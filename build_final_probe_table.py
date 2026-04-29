@@ -1,11 +1,10 @@
 """
-Build the final probe workbook: (1) Final_probe_panel - v6 Region / cell populations
-plus marker columns, with 'GPCRs to prioritize' from Allen Computed_GPCR_subclass_long
-(mean log2, explicit subclass mapping per row). (2) Resources_and_protocol - URLs,
-cache notes, and reproducible run order for GitHub.
+Build the final probe workbook: (1) Final_probe_panel - v6 Region / cell populations,
+markers, GPCRs_paper_suggested (v6 text vs GPCR universe), GPCRs_Allen_WMB_suggested
+(log2-ranked Allen subclasses), GPCRs_union_all. (2) Resources_and_protocol.
 
-Input: mouse_*_WITH_GPCR_COMPUTED.xlsx (must contain v6_Final_CellType_GPCR
-and Computed_GPCR_subclass_long).
+Input: *_WITH_GPCR_COMPUTED.xlsx (v6_Final_CellType_GPCR, Computed_GPCR_subclass_long;
+optional sheet GPCR_Candidates).
 
 Output: Excel with sheets Final_probe_panel and Resources_and_protocol.
 """
@@ -13,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -24,14 +24,14 @@ def _resources_protocol_rows(computed_xlsx: Path, cache_dir: Path) -> list[dict[
     """Human-readable provenance; sizes are approximate if cache not scanned."""
     rows: list[dict[str, str]] = [
         {
-            "Topic": "What 'GPCRs to prioritize' means",
+            "Topic": "GPCR columns in Final_probe_panel",
             "Detail": (
-                "This column is derived ONLY from Allen Brain Cell Atlas WMB-10X "
-                "log2 expression: mean log2 per (ROI, Allen subclass) from sheet "
-                "Computed_GPCR_subclass_long in the computed workbook, then top genes "
-                "by max(mean_log2) across the subclass(es) mapped in build_final_probe_table.py. "
-                "It is NOT an automated fusion with paper-based lists; Primary/Secondary "
-                "marker columns still come from your curated v6 workbook text."
+                "GPCRs_paper_suggested: gene symbols parsed from v6 sheet column "
+                "'GPCRs to prioritize in this cell type' (default), kept only if they appear "
+                "in GPCR_Candidates or the Allen computed gene set. Optional flag adds "
+                "Primary/Secondary columns (may pick up genes mentioned only as exclusions). "
+                "GPCRs_Allen_WMB_suggested: top-N by max(mean log2) across mapped Allen subclasses. "
+                "GPCRs_union_all: paper-ordered list, then Allen-only genes in Allen rank order."
             ),
         },
         {
@@ -95,7 +95,7 @@ def _resources_protocol_rows(computed_xlsx: Path, cache_dir: Path) -> list[dict[
             ),
         },
         {
-            "Topic": "Protocol step 5 - final five-column panel",
+            "Topic": "Protocol step 5 - final panel (paper vs Allen GPCR columns)",
             "Detail": (
                 "python build_final_probe_table.py --computed <WITH_GPCR_COMPUTED.xlsx> "
                 "--output mouse_6_region_GPCR_probe_FINAL_panel.xlsx [--top-n 10]"
@@ -201,6 +201,71 @@ ROW_SUBCLASSES: dict[tuple[str, str], list[str]] = {
 }
 
 
+def _load_gpcr_universe(computed_path: Path, sub_long: pd.DataFrame) -> dict[str, str]:
+    """Map lowercase token -> preferred display symbol (GPCR_Candidates first, then Allen)."""
+    canon: dict[str, str] = {}
+    try:
+        gc = pd.read_excel(computed_path, sheet_name="GPCR_Candidates")
+        for g in gc["GPCR gene"].dropna().astype(str).str.strip():
+            if len(g) >= 2:
+                canon[g.lower()] = g
+    except (ValueError, KeyError):
+        pass
+    for g in sub_long["gene_symbol"].dropna().astype(str).unique():
+        g = str(g).strip()
+        if len(g) < 2:
+            continue
+        canon.setdefault(g.lower(), g)
+    return canon
+
+
+def _paper_suggested_genes(
+    row: pd.Series,
+    col_gpcr: str,
+    canon: dict[str, str],
+    include_marker_columns: bool,
+    col_pri: str,
+    col_sec: str,
+) -> list[str]:
+    """Symbols from v6 GPCR prose (and optionally Primary/Secondary) in GPCR universe."""
+    cols = [col_gpcr]
+    if include_marker_columns:
+        cols = [col_pri, col_sec, col_gpcr]
+    blob = " ".join(str(row.get(c, "") or "") for c in cols)
+    seen: set[str] = set()
+    out: list[str] = []
+    for tok in re.findall(r"[A-Za-z][A-Za-z0-9_-]*", blob):
+        c = canon.get(tok.lower())
+        if c is None:
+            continue
+        kl = c.lower()
+        if kl not in seen:
+            seen.add(kl)
+            out.append(c)
+    return out
+
+
+def _allen_gene_list(gpcr_csv: str) -> list[str]:
+    if not (gpcr_csv or "").strip():
+        return []
+    return [x.strip() for x in str(gpcr_csv).split(",") if x.strip()]
+
+
+def _union_paper_then_allen(
+    paper: list[str], allen: list[str], canon: dict[str, str]
+) -> list[str]:
+    seen = {g.lower() for g in paper}
+    out = list(paper)
+    for g in allen:
+        c = canon.get(g.lower(), g)
+        kl = c.lower()
+        if kl in seen:
+            continue
+        seen.add(kl)
+        out.append(c)
+    return out
+
+
 def _top_gpcrs(
     sub_long: pd.DataFrame,
     roi: str,
@@ -232,7 +297,12 @@ def main() -> None:
         "--top-n",
         type=int,
         default=10,
-        help="Number of GPCR genes to list (ranked by max subclass mean log2)",
+        help="Allen column: number of genes ranked by max subclass mean log2",
+    )
+    ap.add_argument(
+        "--paper-include-marker-columns",
+        action="store_true",
+        help="Also scan Primary and Secondary marker text for GPCR symbols (default: GPCR column only).",
     )
     args = ap.parse_args()
 
@@ -244,6 +314,9 @@ def main() -> None:
     col_pop = "Cell type / population"
     col_pri = "Primary cell-type marker genes to add"
     col_sec = "Secondary / exclusion markers"
+    col_gpcr_paper = "GPCRs to prioritize in this cell type"
+
+    canon = _load_gpcr_universe(args.computed, sub_long)
 
     rows_out: list[dict[str, str]] = []
     for _, r in v6.iterrows():
@@ -257,7 +330,17 @@ def main() -> None:
             raise KeyError(f"No ROI mapping for region: {region!r}")
 
         subclasses = ROW_SUBCLASSES[key]
-        gpcr_str, _ = _top_gpcrs(sub_long, roi, subclasses, args.top_n)
+        allen_csv, _ = _top_gpcrs(sub_long, roi, subclasses, args.top_n)
+        allen_list = _allen_gene_list(allen_csv)
+        paper_list = _paper_suggested_genes(
+            r,
+            col_gpcr_paper,
+            canon,
+            args.paper_include_marker_columns,
+            col_pri,
+            col_sec,
+        )
+        union_list = _union_paper_then_allen(paper_list, allen_list, canon)
 
         rows_out.append(
             {
@@ -265,7 +348,9 @@ def main() -> None:
                 "Cell type / population": pop,
                 "Primary cell-type markers": str(r.get(col_pri, "") or ""),
                 "Secondary / exclusion markers": str(r.get(col_sec, "") or ""),
-                "GPCRs to prioritize": gpcr_str,
+                "GPCRs_paper_suggested": ", ".join(paper_list),
+                "GPCRs_Allen_WMB_suggested": ", ".join(allen_list),
+                "GPCRs_union_all": ", ".join(union_list),
             }
         )
 

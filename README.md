@@ -29,7 +29,7 @@ Place your v6 audit workbook (or adjust paths in each script / CLI flags). Defau
 | `allen_v6_workbook_audit.py` | Small-file download + symbol audit; use `--input` / `--output` to avoid locked paths under Downloads. |
 | `wmb_enrich_probe_workbook_v7.py` | Cluster census from cell metadata; optional `--compute-th-gpcr` for TH matrix. |
 | `gpcr_rank_patch_v6.py` | Full pipeline: ROI cells → per-matrix `get_gene_data` → mean log2 + rank within cluster/subclass; adds `Computed_GPCR_*` sheets. |
-| `build_final_probe_table.py` | From `*_WITH_GPCR_COMPUTED.xlsx`, writes **Final_probe_panel** (20 rows, Allen-derived GPCR column) and **Resources_and_protocol** (links, disk guidance, run order). |
+| `build_final_probe_table.py` | Builds **Final_probe_panel** (markers + **GPCRs_paper_suggested** from v6 GPCR column + **GPCRs_Allen_WMB_suggested** from Allen means + **GPCRs_union_all**) and **Resources_and_protocol**. |
 
 **Important:** For `gpcr_rank_patch_v6.py`, use `--output path\to\result.xlsx` so Excel does not lock the input file. Close Excel while running.
 
@@ -46,8 +46,10 @@ Audit and v7 outputs go under `outputs\` by default. The GPCR workbook can be 10
 After `*_WITH_GPCR_COMPUTED.xlsx` exists (close Excel if overwriting the same path):
 
 ```powershell
-python .\build_final_probe_table.py --computed .\outputs\mouse_6_region_celltype_GPCR_probe_list_v6_WITH_GPCR_COMPUTED.xlsx --output .\outputs\mouse_6_region_GPCR_probe_FINAL_panel.xlsx
+python .\build_final_probe_table.py --computed .\outputs\mouse_6_region_celltype_GPCR_probe_list_v6_WITH_GPCR_COMPUTED.xlsx --output .\outputs\mouse_6_region_GPCR_probe_FINAL_panel.xlsx --top-n 10
 ```
+
+Optional: `--paper-include-marker-columns` also pulls GPCR symbols mentioned in Primary/Secondary (can include genes cited only as exclusions).
 
 Output has two sheets: **Final_probe_panel** and **Resources_and_protocol** (links, cache notes, run order).
 
