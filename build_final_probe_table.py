@@ -6,7 +6,9 @@ markers, GPCRs_paper_suggested (v6 text vs GPCR universe), GPCRs_Allen_WMB_sugge
 Input: *_WITH_GPCR_COMPUTED.xlsx (v6_Final_CellType_GPCR, Computed_GPCR_subclass_long;
 optional sheet GPCR_Candidates).
 
-Output: Excel with sheets Final_probe_panel and Resources_and_protocol.
+Output: Excel with sheets Final_probe_panel, Resources_and_protocol, Workbook_Sources
+(copy of Sources from input if present), v6_Population_references (per-row paper URLs
+and evidence), and All_URLs_deduplicated (merged unique http links).
 """
 from __future__ import annotations
 
@@ -23,6 +25,14 @@ GITHUB_REPO = "https://github.com/limserenahansol/Genelist_analysis_WMB"
 def _resources_protocol_rows(computed_xlsx: Path, cache_dir: Path) -> list[dict[str, str]]:
     """Human-readable provenance; sizes are approximate if cache not scanned."""
     rows: list[dict[str, str]] = [
+        {
+            "Topic": "Paper and workbook links (full tables in this file)",
+            "Detail": (
+                "Sheets: Workbook_Sources = curated catalog from the input workbook Sources tab; "
+                "v6_Population_references = each Region/cell population with Source URLs and evidence; "
+                "All_URLs_deduplicated = merged unique http(s) links from Sources + v6 Source URLs."
+            ),
+        },
         {
             "Topic": "GPCR columns in Final_probe_panel",
             "Detail": (
@@ -284,6 +294,41 @@ def _top_gpcrs(
     return ", ".join(genes), "; ".join(subclasses[:3]) + ("..." if len(subclasses) > 3 else "")
 
 
+def _dedup_url_table(v6: pd.DataFrame, sources_df: pd.DataFrame | None) -> pd.DataFrame:
+    """Unique http(s) URLs from Sources sheet and v6 Source URLs column."""
+    rows: list[dict[str, str]] = []
+    if sources_df is not None and "URL" in sources_df.columns:
+        for _, r in sources_df.iterrows():
+            u = str(r.get("URL") or "").strip()
+            if u.lower().startswith("http"):
+                rows.append(
+                    {
+                        "URL": u,
+                        "Origin": "Workbook Sources sheet",
+                        "Source name / label": str(r.get("Source name", "") or ""),
+                    }
+                )
+    col_pop = "Cell type / population"
+    for _, r in v6.iterrows():
+        cell = str(r.get("Source URLs") or "")
+        region = str(r.get("Region", "") or "")
+        pop = str(r.get(col_pop, "") or "")[:80]
+        for part in re.split(r"[;\n]+|,\s*(?=https?://)", cell):
+            u = part.strip().strip(",").strip()
+            if u.lower().startswith("http"):
+                rows.append(
+                    {
+                        "URL": u,
+                        "Origin": "v6_Final_CellType_GPCR",
+                        "Source name / label": f"{region} | {pop}",
+                    }
+                )
+    if not rows:
+        return pd.DataFrame(columns=["URL", "Origin", "Source name / label"])
+    dfu = pd.DataFrame(rows)
+    return dfu.drop_duplicates(subset=["URL"], keep="first").sort_values("URL")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
@@ -292,7 +337,7 @@ def main() -> None:
         required=True,
         help="Path to *_WITH_GPCR_COMPUTED.xlsx",
     )
-    ap.add_argument("--output", type=Path, required=True, help="Output .xlsx (two sheets)")
+    ap.add_argument("--output", type=Path, required=True, help="Output .xlsx (multiple sheets)")
     ap.add_argument(
         "--top-n",
         type=int,
@@ -357,12 +402,41 @@ def main() -> None:
     cache_dir = Path(os.environ.get("ABC_ATLAS_CACHE", r"C:\Users\hsollim\Downloads\abc_atlas_cache"))
     resources = pd.DataFrame(_resources_protocol_rows(args.computed, cache_dir))
 
+    sources_df: pd.DataFrame | None = None
+    try:
+        sources_df = pd.read_excel(args.computed, sheet_name="Sources")
+    except ValueError:
+        pass
+
+    v6_ref_cols = [
+        "Region",
+        col_pop,
+        "Source URLs",
+        "Evidence tier after v6",
+        "Evidence status",
+    ]
+    v6_refs = v6[[c for c in v6_ref_cols if c in v6.columns]].copy()
+    url_dedup = _dedup_url_table(v6, sources_df)
+
     out = pd.DataFrame(rows_out)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(args.output, engine="openpyxl") as w:
         out.to_excel(w, sheet_name="Final_probe_panel", index=False)
         resources.to_excel(w, sheet_name="Resources_and_protocol", index=False)
-    print("Wrote", args.output, "Final_probe_panel rows:", len(out), "+ Resources_and_protocol")
+        if sources_df is not None and not sources_df.empty:
+            sources_df.to_excel(w, sheet_name="Workbook_Sources", index=False)
+        v6_refs.to_excel(w, sheet_name="v6_Population_references", index=False)
+        url_dedup.to_excel(w, sheet_name="All_URLs_deduplicated", index=False)
+    extra = ["Workbook_Sources"] if sources_df is not None and not sources_df.empty else []
+    print(
+        "Wrote",
+        args.output,
+        "Final_probe_panel",
+        len(out),
+        "rows; Resources_and_protocol;",
+        *extra,
+        "v6_Population_references; All_URLs_deduplicated",
+    )
 
 
 if __name__ == "__main__":

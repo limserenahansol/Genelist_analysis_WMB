@@ -51,7 +51,7 @@ python .\build_final_probe_table.py --computed .\outputs\mouse_6_region_celltype
 
 Optional: `--paper-include-marker-columns` also pulls GPCR symbols mentioned in Primary/Secondary (can include genes cited only as exclusions).
 
-Output has two sheets: **Final_probe_panel** and **Resources_and_protocol** (links, cache notes, run order).
+Output has five sheets: **Final_probe_panel**, **Resources_and_protocol** (Allen + protocol), **Workbook_Sources** (copy of the workbook `Sources` catalog), **v6_Population_references** (per-row `Source URLs` and evidence from v6), **All_URLs_deduplicated** (unique links from Sources + v6).
 
 ## References
 
