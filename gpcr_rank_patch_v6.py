@@ -13,6 +13,7 @@ interpret which GPCRs dominate each Allen population.
 from __future__ import annotations
 
 import argparse
+import gc
 import os
 import re
 import shutil
@@ -80,7 +81,7 @@ def pull_expression_for_matrix(
         ["dataset_label", "feature_matrix_label"]
     ]
     last_err: Exception | None = None
-    for attempt in range(1, 6):
+    for attempt in range(1, 13):
         try:
             expr = get_gene_data(
                 abc,
@@ -93,13 +94,15 @@ def pull_expression_for_matrix(
             break
         except PermissionError as e:
             last_err = e
+            gc.collect()
             print(
-                f"  PermissionError (file lock?), retry {attempt}/5 in 20s: {e}"
+                f"  PermissionError (file lock?), retry {attempt}/12 in 30s: {e}"
             )
-            time.sleep(20)
+            time.sleep(30)
     else:
         raise last_err  # type: ignore[misc]
 
+    gc.collect()
     meta = cells_frame.set_index("cell_label")
     joined = expr.join(
         meta[
@@ -238,7 +241,8 @@ def main() -> None:
             continue
         print("Matrix", m, "cells", len(sub))
         parts.append(pull_expression_for_matrix(abc, gene_df, genes, sub))
-        time.sleep(3)
+        gc.collect()
+        time.sleep(8)
 
     full = pd.concat(parts, axis=0)
     print("Joined expression rows:", len(full))

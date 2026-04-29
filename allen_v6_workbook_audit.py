@@ -61,9 +61,12 @@ def tokenize_gene_like(s: str) -> list[str]:
     return re.findall(r"[A-Za-z][A-Za-z0-9_-]*", s)
 
 
-def main() -> None:
-    if not INPUT_XLSX.exists():
-        raise FileNotFoundError(INPUT_XLSX)
+def main(input_xlsx: Path | None = None, output_xlsx: Path | None = None) -> None:
+    input_path = input_xlsx or INPUT_XLSX
+    output_path = output_xlsx or OUTPUT_XLSX
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if not input_path.exists():
+        raise FileNotFoundError(input_path)
 
     abc = load_abc_cache()
     manifest = abc.current_manifest
@@ -77,7 +80,7 @@ def main() -> None:
     roi_df = pd.read_csv(paths["region_of_interest_metadata.csv"])
 
     # Genes mentioned in final sheet
-    final = pd.read_excel(INPUT_XLSX, sheet_name="v6_Final_CellType_GPCR")
+    final = pd.read_excel(input_path, sheet_name="v6_Final_CellType_GPCR")
     gene_cols = [
         c
         for c in final.columns
@@ -178,10 +181,10 @@ def main() -> None:
     )
 
     # Write full copy of original sheets + new sheets
-    xl = pd.ExcelFile(INPUT_XLSX)
-    with pd.ExcelWriter(OUTPUT_XLSX, engine="openpyxl") as writer:
+    xl = pd.ExcelFile(input_path)
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
         for sheet in xl.sheet_names:
-            pd.read_excel(INPUT_XLSX, sheet_name=sheet).to_excel(
+            pd.read_excel(input_path, sheet_name=sheet).to_excel(
                 writer, sheet_name=sheet, index=False
             )
         audit_summary.to_excel(writer, sheet_name="Python_Allen_Audit_Summary", index=False)
@@ -192,7 +195,7 @@ def main() -> None:
         )
         notes.to_excel(writer, sheet_name="Python_Symbol_Notes", index=False)
 
-    print("Wrote:", OUTPUT_XLSX)
+    print("Wrote:", output_path)
     print("Manifest:", manifest, "version:", version)
     print("Unique Allen-valid gene symbols from v6_Final:", len(mentioned_unique))
     print("Tokens resembling genes but not in gene.csv:", len(false_hits))
@@ -201,4 +204,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--input", type=Path, default=INPUT_XLSX, help="v6 audit workbook")
+    ap.add_argument("--output", type=Path, default=OUTPUT_XLSX, help="Workbook + Python audit sheets")
+    args = ap.parse_args()
+    main(args.input, args.output)

@@ -26,7 +26,7 @@ Place your v6 audit workbook (or adjust paths in each script / CLI flags). Defau
 
 | Script | Purpose |
 |--------|---------|
-| `allen_v6_workbook_audit.py` | Small-file download + symbol audit; writes `*_plus_ALLEN_PYTHON_AUDIT.xlsx`. |
+| `allen_v6_workbook_audit.py` | Small-file download + symbol audit; use `--input` / `--output` to avoid locked paths under Downloads. |
 | `wmb_enrich_probe_workbook_v7.py` | Cluster census from cell metadata; optional `--compute-th-gpcr` for TH matrix. |
 | `gpcr_rank_patch_v6.py` | Full pipeline: ROI cells → per-matrix `get_gene_data` → mean log2 + rank within cluster/subclass; adds `Computed_GPCR_*` sheets. |
 
