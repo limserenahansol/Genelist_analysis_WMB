@@ -101,6 +101,30 @@ def _markers_for(markers: pd.DataFrame, region: str, cell_type: str, role: str) 
     return sorted(dict.fromkeys(sel["gene"].astype(str).tolist()))
 
 
+def _build_paper_lookup(paper_sugg: pd.DataFrame) -> dict[tuple[str, str, str], list[str]]:
+    """Build dict {(region_user, cell_type_label, gene): sorted unique source list}."""
+    lookup: dict[tuple[str, str, str], set[str]] = {}
+    if paper_sugg.empty:
+        return {}
+    needed = {"region_user", "cell_type_label", "gene", "paper_source"}
+    if not needed.issubset(paper_sugg.columns):
+        return {}
+    for _, r in paper_sugg.iterrows():
+        key = (str(r["region_user"]).strip(), str(r["cell_type_label"]).strip(), str(r["gene"]).strip())
+        sources = {s.strip() for s in str(r["paper_source"]).replace(",", ";").split(";") if s.strip()}
+        lookup.setdefault(key, set()).update(sources)
+    return {k: sorted(v) for k, v in lookup.items()}
+
+
+def _paper_genes_for(paper_lookup: dict, region: str, cell_type: str) -> dict[str, list[str]]:
+    """Return {gene: [sources]} dict for a (region, cell_type)."""
+    return {
+        g: srcs
+        for (r, ct, g), srcs in paper_lookup.items()
+        if r == region and ct == cell_type
+    }
+
+
 def _format_top_gpcrs(rows: pd.DataFrame, top_n: int, with_status: bool = True) -> str:
     """Render top GPCR rows as 'Gene(spec=2.1, log2=8.3, pct=87%, status=keep)' joined by '; '."""
     if rows.empty:
@@ -124,6 +148,7 @@ def build_final_summary(
     panel: pd.DataFrame,
     markers: pd.DataFrame,
     anchors: pd.DataFrame,
+    paper_lookup: dict[tuple[str, str, str], list[str]] | None = None,
     top_n: int = 8,
 ) -> pd.DataFrame:
     """Build the human-readable Final_Summary sheet.
@@ -141,9 +166,15 @@ def build_final_summary(
 
     sub = panel[panel["taxonomy_level"] == "subclass"].copy()
     keep_recs = {"keep", "keep_validate_spatially", "candidate_to_validate"}
+    paper_lookup = paper_lookup or {}
 
     rows: list[dict] = []
     for (region, cell_type), grp in anchors.groupby(["region_user", "cell_type_label"], sort=False):
+        # Paper-suggested GPCRs are anchored to (region, cell_type), not subclass.
+        paper_genes = _paper_genes_for(paper_lookup, region, cell_type)
+        paper_set = set(paper_genes.keys())
+        paper_str = ", ".join(sorted(paper_set)) if paper_set else ""
+
         for _, anc in grp.iterrows():
             anchor = str(anc["allen_subclass_anchor"]).strip()
             confidence = str(anc.get("confidence", "")).strip()
@@ -161,7 +192,10 @@ def build_final_summary(
                         "n_cells_in_anchor": 0,
                         "cell_type_marker_genes": ", ".join(_markers_for(markers, region, cell_type, "positive_marker")),
                         "exclusion_markers": ", ".join(_markers_for(markers, region, cell_type, "exclusion_marker")),
+                        "paper_suggested_gpcrs": paper_str,
                         "top_GPCRs_to_choose": "",
+                        "top_GPCRs_by_expression": "",
+                        "agreement_paper_vs_allen": "",
                         "n_GPCRs_keep": 0,
                         "warning": "anchor subclass not found in computed panel",
                     }
@@ -180,6 +214,33 @@ def build_final_summary(
                 ["mean_log2_expr", "pct_expr"], ascending=[False, False]
             )
             top_expr = _format_top_gpcrs(by_expr, top_n, with_status=False)
+
+            # Agreement vs paper: which paper genes did Allen pipeline keep,
+            # which are paper-only (allen downgraded or absent), and which are
+            # Allen-specific keeps not in paper list.
+            keep_genes = set(keep_rows["gpcr_gene"].astype(str))
+            both = sorted(paper_set & keep_genes)
+            paper_only = sorted(paper_set - keep_genes)
+            allen_only = sorted(keep_genes - paper_set)
+            agreement_parts = []
+            if both:
+                agreement_parts.append(f"both: {', '.join(both)}")
+            if paper_only:
+                # Annotate paper-only with why Allen downgraded them
+                detail = []
+                for g in paper_only:
+                    grow = tile[tile["gpcr_gene"] == g]
+                    if grow.empty:
+                        detail.append(f"{g}(not_in_universe_or_no_data)")
+                    else:
+                        rec = str(grow["final_recommendation"].iloc[0])
+                        spec = float(grow["specificity_log2"].iloc[0])
+                        log2 = float(grow["mean_log2_expr"].iloc[0])
+                        detail.append(f"{g}({rec},spec={spec:+.2f},log2={log2:.2f})")
+                agreement_parts.append(f"paper_only: {'; '.join(detail)}")
+            if allen_only:
+                agreement_parts.append(f"allen_only_keep: {', '.join(allen_only)}")
+            agreement = " | ".join(agreement_parts)
 
             warnings: list[str] = []
             if n_cells < 30:
@@ -201,8 +262,10 @@ def build_final_summary(
                     "exclusion_markers": ", ".join(
                         _markers_for(markers, region, cell_type, "exclusion_marker")
                     ),
+                    "paper_suggested_gpcrs": paper_str,
                     "top_GPCRs_to_choose": top_keep,
                     "top_GPCRs_by_expression": top_expr,
+                    "agreement_paper_vs_allen": agreement,
                     "n_GPCRs_keep": int(len(keep_rows)),
                     "warning": "; ".join(warnings),
                 }
@@ -210,7 +273,12 @@ def build_final_summary(
     return pd.DataFrame(rows)
 
 
-def build_final_probe_panel(allen: pd.DataFrame, markers: pd.DataFrame, paper: pd.DataFrame) -> pd.DataFrame:
+def build_final_probe_panel(
+    allen: pd.DataFrame,
+    markers: pd.DataFrame,
+    paper: pd.DataFrame,
+    paper_sugg_lookup: dict[tuple[str, str, str], list[str]] | None = None,
+) -> pd.DataFrame:
     if allen.empty:
         return pd.DataFrame()
     base = allen.copy()
@@ -227,19 +295,41 @@ def build_final_probe_panel(allen: pd.DataFrame, markers: pd.DataFrame, paper: p
         )
     else:
         base["marker_role"] = ""
-    # paper evidence join
-    paper_lookup = {}
+    # paper evidence join (legacy: numeric paper means)
+    paper_num_lookup = {}
     if not paper.empty and {"gene", "mean_expr"}.issubset(paper.columns):
         for _, r in paper.iterrows():
-            paper_lookup[str(r["gene"]).strip()] = (
+            paper_num_lookup[str(r["gene"]).strip()] = (
                 float(r.get("mean_expr") or 0.0),
                 float(r.get("pct_expr") or 0.0),
             )
-        base["paper_mean_expr"] = base["gpcr_gene"].map(lambda g: paper_lookup.get(str(g), (None, None))[0])
-        base["paper_pct_expr"] = base["gpcr_gene"].map(lambda g: paper_lookup.get(str(g), (None, None))[1])
+        base["paper_mean_expr"] = base["gpcr_gene"].map(lambda g: paper_num_lookup.get(str(g), (None, None))[0])
+        base["paper_pct_expr"] = base["gpcr_gene"].map(lambda g: paper_num_lookup.get(str(g), (None, None))[1])
     else:
         base["paper_mean_expr"] = pd.NA
         base["paper_pct_expr"] = pd.NA
+
+    # paper_suggested flag + paper_source per (region, gene). Note: the panel is
+    # at (region, subclass, gene) granularity but paper suggestions are at
+    # (region, cell_type, gene). We aggregate sources across cell_types within a
+    # region so a gene flagged in any cell_type is still discoverable.
+    if paper_sugg_lookup:
+        per_region_gene: dict[tuple[str, str], set[str]] = {}
+        for (r, ct, g), srcs in paper_sugg_lookup.items():
+            key = (r, g)
+            per_region_gene.setdefault(key, set()).update(srcs)
+        per_region_gene_sorted = {k: sorted(v) for k, v in per_region_gene.items()}
+        base["paper_suggested"] = base.apply(
+            lambda r: (str(r["region_user"]), str(r["gpcr_gene"])) in per_region_gene_sorted,
+            axis=1,
+        )
+        base["paper_source"] = base.apply(
+            lambda r: "; ".join(per_region_gene_sorted.get((str(r["region_user"]), str(r["gpcr_gene"])), [])),
+            axis=1,
+        )
+    else:
+        base["paper_suggested"] = False
+        base["paper_source"] = ""
     return base
 
 
@@ -259,6 +349,11 @@ def main() -> None:
         default=None,
         help="CSV with columns region_user, cell_type_label, allen_subclass_anchor, confidence, notes",
     )
+    p.add_argument(
+        "--paper_suggestions_csv",
+        default=None,
+        help="CSV with columns region_user, cell_type_label, gene, paper_source, notes",
+    )
     p.add_argument("--top_n_gpcrs_in_summary", type=int, default=8)
     args = p.parse_args()
 
@@ -274,6 +369,9 @@ def main() -> None:
     mapping = _read_optional(args.region_mapping_csv)
     old = _read_optional(args.old_candidates_csv)
     anchors = _read_optional(args.celltype_anchor_csv)
+    paper_sugg = _read_optional(args.paper_suggestions_csv)
+    paper_lookup = _build_paper_lookup(paper_sugg)
+    print(f"[INFO] paper_suggestions_csv: {len(paper_sugg)} rows, lookup keys: {len(paper_lookup)}")
 
     classified_levels: dict[str, pd.DataFrame] = {}
     for lvl, df in allen_levels.items():
@@ -287,7 +385,7 @@ def main() -> None:
         if "taxonomy_level" not in df.columns:
             df = df.copy()
             df["taxonomy_level"] = lvl
-        panel_parts.append(build_final_probe_panel(df, markers, paper))
+        panel_parts.append(build_final_probe_panel(df, markers, paper, paper_lookup))
     panel = pd.concat(panel_parts, ignore_index=True) if panel_parts else pd.DataFrame()
 
     if not panel.empty:
@@ -318,7 +416,9 @@ def main() -> None:
         ]
     )
 
-    summary = build_final_summary(panel, markers, anchors, top_n=args.top_n_gpcrs_in_summary)
+    summary = build_final_summary(
+        panel, markers, anchors, paper_lookup=paper_lookup, top_n=args.top_n_gpcrs_in_summary
+    )
 
     with pd.ExcelWriter(out_xlsx, engine="openpyxl") as w:
         readme.to_excel(w, sheet_name="README", index=False)
@@ -328,6 +428,8 @@ def main() -> None:
             mapping.to_excel(w, sheet_name="Region_Mapping_Final", index=False)
         if not anchors.empty:
             anchors.to_excel(w, sheet_name="CellType_Subclass_Anchors", index=False)
+        if not paper_sugg.empty:
+            paper_sugg.to_excel(w, sheet_name="Paper_GPCR_Suggestions", index=False)
         for lvl, df in classified_levels.items():
             df.to_excel(w, sheet_name=f"Computed_GPCR_{lvl}", index=False)
         if not markers.empty:

@@ -13,3 +13,7 @@ LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,Anterior mammillar
 ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,Cortical L2/3 IT canonical
 AId,Upper-layer IT excitatory,007 L2/3 IT CTX Glut,high,Cortical L2/3 IT canonical
 AId,Upper-layer IT excitatory,006 L4/5 IT CTX Glut,high,Cortical L4/5 IT (insula has prominent L4/5)
+CA,CA1 pyramidal,016 CA1-ProS Glut,high,CA1 pyramidal + ProSubiculum (largest CA1 subclass)
+CA,CA2 pyramidal,025 CA2-FC-IG Glut,high,CA2 + Fasciola Cinerea + Indusium Griseum (only ~327 cells in WMB; Avpr1b/Rgs14 marker)
+CA,CA3 pyramidal,017 CA3 Glut,high,CA3 pyramidal canonical
+CA,DG granule cell,037 DG Glut,high,Dentate gyrus granule cells (largest hippocampal subclass)

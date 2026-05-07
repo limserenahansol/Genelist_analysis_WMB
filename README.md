@@ -1,26 +1,28 @@
 # Genelist analysis (Allen WMB-10X)
 
-Defensible, evidence-aware GPCR / cell-type marker probe planning for six mouse brain regions (BMAp, LM, RE, CP, ORBm, AId), built on the [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/) WMB-10X data plus curated published markers.
+Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mouse brain regions** (BMAp, LM, RE, CP, ORBm, AId, **CA**), built on the [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/) WMB-10X data plus curated published markers, with **paper-suggested vs. Allen-computed** GPCRs shown side-by-side.
 
 ![v3 pipeline overview](v3/docs/images/v3_pipeline_overview.png)
 
 > ## I just want the answer — which probes do I order?
 >
-> 1. **Download** either copy of the same workbook (24.6 MB, 10 sheets):
+> 1. **Download** either copy of the same workbook (49 MB, 11 sheets):
 >    - [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) ← top-level mirror
 >    - [`v3/outputs/Final_Probe_Panel_v7_modular.xlsx`](v3/outputs/Final_Probe_Panel_v7_modular.xlsx) ← canonical
-> 2. **Open it in Excel** and go to the **second tab from the left**, named **`Final_Summary`** (the tab order is `README → Final_Summary → Region_Mapping_Final → …`).
-> 3. That sheet is one row per **(region × cell type)** with these columns:
->    - `cell_type_marker_genes` — curated **+ markers** to use (e.g. *Drd1, Tac1, Pdyn* for D1 SPN)
+> 2. **Open it in Excel** and go to the **second tab from the left**, named **`Final_Summary`** (tab order: `README → Final_Summary → Region_Mapping_Final → CellType_Subclass_Anchors → Paper_GPCR_Suggestions → Computed_GPCR_subclass → … → Final_Probe_Panel`).
+> 3. That sheet is one row per **(region × cell type)** — 18 rows across 7 regions (BMAp, LM, RE, CP, ORBm, AId, CA-CA1/CA2/CA3/DG) — with these columns:
+>    - `cell_type_marker_genes` — curated **+ markers** to use for the cell type (e.g. *Drd1, Tac1, Pdyn* for D1 SPN; *Avpr1b, Rgs14, Amigo2* for CA2)
 >    - `exclusion_markers` — markers that **must be off** (e.g. *Adora2a, Drd2, Penk* for D1 SPN)
->    - `top_GPCRs_to_choose` — **GPCRs to order**, only the ones that pass keep / validate-spatially thresholds
->    - `top_GPCRs_by_expression` — **fallback GPCRs** (top by raw mean expression) for cell types where nothing passed the strict thresholds
->    - `warning` — flagged when no GPCR passed thresholds, so you know to lean on the fallback column
-> 4. Don't see `Final_Summary` as a tab? You opened the **old** `mouse_6_region_GPCR_probe_FINAL_panel_with_resources.xlsx`. Use the file linked above instead — same evidence, with the new summary tab on top.
+>    - **`paper_suggested_gpcrs`** — every GPCR the literature flagged for this cell type (alphabetical)
+>    - **`top_GPCRs_to_choose`** — Allen-computed GPCRs that **pass** the keep / validate-spatially thresholds
+>    - `top_GPCRs_by_expression` — fallback ranked by raw mean expression (for cell types where nothing passed)
+>    - **`agreement_paper_vs_allen`** — `both: …` (paper and Allen agree) | `paper_only: gene(status, spec, log2)` (paper said yes, Allen downgraded — so verify with FISH if you really want it) | `allen_only_keep: …` (Allen found it but paper missed it — interesting new candidates)
+>    - `warning` — flagged when no GPCR passed thresholds
+> 4. Don't see these columns? You're on the old workbook. Re-download from one of the two links above (look for size **~49 MB**, not 24 or 13 MB).
 >
-> Want a quick GitHub-rendered preview without downloading? See [`v3/outputs/Final_Summary.csv`](v3/outputs/Final_Summary.csv) (same 14 rows, GitHub renders CSVs natively).
+> Want a quick GitHub-rendered preview without downloading? See [`v3/outputs/Final_Summary_v7_with_paper.csv`](v3/outputs/Final_Summary_v7_with_paper.csv) (18 rows × 14 columns, GitHub renders CSVs natively).
 >
-> **Full evidence ledger** lives in the `Final_Probe_Panel` sheet of the same workbook (80,652 rows) with `validation_status`, `final_recommendation`, and `specificity_log2` per (region × cell type × GPCR).
+> **Full evidence ledger** lives in the `Final_Probe_Panel` sheet of the same workbook (**154,869 rows × 23 columns**) with `validation_status`, `final_recommendation`, `specificity_log2`, `paper_suggested` (TRUE/FALSE) and `paper_source` (which paper) per (region × subclass × GPCR).
 >
 > **Want to run the pipeline?** Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
 
@@ -31,10 +33,13 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for six mouse 
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | **Final 6-region probe-selection workbook (10 sheets, including `Final_Summary`).** |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | **Final 7-region probe-selection workbook (11 sheets including `Final_Summary` + `Paper_GPCR_Suggestions`).** |
 | `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the file above, kept at the top level so it's easy to find. |
-| `v3/outputs/Final_Summary.csv` | Standalone export of the `Final_Summary` sheet (14 rows). Renders directly on GitHub. |
+| `v3/outputs/Final_Summary_v7_with_paper.csv` | Standalone export of the new `Final_Summary` sheet (18 rows × 14 cols, includes `paper_suggested_gpcrs` and `agreement_paper_vs_allen`). Renders directly on GitHub. |
+| `v3/outputs/Final_Summary.csv` | Older 14-row preview from before paper integration (kept for diff). |
 | `v3/inputs/celltype_to_subclass_anchor.csv` | Curated mapping from your cell-type labels (e.g. *D1 SPN*) to the exact Allen subclass IDs (e.g. *061 STR D1 Gaba*). Drives the `Final_Summary` sheet. |
+| `v3/inputs/paper_gpcr_suggestions.csv` | (region × cell_type × gene → paper_source) curated from Hochgerner 2023, Märtin 2019, Gokce 2016, Smith 2019 NP-GPCR, Hitti 2014 / Pagani 2015 (CA2), and IUPHAR. |
+| `v3/inputs/mouse_gpcr_universe_template.csv` | **39 GPCR universe** (was 22; added Htr1a/1b/2a, Gpr6/52, Tacr1/3, Ntsr1/2, Hcrtr1/2, Oxtr, Avpr1a/1b ← CA2 KEY, Crhr1, Galr1, Mc4r). |
 | `v3/outputs/gpcr_full/Allen_GPCR_Ranking_*.csv` | Per-level (subclass / supertype / cluster) GPCR ranking with `specificity_log2`. |
 | `v3/docs/STEP_BY_STEP.md` | One-page command playbook, end-to-end. |
 | `v3/docs/images/` | Schematic figures (the ones in this README). |

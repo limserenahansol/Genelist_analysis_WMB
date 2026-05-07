@@ -6,18 +6,35 @@ Drd1,DRD1,Class A,dopamine receptor,IUPHAR_or_curated,D1 receptor
 Drd2,DRD2,Class A,dopamine receptor,IUPHAR_or_curated,D2 receptor
 Adora2a,ADORA2A,Class A,adenosine receptor,IUPHAR_or_curated,D2 SPN associated
 Gpr88,GPR88,Class A orphan,orphan GPCR,IUPHAR_or_curated,striatal-enriched candidate
+Gpr6,GPR6,Class A orphan,orphan GPCR,IUPHAR_or_curated,D2 SPN orphan; cAMP signalling
+Gpr52,GPR52,Class A orphan,orphan GPCR,IUPHAR_or_curated,SPN orphan; D1/D2 split
 Cnr1,CNR1,Class A,cannabinoid receptor,IUPHAR_or_curated,CB1
 Sstr2,SSTR2,Class A,somatostatin receptor,IUPHAR_or_curated,SST signalling
 Npy1r,NPY1R,Class A,neuropeptide Y receptor,IUPHAR_or_curated,NPY family
 Npy2r,NPY2R,Class A,neuropeptide Y receptor,IUPHAR_or_curated,NPY family
 Cckbr,CCKBR,Class A,cholecystokinin receptor,IUPHAR_or_curated,CCK signalling
-Htr2c,HTR2C,Class A,serotonin receptor,IUPHAR_or_curated,5HT2C
+Htr1a,HTR1A,Class A,serotonin receptor,IUPHAR_or_curated,5HT1A; broad cortex/HIP
+Htr1b,HTR1B,Class A,serotonin receptor,IUPHAR_or_curated,5HT1B; D1 SPN classic
 Htr1f,HTR1F,Class A,serotonin receptor,IUPHAR_or_curated,5HT1F
+Htr2a,HTR2A,Class A,serotonin receptor,IUPHAR_or_curated,5HT2A; cortex L5/L6 RE
+Htr2c,HTR2C,Class A,serotonin receptor,IUPHAR_or_curated,5HT2C
 Grm1,GRM1,Class C,metabotropic glutamate,IUPHAR_or_curated,mGluR1
 Grm5,GRM5,Class C,metabotropic glutamate,IUPHAR_or_curated,mGluR5
 Gabbr1,GABBR1,Class C,GABA-B,IUPHAR_or_curated,co-receptor with Gabbr2
 Gabbr2,GABBR2,Class C,GABA-B,IUPHAR_or_curated,co-receptor with Gabbr1
 Chrm2,CHRM2,Class A,cholinergic muscarinic,IUPHAR_or_curated,M2
 Chrm4,CHRM4,Class A,cholinergic muscarinic,IUPHAR_or_curated,M4
+Tacr1,TACR1,Class A,tachykinin receptor,IUPHAR_or_curated,NK1R; BMA + patch SPN
+Tacr3,TACR3,Class A,tachykinin receptor,IUPHAR_or_curated,NK3R; cortical/CTX interneurons
+Ntsr1,NTSR1,Class A,neurotensin receptor,IUPHAR_or_curated,NTR1; L6 CT + reuniens
+Ntsr2,NTSR2,Class A,neurotensin receptor,IUPHAR_or_curated,NTR2; thalamus/astrocyte
+Hcrtr1,HCRTR1,Class A,orexin receptor,IUPHAR_or_curated,Orexin R1; mammillary/LH
+Hcrtr2,HCRTR2,Class A,orexin receptor,IUPHAR_or_curated,Orexin R2; mammillary/LH
+Oxtr,OXTR,Class A,oxytocin receptor,IUPHAR_or_curated,Oxytocin R; CA2/social
+Avpr1a,AVPR1A,Class A,vasopressin receptor,IUPHAR_or_curated,V1A; CA2/LM/social
+Avpr1b,AVPR1B,Class A,vasopressin receptor,IUPHAR_or_curated,V1B; CA2 KEY marker
+Crhr1,CRHR1,Class B,CRF receptor,IUPHAR_or_curated,CRF1; amygdala/BMA stress
+Galr1,GALR1,Class A,galanin receptor,IUPHAR_or_curated,GalR1; HY/CTX interneurons
+Mc4r,MC4R,Class A,melanocortin receptor,IUPHAR_or_curated,MC4R; hypothalamus appetite
 Adcyap1r1,ADCYAP1R1,Class B,PACAP receptor,IUPHAR_or_curated,PAC1
 Gpr101,GPR101,Class A orphan,orphan GPCR,IUPHAR_or_curated,amygdala marker candidate

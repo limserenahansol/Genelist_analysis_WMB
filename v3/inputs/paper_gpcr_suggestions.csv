@@ -1,0 +1,126 @@
+region_user,cell_type_label,gene,paper_source,notes
+CP,D1/direct-pathway SPN,Drd1,Martin2019_CellRep_striatum;Gokce2016_CellRep_striatum,Canonical D1 marker
+CP,D1/direct-pathway SPN,Oprm1,Martin2019_CellRep_striatum,Patch/striosome enrichment but also broadly in D1
+CP,D1/direct-pathway SPN,Oprd1,IUPHAR_classical,Delta opioid in D1 SPN
+CP,D1/direct-pathway SPN,Cnr1,Martin2019_CellRep_striatum,CB1 broadly expressed in SPN
+CP,D1/direct-pathway SPN,Gpr88,Gokce2016_CellRep_striatum,Striatal-enriched orphan GPCR
+CP,D1/direct-pathway SPN,Htr1b,IUPHAR_classical,Classic D1 SPN serotonin receptor
+CP,D1/direct-pathway SPN,Chrm4,IUPHAR_classical;Martin2019_CellRep_striatum,M4 cholinergic D1 enriched
+CP,D1/direct-pathway SPN,Grm5,IUPHAR_classical,mGluR5 SPN
+CP,D1/direct-pathway SPN,Grm1,IUPHAR_classical,mGluR1 SPN
+CP,D1/direct-pathway SPN,Gabbr1,IUPHAR_classical,GABA-B
+CP,D2/indirect-pathway SPN,Drd2,Martin2019_CellRep_striatum;Gokce2016_CellRep_striatum,Canonical D2 marker
+CP,D2/indirect-pathway SPN,Adora2a,Martin2019_CellRep_striatum;Gokce2016_CellRep_striatum,Adenosine A2A canonical D2 marker
+CP,D2/indirect-pathway SPN,Gpr6,Gokce2016_CellRep_striatum,D2 SPN orphan
+CP,D2/indirect-pathway SPN,Gpr52,Gokce2016_CellRep_striatum,SPN orphan
+CP,D2/indirect-pathway SPN,Oprd1,IUPHAR_classical,Delta opioid in D2 SPN
+CP,D2/indirect-pathway SPN,Cnr1,Martin2019_CellRep_striatum,CB1 broadly in SPN
+CP,D2/indirect-pathway SPN,Chrm4,IUPHAR_classical,M4 cholinergic
+CP,D2/indirect-pathway SPN,Grm5,IUPHAR_classical,mGluR5 SPN
+CP,D2/indirect-pathway SPN,Gpr88,Gokce2016_CellRep_striatum,Striatal-enriched orphan
+CP,D2/indirect-pathway SPN,Grm1,IUPHAR_classical,mGluR1 SPN
+CP,Cholinergic interneuron,Chrm2,IUPHAR_classical,M2 autoreceptor on cholinergic
+CP,Cholinergic interneuron,Chrm4,IUPHAR_classical,M4 cholinergic
+CP,Cholinergic interneuron,Drd2,IUPHAR_classical,D2 autoreceptor on cholinergic
+CP,Cholinergic interneuron,Adora2a,IUPHAR_classical,A2A
+CP,Cholinergic interneuron,Cnr1,IUPHAR_classical,CB1
+CP,Cholinergic interneuron,Tacr1,IUPHAR_classical,NK1R
+CP,Cholinergic interneuron,Gabbr1,IUPHAR_classical,GABA-B
+CP,Cholinergic interneuron,Oprm1,IUPHAR_classical,mu opioid
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Gpr101,Hochgerner2023_NatNeurosci_amygdala,Amygdala-enriched orphan GPCR
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Htr2c,Hochgerner2023_NatNeurosci_amygdala,5HT2C amygdala
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Cnr1,Hochgerner2023_NatNeurosci_amygdala,CB1
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Cckbr,Hochgerner2023_NatNeurosci_amygdala,CCK-B amygdala
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Npy1r,Hochgerner2023_NatNeurosci_amygdala,NPY1R amygdala
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Sstr2,Hochgerner2023_NatNeurosci_amygdala,SST amygdala
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Oprm1,Hochgerner2023_NatNeurosci_amygdala,mu opioid
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Oprd1,Hochgerner2023_NatNeurosci_amygdala,delta opioid
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Tacr1,Hochgerner2023_NatNeurosci_amygdala,NK1R amygdala
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Crhr1,Hochgerner2023_NatNeurosci_amygdala,CRF1 amygdala stress
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Grm5,IUPHAR_classical,mGluR5
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Gabbr1,IUPHAR_classical,GABA-B
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Gabbr2,IUPHAR_classical,GABA-B
+RE,Midline thalamic glutamatergic / reuniens,Ntsr1,IUPHAR_classical,Neurotensin R1 reuniens / L6 CT
+RE,Midline thalamic glutamatergic / reuniens,Ntsr2,IUPHAR_classical,NTR2 thalamic
+RE,Midline thalamic glutamatergic / reuniens,Grm1,IUPHAR_classical,mGluR1 thalamic
+RE,Midline thalamic glutamatergic / reuniens,Grm5,IUPHAR_classical,mGluR5 thalamic
+RE,Midline thalamic glutamatergic / reuniens,Adcyap1r1,IUPHAR_classical,PAC1 reuniens
+RE,Midline thalamic glutamatergic / reuniens,Sstr2,IUPHAR_classical,SST signalling
+RE,Midline thalamic glutamatergic / reuniens,Htr2a,IUPHAR_classical,5HT2A midline thalamus
+RE,Midline thalamic glutamatergic / reuniens,Gabbr1,IUPHAR_classical,GABA-B
+RE,Midline thalamic glutamatergic / reuniens,Gabbr2,IUPHAR_classical,GABA-B
+RE,Midline thalamic glutamatergic / reuniens,Chrm2,IUPHAR_classical,M2
+LM,Lateral mammillary excitatory,Cckbr,IUPHAR_classical,CCK-B mammillary
+LM,Lateral mammillary excitatory,Sstr2,IUPHAR_classical,SST mammillary
+LM,Lateral mammillary excitatory,Adcyap1r1,IUPHAR_classical,PAC1 mammillary
+LM,Lateral mammillary excitatory,Hcrtr1,IUPHAR_classical,Orexin R1 LM/HY
+LM,Lateral mammillary excitatory,Hcrtr2,IUPHAR_classical,Orexin R2 LM/HY
+LM,Lateral mammillary excitatory,Grm1,IUPHAR_classical,mGluR1
+LM,Lateral mammillary excitatory,Gabbr1,IUPHAR_classical,GABA-B
+LM,Lateral mammillary excitatory,Gabbr2,IUPHAR_classical,GABA-B
+LM,Lateral mammillary excitatory,Avpr1a,IUPHAR_classical,V1A LM/social
+LM,Lateral mammillary excitatory,Oxtr,IUPHAR_classical,Oxytocin R LM/social
+LM,Lateral mammillary excitatory,Mc4r,IUPHAR_classical,MC4R hypothalamic
+ORBm,L2/3 IT excitatory,Cnr1,Smith2019_eLife_NPGPCR,CB1 cortical
+ORBm,L2/3 IT excitatory,Htr2a,Smith2019_eLife_NPGPCR,5HT2A cortex L2/3
+ORBm,L2/3 IT excitatory,Sstr2,Smith2019_eLife_NPGPCR,SST cortex
+ORBm,L2/3 IT excitatory,Npy1r,Smith2019_eLife_NPGPCR,NPY1R cortex
+ORBm,L2/3 IT excitatory,Cckbr,Smith2019_eLife_NPGPCR,CCK-B cortex
+ORBm,L2/3 IT excitatory,Oprm1,Smith2019_eLife_NPGPCR,mu opioid cortex
+ORBm,L2/3 IT excitatory,Oprd1,Smith2019_eLife_NPGPCR,delta opioid cortex
+ORBm,L2/3 IT excitatory,Grm5,IUPHAR_classical,mGluR5 cortex
+ORBm,L2/3 IT excitatory,Grm1,IUPHAR_classical,mGluR1 cortex
+ORBm,L2/3 IT excitatory,Gabbr1,IUPHAR_classical,GABA-B
+ORBm,L2/3 IT excitatory,Gabbr2,IUPHAR_classical,GABA-B
+AId,Upper-layer IT excitatory,Cnr1,Smith2019_eLife_NPGPCR,CB1 cortical
+AId,Upper-layer IT excitatory,Htr2a,Smith2019_eLife_NPGPCR,5HT2A cortex L2/3
+AId,Upper-layer IT excitatory,Sstr2,Smith2019_eLife_NPGPCR,SST cortex
+AId,Upper-layer IT excitatory,Cckbr,Smith2019_eLife_NPGPCR,CCK-B insula
+AId,Upper-layer IT excitatory,Npy1r,Smith2019_eLife_NPGPCR,NPY1R cortex
+AId,Upper-layer IT excitatory,Oprm1,Smith2019_eLife_NPGPCR,mu opioid insula
+AId,Upper-layer IT excitatory,Oprd1,Smith2019_eLife_NPGPCR,delta opioid insula
+AId,Upper-layer IT excitatory,Grm5,IUPHAR_classical,mGluR5 cortex
+AId,Upper-layer IT excitatory,Gabbr1,IUPHAR_classical,GABA-B
+AId,Upper-layer IT excitatory,Gabbr2,IUPHAR_classical,GABA-B
+CA,CA1 pyramidal,Drd1,IUPHAR_classical,Weak in CA1 pyramidal
+CA,CA1 pyramidal,Drd2,IUPHAR_classical,D2 sparse in CA1
+CA,CA1 pyramidal,Htr1a,IUPHAR_classical,5HT1A CA1 classic somatodendritic
+CA,CA1 pyramidal,Htr1b,IUPHAR_classical,5HT1B CA1
+CA,CA1 pyramidal,Htr2c,IUPHAR_classical,5HT2C CA1
+CA,CA1 pyramidal,Cnr1,IUPHAR_classical,CB1 CA1 (mostly interneurons but pyr too)
+CA,CA1 pyramidal,Oprm1,IUPHAR_classical,mu opioid CA1
+CA,CA1 pyramidal,Grm1,IUPHAR_classical,mGluR1 CA1
+CA,CA1 pyramidal,Grm5,IUPHAR_classical,mGluR5 CA1
+CA,CA1 pyramidal,Gabbr1,IUPHAR_classical,GABA-B CA1
+CA,CA1 pyramidal,Gabbr2,IUPHAR_classical,GABA-B CA1
+CA,CA1 pyramidal,Adcyap1r1,IUPHAR_classical,PAC1 CA1
+CA,CA1 pyramidal,Sstr2,IUPHAR_classical,SST CA1
+CA,CA2 pyramidal,Avpr1b,Hitti2014_Nature_CA2;Pagani2015_PNAS_CA2,V1B CA2 KEY MARKER (vasopressin social memory)
+CA,CA2 pyramidal,Oxtr,Tirko2018_Neuron_CA2_OT;Lin2018_NatCommun_CA2,Oxytocin receptor CA2
+CA,CA2 pyramidal,Avpr1a,Pagani2015_PNAS_CA2,V1A CA2
+CA,CA2 pyramidal,Drd1,IUPHAR_classical,Weak in CA2
+CA,CA2 pyramidal,Htr1a,IUPHAR_classical,5HT1A CA2
+CA,CA2 pyramidal,Cnr1,IUPHAR_classical,CB1 CA2
+CA,CA2 pyramidal,Grm1,IUPHAR_classical,mGluR1 CA2
+CA,CA2 pyramidal,Grm5,IUPHAR_classical,mGluR5 CA2
+CA,CA2 pyramidal,Gabbr1,IUPHAR_classical,GABA-B CA2
+CA,CA2 pyramidal,Gabbr2,IUPHAR_classical,GABA-B CA2
+CA,CA3 pyramidal,Drd2,IUPHAR_classical,D2 in CA3 subset
+CA,CA3 pyramidal,Htr1a,IUPHAR_classical,5HT1A CA3
+CA,CA3 pyramidal,Htr1b,IUPHAR_classical,5HT1B CA3 mossy fibers
+CA,CA3 pyramidal,Cnr1,IUPHAR_classical,CB1 CA3
+CA,CA3 pyramidal,Oprm1,IUPHAR_classical,mu opioid CA3 mossy fibers
+CA,CA3 pyramidal,Grm1,IUPHAR_classical,mGluR1 CA3
+CA,CA3 pyramidal,Grm5,IUPHAR_classical,mGluR5 CA3
+CA,CA3 pyramidal,Gabbr1,IUPHAR_classical,GABA-B CA3
+CA,CA3 pyramidal,Gabbr2,IUPHAR_classical,GABA-B CA3
+CA,CA3 pyramidal,Adcyap1r1,IUPHAR_classical,PAC1 CA3 mossy fibers
+CA,DG granule cell,Drd2,IUPHAR_classical,D2 weak in DG
+CA,DG granule cell,Htr1a,IUPHAR_classical,5HT1A DG
+CA,DG granule cell,Htr2c,IUPHAR_classical,5HT2C DG
+CA,DG granule cell,Cnr1,IUPHAR_classical,CB1 DG
+CA,DG granule cell,Grm1,IUPHAR_classical,mGluR1 DG
+CA,DG granule cell,Grm5,IUPHAR_classical,mGluR5 DG
+CA,DG granule cell,Gabbr1,IUPHAR_classical,GABA-B DG
+CA,DG granule cell,Gabbr2,IUPHAR_classical,GABA-B DG
+CA,DG granule cell,Adcyap1r1,IUPHAR_classical,PAC1 DG

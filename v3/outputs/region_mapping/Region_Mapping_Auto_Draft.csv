@@ -5,3 +5,4 @@ RE,region_of_interest_acronym,TH,high_exact
 CP,region_of_interest_acronym,STRd,high_exact
 ORBm,region_of_interest_acronym,PL-ILA-ORB,high_exact
 AId,region_of_interest_acronym,AI,high_exact
+CA,region_of_interest_acronym,HIP,high_exact

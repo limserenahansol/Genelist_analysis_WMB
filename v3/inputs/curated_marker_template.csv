@@ -7,3 +7,7 @@ RE,Midline thalamic glutamatergic / reuniens,"Slc17a6,Tcf7l2,Calb2,Pcp4,Spon1","
 LM,Lateral mammillary excitatory,"Foxb1,Lhx5,Pou4f1","Slc32a1",published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
 ORBm,L2/3 IT excitatory,"Slc17a7,Cux1,Cux2,Rorb,Satb2,Cdh13","Gad1,Slc32a1",published_marker_canonical,high,Cortical L2/3 IT canonical markers
 AId,Upper-layer IT excitatory,"Slc17a7,Cux1,Cux2,Rorb","Gad1,Slc32a1",published_marker_canonical,high,Insula L2/3-L4 IT markers
+CA,CA1 pyramidal,"Slc17a7,Wfs1,Mpped1,Pou3f1,Fibcd1,Spink8","Cnih3,Rgs14,Prox1,Calb1",published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas)
+CA,CA2 pyramidal,"Slc17a7,Rgs14,Pcp4,Map3k15,Cacng5,Amigo2,Avpr1b","Wfs1,Cnih3,Prox1",published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014)
+CA,CA3 pyramidal,"Slc17a7,Cnih3,Coch,Lct,Calb2","Wfs1,Prox1,Rgs14",published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016)
+CA,DG granule cell,"Slc17a7,Prox1,Calb1,Dock10,Dsp,C1ql2","Wfs1,Cnih3,Rgs14",published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker)

@@ -5,3 +5,4 @@ RE,TH,exact+name_term
 CP,STRd,exact
 ORBm,PL-ILA-ORB,exact+name_term
 AId,AI,exact+name_term
+CA,HIP,exact+name_term

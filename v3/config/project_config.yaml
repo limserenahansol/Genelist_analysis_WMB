@@ -28,6 +28,9 @@ regions:
   - user_label: AId
     intended_name: Agranular insular area, dorsal part
     status: confirm_original_Ald_means_AId
+  - user_label: CA
+    intended_name: Hippocampal CA region (CA1/CA2/CA3 + DG)
+    status: confirm_HIP_dissection_covers_all_CA
 
 # A02 will preferentially match these against the official Allen
 # region_of_interest_metadata.csv via exact acronym, falling back to
@@ -55,6 +58,11 @@ region_acronym_queries:
   AId:
     acronyms: [AId, AI]
     name_terms: [agranular insular, insular]
+  CA:
+    # Hippocampal CA region — Allen WMB-10X has a single HIP dissection
+    # covering CA1/CA2/CA3/DG. Subclass anchors split CA1 vs CA2 vs CA3 vs DG.
+    acronyms: [HIP]
+    name_terms: [hippocampal, hippocampus]
 
 thresholds:
   min_cells: 30
