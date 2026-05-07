@@ -1,0 +1,9 @@
+region_user,cell_type_label,marker_genes,exclusion_markers,source,confidence,notes
+CP,D1/direct-pathway SPN,"Drd1,Tac1,Pdyn,Isl1","Drd2,Adora2a,Penk",published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D2/indirect-pathway SPN,"Drd2,Adora2a,Penk,Gpr6,Gpr52,Sp9","Drd1,Tac1",published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,Cholinergic interneuron,"Chat,Slc5a7,Slc18a3,Lhx8","Drd1,Drd2",published_marker_canonical,high,ChAT-positive interneurons
+BMAp,Posterior BMA glutamatergic VGLUT1-like,"Slc17a7,Meis2,Dcn,C1ql2,Gpr101,Cartpt","Gad1,Gad2,Slc32a1",paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+RE,Midline thalamic glutamatergic / reuniens,"Slc17a6,Tcf7l2,Calb2,Pcp4,Spon1","Gad1,Gad2",published_marker_canonical,medium,Reuniens midline thalamus markers
+LM,Lateral mammillary excitatory,"Foxb1,Lhx5,Pou4f1","Slc32a1",published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+ORBm,L2/3 IT excitatory,"Slc17a7,Cux1,Cux2,Rorb,Satb2,Cdh13","Gad1,Slc32a1",published_marker_canonical,high,Cortical L2/3 IT canonical markers
+AId,Upper-layer IT excitatory,"Slc17a7,Cux1,Cux2,Rorb","Gad1,Slc32a1",published_marker_canonical,high,Insula L2/3-L4 IT markers

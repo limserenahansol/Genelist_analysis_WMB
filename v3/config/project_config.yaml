@@ -1,0 +1,75 @@
+project:
+  name: mouse_6_region_gpcr_probe_panel
+  output_version: v7_modular
+  species: mouse
+
+paths:
+  cache_dir: C:/Users/hsollim/Downloads/abc_atlas_cache
+  project_dir: c:/Users/hsollim/Desktop/cursor/Genelist_analysis_WMB
+  input_dir: c:/Users/hsollim/Desktop/cursor/Genelist_analysis_WMB/v3/inputs
+  output_dir: c:/Users/hsollim/Desktop/cursor/Genelist_analysis_WMB/v3/outputs
+
+regions:
+  - user_label: BMAp
+    intended_name: Basomedial amygdalar nucleus, posterior part
+    status: verify_exact_allen_label
+  - user_label: LM
+    intended_name: Lateral mammillary nucleus/body
+    status: high_risk_verify_acronym
+  - user_label: RE
+    intended_name: Nucleus reuniens
+    status: verify_exact_allen_label
+  - user_label: CP
+    intended_name: Caudoputamen
+    status: lower_risk
+  - user_label: ORBm
+    intended_name: Orbital area, medial part
+    status: verify_exact_allen_label
+  - user_label: AId
+    intended_name: Agranular insular area, dorsal part
+    status: confirm_original_Ald_means_AId
+
+# A02 will preferentially match these against the official Allen
+# region_of_interest_metadata.csv via exact acronym, falling back to
+# word-boundary matches in the canonical name field.
+region_acronym_queries:
+  BMAp:
+    acronyms: [BMAp, sAMY]
+    name_terms: [basomedial amygdalar, striatum-like amygdalar]
+  LM:
+    # LM (lateral mammillary) is not a standalone Allen ROI; it lives inside
+    # the HY (hypothalamus) dissection in WMB-10X. Use HY for cell selection
+    # then refine with MERFISH/CCF or markers (Foxb1, Lhx5).
+    acronyms: [HY]
+    name_terms: [hypothalamus]
+  RE:
+    # Nucleus reuniens lives inside the TH dissection.
+    acronyms: [TH]
+    name_terms: [thalamus]
+  CP:
+    acronyms: [CP, STRd]
+    name_terms: [caudoputamen, dorsal striatum]
+  ORBm:
+    acronyms: [ORBm, ORB, PL-ILA-ORB]
+    name_terms: ["orbital area, medial", prelimbic, infralimbic]
+  AId:
+    acronyms: [AId, AI]
+    name_terms: [agranular insular, insular]
+
+thresholds:
+  min_cells: 30
+  min_pct_expr_candidate: 10
+  min_mean_log2_expr_candidate: 0.25
+  strong_pct_expr: 20
+  strong_mean_log2_expr: 0.5
+
+allen:
+  data_directory_10x: WMB-10X
+  data_directory_taxonomy: WMB-taxonomy
+  expression_data_type: log2
+  chunk_size: 8192
+  # Pin manifest version for reproducibility. Set to null to use latest.
+  manifest_version: releases/20240330/manifest.json
+
+outputs:
+  final_workbook: Final_Probe_Panel_v7_modular.xlsx

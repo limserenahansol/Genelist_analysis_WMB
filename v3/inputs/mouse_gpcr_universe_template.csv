@@ -1,0 +1,23 @@
+mouse_gene_symbol,human_gene_symbol,gpcr_class,family,source,notes
+Oprm1,OPRM1,Class A,opioid receptor,IUPHAR_or_curated,mu opioid receptor
+Oprd1,OPRD1,Class A,opioid receptor,IUPHAR_or_curated,delta opioid receptor
+Oprk1,OPRK1,Class A,opioid receptor,IUPHAR_or_curated,kappa opioid receptor
+Drd1,DRD1,Class A,dopamine receptor,IUPHAR_or_curated,D1 receptor
+Drd2,DRD2,Class A,dopamine receptor,IUPHAR_or_curated,D2 receptor
+Adora2a,ADORA2A,Class A,adenosine receptor,IUPHAR_or_curated,D2 SPN associated
+Gpr88,GPR88,Class A orphan,orphan GPCR,IUPHAR_or_curated,striatal-enriched candidate
+Cnr1,CNR1,Class A,cannabinoid receptor,IUPHAR_or_curated,CB1
+Sstr2,SSTR2,Class A,somatostatin receptor,IUPHAR_or_curated,SST signalling
+Npy1r,NPY1R,Class A,neuropeptide Y receptor,IUPHAR_or_curated,NPY family
+Npy2r,NPY2R,Class A,neuropeptide Y receptor,IUPHAR_or_curated,NPY family
+Cckbr,CCKBR,Class A,cholecystokinin receptor,IUPHAR_or_curated,CCK signalling
+Htr2c,HTR2C,Class A,serotonin receptor,IUPHAR_or_curated,5HT2C
+Htr1f,HTR1F,Class A,serotonin receptor,IUPHAR_or_curated,5HT1F
+Grm1,GRM1,Class C,metabotropic glutamate,IUPHAR_or_curated,mGluR1
+Grm5,GRM5,Class C,metabotropic glutamate,IUPHAR_or_curated,mGluR5
+Gabbr1,GABBR1,Class C,GABA-B,IUPHAR_or_curated,co-receptor with Gabbr2
+Gabbr2,GABBR2,Class C,GABA-B,IUPHAR_or_curated,co-receptor with Gabbr1
+Chrm2,CHRM2,Class A,cholinergic muscarinic,IUPHAR_or_curated,M2
+Chrm4,CHRM4,Class A,cholinergic muscarinic,IUPHAR_or_curated,M4
+Adcyap1r1,ADCYAP1R1,Class B,PACAP receptor,IUPHAR_or_curated,PAC1
+Gpr101,GPR101,Class A orphan,orphan GPCR,IUPHAR_or_curated,amygdala marker candidate
