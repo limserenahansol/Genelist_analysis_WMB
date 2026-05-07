@@ -1,0 +1,56 @@
+region_user,cell_type_label,gene,gene_role,source,confidence,notes
+CP,D1/direct-pathway SPN,Drd1,positive_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D1/direct-pathway SPN,Tac1,positive_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D1/direct-pathway SPN,Pdyn,positive_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D1/direct-pathway SPN,Isl1,positive_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D1/direct-pathway SPN,Drd2,exclusion_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D1/direct-pathway SPN,Adora2a,exclusion_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D1/direct-pathway SPN,Penk,exclusion_marker,published_marker_canonical,high,Canonical striatal D1 SPN markers
+CP,D2/indirect-pathway SPN,Drd2,positive_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Adora2a,positive_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Penk,positive_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Gpr6,positive_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Gpr52,positive_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Sp9,positive_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Drd1,exclusion_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,D2/indirect-pathway SPN,Tac1,exclusion_marker,published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,Cholinergic interneuron,Chat,positive_marker,published_marker_canonical,high,ChAT-positive interneurons
+CP,Cholinergic interneuron,Slc5a7,positive_marker,published_marker_canonical,high,ChAT-positive interneurons
+CP,Cholinergic interneuron,Slc18a3,positive_marker,published_marker_canonical,high,ChAT-positive interneurons
+CP,Cholinergic interneuron,Lhx8,positive_marker,published_marker_canonical,high,ChAT-positive interneurons
+CP,Cholinergic interneuron,Drd1,exclusion_marker,published_marker_canonical,high,ChAT-positive interneurons
+CP,Cholinergic interneuron,Drd2,exclusion_marker,published_marker_canonical,high,ChAT-positive interneurons
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Slc17a7,positive_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Meis2,positive_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Dcn,positive_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,C1ql2,positive_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Gpr101,positive_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Cartpt,positive_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Gad1,exclusion_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Gad2,exclusion_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+BMAp,Posterior BMA glutamatergic VGLUT1-like,Slc32a1,exclusion_marker,paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
+RE,Midline thalamic glutamatergic / reuniens,Slc17a6,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Midline thalamic glutamatergic / reuniens,Tcf7l2,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Midline thalamic glutamatergic / reuniens,Calb2,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Midline thalamic glutamatergic / reuniens,Pcp4,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Midline thalamic glutamatergic / reuniens,Spon1,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Midline thalamic glutamatergic / reuniens,Gad1,exclusion_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Midline thalamic glutamatergic / reuniens,Gad2,exclusion_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
+LM,Lateral mammillary excitatory,Foxb1,positive_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+LM,Lateral mammillary excitatory,Lhx5,positive_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+LM,Lateral mammillary excitatory,Pou4f1,positive_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+LM,Lateral mammillary excitatory,Slc32a1,exclusion_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+ORBm,L2/3 IT excitatory,Slc17a7,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Cux1,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Cux2,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Rorb,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Satb2,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Cdh13,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Gad1,exclusion_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L2/3 IT excitatory,Slc32a1,exclusion_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
+AId,Upper-layer IT excitatory,Slc17a7,positive_marker,published_marker_canonical,high,Insula L2/3-L4 IT markers
+AId,Upper-layer IT excitatory,Cux1,positive_marker,published_marker_canonical,high,Insula L2/3-L4 IT markers
+AId,Upper-layer IT excitatory,Cux2,positive_marker,published_marker_canonical,high,Insula L2/3-L4 IT markers
+AId,Upper-layer IT excitatory,Rorb,positive_marker,published_marker_canonical,high,Insula L2/3-L4 IT markers
+AId,Upper-layer IT excitatory,Gad1,exclusion_marker,published_marker_canonical,high,Insula L2/3-L4 IT markers
+AId,Upper-layer IT excitatory,Slc32a1,exclusion_marker,published_marker_canonical,high,Insula L2/3-L4 IT markers

@@ -1,0 +1,7 @@
+region_user,matched_allen_acronyms,match_kind
+BMAp,sAMY,exact+name_term
+LM,HY,exact+name_term
+RE,TH,exact+name_term
+CP,STRd,exact
+ORBm,PL-ILA-ORB,exact+name_term
+AId,AI,exact+name_term

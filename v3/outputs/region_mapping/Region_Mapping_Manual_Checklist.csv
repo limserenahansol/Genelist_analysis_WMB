@@ -1,0 +1,7 @@
+region_user,manual_review_required,final_allen_acronym,final_allen_name,confidence,notes
+BMAp,True,,,pending,Confirm exact Allen label before probe ordering.
+LM,True,,,pending,Confirm exact Allen label before probe ordering.
+RE,True,,,pending,Confirm exact Allen label before probe ordering.
+CP,True,,,pending,Confirm exact Allen label before probe ordering.
+ORBm,True,,,pending,Confirm exact Allen label before probe ordering.
+AId,True,,,pending,Confirm exact Allen label before probe ordering.

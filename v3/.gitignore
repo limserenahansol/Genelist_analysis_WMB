@@ -1,8 +1,21 @@
-outputs/
-*.parquet
+outputs/preprocess/
+outputs/metadata/
+outputs/gpcr_test_*/
+outputs/Final_Probe_Panel_*_TEST.xlsx
 *.h5ad
-*.xlsx
-!Final_Probe_Panel_v7_modular_TEST_README.xlsx
+*.parquet
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# DO track these public deliverables (negation rules):
+!outputs/
+!outputs/Final_Probe_Panel_v7_modular.xlsx
+!outputs/region_mapping/
+!outputs/region_mapping/*.csv
+!outputs/markers/
+!outputs/markers/*.csv
+!outputs/gpcr_full/
+!outputs/gpcr_full/*.csv
+!outputs/gpcr_full/run_log.jsonl
+!outputs/run_log.jsonl
