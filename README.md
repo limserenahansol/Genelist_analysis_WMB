@@ -6,11 +6,39 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 
 > ## I just want the answer — which probes do I order?
 >
-> **Open this one focused file (now includes drug citations):**
+> **Open this — only conclusions, no metrics, no URLs:**
+> - [`outputs/FINAL_Recommendations.xlsx`](outputs/FINAL_Recommendations.xlsx) ← top-level mirror (8.5 KB, opens instantly)
+> - [`v3/outputs/FINAL_Recommendations.xlsx`](v3/outputs/FINAL_Recommendations.xlsx) ← canonical
+> - [`v3/outputs/FINAL_Recommendations.csv`](v3/outputs/FINAL_Recommendations.csv) ← GitHub preview
+>
+> 18 rows × 9 columns, two sheets (`HOW_TO_READ`, `FINAL_Recommendations`). One row per (region × cell type). Just the answer:
+>
+> | Column | Color | Meaning |
+> |---|---|---|
+> | `recommended_GPCR_panel` | 🔵 blue | Top 5 GPCR probes to order, ranked by tier |
+> | `recommended_drugs_per_gene` | 🟣 purple | One drug per gene, marked `(FDA YEAR)` / `(clinical-trial)` / `(research)` / `(EU-only)` |
+> | `evidence_tier_per_gene` | grey | `paper+allen_keep` > `allen_only_keep` > `paper+allen_broadly_detectable` > `allen_only_broadly_detectable` |
+> | `what_to_do` | 🟢 green | `ORDER` (cell-type-specific) / 🟡 yellow `ORDER WITH SPATIAL CONSTRAINT` (broadly detectable only) / 🟠 orange `REVIEW` (no picks) |
+>
+> Sample rows:
+>
+> | region | cell_type | recommended_GPCR_panel | recommended_drugs_per_gene | what_to_do |
+> |---|---|---|---|---|
+> | CP | D1 SPN | Drd1, Grm1, Htr1b, Chrm4, Cnr1 | Drd1: Apomorphine (FDA) \| Htr1b: Sumatriptan (FDA 1992) \| Chrm4: **Xanomeline (FDA 2024)** \| Cnr1: Dronabinol (FDA 1985) | ORDER |
+> | CP | Cholinergic IN | Gabbr1, Chrm2, Oprm1, Tacr3, Oprd1 | Gabbr1: Baclofen (FDA 1977) \| Chrm2: Donepezil (FDA 1996) \| Oprm1: Morphine (FDA) \| Tacr3: **Fezolinetant (FDA 2023)** | ORDER |
+> | CA | CA1 | Htr1a, Mc4r, Gabbr1, Gabbr2, Grm1 | Htr1a: Buspirone (FDA 1986) \| Mc4r: **Setmelanotide (FDA 2020)** \| Gabbr1: Baclofen (FDA 1977) | ORDER |
+> | CA | CA2 | Avpr1b, Gabbr1, Gabbr2, Grm5 | Avpr1b: Nelivaptan (clinical-trial) \| Gabbr1: Baclofen (FDA 1977) | ORDER |
+> | RE | Reuniens (PVT-PT) | Oprk1, Galr1, Oxtr, Cnr1, Oprm1 | Oprk1: **Difelikefalin (FDA 2021)** \| Cnr1: Dronabinol (FDA 1985) \| Oprm1: Morphine (FDA) | ORDER |
+> | BMAp | Posterior BMA Glut | Gabbr1, Gabbr2, Grm5, Npy2r | Gabbr1: Baclofen (FDA 1977) \| Grm5: Mavoglurant (clinical-trial) | ORDER WITH SPATIAL CONSTRAINT |
+> | CA | DG granule | Grm1, Grm5 | Grm1: research \| Grm5: clinical-trial | ORDER WITH SPATIAL CONSTRAINT |
+>
+> ### Drilldown level 2 — full evidence + sources
+>
+> **Need the reasoning behind each pick (metrics, specificity, paper-vs-Allen comparison, drug DrugBank IDs/PubMed PMIDs)?** Open:
 > - [`outputs/FINAL_decision_table_combined_with_sources.xlsx`](outputs/FINAL_decision_table_combined_with_sources.xlsx) ← top-level mirror
 > - [`v3/outputs/FINAL_decision_table_combined_with_sources.xlsx`](v3/outputs/FINAL_decision_table_combined_with_sources.xlsx) ← canonical
 >
-> 18 rows × 15 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). Each row is one (region × cell type). The key columns:
+> 18 rows × 15 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). The key columns:
 >
 > | Column | Color | Meaning |
 > |---|---|---|
@@ -45,11 +73,14 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| **`outputs/FINAL_decision_table_combined_with_sources.xlsx`** | **One-stop probe-selection answer (18 rows × 15 cols, color-coded, paper+Allen combined, drugs inline WITH DrugBank IDs + PubMed PMIDs + FDA NDA numbers).** |
+| **`outputs/FINAL_Recommendations.xlsx`** | **🎯 Conclusions only (18 rows × 9 cols, 8.5 KB). One row per cell type: gene panel + drug per gene + ORDER/REVIEW verdict. Open this first.** |
+| `v3/outputs/FINAL_Recommendations.xlsx` | Same as above (canonical location). |
+| `v3/outputs/FINAL_Recommendations.csv` | GitHub-renderable preview of the conclusions table. |
+| `outputs/FINAL_decision_table_combined_with_sources.xlsx` | **Drilldown level 2** — same 18 rows but with metrics + DrugBank URLs + PubMed PMIDs + FDA NDA numbers (15 cols). |
 | `v3/outputs/FINAL_decision_table_combined_with_sources.xlsx` | Same as above (canonical location). |
-| `v3/outputs/FINAL_decision_table_combined_with_sources.csv` | GitHub-renderable preview of the focused decision table (with sources). |
+| `v3/outputs/FINAL_decision_table_combined_with_sources.csv` | GitHub-renderable preview with sources. |
 | `outputs/FINAL_decision_table_combined.xlsx` | Older companion file without source citations (kept for diff). |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (13 sheets including `Final_Summary`, `Paper_GPCR_Suggestions`, **`GPCR_Drug_Targets`** (wide), **`GPCR_Drug_References`** (long, with sources), full per-subclass evidence ledger). |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (14 sheets: **`FINAL_Recommendations`** (conclusions, second sheet), `Final_Summary`, `Paper_GPCR_Suggestions`, **`GPCR_Drug_Targets`** (wide), **`GPCR_Drug_References`** (long, with sources), full per-subclass evidence ledger). |
 | `v3/inputs/gpcr_drug_targets.csv` | Wide drug-target table for 39 GPCRs (compact: drugs / mechanism / indication). |
 | `v3/inputs/gpcr_drug_targets_detailed.csv` | **Long-format drug reference table (94 rows × 13 cols)**: one row per (gene, drug). Columns: `gene_symbol, iuphar_receptor, drug_name, drug_status, drug_class, year_approved_or_published, indication, drugbank_id, drugbank_url, fda_application, key_pmid, pubmed_url, notes`. 62 FDA-approved entries, 32 clinical/research. |
 | `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the full workbook. |

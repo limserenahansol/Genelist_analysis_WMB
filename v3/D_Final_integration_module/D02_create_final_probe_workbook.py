@@ -175,6 +175,10 @@ def build_final_summary(
     t = thresholds
 
     rows: list[dict] = []
+    # Parallel list with structured tier-tagged genes per cell type, used by
+    # build_final_recommendations() to make the conclusive picks sheet without
+    # re-parsing the verbose combined_GPCRs_for_probe string.
+    rec_rows: list[dict] = []
     for (region, cell_type), grp in anchors.groupby(["region_user", "cell_type_label"], sort=False):
         # Paper-suggested GPCRs are anchored to (region, cell_type), not subclass.
         paper_genes = _paper_genes_for(paper_lookup, region, cell_type)
@@ -208,6 +212,19 @@ def build_final_summary(
                         "existing_drugs_for_picks": "",
                         "drugs_with_sources_per_picks": "",
                         "warning": "anchor subclass not found in computed panel",
+                    }
+                )
+                rec_rows.append(
+                    {
+                        "region_user": region,
+                        "cell_type_label": cell_type,
+                        "allen_subclass_anchor": anchor,
+                        "n_cells_in_anchor": 0,
+                        "agreed_keep": [],
+                        "allen_only_keep": [],
+                        "paper_with_broad": [],
+                        "allen_only_broad": [],
+                        "tile_stats": {},
                     }
                 )
                 continue
@@ -427,7 +444,137 @@ def build_final_summary(
                     "warning": "; ".join(warnings),
                 }
             )
-    return pd.DataFrame(rows)
+
+            # Stat-augmented gene-tier lookup for build_final_recommendations.
+            tile_stats = {
+                str(rrr["gpcr_gene"]): {
+                    "spec": float(rrr.get("specificity_log2", 0.0) or 0.0),
+                    "log2": float(rrr.get("mean_log2_expr", 0.0) or 0.0),
+                    "pct": float(rrr.get("pct_expr", 0.0) or 0.0),
+                }
+                for _, rrr in tile.iterrows()
+            }
+            rec_rows.append(
+                {
+                    "region_user": region,
+                    "cell_type_label": cell_type,
+                    "allen_subclass_anchor": anchor,
+                    "n_cells_in_anchor": n_cells,
+                    "agreed_keep": list(agreed_keep),
+                    "allen_only_keep": list(allen_only_keep_list),
+                    "paper_with_broad": list(paper_with_broad),
+                    "allen_only_broad": list(allen_only_broad),
+                    "tile_stats": tile_stats,
+                }
+            )
+    return pd.DataFrame(rows), rec_rows
+
+
+def build_final_recommendations(
+    rec_rows: list[dict],
+    drug_ref_lookup: dict[str, list[dict[str, str]]] | None = None,
+    max_genes: int = 5,
+) -> pd.DataFrame:
+    """Build a clean, conclusive recommendations sheet (one row per cell type).
+
+    Picks at most `max_genes` GPCRs per cell type using the tier priority:
+        1. paper+allen_keep (gold)
+        2. allen_only_keep
+        3. paper+allen_broadly_detectable
+        4. allen_only_broadly_detectable
+    Genes within a tier are kept in original order (sorted by spec/expression
+    upstream). For each gene, picks the FIRST FDA-approved drug from the
+    long-format drug references; falls back to first clinical/research drug
+    if no FDA approval exists; "—" if no drug is curated.
+    """
+    drug_ref_lookup = drug_ref_lookup or {}
+
+    def _pick_top_drug(gene: str) -> tuple[str, str]:
+        """Return (drug_label, drugbank_id_or_empty)."""
+        entries = drug_ref_lookup.get(gene) or []
+        if not entries:
+            return "—", ""
+        # Prefer FDA-approved
+        fda = [e for e in entries if "FDA-approved" in (e.get("drug_status") or "")]
+        chosen = fda[0] if fda else entries[0]
+        name = chosen.get("drug_name") or "—"
+        year = chosen.get("year_approved_or_published") or ""
+        status = chosen.get("drug_status") or ""
+        # Compact status mark
+        if "FDA-approved" in status:
+            mark = f"FDA{(' ' + year) if year and year.replace('-', '').isdigit() else ''}"
+        elif "withdrawn" in status:
+            mark = "withdrawn"
+        elif "clinical-trial" in status:
+            mark = "clinical-trial"
+        elif "approved-Japan" in status:
+            mark = "Japan-only"
+        elif "approved-EU" in status:
+            mark = "EU-only"
+        else:
+            mark = "research"
+        label = f"{name} ({mark})"
+        return label, (chosen.get("drugbank_id") or "").strip()
+
+    out: list[dict] = []
+    for row in rec_rows:
+        region = row["region_user"]
+        ct = row["cell_type_label"]
+        anchor = row["allen_subclass_anchor"]
+        n_cells = row["n_cells_in_anchor"]
+        agreed = list(row["agreed_keep"])
+        allen_keep = list(row["allen_only_keep"])
+        paper_broad = list(row["paper_with_broad"])
+        allen_broad = list(row["allen_only_broad"])
+
+        # Tier-priority filling up to max_genes.
+        ranked: list[tuple[str, str]] = []
+        for g in agreed:
+            ranked.append((g, "paper+allen_keep"))
+        for g in allen_keep:
+            ranked.append((g, "allen_only_keep"))
+        for g in paper_broad:
+            ranked.append((g, "paper+allen_broadly_detectable"))
+        for g in allen_broad:
+            ranked.append((g, "allen_only_broadly_detectable"))
+        ranked = ranked[:max_genes]
+
+        gene_panel = ", ".join([g for g, _ in ranked])
+        tier_str = "; ".join([f"{g}={t}" for g, t in ranked])
+
+        # gene-keyed drug list
+        drug_pairs = []
+        for g, _ in ranked:
+            label, _db = _pick_top_drug(g)
+            drug_pairs.append(f"{g}: {label}")
+        drugs_str = " | ".join(drug_pairs)
+
+        # what-to-do summary
+        n_keep = sum(1 for _, t in ranked if t.endswith("keep"))
+        n_broad = sum(1 for _, t in ranked if "broadly" in t)
+        if n_keep >= 1:
+            action = "ORDER (cell-type-specific picks available)"
+        elif n_broad >= 1:
+            action = "ORDER WITH SPATIAL CONSTRAINT (broadly detectable only)"
+        elif n_cells == 0:
+            action = "REVIEW - anchor subclass not found"
+        else:
+            action = "REVIEW - no GPCR passed any threshold"
+
+        out.append(
+            {
+                "region": region,
+                "cell_type": ct,
+                "allen_subclass": anchor,
+                "n_cells_in_anchor": n_cells,
+                "recommended_GPCR_panel": gene_panel,
+                "recommended_drugs_per_gene": drugs_str,
+                "n_genes_recommended": len(ranked),
+                "evidence_tier_per_gene": tier_str,
+                "what_to_do": action,
+            }
+        )
+    return pd.DataFrame(out)
 
 
 def build_final_probe_panel(
@@ -660,7 +807,7 @@ def main() -> None:
         ]
     )
 
-    summary = build_final_summary(
+    summary, rec_rows = build_final_summary(
         panel,
         markers,
         anchors,
@@ -670,9 +817,12 @@ def main() -> None:
         thresholds=cfg.thresholds,
         top_n=args.top_n_gpcrs_in_summary,
     )
+    recommendations = build_final_recommendations(rec_rows, drug_ref_lookup=drug_ref_lookup)
 
     with pd.ExcelWriter(out_xlsx, engine="openpyxl") as w:
         readme.to_excel(w, sheet_name="README", index=False)
+        if not recommendations.empty:
+            recommendations.to_excel(w, sheet_name="FINAL_Recommendations", index=False)
         if not summary.empty:
             summary.to_excel(w, sheet_name="Final_Summary", index=False)
         if not mapping.empty:
