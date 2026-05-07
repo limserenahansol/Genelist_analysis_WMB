@@ -4,14 +4,25 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for six mouse 
 
 ![v3 pipeline overview](v3/docs/images/v3_pipeline_overview.png)
 
-> **Want the deliverable, not the code?**
-> Open [`v3/outputs/Final_Probe_Panel_v7_modular.xlsx`](v3/outputs/Final_Probe_Panel_v7_modular.xlsx).
+> ## I just want the answer — which probes do I order?
 >
-> - **`Final_Summary`** — one-page table: per region × cell type, which Allen subclass is the anchor, which curated markers + and −, and which **GPCRs to actually order** (keep-status genes first, expression-fallback genes second). 14 rows total.
-> - **`Final_Probe_Panel`** — full evidence ledger (80,652 rows) with `validation_status`, `final_recommendation`, and `specificity_log2` per (region, cell type, GPCR).
+> 1. **Download** either copy of the same workbook (24.6 MB, 10 sheets):
+>    - [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) ← top-level mirror
+>    - [`v3/outputs/Final_Probe_Panel_v7_modular.xlsx`](v3/outputs/Final_Probe_Panel_v7_modular.xlsx) ← canonical
+> 2. **Open it in Excel** and go to the **second tab from the left**, named **`Final_Summary`** (the tab order is `README → Final_Summary → Region_Mapping_Final → …`).
+> 3. That sheet is one row per **(region × cell type)** with these columns:
+>    - `cell_type_marker_genes` — curated **+ markers** to use (e.g. *Drd1, Tac1, Pdyn* for D1 SPN)
+>    - `exclusion_markers` — markers that **must be off** (e.g. *Adora2a, Drd2, Penk* for D1 SPN)
+>    - `top_GPCRs_to_choose` — **GPCRs to order**, only the ones that pass keep / validate-spatially thresholds
+>    - `top_GPCRs_by_expression` — **fallback GPCRs** (top by raw mean expression) for cell types where nothing passed the strict thresholds
+>    - `warning` — flagged when no GPCR passed thresholds, so you know to lean on the fallback column
+> 4. Don't see `Final_Summary` as a tab? You opened the **old** `mouse_6_region_GPCR_probe_FINAL_panel_with_resources.xlsx`. Use the file linked above instead — same evidence, with the new summary tab on top.
 >
-> **Want to run the pipeline?**
-> Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
+> Want a quick GitHub-rendered preview without downloading? See [`v3/outputs/Final_Summary.csv`](v3/outputs/Final_Summary.csv) (same 14 rows, GitHub renders CSVs natively).
+>
+> **Full evidence ledger** lives in the `Final_Probe_Panel` sheet of the same workbook (80,652 rows) with `validation_status`, `final_recommendation`, and `specificity_log2` per (region × cell type × GPCR).
+>
+> **Want to run the pipeline?** Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
 
 ---
 
@@ -20,14 +31,15 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for six mouse 
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Final 6-region probe-selection workbook (10 sheets). |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | **Final 6-region probe-selection workbook (10 sheets, including `Final_Summary`).** |
+| `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the file above, kept at the top level so it's easy to find. |
+| `v3/outputs/Final_Summary.csv` | Standalone export of the `Final_Summary` sheet (14 rows). Renders directly on GitHub. |
 | `v3/inputs/celltype_to_subclass_anchor.csv` | Curated mapping from your cell-type labels (e.g. *D1 SPN*) to the exact Allen subclass IDs (e.g. *061 STR D1 Gaba*). Drives the `Final_Summary` sheet. |
 | `v3/outputs/gpcr_full/Allen_GPCR_Ranking_*.csv` | Per-level (subclass / supertype / cluster) GPCR ranking with `specificity_log2`. |
 | `v3/docs/STEP_BY_STEP.md` | One-page command playbook, end-to-end. |
 | `v3/docs/images/` | Schematic figures (the ones in this README). |
 | `v3/config/project_config.yaml` | Cache path, manifest pin, region list, all thresholds. |
-| Top-level `gpcr_rank_patch_v6.py`, `build_final_probe_table.py`, `run_all.ps1` | Legacy v6/v7 monolithic scripts (kept for reproducibility). |
-| `outputs/mouse_6_region_GPCR_probe_FINAL_panel_with_resources.xlsx` | Earlier 6-region deliverable from the legacy pipeline. |
+| Top-level `gpcr_rank_patch_v6.py`, `build_final_probe_table.py`, `run_all.ps1` | Legacy v6/v7 monolithic scripts (kept for reproducibility — superseded by `v3/`). |
 
 ---
 

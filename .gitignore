@@ -5,4 +5,5 @@ venv/
 .env
 outputs/*.xlsx
 !outputs/.gitkeep
+!outputs/Final_Probe_Panel_v7_modular.xlsx
 *.pre_gpcr_compute_backup.xlsx
