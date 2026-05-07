@@ -149,6 +149,8 @@ def build_final_summary(
     markers: pd.DataFrame,
     anchors: pd.DataFrame,
     paper_lookup: dict[tuple[str, str, str], list[str]] | None = None,
+    drug_lookup: dict[str, dict[str, str]] | None = None,
+    thresholds: Thresholds | None = None,
     top_n: int = 8,
 ) -> pd.DataFrame:
     """Build the human-readable Final_Summary sheet.
@@ -167,6 +169,8 @@ def build_final_summary(
     sub = panel[panel["taxonomy_level"] == "subclass"].copy()
     keep_recs = {"keep", "keep_validate_spatially", "candidate_to_validate"}
     paper_lookup = paper_lookup or {}
+    drug_lookup = drug_lookup or {}
+    t = thresholds
 
     rows: list[dict] = []
     for (region, cell_type), grp in anchors.groupby(["region_user", "cell_type_label"], sort=False):
@@ -198,6 +202,8 @@ def build_final_summary(
                         "combined_GPCRs_for_probe": "",
                         "combined_evidence_summary": "",
                         "n_GPCRs_keep": 0,
+                        "n_broadly_detectable": 0,
+                        "existing_drugs_for_picks": "",
                         "warning": "anchor subclass not found in computed panel",
                     }
                 )
@@ -244,46 +250,67 @@ def build_final_summary(
             agreement = " | ".join(agreement_parts)
 
             # Build a single union list (combined_GPCRs_for_probe) tagged
-            # by evidence source, sorted by evidence strength: agreed >
-            # allen-only-keep > paper-only-with-expression > paper-only-low.
-            keep_lookup = {str(g): True for g in keep_rows["gpcr_gene"]}
-            tile_lookup = {
-                str(r["gpcr_gene"]): r
-                for _, r in tile.sort_values("specificity_log2", ascending=False).iterrows()
-            }
-            agreed = []
-            allen_only_keep_list = []
-            paper_only_seen = []
-            for g in keep_rows["gpcr_gene"].astype(str).tolist():
-                if g in paper_set:
-                    agreed.append(g)
-                else:
-                    allen_only_keep_list.append(g)
-            for g in sorted(paper_set):
-                if g not in keep_lookup:
-                    paper_only_seen.append(g)
+            # by evidence source, sorted by evidence strength:
+            #   1. paper+allen_keep                    (paper agrees + Allen keep)
+            #   2. allen_only_keep                     (Allen-only specific finding)
+            #   3. paper+allen_broadly_detectable      (paper agrees + reliable Allen signal but not specific)
+            #   4. allen_only_broadly_detectable       (Allen-only broadly expressed signal)
+            #   5. paper_only_allen_downgrade          (paper said yes, Allen has no detectable signal)
+            keep_set = {str(g) for g in keep_rows["gpcr_gene"]}
+            tile_sorted = tile.sort_values("specificity_log2", ascending=False)
+            tile_lookup = {str(r["gpcr_gene"]): r for _, r in tile_sorted.iterrows()}
+
+            # broadly-detectable rows (NOT in keep already)
+            broad_set: set[str] = set()
+            if t is not None:
+                broad_mask = (
+                    (tile["pct_expr"] >= t.broad_min_pct_expr)
+                    & (tile["mean_log2_expr"] >= t.broad_min_mean_log2_expr)
+                    & (tile["specificity_log2"] >= t.broad_min_specificity_log2)
+                    & (~tile["gpcr_gene"].astype(str).isin(keep_set))
+                )
+                broad_set = set(tile.loc[broad_mask, "gpcr_gene"].astype(str))
+
+            agreed_keep = [g for g in keep_rows["gpcr_gene"].astype(str) if g in paper_set]
+            allen_only_keep_list = [g for g in keep_rows["gpcr_gene"].astype(str) if g not in paper_set]
+            paper_with_broad = sorted(paper_set & broad_set)
+            allen_only_broad = sorted(broad_set - paper_set)
+            paper_only_seen = sorted(paper_set - keep_set - broad_set)
 
             def _fmt_g(g: str, tag: str) -> str:
                 r = tile_lookup.get(g)
+                drug_info = drug_lookup.get(g) or {}
+                approved = (drug_info.get("approved_drugs") or "").strip().rstrip("-")
+                drug_str = f"; drugs: {approved}" if approved and approved != "-" else "; drugs: research_only_or_none"
                 if r is None:
-                    return f"{g}[{tag}, no_allen_data]"
+                    return f"{g}[{tag}, no_allen_data{drug_str}]"
                 spec = float(r.get("specificity_log2", 0.0) or 0.0)
                 log2 = float(r.get("mean_log2_expr", 0.0) or 0.0)
                 pct = float(r.get("pct_expr", 0.0) or 0.0)
-                return f"{g}[{tag}, spec={spec:+.2f}, log2={log2:.2f}, pct={pct:.0f}%]"
+                return f"{g}[{tag}, spec={spec:+.2f}, log2={log2:.2f}, pct={pct:.0f}%{drug_str}]"
 
-            combined_parts = []
-            for g in agreed:
+            combined_parts: list[str] = []
+            for g in agreed_keep:
                 combined_parts.append(_fmt_g(g, "paper+allen_keep"))
             for g in allen_only_keep_list:
                 combined_parts.append(_fmt_g(g, "allen_only_keep"))
+            for g in paper_with_broad:
+                combined_parts.append(_fmt_g(g, "paper+allen_broadly_detectable"))
+            for g in allen_only_broad:
+                combined_parts.append(_fmt_g(g, "allen_only_broadly_detectable"))
             for g in paper_only_seen:
                 combined_parts.append(_fmt_g(g, "paper_only_allen_downgrade"))
             combined_for_probe = "; ".join(combined_parts)
 
             agreement_parts = []
-            if agreed:
-                agreement_parts.append(f"both: {', '.join(agreed)}")
+            if agreed_keep:
+                agreement_parts.append(f"both_keep: {', '.join(agreed_keep)}")
+            if allen_only_keep_list:
+                agreement_parts.append(f"allen_only_keep: {', '.join(allen_only_keep_list)}")
+            if paper_with_broad:
+                agreement_parts.append(f"paper+broadly_detectable: {', '.join(paper_with_broad)}")
+            if allen_only_broad:
+                agreement_parts.append(f"allen_only_broadly_detectable: {', '.join(allen_only_broad)}")
             if paper_only_seen:
                 detail = []
                 for g in paper_only_seen:
@@ -296,15 +323,40 @@ def build_final_summary(
                         log2 = float(grow["mean_log2_expr"].iloc[0])
                         detail.append(f"{g}({rec},spec={spec:+.2f},log2={log2:.2f})")
                 agreement_parts.append(f"paper_only: {'; '.join(detail)}")
-            if allen_only_keep_list:
-                agreement_parts.append(f"allen_only_keep: {', '.join(allen_only_keep_list)}")
             combined_evidence_summary = " | ".join(agreement_parts)
 
             warnings: list[str] = []
             if n_cells < 30:
                 warnings.append("anchor has < 30 cells; treat with caution")
-            if not top_keep:
-                warnings.append("no GPCR passes keep/validate thresholds; using expression fallback")
+            if not top_keep and not broad_set:
+                warnings.append("no GPCR passes keep/validate or broadly_detectable thresholds; using expression fallback")
+            elif not top_keep and broad_set:
+                warnings.append(
+                    f"no cell-type-specific GPCR; relying on {len(broad_set)} broadly_expressed_detectable candidates"
+                )
+
+            # drugs for any gene in the union (keep + broad + paper-only)
+            union_genes_for_drugs: list[str] = []
+            for g in agreed_keep + allen_only_keep_list + paper_with_broad + allen_only_broad + paper_only_seen:
+                if g not in union_genes_for_drugs:
+                    union_genes_for_drugs.append(g)
+            drug_lines = []
+            for g in union_genes_for_drugs:
+                d = drug_lookup.get(g) or {}
+                approved = (d.get("approved_drugs") or "").strip()
+                exper = (d.get("experimental_or_research") or "").strip()
+                ind = (d.get("clinical_indications") or "").strip()
+                if not approved and not exper:
+                    continue
+                bits = [g]
+                if approved and approved not in {"-", "–", ""}:
+                    bits.append(f"FDA: {approved}")
+                if exper and exper not in {"-", "–", ""}:
+                    bits.append(f"clinical/research: {exper}")
+                if ind:
+                    bits.append(f"indication: {ind}")
+                drug_lines.append(" | ".join(bits))
+            existing_drugs_str = " || ".join(drug_lines)
 
             rows.append(
                 {
@@ -326,6 +378,8 @@ def build_final_summary(
                     "combined_GPCRs_for_probe": combined_for_probe,
                     "combined_evidence_summary": combined_evidence_summary,
                     "n_GPCRs_keep": int(len(keep_rows)),
+                    "n_broadly_detectable": int(len(broad_set)),
+                    "existing_drugs_for_picks": existing_drugs_str,
                     "warning": "; ".join(warnings),
                 }
             )
@@ -413,6 +467,15 @@ def main() -> None:
         default=None,
         help="CSV with columns region_user, cell_type_label, gene, paper_source, notes",
     )
+    p.add_argument(
+        "--drug_targets_csv",
+        default=None,
+        help=(
+            "CSV listing existing drugs that target each GPCR; columns: "
+            "gene_symbol, approved_drugs, experimental_or_research, primary_mechanism, "
+            "clinical_indications, notes."
+        ),
+    )
     p.add_argument("--top_n_gpcrs_in_summary", type=int, default=8)
     args = p.parse_args()
 
@@ -431,6 +494,22 @@ def main() -> None:
     paper_sugg = _read_optional(args.paper_suggestions_csv)
     paper_lookup = _build_paper_lookup(paper_sugg)
     print(f"[INFO] paper_suggestions_csv: {len(paper_sugg)} rows, lookup keys: {len(paper_lookup)}")
+
+    drug_targets = _read_optional(args.drug_targets_csv)
+    drug_lookup: dict[str, dict[str, str]] = {}
+    if not drug_targets.empty and "gene_symbol" in drug_targets.columns:
+        for _, r in drug_targets.iterrows():
+            drug_lookup[str(r["gene_symbol"]).strip()] = {
+                k: ("" if pd.isna(r.get(k)) else str(r.get(k)))
+                for k in (
+                    "approved_drugs",
+                    "experimental_or_research",
+                    "primary_mechanism",
+                    "clinical_indications",
+                    "notes",
+                )
+            }
+    print(f"[INFO] drug_targets_csv: {len(drug_targets)} rows, lookup keys: {len(drug_lookup)}")
 
     classified_levels: dict[str, pd.DataFrame] = {}
     for lvl, df in allen_levels.items():
@@ -472,11 +551,31 @@ def main() -> None:
             {"item": "min_pct_expr_candidate", "value": cfg.thresholds.min_pct_expr_candidate},
             {"item": "strong_mean_log2_expr", "value": cfg.thresholds.strong_mean_log2_expr},
             {"item": "strong_pct_expr", "value": cfg.thresholds.strong_pct_expr},
+            {"item": "broad_min_pct_expr", "value": cfg.thresholds.broad_min_pct_expr},
+            {"item": "broad_min_mean_log2_expr", "value": cfg.thresholds.broad_min_mean_log2_expr},
+            {"item": "broad_min_specificity_log2", "value": cfg.thresholds.broad_min_specificity_log2},
+            {
+                "item": "tier_definition_keep",
+                "value": "specificity_log2 > 0 AND pct >= strong_pct_expr AND log2 >= strong_mean_log2_expr (cell-type-specific probes)",
+            },
+            {
+                "item": "tier_definition_broadly_detectable",
+                "value": (
+                    "pct >= broad_min_pct_expr AND log2 >= broad_min_mean_log2_expr AND specificity_log2 >= broad_min_specificity_log2 "
+                    "(reliable FISH signal but NOT cell-type specific; use only if region/spatial is constrained)"
+                ),
+            },
         ]
     )
 
     summary = build_final_summary(
-        panel, markers, anchors, paper_lookup=paper_lookup, top_n=args.top_n_gpcrs_in_summary
+        panel,
+        markers,
+        anchors,
+        paper_lookup=paper_lookup,
+        drug_lookup=drug_lookup,
+        thresholds=cfg.thresholds,
+        top_n=args.top_n_gpcrs_in_summary,
     )
 
     with pd.ExcelWriter(out_xlsx, engine="openpyxl") as w:
@@ -489,6 +588,8 @@ def main() -> None:
             anchors.to_excel(w, sheet_name="CellType_Subclass_Anchors", index=False)
         if not paper_sugg.empty:
             paper_sugg.to_excel(w, sheet_name="Paper_GPCR_Suggestions", index=False)
+        if not drug_targets.empty:
+            drug_targets.to_excel(w, sheet_name="GPCR_Drug_Targets", index=False)
         for lvl, df in classified_levels.items():
             df.to_excel(w, sheet_name=f"Computed_GPCR_{lvl}", index=False)
         if not markers.empty:

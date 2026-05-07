@@ -70,6 +70,14 @@ thresholds:
   min_mean_log2_expr_candidate: 0.25
   strong_pct_expr: 20
   strong_mean_log2_expr: 0.5
+  # NEW broadly-expressed-detectable tier (reliable FISH signal but not
+  # cell-type specific). Genes that pass these AND have specificity_log2
+  # >= broad_min_specificity_log2 are tagged as "broadly_expressed_detectable"
+  # in combined_GPCRs_for_probe. Use them when spatial info already
+  # constrains region (e.g. dissection, AAV, ROI restriction).
+  broad_min_pct_expr: 50
+  broad_min_mean_log2_expr: 4.0
+  broad_min_specificity_log2: -2.0
 
 allen:
   data_directory_10x: WMB-10X

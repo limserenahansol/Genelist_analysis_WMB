@@ -29,6 +29,9 @@ class Thresholds:
     min_mean_log2_expr_candidate: float
     strong_pct_expr: float
     strong_mean_log2_expr: float
+    broad_min_pct_expr: float = 50.0
+    broad_min_mean_log2_expr: float = 4.0
+    broad_min_specificity_log2: float = -2.0
 
 
 @dataclass
@@ -64,6 +67,9 @@ def load_config(path: str | Path | None = None) -> ProjectConfig:
             min_mean_log2_expr_candidate=float(th.get("min_mean_log2_expr_candidate", 0.25)),
             strong_pct_expr=float(th.get("strong_pct_expr", 20)),
             strong_mean_log2_expr=float(th.get("strong_mean_log2_expr", 0.5)),
+            broad_min_pct_expr=float(th.get("broad_min_pct_expr", 50.0)),
+            broad_min_mean_log2_expr=float(th.get("broad_min_mean_log2_expr", 4.0)),
+            broad_min_specificity_log2=float(th.get("broad_min_specificity_log2", -2.0)),
         ),
         expression_data_type=str(al.get("expression_data_type", "log2")),
         chunk_size=int(al.get("chunk_size", 8192)),

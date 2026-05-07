@@ -10,18 +10,30 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 > - [`outputs/FINAL_decision_table_combined.xlsx`](outputs/FINAL_decision_table_combined.xlsx) ← top-level mirror
 > - [`v3/outputs/FINAL_decision_table_combined.xlsx`](v3/outputs/FINAL_decision_table_combined.xlsx) ← canonical
 >
-> 18 rows × 11 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). Each row is one (region × cell type). The four key columns:
+> 18 rows × 14 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). Each row is one (region × cell type). The key columns:
 >
 > | Column | Color | Meaning |
 > |---|---|---|
 > | `paper_suggested_gpcrs` | 🟡 yellow | Literature-curated genes for this cell type |
-> | `allen_validated_top_picks` | 🟢 green | Genes passing Allen single-cell thresholds (status=keep / candidate_to_validate) |
-> | **`combined_GPCRs_for_probe`** | 🔵 **blue** | **UNION of paper + Allen, sorted by evidence**: `paper+allen_keep` first, then `allen_only_keep`, then `paper_only_allen_downgrade` (with spec/log2/pct so you can decide whether to FISH-validate) |
-> | `combined_evidence_summary` | 🟠 orange | Compact summary of the union (`both: …` / `paper_only: gene(reason)` / `allen_only_keep: …`) |
+> | `allen_validated_top_picks` | 🟢 green | Cell-type-specific genes (Allen `keep` tier: spec > 0, strong expression) |
+> | **`combined_GPCRs_for_probe`** | 🔵 **blue** | **UNION sorted by evidence strength**: `paper+allen_keep` → `allen_only_keep` → `paper+allen_broadly_detectable` → `allen_only_broadly_detectable` → `paper_only_allen_downgrade`. **Each gene also lists FDA-approved drugs and clinical/research compounds inline.** |
+> | `combined_evidence_summary` | 🟠 orange | Compact summary of which genes were kept and why |
+> | `n_GPCRs_keep` | grey | Count of cell-type-specific picks (gold tier) |
+> | `n_broadly_detectable` | grey | Count of broadly-expressed reliable-signal picks (use only if region/spatial is constrained) |
+> | **`existing_drugs_for_picks`** | 🟣 **purple** | **Per-gene drug-target ledger**: FDA-approved drugs, clinical/research compounds, indication. Built from a curated 39-GPCR drug table (`v3/inputs/gpcr_drug_targets.csv`). |
+>
+> ### Two evidence tiers (NEW)
+>
+> The original strict tier required `specificity_log2 > 0` (cell-type-specific). For regions like **BMAp / RE / DG** that express high-abundance neuronal GPCRs (Grm5, Gabbr1/2, Grm1) at very high levels (log2 ≥ 8, pct = 100%) but only slightly less than other subclasses, this returned **zero picks**. To fix that without lowering the gold-standard bar:
+>
+> - **Tier 1 — `keep` (cell-type-specific)** — original gold standard. `spec_log2 > 0` AND strong expression. Best for cell-type-discriminating probes.
+> - **Tier 2 — `broadly_expressed_detectable` (NEW)** — `pct ≥ 50%` AND `log2 ≥ 4` AND `spec_log2 ≥ -2`. Reliable FISH signal, but the gene is also expressed elsewhere; only safe to use if your dissection / AAV / ROI already restricts the region.
+>
+> Both tiers feed `combined_GPCRs_for_probe`, tagged so you can tell them apart at a glance.
 >
 > Need GitHub preview without download? See [`v3/outputs/FINAL_decision_table_combined.csv`](v3/outputs/FINAL_decision_table_combined.csv).
 >
-> Need the full evidence ledger? Open [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) (49 MB, 11 sheets, 154,869 rows in `Final_Probe_Panel` with `validation_status`, `paper_suggested`, `paper_source`, `specificity_log2`).
+> Need the full evidence ledger? Open [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) (12 sheets including `GPCR_Drug_Targets`, 154,869 rows in `Final_Probe_Panel`).
 >
 > **Want to run the pipeline?** Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
 
@@ -32,10 +44,11 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| **`outputs/FINAL_decision_table_combined.xlsx`** | **One-stop probe-selection answer (18 rows × 11 cols, color-coded, paper+Allen combined).** |
+| **`outputs/FINAL_decision_table_combined.xlsx`** | **One-stop probe-selection answer (18 rows × 14 cols, color-coded, paper+Allen combined, drugs inline).** |
 | `v3/outputs/FINAL_decision_table_combined.xlsx` | Same as above (canonical location). |
 | `v3/outputs/FINAL_decision_table_combined.csv` | GitHub-renderable preview of the focused decision table. |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (11 sheets including `Final_Summary`, `Paper_GPCR_Suggestions`, full per-subclass evidence ledger). |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (12 sheets including `Final_Summary`, `Paper_GPCR_Suggestions`, **`GPCR_Drug_Targets`**, full per-subclass evidence ledger). |
+| `v3/inputs/gpcr_drug_targets.csv` | Curated drug-target table for all 39 GPCRs (FDA-approved + clinical/research drugs, mechanism, indication). |
 | `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the full workbook. |
 | `v3/outputs/Final_Summary_v7_with_paper.csv` | Older standalone export of `Final_Summary` (kept for diff). |
 | `v3/outputs/Final_Summary.csv` | Even older 14-row preview from before paper integration (kept for diff). |
@@ -99,13 +112,58 @@ Every row in `Final_Probe_Panel` is a `(region_user, cell-type, GPCR gene)` comb
 
 | `final_recommendation` | Meaning | What to do |
 |---|---|---|
-| `keep` | strong expression and cell-type-specific | order probe |
+| `keep` | strong expression and cell-type-specific (`spec_log2 > 0` AND strong expression) | order probe (gold tier) |
 | `keep_validate_spatially` | passes minimum thresholds | order, but verify with MERFISH/HCR |
 | `candidate_to_validate` | borderline | needs more evidence |
 | `downgrade` | low expression OR low specificity (ubiquitous) | drop unless there's a literature reason |
 | `needs_more_cells` | n_cells < 30 | not enough power; revisit with deeper data |
 
 The `specificity_log2` column = (group mean log2) − (max log2 across other groups in the same region). Positive = enriched in this cell type; large positive = great probe candidate.
+
+### Why a second tier was added (broadly_expressed_detectable)
+
+Before adding this tier, regions like **BMAp / RE / DG** had **zero** picks even though they expressed broad neuronal GPCRs (Grm5, Gabbr1/2, Grm1) at near-saturating levels (log2 ≥ 8, pct = 100%). The reason: `spec_log2` was slightly negative (e.g. -0.7 to -1.5), meaning some other subclass had marginally higher expression. These genes are still **excellent FISH probes** if you have any spatial constraint (dissection, AAV, ROI). The new tier surfaces them explicitly:
+
+| Anchor | Tier-1 keep | Tier-2 broadly_detectable |
+|---|---:|---:|
+| BMAp 012 MEA Slc17a7 Glut | 0 | **4** (Grm5, Gabbr1, Gabbr2, Npy2r) |
+| RE 152 RE-Xi Nox4 Glut | 0 | **4** (Grm5, Gabbr1, Gabbr2, Grm1) |
+| LM 144 MM Foxb1 Glut | 0 | **3** |
+| CA DG 037 DG Glut | 0 | **2** (Grm1, Grm5) |
+| CA CA2 025 CA2-FC-IG Glut | 0 → **1** | 3 (incl. Avpr1b inline) |
+
+Adjust thresholds in `v3/config/project_config.yaml`:
+
+```yaml
+thresholds:
+  strong_pct_expr: 20         # Tier 1 keep
+  strong_mean_log2_expr: 0.5
+  broad_min_pct_expr: 50      # Tier 2 broadly_detectable
+  broad_min_mean_log2_expr: 4.0
+  broad_min_specificity_log2: -2.0
+```
+
+### Drug-target column (NEW)
+
+Each gene in `combined_GPCRs_for_probe` and the dedicated `existing_drugs_for_picks` column is annotated with FDA-approved + clinical/research drugs from a curated 39-GPCR table (`v3/inputs/gpcr_drug_targets.csv`). Highlights from the union picks across the 7 regions:
+
+| Gene | FDA-approved | Clinical relevance |
+|---|---|---|
+| `Drd1` / `Drd2` | Apomorphine, Pergolide; Risperidone, Olanzapine, Aripiprazole, Haloperidol, Levodopa+Carbidopa, Bromocriptine, Pramipexole | Parkinson's, schizophrenia |
+| `Adora2a` | Istradefylline (Nourianz, FDA 2019) | Parkinson's adjunct |
+| `Cnr1` | Dronabinol (Marinol/THC), Nabilone, CBD | Anti-emesis, appetite, epilepsy |
+| `Gabbr1`/`Gabbr2` | Baclofen, Sodium oxybate (Xyrem) | Spasticity, narcolepsy |
+| `Chrm4` | **Xanomeline (KarXT/Cobenfy, FDA Sept 2024)** | First non-D2 antipsychotic |
+| `Tacr1` | Aprepitant, Fosaprepitant | Chemo-induced nausea |
+| `Tacr3` | Fezolinetant (Veozah, FDA 2023) | Menopause hot flashes |
+| `Sstr2` | Octreotide, Lanreotide, Lutetium Lu-177 dotatate | Acromegaly, NETs |
+| `Hcrtr1`/`Hcrtr2` | Suvorexant, Lemborexant, Daridorexant | Insomnia |
+| `Mc4r` | Setmelanotide (Imcivree, FDA 2020) | Genetic obesity |
+| `Htr1b` | Triptan class (Sumatriptan etc.) | Migraine |
+| `Htr2a` | Pimavanserin, Risperidone; Psilocybin (FDA breakthrough) | Parkinson psychosis, depression |
+| `Oprm1`/`Oprk1` | Morphine, Methadone, Buprenorphine; Difelikefalin (FDA 2021) | Pain, uremic pruritus |
+
+Full table: open the `GPCR_Drug_Targets` sheet in `Final_Probe_Panel_v7_modular.xlsx` or `v3/inputs/gpcr_drug_targets.csv`.
 
 ---
 
