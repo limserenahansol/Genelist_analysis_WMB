@@ -193,9 +193,10 @@ def build_final_summary(
                         "cell_type_marker_genes": ", ".join(_markers_for(markers, region, cell_type, "positive_marker")),
                         "exclusion_markers": ", ".join(_markers_for(markers, region, cell_type, "exclusion_marker")),
                         "paper_suggested_gpcrs": paper_str,
-                        "top_GPCRs_to_choose": "",
-                        "top_GPCRs_by_expression": "",
-                        "agreement_paper_vs_allen": "",
+                        "allen_validated_top_picks": "",
+                        "allen_top_GPCRs_by_expression": "",
+                        "combined_GPCRs_for_probe": "",
+                        "combined_evidence_summary": "",
                         "n_GPCRs_keep": 0,
                         "warning": "anchor subclass not found in computed panel",
                     }
@@ -242,6 +243,63 @@ def build_final_summary(
                 agreement_parts.append(f"allen_only_keep: {', '.join(allen_only)}")
             agreement = " | ".join(agreement_parts)
 
+            # Build a single union list (combined_GPCRs_for_probe) tagged
+            # by evidence source, sorted by evidence strength: agreed >
+            # allen-only-keep > paper-only-with-expression > paper-only-low.
+            keep_lookup = {str(g): True for g in keep_rows["gpcr_gene"]}
+            tile_lookup = {
+                str(r["gpcr_gene"]): r
+                for _, r in tile.sort_values("specificity_log2", ascending=False).iterrows()
+            }
+            agreed = []
+            allen_only_keep_list = []
+            paper_only_seen = []
+            for g in keep_rows["gpcr_gene"].astype(str).tolist():
+                if g in paper_set:
+                    agreed.append(g)
+                else:
+                    allen_only_keep_list.append(g)
+            for g in sorted(paper_set):
+                if g not in keep_lookup:
+                    paper_only_seen.append(g)
+
+            def _fmt_g(g: str, tag: str) -> str:
+                r = tile_lookup.get(g)
+                if r is None:
+                    return f"{g}[{tag}, no_allen_data]"
+                spec = float(r.get("specificity_log2", 0.0) or 0.0)
+                log2 = float(r.get("mean_log2_expr", 0.0) or 0.0)
+                pct = float(r.get("pct_expr", 0.0) or 0.0)
+                return f"{g}[{tag}, spec={spec:+.2f}, log2={log2:.2f}, pct={pct:.0f}%]"
+
+            combined_parts = []
+            for g in agreed:
+                combined_parts.append(_fmt_g(g, "paper+allen_keep"))
+            for g in allen_only_keep_list:
+                combined_parts.append(_fmt_g(g, "allen_only_keep"))
+            for g in paper_only_seen:
+                combined_parts.append(_fmt_g(g, "paper_only_allen_downgrade"))
+            combined_for_probe = "; ".join(combined_parts)
+
+            agreement_parts = []
+            if agreed:
+                agreement_parts.append(f"both: {', '.join(agreed)}")
+            if paper_only_seen:
+                detail = []
+                for g in paper_only_seen:
+                    grow = tile[tile["gpcr_gene"] == g]
+                    if grow.empty:
+                        detail.append(f"{g}(not_in_universe_or_no_data)")
+                    else:
+                        rec = str(grow["final_recommendation"].iloc[0])
+                        spec = float(grow["specificity_log2"].iloc[0])
+                        log2 = float(grow["mean_log2_expr"].iloc[0])
+                        detail.append(f"{g}({rec},spec={spec:+.2f},log2={log2:.2f})")
+                agreement_parts.append(f"paper_only: {'; '.join(detail)}")
+            if allen_only_keep_list:
+                agreement_parts.append(f"allen_only_keep: {', '.join(allen_only_keep_list)}")
+            combined_evidence_summary = " | ".join(agreement_parts)
+
             warnings: list[str] = []
             if n_cells < 30:
                 warnings.append("anchor has < 30 cells; treat with caution")
@@ -263,9 +321,10 @@ def build_final_summary(
                         _markers_for(markers, region, cell_type, "exclusion_marker")
                     ),
                     "paper_suggested_gpcrs": paper_str,
-                    "top_GPCRs_to_choose": top_keep,
-                    "top_GPCRs_by_expression": top_expr,
-                    "agreement_paper_vs_allen": agreement,
+                    "allen_validated_top_picks": top_keep,
+                    "allen_top_GPCRs_by_expression": top_expr,
+                    "combined_GPCRs_for_probe": combined_for_probe,
+                    "combined_evidence_summary": combined_evidence_summary,
                     "n_GPCRs_keep": int(len(keep_rows)),
                     "warning": "; ".join(warnings),
                 }

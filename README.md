@@ -1,28 +1,27 @@
 # Genelist analysis (Allen WMB-10X)
 
-Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mouse brain regions** (BMAp, LM, RE, CP, ORBm, AId, **CA**), built on the [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/) WMB-10X data plus curated published markers, with **paper-suggested vs. Allen-computed** GPCRs shown side-by-side.
+Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mouse brain regions** (BMAp, LM, RE, CP, ORBm, AId, **CA**), built by **combining** [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/) WMB-10X single-cell data with curated published-literature GPCR suggestions. Both data sources are used **together**, not against each other — every recommended GPCR is tagged with the evidence (paper, Allen, or both) that supports it.
 
 ![v3 pipeline overview](v3/docs/images/v3_pipeline_overview.png)
 
 > ## I just want the answer — which probes do I order?
 >
-> 1. **Download** either copy of the same workbook (49 MB, 11 sheets):
->    - [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) ← top-level mirror
->    - [`v3/outputs/Final_Probe_Panel_v7_modular.xlsx`](v3/outputs/Final_Probe_Panel_v7_modular.xlsx) ← canonical
-> 2. **Open it in Excel** and go to the **second tab from the left**, named **`Final_Summary`** (tab order: `README → Final_Summary → Region_Mapping_Final → CellType_Subclass_Anchors → Paper_GPCR_Suggestions → Computed_GPCR_subclass → … → Final_Probe_Panel`).
-> 3. That sheet is one row per **(region × cell type)** — 18 rows across 7 regions (BMAp, LM, RE, CP, ORBm, AId, CA-CA1/CA2/CA3/DG) — with these columns:
->    - `cell_type_marker_genes` — curated **+ markers** to use for the cell type (e.g. *Drd1, Tac1, Pdyn* for D1 SPN; *Avpr1b, Rgs14, Amigo2* for CA2)
->    - `exclusion_markers` — markers that **must be off** (e.g. *Adora2a, Drd2, Penk* for D1 SPN)
->    - **`paper_suggested_gpcrs`** — every GPCR the literature flagged for this cell type (alphabetical)
->    - **`top_GPCRs_to_choose`** — Allen-computed GPCRs that **pass** the keep / validate-spatially thresholds
->    - `top_GPCRs_by_expression` — fallback ranked by raw mean expression (for cell types where nothing passed)
->    - **`agreement_paper_vs_allen`** — `both: …` (paper and Allen agree) | `paper_only: gene(status, spec, log2)` (paper said yes, Allen downgraded — so verify with FISH if you really want it) | `allen_only_keep: …` (Allen found it but paper missed it — interesting new candidates)
->    - `warning` — flagged when no GPCR passed thresholds
-> 4. Don't see these columns? You're on the old workbook. Re-download from one of the two links above (look for size **~49 MB**, not 24 or 13 MB).
+> **Open this one focused file:**
+> - [`outputs/FINAL_decision_table_combined.xlsx`](outputs/FINAL_decision_table_combined.xlsx) ← top-level mirror
+> - [`v3/outputs/FINAL_decision_table_combined.xlsx`](v3/outputs/FINAL_decision_table_combined.xlsx) ← canonical
 >
-> Want a quick GitHub-rendered preview without downloading? See [`v3/outputs/Final_Summary_v7_with_paper.csv`](v3/outputs/Final_Summary_v7_with_paper.csv) (18 rows × 14 columns, GitHub renders CSVs natively).
+> 18 rows × 11 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). Each row is one (region × cell type). The four key columns:
 >
-> **Full evidence ledger** lives in the `Final_Probe_Panel` sheet of the same workbook (**154,869 rows × 23 columns**) with `validation_status`, `final_recommendation`, `specificity_log2`, `paper_suggested` (TRUE/FALSE) and `paper_source` (which paper) per (region × subclass × GPCR).
+> | Column | Color | Meaning |
+> |---|---|---|
+> | `paper_suggested_gpcrs` | 🟡 yellow | Literature-curated genes for this cell type |
+> | `allen_validated_top_picks` | 🟢 green | Genes passing Allen single-cell thresholds (status=keep / candidate_to_validate) |
+> | **`combined_GPCRs_for_probe`** | 🔵 **blue** | **UNION of paper + Allen, sorted by evidence**: `paper+allen_keep` first, then `allen_only_keep`, then `paper_only_allen_downgrade` (with spec/log2/pct so you can decide whether to FISH-validate) |
+> | `combined_evidence_summary` | 🟠 orange | Compact summary of the union (`both: …` / `paper_only: gene(reason)` / `allen_only_keep: …`) |
+>
+> Need GitHub preview without download? See [`v3/outputs/FINAL_decision_table_combined.csv`](v3/outputs/FINAL_decision_table_combined.csv).
+>
+> Need the full evidence ledger? Open [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) (49 MB, 11 sheets, 154,869 rows in `Final_Probe_Panel` with `validation_status`, `paper_suggested`, `paper_source`, `specificity_log2`).
 >
 > **Want to run the pipeline?** Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
 
@@ -33,10 +32,13 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | **Final 7-region probe-selection workbook (11 sheets including `Final_Summary` + `Paper_GPCR_Suggestions`).** |
-| `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the file above, kept at the top level so it's easy to find. |
-| `v3/outputs/Final_Summary_v7_with_paper.csv` | Standalone export of the new `Final_Summary` sheet (18 rows × 14 cols, includes `paper_suggested_gpcrs` and `agreement_paper_vs_allen`). Renders directly on GitHub. |
-| `v3/outputs/Final_Summary.csv` | Older 14-row preview from before paper integration (kept for diff). |
+| **`outputs/FINAL_decision_table_combined.xlsx`** | **One-stop probe-selection answer (18 rows × 11 cols, color-coded, paper+Allen combined).** |
+| `v3/outputs/FINAL_decision_table_combined.xlsx` | Same as above (canonical location). |
+| `v3/outputs/FINAL_decision_table_combined.csv` | GitHub-renderable preview of the focused decision table. |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (11 sheets including `Final_Summary`, `Paper_GPCR_Suggestions`, full per-subclass evidence ledger). |
+| `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the full workbook. |
+| `v3/outputs/Final_Summary_v7_with_paper.csv` | Older standalone export of `Final_Summary` (kept for diff). |
+| `v3/outputs/Final_Summary.csv` | Even older 14-row preview from before paper integration (kept for diff). |
 | `v3/inputs/celltype_to_subclass_anchor.csv` | Curated mapping from your cell-type labels (e.g. *D1 SPN*) to the exact Allen subclass IDs (e.g. *061 STR D1 Gaba*). Drives the `Final_Summary` sheet. |
 | `v3/inputs/paper_gpcr_suggestions.csv` | (region × cell_type × gene → paper_source) curated from Hochgerner 2023, Märtin 2019, Gokce 2016, Smith 2019 NP-GPCR, Hitti 2014 / Pagani 2015 (CA2), and IUPHAR. |
 | `v3/inputs/mouse_gpcr_universe_template.csv` | **39 GPCR universe** (was 22; added Htr1a/1b/2a, Gpr6/52, Tacr1/3, Ntsr1/2, Hcrtr1/2, Oxtr, Avpr1a/1b ← CA2 KEY, Crhr1, Galr1, Mc4r). |

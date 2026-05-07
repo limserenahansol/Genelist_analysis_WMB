@@ -6,5 +6,5 @@ venv/
 outputs/*.xlsx
 !outputs/.gitkeep
 !outputs/Final_Probe_Panel_v7_modular.xlsx
-!outputs/FINAL_decision_table_paper_vs_allen.xlsx
+!outputs/FINAL_decision_table_combined.xlsx
 *.pre_gpcr_compute_backup.xlsx
