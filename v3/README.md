@@ -1,5 +1,12 @@
 # Allen + Published Data Workflow for Mouse Cell-Type Marker and GPCR Probe Lists
 
+![v3 pipeline overview](docs/images/v3_pipeline_overview.png)
+
+> **Want a single-page recipe?** See [`docs/STEP_BY_STEP.md`](docs/STEP_BY_STEP.md).
+> **Want to understand the row-level decisions?** See the schematic below.
+
+![v3 decision tree](docs/images/v3_decision_tree.png)
+
 ## Project goal
 
 Build a defensible probe-list workbook for six mouse brain regions:
