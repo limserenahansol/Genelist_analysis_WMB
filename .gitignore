@@ -9,6 +9,7 @@ outputs/*.xlsx
 !outputs/FINAL_decision_table_combined.xlsx
 !outputs/FINAL_decision_table_combined_with_sources.xlsx
 !outputs/FINAL_Recommendations.xlsx
+!outputs/FINAL_decision.xlsx
 *.pre_gpcr_compute_backup.xlsx
 ~$*.xlsx
 
