@@ -129,29 +129,48 @@ python "$ROOT\D_Final_integration_module\D02_create_final_probe_workbook.py" `
     --allen_supertype_csv "$OUT\gpcr_full\Allen_GPCR_Ranking_supertype.csv" `
     --allen_cluster_csv   "$OUT\gpcr_full\Allen_GPCR_Ranking_cluster.csv" `
     --published_marker_csv "$OUT\markers\Published_Cell_Marker_Long.csv" `
-    --region_mapping_csv "$OUT\region_mapping\Region_Mapping_Auto_Draft.csv"
+    --region_mapping_csv "$OUT\region_mapping\Region_Mapping_Auto_Draft.csv" `
+    --celltype_anchor_csv "$ROOT\inputs\celltype_to_subclass_anchor.csv" `
+    --top_n_gpcrs_in_summary 8
 ```
 
-The workbook has 8 sheets:
+The workbook has 10 sheets:
 
 | Sheet | What's in it |
 |---|---|
 | `README` | thresholds + manifest pinned for this run |
+| **`Final_Summary`** | **the human-friendly probe planning table** — one row per (region, cell type, anchor subclass), with positive markers, exclusion markers, top GPCRs that pass `keep`/`keep_validate_spatially` thresholds, and a fallback list of top GPCRs by raw expression in case nothing passes. **Open this sheet first.** |
 | `Region_Mapping_Final` | exact ROI per user label |
+| `CellType_Subclass_Anchors` | the curated user-cell-type → Allen-subclass mapping that drives `Final_Summary` |
 | `Computed_GPCR_subclass` | A03 subclass-level long table |
 | `Computed_GPCR_supertype` | A03 supertype-level long table |
 | `Computed_GPCR_cluster` | A03 cluster-level long table |
 | `Published_Marker_Backbone` | curated marker long table |
-| **`Final_Probe_Panel`** | the deliverable: 80,652 rows, all the above joined + `validation_status` + `final_recommendation` + `specificity_log2` |
+| `Final_Probe_Panel` | full evidence ledger: 80,652 rows, all the above joined + `validation_status` + `final_recommendation` + `specificity_log2` |
 | `Removed_or_Downgraded` | the rows D02 recommends dropping |
 
 ---
 
-## 7. Reading `Final_Probe_Panel`
+## 7. Reading `Final_Summary` and `Final_Probe_Panel`
+
+### `Final_Summary` (use this for probe ordering)
+
+One row per (region, cell type, Allen subclass anchor). The columns you actually act on:
+
+| Column | What to do with it |
+|---|---|
+| `cell_type_marker_genes` | put these on the panel as cell-type-defining markers |
+| `exclusion_markers` | use to gate cells that should NOT be the target |
+| `top_GPCRs_to_choose` | the ordered shortlist that passed `keep` / `keep_validate_spatially` — these are your best evidence-supported GPCRs |
+| `top_GPCRs_by_expression` | fallback list ranked purely by Allen mean log2 — useful when your cell type happens to express only ubiquitous GPCRs |
+| `n_cells_in_anchor` | sample-size sanity check (≥ 30 is required for a reliable estimate) |
+| `warning` | flags low cell counts and cell types where no GPCR passed thresholds |
+
+### `Final_Probe_Panel` (full evidence ledger)
 
 ![v3 decision tree](images/v3_decision_tree.png)
 
-To pick probes for a region, filter `Final_Probe_Panel` to that `region_user`, then:
+If you need to dig in, filter `Final_Probe_Panel` to that `region_user`, then:
 
 1. Sort by `taxonomy_level == "subclass"` and `final_recommendation == "keep"`.
 2. Sort ascending by `combined_rank_score` (smaller = better — combines mean rank and pct rank).

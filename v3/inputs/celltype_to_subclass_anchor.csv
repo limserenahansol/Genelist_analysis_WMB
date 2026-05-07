@@ -1,0 +1,15 @@
+region_user,cell_type_label,allen_subclass_anchor,confidence,notes
+CP,D1/direct-pathway SPN,061 STR D1 Gaba,high,Canonical D1 SPN; matches Drd1/Tac1/Pdyn markers
+CP,D1/direct-pathway SPN,063 STR D1 Sema5a Gaba,medium,D1 SPN Sema5a variant
+CP,D2/indirect-pathway SPN,062 STR D2 Gaba,high,Canonical D2 SPN; matches Drd2/Adora2a/Penk markers
+CP,Cholinergic interneuron,058 PAL-STR Gaba-Chol,high,Cholinergic-Gaba; ChAT-positive interneuron
+BMAp,Posterior BMA glutamatergic VGLUT1-like,012 MEA Slc17a7 Glut,high,Slc17a7 = VGLUT1; BMA glutamatergic
+BMAp,Posterior BMA glutamatergic VGLUT1-like,113 MEA-COA-BMA Ccdc42 Glut,medium,Major MEA-COA-BMA glutamatergic subclass in sAMY
+RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,Exact reuniens (RE) and Xi nuclei subclass
+RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,PVT/PT midline thalamic glutamatergic
+RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,Medial habenula Tac2; adjacent midline structure
+LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,Foxb1+ mammillary body main subclass
+LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,Anterior mammillary Foxb1+
+ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,Cortical L2/3 IT canonical
+AId,Upper-layer IT excitatory,007 L2/3 IT CTX Glut,high,Cortical L2/3 IT canonical
+AId,Upper-layer IT excitatory,006 L4/5 IT CTX Glut,high,Cortical L4/5 IT (insula has prominent L4/5)

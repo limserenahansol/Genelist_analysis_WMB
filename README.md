@@ -5,7 +5,10 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for six mouse 
 ![v3 pipeline overview](v3/docs/images/v3_pipeline_overview.png)
 
 > **Want the deliverable, not the code?**
-> Open [`v3/outputs/Final_Probe_Panel_v7_modular.xlsx`](v3/outputs/Final_Probe_Panel_v7_modular.xlsx) — sheet **`Final_Probe_Panel`** (80,652 rows) is the public-ready probe-selection table.
+> Open [`v3/outputs/Final_Probe_Panel_v7_modular.xlsx`](v3/outputs/Final_Probe_Panel_v7_modular.xlsx).
+>
+> - **`Final_Summary`** — one-page table: per region × cell type, which Allen subclass is the anchor, which curated markers + and −, and which **GPCRs to actually order** (keep-status genes first, expression-fallback genes second). 14 rows total.
+> - **`Final_Probe_Panel`** — full evidence ledger (80,652 rows) with `validation_status`, `final_recommendation`, and `specificity_log2` per (region, cell type, GPCR).
 >
 > **Want to run the pipeline?**
 > Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
@@ -17,7 +20,8 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for six mouse 
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Final 6-region probe-selection workbook (8 sheets). |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Final 6-region probe-selection workbook (10 sheets). |
+| `v3/inputs/celltype_to_subclass_anchor.csv` | Curated mapping from your cell-type labels (e.g. *D1 SPN*) to the exact Allen subclass IDs (e.g. *061 STR D1 Gaba*). Drives the `Final_Summary` sheet. |
 | `v3/outputs/gpcr_full/Allen_GPCR_Ranking_*.csv` | Per-level (subclass / supertype / cluster) GPCR ranking with `specificity_log2`. |
 | `v3/docs/STEP_BY_STEP.md` | One-page command playbook, end-to-end. |
 | `v3/docs/images/` | Schematic figures (the ones in this README). |

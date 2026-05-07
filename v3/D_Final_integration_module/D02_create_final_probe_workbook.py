@@ -21,6 +21,10 @@ Writes a single Excel with:
   full set of evidence columns + final_recommendation derived from
   thresholds in project_config.yaml.
 - Removed_or_Downgraded : subset of Final_Probe_Panel where the rule fired.
+- Final_Summary        : ONE row per (region_user, cell_type_label) with the
+  Allen subclass anchor, top GPCRs to choose, and curated cell-type marker
+  genes. This is the human-readable "what to put on the probe order"
+  sheet. Driven by an optional --celltype_anchor_csv mapping.
 """
 from __future__ import annotations
 
@@ -86,6 +90,126 @@ def classify(df: pd.DataFrame, t: Thresholds) -> pd.DataFrame:
     return out
 
 
+def _markers_for(markers: pd.DataFrame, region: str, cell_type: str, role: str) -> list[str]:
+    if markers.empty or not {"region_user", "cell_type_label", "gene", "gene_role"}.issubset(markers.columns):
+        return []
+    sel = markers[
+        (markers["region_user"].astype(str) == region)
+        & (markers["cell_type_label"].astype(str) == cell_type)
+        & (markers["gene_role"].astype(str) == role)
+    ]
+    return sorted(dict.fromkeys(sel["gene"].astype(str).tolist()))
+
+
+def _format_top_gpcrs(rows: pd.DataFrame, top_n: int, with_status: bool = True) -> str:
+    """Render top GPCR rows as 'Gene(spec=2.1, log2=8.3, pct=87%, status=keep)' joined by '; '."""
+    if rows.empty:
+        return ""
+    out = []
+    for _, r in rows.head(top_n).iterrows():
+        spec = float(r.get("specificity_log2", 0.0) or 0.0)
+        log2 = float(r.get("mean_log2_expr", 0.0) or 0.0)
+        pct = float(r.get("pct_expr", 0.0) or 0.0)
+        if with_status:
+            rec = str(r.get("final_recommendation", "") or "")
+            out.append(
+                f"{r['gpcr_gene']}(spec={spec:.2f}, log2={log2:.2f}, pct={pct:.0f}%, status={rec})"
+            )
+        else:
+            out.append(f"{r['gpcr_gene']}(log2={log2:.2f}, pct={pct:.0f}%, spec={spec:.2f})")
+    return "; ".join(out)
+
+
+def build_final_summary(
+    panel: pd.DataFrame,
+    markers: pd.DataFrame,
+    anchors: pd.DataFrame,
+    top_n: int = 8,
+) -> pd.DataFrame:
+    """Build the human-readable Final_Summary sheet.
+
+    For each row in `anchors` (region_user, cell_type_label, allen_subclass_anchor),
+    look up the Allen subclass stats + top GPCRs from `panel` (filtered to
+    final_recommendation in keep / keep_validate_spatially / candidate_to_validate
+    and specificity_log2 > 0), and join the curated positive / exclusion markers
+    from `markers`.
+    """
+    if panel.empty or anchors.empty:
+        return pd.DataFrame()
+    if "subclass" not in panel.columns or "taxonomy_level" not in panel.columns:
+        return pd.DataFrame()
+
+    sub = panel[panel["taxonomy_level"] == "subclass"].copy()
+    keep_recs = {"keep", "keep_validate_spatially", "candidate_to_validate"}
+
+    rows: list[dict] = []
+    for (region, cell_type), grp in anchors.groupby(["region_user", "cell_type_label"], sort=False):
+        for _, anc in grp.iterrows():
+            anchor = str(anc["allen_subclass_anchor"]).strip()
+            confidence = str(anc.get("confidence", "")).strip()
+            note = str(anc.get("notes", "")).strip()
+
+            tile = sub[(sub["region_user"] == region) & (sub["subclass"] == anchor)]
+            if tile.empty:
+                rows.append(
+                    {
+                        "region_user": region,
+                        "cell_type_label": cell_type,
+                        "allen_subclass_anchor": anchor,
+                        "anchor_confidence": confidence,
+                        "anchor_notes": note,
+                        "n_cells_in_anchor": 0,
+                        "cell_type_marker_genes": ", ".join(_markers_for(markers, region, cell_type, "positive_marker")),
+                        "exclusion_markers": ", ".join(_markers_for(markers, region, cell_type, "exclusion_marker")),
+                        "top_GPCRs_to_choose": "",
+                        "n_GPCRs_keep": 0,
+                        "warning": "anchor subclass not found in computed panel",
+                    }
+                )
+                continue
+
+            n_cells = int(tile["n_cells"].iloc[0]) if "n_cells" in tile.columns else 0
+            keep_rows = tile[tile["final_recommendation"].isin(keep_recs)].sort_values(
+                ["combined_rank_score", "specificity_log2"], ascending=[True, False]
+            )
+            top_keep = _format_top_gpcrs(keep_rows, top_n, with_status=True)
+
+            # Fallback: top GPCRs by raw mean expression regardless of recommendation,
+            # so every cell type gets a non-empty list to consider for probe ordering.
+            by_expr = tile.sort_values(
+                ["mean_log2_expr", "pct_expr"], ascending=[False, False]
+            )
+            top_expr = _format_top_gpcrs(by_expr, top_n, with_status=False)
+
+            warnings: list[str] = []
+            if n_cells < 30:
+                warnings.append("anchor has < 30 cells; treat with caution")
+            if not top_keep:
+                warnings.append("no GPCR passes keep/validate thresholds; using expression fallback")
+
+            rows.append(
+                {
+                    "region_user": region,
+                    "cell_type_label": cell_type,
+                    "allen_subclass_anchor": anchor,
+                    "anchor_confidence": confidence,
+                    "anchor_notes": note,
+                    "n_cells_in_anchor": n_cells,
+                    "cell_type_marker_genes": ", ".join(
+                        _markers_for(markers, region, cell_type, "positive_marker")
+                    ),
+                    "exclusion_markers": ", ".join(
+                        _markers_for(markers, region, cell_type, "exclusion_marker")
+                    ),
+                    "top_GPCRs_to_choose": top_keep,
+                    "top_GPCRs_by_expression": top_expr,
+                    "n_GPCRs_keep": int(len(keep_rows)),
+                    "warning": "; ".join(warnings),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
 def build_final_probe_panel(allen: pd.DataFrame, markers: pd.DataFrame, paper: pd.DataFrame) -> pd.DataFrame:
     if allen.empty:
         return pd.DataFrame()
@@ -130,6 +254,12 @@ def main() -> None:
     p.add_argument("--paper_gpcr_csv", default=None)
     p.add_argument("--region_mapping_csv", default=None)
     p.add_argument("--old_candidates_csv", default=None)
+    p.add_argument(
+        "--celltype_anchor_csv",
+        default=None,
+        help="CSV with columns region_user, cell_type_label, allen_subclass_anchor, confidence, notes",
+    )
+    p.add_argument("--top_n_gpcrs_in_summary", type=int, default=8)
     args = p.parse_args()
 
     cfg = load_config(args.config)
@@ -143,6 +273,7 @@ def main() -> None:
     paper = _read_optional(args.paper_gpcr_csv)
     mapping = _read_optional(args.region_mapping_csv)
     old = _read_optional(args.old_candidates_csv)
+    anchors = _read_optional(args.celltype_anchor_csv)
 
     classified_levels: dict[str, pd.DataFrame] = {}
     for lvl, df in allen_levels.items():
@@ -187,10 +318,16 @@ def main() -> None:
         ]
     )
 
+    summary = build_final_summary(panel, markers, anchors, top_n=args.top_n_gpcrs_in_summary)
+
     with pd.ExcelWriter(out_xlsx, engine="openpyxl") as w:
         readme.to_excel(w, sheet_name="README", index=False)
+        if not summary.empty:
+            summary.to_excel(w, sheet_name="Final_Summary", index=False)
         if not mapping.empty:
             mapping.to_excel(w, sheet_name="Region_Mapping_Final", index=False)
+        if not anchors.empty:
+            anchors.to_excel(w, sheet_name="CellType_Subclass_Anchors", index=False)
         for lvl, df in classified_levels.items():
             df.to_excel(w, sheet_name=f"Computed_GPCR_{lvl}", index=False)
         if not markers.empty:
@@ -213,6 +350,8 @@ def main() -> None:
             "thresholds": cfg.thresholds.__dict__,
             "levels_present": list(classified_levels.keys()),
             "n_panel_rows": int(len(panel)),
+            "n_summary_rows": int(len(summary)),
+            "celltype_anchor_csv": args.celltype_anchor_csv,
         },
     )
     print(f"[DONE] {out_xlsx}")
