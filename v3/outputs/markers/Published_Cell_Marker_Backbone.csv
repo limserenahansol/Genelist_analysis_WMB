@@ -1,12 +1,24 @@
 region_user,cell_type_label,marker_genes,exclusion_markers,source,confidence,notes
 CP,D1/direct-pathway SPN,"Drd1,Tac1,Pdyn,Isl1","Drd2,Adora2a,Penk",published_marker_canonical,high,Canonical striatal D1 SPN markers
 CP,D2/indirect-pathway SPN,"Drd2,Adora2a,Penk,Gpr6,Gpr52,Sp9","Drd1,Tac1",published_marker_canonical,high,Canonical striatal D2 SPN markers
+CP,Patch/striosome SPN,"Drd1,Tac1,Pdyn,Foxp2,Mor1,Oprm1,Nnat","Drd2,Adora2a,Calb1",published_marker_canonical,high,Patch/striosome markers (Pdyn-high + Foxp2 + mu-opioid receptor Oprm1 enriched). Crittenden & Graybiel 2011
+CP,Matrix/exopatch SPN,"Calb1,Mef2c,Drd1,Tac1","Pdyn,Foxp2,Adora2a",published_marker_canonical,high,Matrix markers (Calb1+ Mef2c+) - lower Pdyn than patch. Crittenden & Graybiel 2011
 CP,Cholinergic interneuron,"Chat,Slc5a7,Slc18a3,Lhx8","Drd1,Drd2",published_marker_canonical,high,ChAT-positive interneurons
-BMAp,Posterior BMA glutamatergic VGLUT1-like,"Slc17a7,Meis2,Dcn,C1ql2,Gpr101,Cartpt","Gad1,Gad2,Slc32a1",paper_text_supported,moderate,Needs paper dataset and Allen/MERFISH validation
-RE,Midline thalamic glutamatergic / reuniens,"Slc17a6,Tcf7l2,Calb2,Pcp4,Spon1","Gad1,Gad2",published_marker_canonical,medium,Reuniens midline thalamus markers
-LM,Lateral mammillary excitatory,"Foxb1,Lhx5,Pou4f1",Slc32a1,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+CP,PV/SST/NPY interneurons,"Pvalb,Sst,Npy,Nos1,Lhx6,Prox1,Calb2","Drd1,Drd2,Chat,Slc17a7",published_marker_canonical,high,Striatal PV / SST / NPY / Calb2 GABAergic interneurons (Tepper 2010 review)
+BMAp,Posterior BMA glutamatergic VGLUT1-like,"Slc17a7,Meis2,Dcn,C1ql2,Gpr101,Cartpt","Gad1,Gad2,Slc32a1,Slc17a6",paper_text_supported,moderate,VGLUT1+ (Slc17a7) BMA glutamatergic; needs paper dataset and Allen/MERFISH validation
+BMAp,BMA/MEA VGLUT2-like excitatory,"Slc17a6,Otp,Foxp2,Zic2,Tac2","Slc17a7,Gad1,Slc32a1",paper_text_supported,moderate,VGLUT2+ (Slc17a6) MEA/BMA glutamatergic neighbors (Otp+ Foxp2+/Zic2+). Hochgerner 2023
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,"Gad1,Gad2,Slc32a1,Sox6,Lhx6,Sp9,Ebf1","Slc17a7,Slc17a6,Meis2",published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
+RE,Midline thalamic glutamatergic / reuniens,"Slc17a6,Tcf7l2,Calb2,Pcp4,Spon1","Gad1,Gad2,Slc32a1",published_marker_canonical,medium,Reuniens midline thalamus markers
+RE,Reticular/inhibitory thalamic exclusion,"Gad1,Gad2,Slc32a1,Pvalb,Gnb3,Otx2","Slc17a6,Slc17a7,Tcf7l2",published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
+LM,Lateral mammillary excitatory,"Foxb1,Lhx5,Pou4f1","Slc32a1,Gad1",published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
+LM,Nearby hypothalamic exclusion populations,"Otp,Fezf1,Pdrm12,Gsx1,Slc32a1,Gad1","Foxb1,Lhx5,Pou4f1",published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
 ORBm,L2/3 IT excitatory,"Slc17a7,Cux1,Cux2,Rorb,Satb2,Cdh13","Gad1,Slc32a1",published_marker_canonical,high,Cortical L2/3 IT canonical markers
+ORBm,L5 IT / L5 ET/PT output neurons,"Slc17a7,Fezf2,Bcl11b,Foxp2,Rprm,Pcp4","Cux1,Cux2,Rorb,Gad1",published_marker_canonical,high,L5 deep-layer markers (Fezf2 KEY for ET/PT; Foxp2 for IT)
+ORBm,L6 CT / L6b,"Slc17a7,Foxp2,Tle4,Ctgf,Cplx3,Nxph4","Cux1,Cux2,Gad1",published_marker_canonical,high,L6 CT (Tle4+ Foxp2+) and L6b (Ctgf+ Cplx3+ Nxph4+) markers
+ORBm,Cortical interneurons,"Gad1,Gad2,Slc32a1,Pvalb,Sst,Vip,Lamp5","Slc17a7,Cux1,Foxp2",published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5 interneurons (Tasic 2018; Yao 2021)
 AId,Upper-layer IT excitatory,"Slc17a7,Cux1,Cux2,Rorb","Gad1,Slc32a1",published_marker_canonical,high,Insula L2/3-L4 IT markers
+AId,Deep-layer output neurons,"Slc17a7,Fezf2,Bcl11b,Foxp2,Tle4,Ctgf","Cux1,Cux2,Rorb,Gad1",published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+) output neurons
+AId,Cortical interneurons,"Gad1,Gad2,Slc32a1,Pvalb,Sst,Vip,Lamp5","Slc17a7,Cux1,Foxp2",published_marker_canonical,high,Insular cortical PV/SST/VIP/LAMP5 interneurons
 CA,CA1 pyramidal,"Slc17a7,Wfs1,Mpped1,Pou3f1,Fibcd1,Spink8","Cnih3,Rgs14,Prox1,Calb1",published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas)
 CA,CA2 pyramidal,"Slc17a7,Rgs14,Pcp4,Map3k15,Cacng5,Amigo2,Avpr1b","Wfs1,Cnih3,Prox1",published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014)
 CA,CA3 pyramidal,"Slc17a7,Cnih3,Coch,Lct,Calb2","Wfs1,Prox1,Rgs14",published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016)

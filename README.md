@@ -6,19 +6,36 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 
 > ## I just want the answer — which probes do I order?
 >
-> **Open this ONE file (4 sheets, everything in one place, 32 KB):**
+> **Open this ONE file (4 sheets, everything in one place):**
 > - [`outputs/FINAL_decision.xlsx`](outputs/FINAL_decision.xlsx) ← top-level mirror
 > - [`v3/outputs/FINAL_decision.xlsx`](v3/outputs/FINAL_decision.xlsx) ← canonical
 >
 > ```
 > Sheet 1  HOW_TO_READ           Legend explaining the 4 sheets.
-> Sheet 2  FINAL_Recommendations  Conclusions only - 18 rows x 11 cols. cell-type markers
->                                 + GPCR panel + 1 drug per gene + ORDER/REVIEW verdict.
-> Sheet 3  Decision_Table_full    Drilldown - 18 rows x 15 cols with metrics, paper vs Allen
->                                 reasoning, DrugBank IDs, FDA NDA, PubMed PMIDs.
-> Sheet 4  GPCR_Drug_References   Long drug-citation table - 94 rows x 13 cols, one row per
->                                 drug with DrugBank URL + PubMed URL + FDA application.
+> Sheet 2  FINAL_Recommendations  Conclusions only - 53 rows (one per (region, cell_type,
+>                                 anchor)). cell-type markers + GPCR panel + 1 drug per
+>                                 gene + ORDER/SPATIAL/EXCLUSION verdict + role column.
+>                                 Covers all 24 cell types from the original v6 input
+>                                 plus CA region.
+> Sheet 3  Decision_Table_full    Drilldown - 53 rows x 16 cols with metrics, paper vs
+>                                 Allen reasoning, DrugBank IDs, FDA NDA, PubMed PMIDs.
+> Sheet 4  GPCR_Drug_References   Long drug-citation table - 94 rows x 13 cols, one row
+>                                 per drug with DrugBank URL + PubMed URL + FDA app.
 > ```
+>
+> **Coverage (24 cell types across 7 regions):**
+>
+> | Region | Targets (probe candidates) | Exclusion counter-stains |
+> |---|---|---|
+> | **CP** | D1 SPN, D2 SPN, Patch/striosome SPN, Matrix/exopatch SPN, Cholinergic IN, PV/SST/NPY IN | — |
+> | **BMAp** | Posterior BMA glut VGLUT1-like, BMA/MEA VGLUT2-like | Amygdala GABA / striatal-like neighbors |
+> | **RE** | Midline thalamic glut / reuniens | Reticular/inhibitory thalamic |
+> | **LM** | Lateral mammillary excitatory | Nearby hypothalamic populations |
+> | **ORBm** | L2/3 IT, L5 IT/L5 ET-PT, L6 CT/L6b, Cortical IN | — |
+> | **AId** | Upper-layer IT, Deep-layer output, Cortical IN | — |
+> | **CA** | CA1, CA2, CA3, DG granule | — |
+>
+> Exclusion rows have `role = exclusion_counterstain` and `what_to_do = "EXCLUSION COUNTER-STAIN"` (grey-shaded). Their markers (e.g. `Gad1, Gnb3, Pvalb` for RE reticular) are meant for confirming you are NOT looking at that cell, not for probe ordering.
 >
 > Use sheet 2 for at-a-glance ordering. Sheet 3 when you need the reasoning. Sheet 4 to look up additional drugs.
 >

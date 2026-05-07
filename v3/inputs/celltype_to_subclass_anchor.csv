@@ -1,19 +1,54 @@
-region_user,cell_type_label,allen_subclass_anchor,confidence,notes
-CP,D1/direct-pathway SPN,061 STR D1 Gaba,high,Canonical D1 SPN; matches Drd1/Tac1/Pdyn markers
-CP,D1/direct-pathway SPN,063 STR D1 Sema5a Gaba,medium,D1 SPN Sema5a variant
-CP,D2/indirect-pathway SPN,062 STR D2 Gaba,high,Canonical D2 SPN; matches Drd2/Adora2a/Penk markers
-CP,Cholinergic interneuron,058 PAL-STR Gaba-Chol,high,Cholinergic-Gaba; ChAT-positive interneuron
-BMAp,Posterior BMA glutamatergic VGLUT1-like,012 MEA Slc17a7 Glut,high,Slc17a7 = VGLUT1; BMA glutamatergic
-BMAp,Posterior BMA glutamatergic VGLUT1-like,113 MEA-COA-BMA Ccdc42 Glut,medium,Major MEA-COA-BMA glutamatergic subclass in sAMY
-RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,Exact reuniens (RE) and Xi nuclei subclass
-RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,PVT/PT midline thalamic glutamatergic
-RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,Medial habenula Tac2; adjacent midline structure
-LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,Foxb1+ mammillary body main subclass
-LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,Anterior mammillary Foxb1+
-ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,Cortical L2/3 IT canonical
-AId,Upper-layer IT excitatory,007 L2/3 IT CTX Glut,high,Cortical L2/3 IT canonical
-AId,Upper-layer IT excitatory,006 L4/5 IT CTX Glut,high,Cortical L4/5 IT (insula has prominent L4/5)
-CA,CA1 pyramidal,016 CA1-ProS Glut,high,CA1 pyramidal + ProSubiculum (largest CA1 subclass)
-CA,CA2 pyramidal,025 CA2-FC-IG Glut,high,CA2 + Fasciola Cinerea + Indusium Griseum (only ~327 cells in WMB; Avpr1b/Rgs14 marker)
-CA,CA3 pyramidal,017 CA3 Glut,high,CA3 pyramidal canonical
-CA,DG granule cell,037 DG Glut,high,Dentate gyrus granule cells (largest hippocampal subclass)
+region_user,cell_type_label,allen_subclass_anchor,confidence,role,notes
+CP,D1/direct-pathway SPN,061 STR D1 Gaba,high,target,Canonical D1 SPN; matches Drd1/Tac1/Pdyn markers
+CP,D1/direct-pathway SPN,063 STR D1 Sema5a Gaba,medium,target,D1 SPN Sema5a variant
+CP,D2/indirect-pathway SPN,062 STR D2 Gaba,high,target,Canonical D2 SPN; matches Drd2/Adora2a/Penk markers
+CP,Patch/striosome SPN,061 STR D1 Gaba,medium,target,Patch enriched within 061 D1 family (Pdyn-high + Foxp2 + Tac1 cluster)
+CP,Patch/striosome SPN,063 STR D1 Sema5a Gaba,medium,target,Patch-related D1 variant (Sema5a)
+CP,Matrix/exopatch SPN,061 STR D1 Gaba,medium,target,Matrix-enriched within 061 D1 family (Calb1+ Mef2c+ lower Pdyn)
+CP,Matrix/exopatch SPN,062 STR D2 Gaba,medium,target,D2 SPN matrix-localized
+CP,Cholinergic interneuron,058 PAL-STR Gaba-Chol,high,target,Cholinergic-Gaba; ChAT-positive interneuron
+CP,PV/SST/NPY interneurons,054 STR Prox1 Lhx6 Gaba,high,target,Striatal SST/NPY/Calb2 interneurons (Prox1+ Lhx6+)
+CP,PV/SST/NPY interneurons,056 Sst Chodl Gaba,high,target,Striatal long-range SST/NPY/NOS (Chodl) interneurons
+BMAp,Posterior BMA glutamatergic VGLUT1-like,012 MEA Slc17a7 Glut,high,target,Slc17a7 = VGLUT1; BMA glutamatergic
+BMAp,Posterior BMA glutamatergic VGLUT1-like,113 MEA-COA-BMA Ccdc42 Glut,medium,target,Major MEA-COA-BMA glutamatergic subclass in sAMY
+BMAp,BMA/MEA VGLUT2-like excitatory,120 MEA Otp Foxp2 Glut,high,target,MEA Slc17a6+ glutamatergic (Otp+ Foxp2+) - VGLUT2-like
+BMAp,BMA/MEA VGLUT2-like excitatory,121 MEA-BST Otp Zic2 Glut,high,target,MEA-BST Otp+ Zic2+ glutamatergic - VGLUT2-like
+BMAp,BMA/MEA VGLUT2-like excitatory,119 SI-MA-LPO-LHA Skor1 Glut,medium,target,Substantia innominata Skor1+ Glut (boundary)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,exclusion_counterstain,Major MEA Sox6+ GABA exclusion neighbor (8.7k cells in BMAp ROI)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,exclusion_counterstain,MEA-BST Lhx6+ Sp9+ GABA
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,exclusion_counterstain,CEA-BST Ebf1+ Pdyn+ GABA (more CEA but bleeds into ROI)
+RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,target,Exact reuniens (RE) and Xi nuclei subclass
+RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,target,PVT/PT midline thalamic glutamatergic
+RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,target,Medial habenula Tac2; adjacent midline structure
+RE,Reticular/inhibitory thalamic exclusion,093 RT-ZI Gnb3 Gaba,high,exclusion_counterstain,Reticular thalamus + Zona Incerta Gnb3+ GABA - KEY exclusion population
+RE,Reticular/inhibitory thalamic exclusion,109 LGv-ZI Otx2 Gaba,medium,exclusion_counterstain,LGv + ZI Otx2+ GABA
+LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,target,Foxb1+ mammillary body main subclass
+LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,target,Anterior mammillary Foxb1+
+LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,high,exclusion_counterstain,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+)
+LM,Nearby hypothalamic exclusion populations,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,exclusion_counterstain,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+)
+LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,exclusion_counterstain,DMH-LHA Gsx1+ GABA
+ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
+ORBm,L5 IT / L5 ET/PT output neurons,005 L5 IT CTX Glut,high,target,Cortical L5 IT
+ORBm,L5 IT / L5 ET/PT output neurons,022 L5 ET CTX Glut,high,target,Cortical L5 ET (pyramidal-tract / PT)
+ORBm,L5 IT / L5 ET/PT output neurons,032 L5 NP CTX Glut,medium,target,Cortical L5 NP (near-projecting)
+ORBm,L6 CT / L6b,030 L6 CT CTX Glut,high,target,Cortical L6 CT (corticothalamic)
+ORBm,L6 CT / L6b,029 L6b CTX Glut,high,target,Cortical L6b
+ORBm,L6 CT / L6b,004 L6 IT CTX Glut,medium,target,Cortical L6 IT
+ORBm,Cortical interneurons,052 Pvalb Gaba,high,target,Cortical PV
+ORBm,Cortical interneurons,053 Sst Gaba,high,target,Cortical SST
+ORBm,Cortical interneurons,046 Vip Gaba,high,target,Cortical VIP
+ORBm,Cortical interneurons,049 Lamp5 Gaba,high,target,Cortical LAMP5
+AId,Upper-layer IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
+AId,Upper-layer IT excitatory,006 L4/5 IT CTX Glut,high,target,Cortical L4/5 IT (insula has prominent L4/5)
+AId,Deep-layer output neurons,030 L6 CT CTX Glut,high,target,Insula L6 CT (very prominent in AId - 13k cells)
+AId,Deep-layer output neurons,022 L5 ET CTX Glut,high,target,Insula L5 ET / pyramidal-tract output
+AId,Deep-layer output neurons,032 L5 NP CTX Glut,medium,target,Insula L5 NP
+AId,Deep-layer output neurons,029 L6b CTX Glut,medium,target,Insula L6b
+AId,Cortical interneurons,053 Sst Gaba,high,target,Insula SST (most abundant)
+AId,Cortical interneurons,052 Pvalb Gaba,high,target,Insula PV
+AId,Cortical interneurons,046 Vip Gaba,high,target,Insula VIP
+AId,Cortical interneurons,049 Lamp5 Gaba,high,target,Insula LAMP5
+CA,CA1 pyramidal,016 CA1-ProS Glut,high,target,CA1 pyramidal + ProSubiculum (largest CA1 subclass)
+CA,CA2 pyramidal,025 CA2-FC-IG Glut,high,target,CA2 + Fasciola Cinerea + Indusium Griseum (~327 cells in WMB; Avpr1b/Rgs14 marker)
+CA,CA3 pyramidal,017 CA3 Glut,high,target,CA3 pyramidal canonical
+CA,DG granule cell,037 DG Glut,high,target,Dentate gyrus granule cells (largest hippocampal subclass)

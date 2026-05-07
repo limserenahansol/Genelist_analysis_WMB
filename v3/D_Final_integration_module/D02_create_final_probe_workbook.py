@@ -189,6 +189,8 @@ def build_final_summary(
             anchor = str(anc["allen_subclass_anchor"]).strip()
             confidence = str(anc.get("confidence", "")).strip()
             note = str(anc.get("notes", "")).strip()
+            role = str(anc.get("role", "target") or "target").strip().lower()
+            is_exclusion = role == "exclusion_counterstain"
 
             tile = sub[(sub["region_user"] == region) & (sub["subclass"] == anchor)]
             if tile.empty:
@@ -198,6 +200,7 @@ def build_final_summary(
                         "cell_type_label": cell_type,
                         "allen_subclass_anchor": anchor,
                         "anchor_confidence": confidence,
+                        "anchor_role": role,
                         "anchor_notes": note,
                         "n_cells_in_anchor": 0,
                         "cell_type_marker_genes": ", ".join(_markers_for(markers, region, cell_type, "positive_marker")),
@@ -220,6 +223,7 @@ def build_final_summary(
                         "cell_type_label": cell_type,
                         "allen_subclass_anchor": anchor,
                         "n_cells_in_anchor": 0,
+                        "role": role,
                         "cell_type_marker_genes": _markers_for(markers, region, cell_type, "positive_marker"),
                         "exclusion_markers": _markers_for(markers, region, cell_type, "exclusion_marker"),
                         "agreed_keep": [],
@@ -426,6 +430,7 @@ def build_final_summary(
                     "cell_type_label": cell_type,
                     "allen_subclass_anchor": anchor,
                     "anchor_confidence": confidence,
+                    "anchor_role": role,
                     "anchor_notes": note,
                     "n_cells_in_anchor": n_cells,
                     "cell_type_marker_genes": ", ".join(
@@ -462,6 +467,7 @@ def build_final_summary(
                     "cell_type_label": cell_type,
                     "allen_subclass_anchor": anchor,
                     "n_cells_in_anchor": n_cells,
+                    "role": role,
                     "cell_type_marker_genes": _markers_for(markers, region, cell_type, "positive_marker"),
                     "exclusion_markers": _markers_for(markers, region, cell_type, "exclusion_marker"),
                     "agreed_keep": list(agreed_keep),
@@ -526,6 +532,8 @@ def build_final_recommendations(
         ct = row["cell_type_label"]
         anchor = row["allen_subclass_anchor"]
         n_cells = row["n_cells_in_anchor"]
+        role = str(row.get("role", "target") or "target").lower()
+        is_exclusion = role == "exclusion_counterstain"
         agreed = list(row["agreed_keep"])
         allen_keep = list(row["allen_only_keep"])
         paper_broad = list(row["paper_with_broad"])
@@ -553,23 +561,31 @@ def build_final_recommendations(
             drug_pairs.append(f"{g}: {label}")
         drugs_str = " | ".join(drug_pairs)
 
-        # what-to-do summary
-        n_keep = sum(1 for _, t in ranked if t.endswith("keep"))
-        n_broad = sum(1 for _, t in ranked if "broadly" in t)
-        if n_keep >= 1:
-            action = "ORDER (cell-type-specific picks available)"
-        elif n_broad >= 1:
-            action = "ORDER WITH SPATIAL CONSTRAINT (broadly detectable only)"
-        elif n_cells == 0:
-            action = "REVIEW - anchor subclass not found"
+        # what-to-do summary - separate verdict for exclusion counter-stain rows
+        if is_exclusion:
+            action = "EXCLUSION COUNTER-STAIN (not a probe target; use markers to confirm NOT this cell)"
+            # For exclusion populations: keep the GPCR/drug info as supplementary
+            # (in case a counter-stain GPCR is useful for co-staining), but do
+            # NOT recommend ordering them as drug targets.
+            drugs_str = "(counter-stain only; drugs not recommended)"
         else:
-            action = "REVIEW - no GPCR passed any threshold"
+            n_keep = sum(1 for _, t in ranked if t.endswith("keep"))
+            n_broad = sum(1 for _, t in ranked if "broadly" in t)
+            if n_keep >= 1:
+                action = "ORDER (cell-type-specific picks available)"
+            elif n_broad >= 1:
+                action = "ORDER WITH SPATIAL CONSTRAINT (broadly detectable only)"
+            elif n_cells == 0:
+                action = "REVIEW - anchor subclass not found"
+            else:
+                action = "REVIEW - no GPCR passed any threshold"
 
         out.append(
             {
                 "region": region,
                 "cell_type": ct,
                 "allen_subclass": anchor,
+                "role": role,
                 "n_cells_in_anchor": n_cells,
                 "cell_type_marker_genes": ", ".join(row.get("cell_type_marker_genes") or []),
                 "exclusion_markers": ", ".join(row.get("exclusion_markers") or []),

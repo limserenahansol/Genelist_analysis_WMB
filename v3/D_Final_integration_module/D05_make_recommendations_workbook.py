@@ -34,6 +34,7 @@ REC_COLUMN_WIDTHS = {
     "region": 8,
     "cell_type": 32,
     "allen_subclass": 28,
+    "role": 18,
     "n_cells_in_anchor": 10,
     "cell_type_marker_genes": 38,
     "exclusion_markers": 22,
@@ -41,13 +42,14 @@ REC_COLUMN_WIDTHS = {
     "recommended_drugs_per_gene": 70,
     "n_genes_recommended": 10,
     "evidence_tier_per_gene": 60,
-    "what_to_do": 35,
+    "what_to_do": 40,
 }
 
 DECISION_TABLE_COLUMNS = [
     "region_user",
     "cell_type_label",
     "allen_subclass_anchor",
+    "anchor_role",
     "n_cells_in_anchor",
     "cell_type_marker_genes",
     "exclusion_markers",
@@ -66,6 +68,7 @@ DECISION_COLUMN_WIDTHS = {
     "region_user": 8,
     "cell_type_label": 30,
     "allen_subclass_anchor": 22,
+    "anchor_role": 18,
     "n_cells_in_anchor": 8,
     "cell_type_marker_genes": 32,
     "exclusion_markers": 22,
@@ -120,6 +123,7 @@ def _style_recommendations_sheet(ws) -> None:
         order_now_fill = PatternFill("solid", fgColor="E2EFDA")
         spatial_fill = PatternFill("solid", fgColor="FFF2CC")
         review_fill = PatternFill("solid", fgColor="FCE4D6")
+        exclusion_fill = PatternFill("solid", fgColor="D9D9D9")
         for r in range(2, ws.max_row + 1):
             v = str(ws.cell(row=r, column=action_idx).value or "")
             row_fill = None
@@ -127,6 +131,8 @@ def _style_recommendations_sheet(ws) -> None:
                 row_fill = order_now_fill
             elif v.startswith("ORDER WITH SPATIAL"):
                 row_fill = spatial_fill
+            elif v.startswith("EXCLUSION"):
+                row_fill = exclusion_fill
             elif v.startswith("REVIEW"):
                 row_fill = review_fill
             if row_fill is not None:
