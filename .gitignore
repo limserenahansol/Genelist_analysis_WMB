@@ -7,4 +7,7 @@ outputs/*.xlsx
 !outputs/.gitkeep
 !outputs/Final_Probe_Panel_v7_modular.xlsx
 !outputs/FINAL_decision_table_combined.xlsx
+!outputs/FINAL_decision_table_combined_with_sources.xlsx
 *.pre_gpcr_compute_backup.xlsx
+~$*.xlsx
+

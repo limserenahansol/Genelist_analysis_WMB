@@ -6,11 +6,11 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 
 > ## I just want the answer — which probes do I order?
 >
-> **Open this one focused file:**
-> - [`outputs/FINAL_decision_table_combined.xlsx`](outputs/FINAL_decision_table_combined.xlsx) ← top-level mirror
-> - [`v3/outputs/FINAL_decision_table_combined.xlsx`](v3/outputs/FINAL_decision_table_combined.xlsx) ← canonical
+> **Open this one focused file (now includes drug citations):**
+> - [`outputs/FINAL_decision_table_combined_with_sources.xlsx`](outputs/FINAL_decision_table_combined_with_sources.xlsx) ← top-level mirror
+> - [`v3/outputs/FINAL_decision_table_combined_with_sources.xlsx`](v3/outputs/FINAL_decision_table_combined_with_sources.xlsx) ← canonical
 >
-> 18 rows × 14 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). Each row is one (region × cell type). The key columns:
+> 18 rows × 15 columns, two sheets (`HOW_TO_READ`, `Decision_Table`). Each row is one (region × cell type). The key columns:
 >
 > | Column | Color | Meaning |
 > |---|---|---|
@@ -20,7 +20,8 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 > | `combined_evidence_summary` | 🟠 orange | Compact summary of which genes were kept and why |
 > | `n_GPCRs_keep` | grey | Count of cell-type-specific picks (gold tier) |
 > | `n_broadly_detectable` | grey | Count of broadly-expressed reliable-signal picks (use only if region/spatial is constrained) |
-> | **`existing_drugs_for_picks`** | 🟣 **purple** | **Per-gene drug-target ledger**: FDA-approved drugs, clinical/research compounds, indication. Built from a curated 39-GPCR drug table (`v3/inputs/gpcr_drug_targets.csv`). |
+> | **`existing_drugs_for_picks`** | 🟣 **purple** | **Per-gene drug-target ledger** (compact): FDA-approved drugs, clinical/research compounds, indication. Built from `v3/inputs/gpcr_drug_targets.csv`. |
+> | **`drugs_with_sources_per_picks`** | 🟣 **dark purple** | **Same drugs WITH citations**: DrugBank ID + URL, FDA NDA/BLA application number, key PubMed PMID + URL. Format `DrugName [status, year] -> indication :: DrugBank: DBxxxx (URL) ; FDA: NDA xxxxx ; PMID:yyyyy (URL)`. Built from `v3/inputs/gpcr_drug_targets_detailed.csv` (long-format, one row per drug, 94 rows × 13 cols). |
 >
 > ### Two evidence tiers (NEW)
 >
@@ -31,9 +32,9 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 >
 > Both tiers feed `combined_GPCRs_for_probe`, tagged so you can tell them apart at a glance.
 >
-> Need GitHub preview without download? See [`v3/outputs/FINAL_decision_table_combined.csv`](v3/outputs/FINAL_decision_table_combined.csv).
+> Need GitHub preview without download? See [`v3/outputs/FINAL_decision_table_combined_with_sources.csv`](v3/outputs/FINAL_decision_table_combined_with_sources.csv).
 >
-> Need the full evidence ledger? Open [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) (12 sheets including `GPCR_Drug_Targets`, 154,869 rows in `Final_Probe_Panel`).
+> Need the full evidence ledger? Open [`outputs/Final_Probe_Panel_v7_modular.xlsx`](outputs/Final_Probe_Panel_v7_modular.xlsx) — 13 sheets: `Final_Summary`, `Paper_GPCR_Suggestions`, **`GPCR_Drug_Targets`** (wide compact 39 GPCRs), **`GPCR_Drug_References`** (long-format **94 drug-receptor rows** with DrugBank URL + PubMed URL + FDA NDA), `Computed_GPCR_subclass/supertype/cluster`, `Final_Probe_Panel` (154,869 rows), and more.
 >
 > **Want to run the pipeline?** Follow [`v3/docs/STEP_BY_STEP.md`](v3/docs/STEP_BY_STEP.md) (one-page playbook).
 
@@ -44,11 +45,13 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 | Folder / file | What it is |
 |---|---|
 | **`v3/`** | **Current modular pipeline (recommended)**. Four modules (A/B/C/D), shared config, run logs, schematic diagrams. |
-| **`outputs/FINAL_decision_table_combined.xlsx`** | **One-stop probe-selection answer (18 rows × 14 cols, color-coded, paper+Allen combined, drugs inline).** |
-| `v3/outputs/FINAL_decision_table_combined.xlsx` | Same as above (canonical location). |
-| `v3/outputs/FINAL_decision_table_combined.csv` | GitHub-renderable preview of the focused decision table. |
-| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (12 sheets including `Final_Summary`, `Paper_GPCR_Suggestions`, **`GPCR_Drug_Targets`**, full per-subclass evidence ledger). |
-| `v3/inputs/gpcr_drug_targets.csv` | Curated drug-target table for all 39 GPCRs (FDA-approved + clinical/research drugs, mechanism, indication). |
+| **`outputs/FINAL_decision_table_combined_with_sources.xlsx`** | **One-stop probe-selection answer (18 rows × 15 cols, color-coded, paper+Allen combined, drugs inline WITH DrugBank IDs + PubMed PMIDs + FDA NDA numbers).** |
+| `v3/outputs/FINAL_decision_table_combined_with_sources.xlsx` | Same as above (canonical location). |
+| `v3/outputs/FINAL_decision_table_combined_with_sources.csv` | GitHub-renderable preview of the focused decision table (with sources). |
+| `outputs/FINAL_decision_table_combined.xlsx` | Older companion file without source citations (kept for diff). |
+| `v3/outputs/Final_Probe_Panel_v7_modular.xlsx` | Full 7-region probe-selection workbook (13 sheets including `Final_Summary`, `Paper_GPCR_Suggestions`, **`GPCR_Drug_Targets`** (wide), **`GPCR_Drug_References`** (long, with sources), full per-subclass evidence ledger). |
+| `v3/inputs/gpcr_drug_targets.csv` | Wide drug-target table for 39 GPCRs (compact: drugs / mechanism / indication). |
+| `v3/inputs/gpcr_drug_targets_detailed.csv` | **Long-format drug reference table (94 rows × 13 cols)**: one row per (gene, drug). Columns: `gene_symbol, iuphar_receptor, drug_name, drug_status, drug_class, year_approved_or_published, indication, drugbank_id, drugbank_url, fda_application, key_pmid, pubmed_url, notes`. 62 FDA-approved entries, 32 clinical/research. |
 | `outputs/Final_Probe_Panel_v7_modular.xlsx` | Identical mirror of the full workbook. |
 | `v3/outputs/Final_Summary_v7_with_paper.csv` | Older standalone export of `Final_Summary` (kept for diff). |
 | `v3/outputs/Final_Summary.csv` | Even older 14-row preview from before paper integration (kept for diff). |
@@ -164,6 +167,28 @@ Each gene in `combined_GPCRs_for_probe` and the dedicated `existing_drugs_for_pi
 | `Oprm1`/`Oprk1` | Morphine, Methadone, Buprenorphine; Difelikefalin (FDA 2021) | Pain, uremic pruritus |
 
 Full table: open the `GPCR_Drug_Targets` sheet in `Final_Probe_Panel_v7_modular.xlsx` or `v3/inputs/gpcr_drug_targets.csv`.
+
+### Drug citations (NEW)
+
+Every drug in the inline `drugs_with_sources_per_picks` cell, and every row of the new `GPCR_Drug_References` workbook sheet (94 rows × 13 cols), is linked to:
+
+- **DrugBank ID + URL** (e.g. Difelikefalin → `DB12550` → `https://go.drugbank.com/drugs/DB12550`).
+- **FDA application number** for landmark / recent approvals (e.g. Xanomeline KarXT → `NDA 217336`, Cobenfy 2024-09-26).
+- **Key PubMed PMID + URL** for the pivotal phase-2/3 trial or characterization paper (e.g. Setmelanotide → `PMID:32027842` Clément et al. *Lancet Diabetes Endocrinol* 2020; Suvorexant → `PMID:24502879` Michelson et al. *Lancet Neurol* 2014; Pimavanserin → `PMID:24411054` Cummings et al. *Lancet* 2014; Fezolinetant → `PMID:36924778` Lederman et al. *Lancet* 2023 SKYLIGHT 1/2; Lasmiditan → `PMID:30736028` Goadsby et al. *Brain* 2019; Difelikefalin → `PMID:32268027` Fishbane et al. *NEJM* 2020 KALM-1; Daridorexant → `PMID:34648391` Mignot et al. *Lancet Neurol* 2022).
+
+Sample row (CA1 pyramidal, Htr1a section, from `drugs_with_sources_per_picks`):
+
+```
+== Htr1a ==
+Buspirone [FDA-approved, 1986] -> generalized anxiety disorder
+   ::  DrugBank: DB00490 (https://go.drugbank.com/drugs/DB00490)
+Vortioxetine [FDA-approved, 2013] -> major depression
+   ::  DrugBank: DB09068 (https://go.drugbank.com/drugs/DB09068) ; FDA: NDA 204447
+Gepirone (Exxua) [FDA-approved 2023, 2023] -> major depression (non-sexual-dysfunction profile)
+   ::  DrugBank: DB04948 (https://go.drugbank.com/drugs/DB04948) ; FDA: NDA 021164
+```
+
+For drugs whose receptor-pharmacology citation is older than easy PMID retrieval (most pre-2000 mu-opioid analgesics, triptans), only the DrugBank link is given — DrugBank itself contains the full mechanism, target affinity, and reference list.
 
 ---
 

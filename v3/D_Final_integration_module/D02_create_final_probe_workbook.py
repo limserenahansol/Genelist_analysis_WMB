@@ -150,6 +150,7 @@ def build_final_summary(
     anchors: pd.DataFrame,
     paper_lookup: dict[tuple[str, str, str], list[str]] | None = None,
     drug_lookup: dict[str, dict[str, str]] | None = None,
+    drug_ref_lookup: dict[str, list[dict[str, str]]] | None = None,
     thresholds: Thresholds | None = None,
     top_n: int = 8,
 ) -> pd.DataFrame:
@@ -170,6 +171,7 @@ def build_final_summary(
     keep_recs = {"keep", "keep_validate_spatially", "candidate_to_validate"}
     paper_lookup = paper_lookup or {}
     drug_lookup = drug_lookup or {}
+    drug_ref_lookup = drug_ref_lookup or {}
     t = thresholds
 
     rows: list[dict] = []
@@ -204,6 +206,7 @@ def build_final_summary(
                         "n_GPCRs_keep": 0,
                         "n_broadly_detectable": 0,
                         "existing_drugs_for_picks": "",
+                        "drugs_with_sources_per_picks": "",
                         "warning": "anchor subclass not found in computed panel",
                     }
                 )
@@ -358,6 +361,46 @@ def build_final_summary(
                 drug_lines.append(" | ".join(bits))
             existing_drugs_str = " || ".join(drug_lines)
 
+            # Per-drug citation lines from the long-format drug references CSV.
+            # Each gene → one cell with bullet-style "DrugName [status, year] :: DrugBank :: PubMed PMID URL"
+            ref_lines: list[str] = []
+            for g in union_genes_for_drugs:
+                drugs_for_gene = drug_ref_lookup.get(g) or []
+                if not drugs_for_gene:
+                    continue
+                ref_lines.append(f"== {g} ==")
+                for entry in drugs_for_gene:
+                    name = entry.get("drug_name") or ""
+                    status = entry.get("drug_status") or ""
+                    year = entry.get("year_approved_or_published") or ""
+                    db_id = entry.get("drugbank_id") or ""
+                    db_url = entry.get("drugbank_url") or ""
+                    pmid = entry.get("key_pmid") or ""
+                    pm_url = entry.get("pubmed_url") or ""
+                    ind_e = entry.get("indication") or ""
+                    src_bits: list[str] = []
+                    if db_id and db_url:
+                        src_bits.append(f"DrugBank: {db_id} ({db_url})")
+                    elif db_id:
+                        src_bits.append(f"DrugBank: {db_id}")
+                    fda_app = entry.get("fda_application") or ""
+                    if fda_app:
+                        src_bits.append(f"FDA: {fda_app}")
+                    if pmid and pm_url:
+                        src_bits.append(f"PMID:{pmid} ({pm_url})")
+                    elif pmid:
+                        src_bits.append(f"PMID:{pmid}")
+                    head_bits = [name]
+                    if status:
+                        head_bits.append(f"[{status}{', ' + year if year else ''}]")
+                    if ind_e:
+                        head_bits.append(f"-> {ind_e}")
+                    line = " ".join(head_bits)
+                    if src_bits:
+                        line += "  ::  " + " ; ".join(src_bits)
+                    ref_lines.append(line)
+            drugs_with_sources_str = "\n".join(ref_lines)
+
             rows.append(
                 {
                     "region_user": region,
@@ -380,6 +423,7 @@ def build_final_summary(
                     "n_GPCRs_keep": int(len(keep_rows)),
                     "n_broadly_detectable": int(len(broad_set)),
                     "existing_drugs_for_picks": existing_drugs_str,
+                    "drugs_with_sources_per_picks": drugs_with_sources_str,
                     "warning": "; ".join(warnings),
                 }
             )
@@ -471,9 +515,19 @@ def main() -> None:
         "--drug_targets_csv",
         default=None,
         help=(
-            "CSV listing existing drugs that target each GPCR; columns: "
+            "Wide CSV listing existing drugs that target each GPCR; columns: "
             "gene_symbol, approved_drugs, experimental_or_research, primary_mechanism, "
             "clinical_indications, notes."
+        ),
+    )
+    p.add_argument(
+        "--drug_references_csv",
+        default=None,
+        help=(
+            "Long CSV (one row per drug) with full source citations; columns: "
+            "gene_symbol, iuphar_receptor, drug_name, drug_status, drug_class, "
+            "year_approved_or_published, indication, drugbank_id, drugbank_url, "
+            "fda_application, key_pmid, pubmed_url, notes."
         ),
     )
     p.add_argument("--top_n_gpcrs_in_summary", type=int, default=8)
@@ -510,6 +564,44 @@ def main() -> None:
                 )
             }
     print(f"[INFO] drug_targets_csv: {len(drug_targets)} rows, lookup keys: {len(drug_lookup)}")
+
+    drug_refs = _read_optional(args.drug_references_csv)
+    # Normalize numeric-looking columns that pandas autocast to float
+    # (PMIDs lose precision and gain trailing ".0"). Force int strings.
+    if not drug_refs.empty and "key_pmid" in drug_refs.columns:
+        def _clean_pmid(v):
+            if pd.isna(v):
+                return ""
+            try:
+                return str(int(float(v)))
+            except (TypeError, ValueError):
+                return str(v).strip()
+        drug_refs["key_pmid"] = drug_refs["key_pmid"].apply(_clean_pmid)
+    drug_ref_lookup: dict[str, list[dict[str, str]]] = {}
+    if not drug_refs.empty and "gene_symbol" in drug_refs.columns:
+        for _, r in drug_refs.iterrows():
+            gene = str(r["gene_symbol"]).strip()
+            entry = {
+                k: ("" if pd.isna(r.get(k)) else str(r.get(k)).strip())
+                for k in (
+                    "drug_name",
+                    "drug_status",
+                    "drug_class",
+                    "year_approved_or_published",
+                    "indication",
+                    "drugbank_id",
+                    "drugbank_url",
+                    "fda_application",
+                    "key_pmid",
+                    "pubmed_url",
+                    "notes",
+                )
+            }
+            drug_ref_lookup.setdefault(gene, []).append(entry)
+    print(
+        f"[INFO] drug_references_csv: {len(drug_refs)} rows, "
+        f"genes covered: {len(drug_ref_lookup)}"
+    )
 
     classified_levels: dict[str, pd.DataFrame] = {}
     for lvl, df in allen_levels.items():
@@ -574,6 +666,7 @@ def main() -> None:
         anchors,
         paper_lookup=paper_lookup,
         drug_lookup=drug_lookup,
+        drug_ref_lookup=drug_ref_lookup,
         thresholds=cfg.thresholds,
         top_n=args.top_n_gpcrs_in_summary,
     )
@@ -590,6 +683,8 @@ def main() -> None:
             paper_sugg.to_excel(w, sheet_name="Paper_GPCR_Suggestions", index=False)
         if not drug_targets.empty:
             drug_targets.to_excel(w, sheet_name="GPCR_Drug_Targets", index=False)
+        if not drug_refs.empty:
+            drug_refs.to_excel(w, sheet_name="GPCR_Drug_References", index=False)
         for lvl, df in classified_levels.items():
             df.to_excel(w, sheet_name=f"Computed_GPCR_{lvl}", index=False)
         if not markers.empty:
