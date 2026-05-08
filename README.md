@@ -23,19 +23,19 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 >                                 per drug with DrugBank URL + PubMed URL + FDA app.
 > ```
 >
-> **Coverage (24 cell types across 7 regions):**
+> **Coverage (24 cell types across 7 regions, ALL probe targets):**
 >
-> | Region | Targets (probe candidates) | Exclusion counter-stains |
-> |---|---|---|
-> | **CP** | D1 SPN, D2 SPN, Patch/striosome SPN, Matrix/exopatch SPN, Cholinergic IN, PV/SST/NPY IN | — |
-> | **BMAp** | Posterior BMA glut VGLUT1-like, BMA/MEA VGLUT2-like | Amygdala GABA / striatal-like neighbors |
-> | **RE** | Midline thalamic glut / reuniens | Reticular/inhibitory thalamic |
-> | **LM** | Lateral mammillary excitatory | Nearby hypothalamic populations |
-> | **ORBm** | L2/3 IT, L5 IT/L5 ET-PT, L6 CT/L6b, Cortical IN | — |
-> | **AId** | Upper-layer IT, Deep-layer output, Cortical IN | — |
-> | **CA** | CA1, CA2, CA3, DG granule | — |
+> | Region | Cell types (all get GPCR panel + drug recommendations) |
+> |---|---|
+> | **CP** | D1 SPN, D2 SPN, Patch/striosome SPN, Matrix/exopatch SPN, Cholinergic IN, PV/SST/NPY IN |
+> | **BMAp** | Posterior BMA glut VGLUT1-like, BMA/MEA VGLUT2-like, Amygdala GABA / striatal-like neighbors |
+> | **RE** | Midline thalamic glut / reuniens, Reticular/inhibitory thalamic neighbors |
+> | **LM** | Lateral mammillary excitatory, Nearby hypothalamic neighbors |
+> | **ORBm** | L2/3 IT, L5 IT/L5 ET-PT, L6 CT/L6b, Cortical IN |
+> | **AId** | Upper-layer IT, Deep-layer output, Cortical IN |
+> | **CA** | CA1, CA2, CA3, DG granule |
 >
-> Exclusion rows have `role = exclusion_counterstain` and `what_to_do = "EXCLUSION COUNTER-STAIN"` (grey-shaded). Their markers (e.g. `Gad1, Gnb3, Pvalb` for RE reticular) are meant for confirming you are NOT looking at that cell, not for probe ordering.
+> Every row has `role = target` and gets full GPCR panel + drug recommendation + ORDER/SPATIAL verdict. The "neighbors" cell types (e.g. `Reticular/inhibitory thalamic neighbors`) are populations adjacent to the canonical target — also probe-orderable, useful as co-stains or independent target panels. Verdict distribution: **25 ORDER (cell-type-specific picks)** + **28 ORDER WITH SPATIAL CONSTRAINT (broadly detectable)** = **53 / 53 orderable**.
 >
 > Use sheet 2 for at-a-glance ordering. Sheet 3 when you need the reasoning. Sheet 4 to look up additional drugs.
 >

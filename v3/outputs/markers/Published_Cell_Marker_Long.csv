@@ -66,16 +66,16 @@ BMAp,BMA/MEA VGLUT2-like excitatory,Tac2,positive_marker,paper_text_supported,mo
 BMAp,BMA/MEA VGLUT2-like excitatory,Slc17a7,exclusion_marker,paper_text_supported,moderate,VGLUT2+ (Slc17a6) MEA/BMA glutamatergic neighbors (Otp+ Foxp2+/Zic2+). Hochgerner 2023
 BMAp,BMA/MEA VGLUT2-like excitatory,Gad1,exclusion_marker,paper_text_supported,moderate,VGLUT2+ (Slc17a6) MEA/BMA glutamatergic neighbors (Otp+ Foxp2+/Zic2+). Hochgerner 2023
 BMAp,BMA/MEA VGLUT2-like excitatory,Slc32a1,exclusion_marker,paper_text_supported,moderate,VGLUT2+ (Slc17a6) MEA/BMA glutamatergic neighbors (Otp+ Foxp2+/Zic2+). Hochgerner 2023
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gad1,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gad2,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc32a1,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Sox6,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Lhx6,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Sp9,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Ebf1,positive_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc17a7,exclusion_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc17a6,exclusion_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Meis2,exclusion_marker,published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gad1,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gad2,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc32a1,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Sox6,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Lhx6,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Sp9,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Ebf1,positive_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc17a7,exclusion_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc17a6,exclusion_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Meis2,exclusion_marker,published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
 RE,Midline thalamic glutamatergic / reuniens,Slc17a6,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
 RE,Midline thalamic glutamatergic / reuniens,Tcf7l2,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
 RE,Midline thalamic glutamatergic / reuniens,Calb2,positive_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
@@ -84,29 +84,29 @@ RE,Midline thalamic glutamatergic / reuniens,Spon1,positive_marker,published_mar
 RE,Midline thalamic glutamatergic / reuniens,Gad1,exclusion_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
 RE,Midline thalamic glutamatergic / reuniens,Gad2,exclusion_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
 RE,Midline thalamic glutamatergic / reuniens,Slc32a1,exclusion_marker,published_marker_canonical,medium,Reuniens midline thalamus markers
-RE,Reticular/inhibitory thalamic exclusion,Gad1,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Gad2,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Slc32a1,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Pvalb,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Gnb3,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Otx2,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Slc17a6,exclusion_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Slc17a7,exclusion_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
-RE,Reticular/inhibitory thalamic exclusion,Tcf7l2,exclusion_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
+RE,Reticular/inhibitory thalamic neighbors,Gad1,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Gad2,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Slc32a1,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Pvalb,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Gnb3,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Otx2,positive_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Slc17a6,exclusion_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Slc17a7,exclusion_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
+RE,Reticular/inhibitory thalamic neighbors,Tcf7l2,exclusion_marker,published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
 LM,Lateral mammillary excitatory,Foxb1,positive_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
 LM,Lateral mammillary excitatory,Lhx5,positive_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
 LM,Lateral mammillary excitatory,Pou4f1,positive_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
 LM,Lateral mammillary excitatory,Slc32a1,exclusion_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
 LM,Lateral mammillary excitatory,Gad1,exclusion_marker,published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
-LM,Nearby hypothalamic exclusion populations,Otp,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Fezf1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Pdrm12,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Gsx1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Slc32a1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Gad1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Foxb1,exclusion_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Lhx5,exclusion_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
-LM,Nearby hypothalamic exclusion populations,Pou4f1,exclusion_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
+LM,Nearby hypothalamic neighbors,Otp,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Fezf1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Pdrm12,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Gsx1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Slc32a1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Gad1,positive_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Foxb1,exclusion_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Lhx5,exclusion_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
+LM,Nearby hypothalamic neighbors,Pou4f1,exclusion_marker,published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
 ORBm,L2/3 IT excitatory,Slc17a7,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
 ORBm,L2/3 IT excitatory,Cux1,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers
 ORBm,L2/3 IT excitatory,Cux2,positive_marker,published_marker_canonical,high,Cortical L2/3 IT canonical markers

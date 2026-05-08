@@ -7,11 +7,11 @@ CP,Cholinergic interneuron,"Chat,Slc5a7,Slc18a3,Lhx8","Drd1,Drd2",published_mark
 CP,PV/SST/NPY interneurons,"Pvalb,Sst,Npy,Nos1,Lhx6,Prox1,Calb2","Drd1,Drd2,Chat,Slc17a7",published_marker_canonical,high,Striatal PV / SST / NPY / Calb2 GABAergic interneurons (Tepper 2010 review)
 BMAp,Posterior BMA glutamatergic VGLUT1-like,"Slc17a7,Meis2,Dcn,C1ql2,Gpr101,Cartpt","Gad1,Gad2,Slc32a1,Slc17a6",paper_text_supported,moderate,VGLUT1+ (Slc17a7) BMA glutamatergic; needs paper dataset and Allen/MERFISH validation
 BMAp,BMA/MEA VGLUT2-like excitatory,"Slc17a6,Otp,Foxp2,Zic2,Tac2","Slc17a7,Gad1,Slc32a1",paper_text_supported,moderate,VGLUT2+ (Slc17a6) MEA/BMA glutamatergic neighbors (Otp+ Foxp2+/Zic2+). Hochgerner 2023
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,"Gad1,Gad2,Slc32a1,Sox6,Lhx6,Sp9,Ebf1","Slc17a7,Slc17a6,Meis2",published_marker_canonical,high,GABAergic neighbors used as EXCLUSION counter-stain (not target). Sox6+/Lhx6+ MEA-BST GABA
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,"Gad1,Gad2,Slc32a1,Sox6,Lhx6,Sp9,Ebf1","Slc17a7,Slc17a6,Meis2",published_marker_canonical,high,GABAergic amygdala neighbors. Sox6+/Lhx6+ MEA-BST GABA - probe target (full panel applied)
 RE,Midline thalamic glutamatergic / reuniens,"Slc17a6,Tcf7l2,Calb2,Pcp4,Spon1","Gad1,Gad2,Slc32a1",published_marker_canonical,medium,Reuniens midline thalamus markers
-RE,Reticular/inhibitory thalamic exclusion,"Gad1,Gad2,Slc32a1,Pvalb,Gnb3,Otx2","Slc17a6,Slc17a7,Tcf7l2",published_marker_canonical,high,Reticular thalamus (RT) GABA used as EXCLUSION counter-stain. Pvalb+ Gnb3+ in RT/ZI
+RE,Reticular/inhibitory thalamic neighbors,"Gad1,Gad2,Slc32a1,Pvalb,Gnb3,Otx2","Slc17a6,Slc17a7,Tcf7l2",published_marker_canonical,high,Reticular thalamus (RT) GABA. Pvalb+ Gnb3+ in RT/ZI - probe target (full panel applied)
 LM,Lateral mammillary excitatory,"Foxb1,Lhx5,Pou4f1","Slc32a1,Gad1",published_marker_canonical,medium,Mammillary body markers; verify acronym before probe ordering
-LM,Nearby hypothalamic exclusion populations,"Otp,Fezf1,Pdrm12,Gsx1,Slc32a1,Gad1","Foxb1,Lhx5,Pou4f1",published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH) used as EXCLUSION. Otp+ but Foxb1-negative
+LM,Nearby hypothalamic neighbors,"Otp,Fezf1,Pdrm12,Gsx1,Slc32a1,Gad1","Foxb1,Lhx5,Pou4f1",published_marker_canonical,high,Hypothalamic neighbors (AHN/RCH/LHA/DMH). Otp+ but Foxb1-negative - probe target (full panel applied)
 ORBm,L2/3 IT excitatory,"Slc17a7,Cux1,Cux2,Rorb,Satb2,Cdh13","Gad1,Slc32a1",published_marker_canonical,high,Cortical L2/3 IT canonical markers
 ORBm,L5 IT / L5 ET/PT output neurons,"Slc17a7,Fezf2,Bcl11b,Foxp2,Rprm,Pcp4","Cux1,Cux2,Rorb,Gad1",published_marker_canonical,high,L5 deep-layer markers (Fezf2 KEY for ET/PT; Foxp2 for IT)
 ORBm,L6 CT / L6b,"Slc17a7,Foxp2,Tle4,Ctgf,Cplx3,Nxph4","Cux1,Cux2,Gad1",published_marker_canonical,high,L6 CT (Tle4+ Foxp2+) and L6b (Ctgf+ Cplx3+ Nxph4+) markers

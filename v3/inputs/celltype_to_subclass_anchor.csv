@@ -14,19 +14,19 @@ BMAp,Posterior BMA glutamatergic VGLUT1-like,113 MEA-COA-BMA Ccdc42 Glut,medium,
 BMAp,BMA/MEA VGLUT2-like excitatory,120 MEA Otp Foxp2 Glut,high,target,MEA Slc17a6+ glutamatergic (Otp+ Foxp2+) - VGLUT2-like
 BMAp,BMA/MEA VGLUT2-like excitatory,121 MEA-BST Otp Zic2 Glut,high,target,MEA-BST Otp+ Zic2+ glutamatergic - VGLUT2-like
 BMAp,BMA/MEA VGLUT2-like excitatory,119 SI-MA-LPO-LHA Skor1 Glut,medium,target,Substantia innominata Skor1+ Glut (boundary)
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,exclusion_counterstain,Major MEA Sox6+ GABA exclusion neighbor (8.7k cells in BMAp ROI)
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,exclusion_counterstain,MEA-BST Lhx6+ Sp9+ GABA
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,exclusion_counterstain,CEA-BST Ebf1+ Pdyn+ GABA (more CEA but bleeds into ROI)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,target,Major MEA Sox6+ GABA neighbor (8.7k cells in BMAp ROI) - probe target + co-stain
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,target,MEA-BST Lhx6+ Sp9+ GABA - probe target + co-stain
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,target,CEA-BST Ebf1+ Pdyn+ GABA (more CEA but bleeds into ROI) - probe target
 RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,target,Exact reuniens (RE) and Xi nuclei subclass
 RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,target,PVT/PT midline thalamic glutamatergic
 RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,target,Medial habenula Tac2; adjacent midline structure
-RE,Reticular/inhibitory thalamic exclusion,093 RT-ZI Gnb3 Gaba,high,exclusion_counterstain,Reticular thalamus + Zona Incerta Gnb3+ GABA - KEY exclusion population
-RE,Reticular/inhibitory thalamic exclusion,109 LGv-ZI Otx2 Gaba,medium,exclusion_counterstain,LGv + ZI Otx2+ GABA
+RE,Reticular/inhibitory thalamic neighbors,093 RT-ZI Gnb3 Gaba,high,target,Reticular thalamus + Zona Incerta Gnb3+ GABA - probe target
+RE,Reticular/inhibitory thalamic neighbors,109 LGv-ZI Otx2 Gaba,medium,target,LGv + ZI Otx2+ GABA
 LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,target,Foxb1+ mammillary body main subclass
 LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,target,Anterior mammillary Foxb1+
-LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,high,exclusion_counterstain,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+)
-LM,Nearby hypothalamic exclusion populations,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,exclusion_counterstain,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+)
-LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,exclusion_counterstain,DMH-LHA Gsx1+ GABA
+LM,Nearby hypothalamic neighbors,132 AHN-RCH-LHA Otp Fezf1 Glut,high,target,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+) - probe target
+LM,Nearby hypothalamic neighbors,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,target,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+) - probe target
+LM,Nearby hypothalamic neighbors,102 DMH-LHA Gsx1 Gaba,medium,target,DMH-LHA Gsx1+ GABA - probe target
 ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
 ORBm,L5 IT / L5 ET/PT output neurons,005 L5 IT CTX Glut,high,target,Cortical L5 IT
 ORBm,L5 IT / L5 ET/PT output neurons,022 L5 ET CTX Glut,high,target,Cortical L5 ET (pyramidal-tract / PT)
