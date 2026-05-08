@@ -224,7 +224,7 @@ def build_final_summary(
             confidence = str(anc.get("confidence", "")).strip()
             note = str(anc.get("notes", "")).strip()
             role = str(anc.get("role", "target") or "target").strip().lower()
-            is_exclusion = role == "exclusion_counterstain"
+            is_exclusion = role in ("neighbor_control", "exclusion_counterstain")
 
             region_warn = REGION_DISSECTION_WARNINGS.get(region, "")
 
@@ -573,7 +573,7 @@ def build_final_recommendations(
         anchor = row["allen_subclass_anchor"]
         n_cells = row["n_cells_in_anchor"]
         role = str(row.get("role", "target") or "target").lower()
-        is_exclusion = role == "exclusion_counterstain"
+        is_exclusion = role in ("neighbor_control", "exclusion_counterstain")
         agreed = list(row["agreed_keep"])
         allen_keep = list(row["allen_only_keep"])
         paper_broad = list(row["paper_with_broad"])
@@ -603,11 +603,8 @@ def build_final_recommendations(
 
         # what-to-do summary - separate verdict for exclusion counter-stain rows
         if is_exclusion:
-            action = "EXCLUSION COUNTER-STAIN (not a probe target; use markers to confirm NOT this cell)"
-            # For exclusion populations: keep the GPCR/drug info as supplementary
-            # (in case a counter-stain GPCR is useful for co-staining), but do
-            # NOT recommend ordering them as drug targets.
-            drugs_str = "(counter-stain only; drugs not recommended)"
+            action = "NEIGHBOR CONTROL (validation counter-stain; not a primary probe target)"
+            drugs_str = "(neighbor control / counter-stain; drugs not recommended)"
         else:
             n_keep = sum(1 for _, t in ranked if t.endswith("keep"))
             n_broad = sum(1 for _, t in ranked if "broadly" in t)

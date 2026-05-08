@@ -1,4 +1,4 @@
-region_user,cell_type_label,allen_subclass_anchor,confidence,role,notes
+﻿region_user,cell_type_label,allen_subclass_anchor,confidence,role,notes
 CP,D1/direct-pathway SPN,061 STR D1 Gaba,high,target,Canonical D1 SPN; matches Drd1/Tac1/Pdyn markers
 CP,D1/direct-pathway SPN,063 STR D1 Sema5a Gaba,medium,target,D1 SPN Sema5a variant
 CP,D2/indirect-pathway SPN,062 STR D2 Gaba,high,target,Canonical D2 SPN; matches Drd2/Adora2a/Penk markers
@@ -14,19 +14,19 @@ BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,113 MEA-COA-BMA Ccdc4
 BMAp,BMA/MEA VGLUT2-like excitatory,120 MEA Otp Foxp2 Glut,high,target,VGLUT2 (Slc17a6+) MEA glutamatergic; BMA/MEA boundary - spatially validate
 BMAp,BMA/MEA VGLUT2-like excitatory,121 MEA-BST Otp Zic2 Glut,high,target,VGLUT2 MEA-BST glutamatergic; spatially validate
 BMAp,BMA/MEA VGLUT2-like excitatory,119 SI-MA-LPO-LHA Skor1 Glut,medium,target,Substantia innominata Skor1+ Glut (boundary)
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,exclusion_counterstain,sAMY-like exclusion: MEA Sox6+ GABA. BMAp != sAMY in Allen ontology; this is a NEIGHBOR/contamination control population (use to confirm BMAp probes are NOT picking up sAMY-like inhibitory cells)
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,exclusion_counterstain,sAMY-like exclusion: MEA-BST Lhx6+ Sp9+ GABA. NEIGHBOR/contamination control
-BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,exclusion_counterstain,sAMY-like exclusion: CEA-BST Ebf1+ Pdyn+ GABA. NEIGHBOR/contamination control
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,neighbor_control,sAMY-like exclusion: MEA Sox6+ GABA. BMAp != sAMY in Allen ontology; this is a NEIGHBOR/contamination control population (use to confirm BMAp probes are NOT picking up sAMY-like inhibitory cells)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,neighbor_control,sAMY-like exclusion: MEA-BST Lhx6+ Sp9+ GABA. NEIGHBOR/contamination control
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,neighbor_control,sAMY-like exclusion: CEA-BST Ebf1+ Pdyn+ GABA. NEIGHBOR/contamination control
 RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,target,Exact reuniens (RE) and Xi nuclei subclass
 RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,target,PVT/PT midline thalamic glutamatergic
 RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,target,Medial habenula Tac2; adjacent midline structure
-RE,Reticular/inhibitory thalamic exclusion,093 RT-ZI Gnb3 Gaba,high,exclusion_counterstain,Reticular thalamus + Zona Incerta Gnb3+ GABA - KEY exclusion population
-RE,Reticular/inhibitory thalamic exclusion,109 LGv-ZI Otx2 Gaba,medium,exclusion_counterstain,LGv + ZI Otx2+ GABA
+RE,Reticular/inhibitory thalamic exclusion,093 RT-ZI Gnb3 Gaba,high,neighbor_control,Reticular thalamus + Zona Incerta Gnb3+ GABA - KEY exclusion population
+RE,Reticular/inhibitory thalamic exclusion,109 LGv-ZI Otx2 Gaba,medium,neighbor_control,LGv + ZI Otx2+ GABA
 LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,target,Foxb1+ mammillary body main subclass
 LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,target,Anterior mammillary Foxb1+
-LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,high,exclusion_counterstain,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+)
-LM,Nearby hypothalamic exclusion populations,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,exclusion_counterstain,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+)
-LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,exclusion_counterstain,DMH-LHA Gsx1+ GABA
+LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,high,neighbor_control,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+)
+LM,Nearby hypothalamic exclusion populations,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,neighbor_control,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+)
+LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,neighbor_control,DMH-LHA Gsx1+ GABA
 ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
 ORBm,L5 IT / L5 ET/PT output neurons,005 L5 IT CTX Glut,high,target,Cortical L5 IT
 ORBm,L5 IT / L5 ET/PT output neurons,022 L5 ET CTX Glut,high,target,Cortical L5 ET (pyramidal-tract / PT)

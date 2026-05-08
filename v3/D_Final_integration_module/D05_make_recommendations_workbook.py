@@ -2,20 +2,20 @@
 """
 D05_make_recommendations_workbook.py
 
-Build the COMBINED 4-sheet decision workbook (one file, everything you need):
+Build the COMBINED 5-sheet decision workbook (one file, everything you need):
 
-  Sheet 1  HOW_TO_READ          - legend explaining the 4 sheets
-  Sheet 2  FINAL_Recommendations - conclusions only (one row per cell type;
-                                    cell_type_marker_genes + GPCR panel +
-                                    drug per gene + what_to_do verdict)
-  Sheet 3  Decision_Table_full   - drilldown 2 with metrics + DrugBank IDs +
-                                    PubMed PMIDs + FDA NDA numbers
-  Sheet 4  GPCR_Drug_References  - long-format drug citation table
-                                    (1 row per drug; 94 rows x 13 cols;
-                                    DrugBank URL + PubMed URL + FDA app)
+  Sheet 1  HOW_TO_READ                       - legend explaining the sheets
+  Sheet 2  FINAL_Recommendations             - conclusions only
+  Sheet 3  Decision_Table_full               - drilldown with metrics
+  Sheet 4  GPCR_Drug_References              - long-format drug citation
+  Sheet 5  MarkerBased_Cluster_Recall_TopN   - NEW: cluster-level recall
+                                                using paper markers (LM/RE/BMAp
+                                                only, since these are the
+                                                anatomically-broad ROI regions)
 
-Reads:  v3/outputs/Final_Probe_Panel_v7_modular.xlsx (FINAL_Recommendations,
+Reads:  v3/outputs/Final_Probe_Panel_v8_modular.xlsx (FINAL_Recommendations,
         Final_Summary, GPCR_Drug_References sheets)
+        v3/outputs/marker_recall/MarkerBased_Cluster_Recall_TopN.csv (optional)
 Writes: v3/outputs/FINAL_decision.xlsx (canonical, styled)
         outputs/FINAL_decision.xlsx    (top-level mirror)
 """
@@ -126,7 +126,7 @@ def _style_recommendations_sheet(ws) -> None:
         order_now_fill = PatternFill("solid", fgColor="E2EFDA")
         spatial_fill = PatternFill("solid", fgColor="FFF2CC")
         review_fill = PatternFill("solid", fgColor="FCE4D6")
-        exclusion_fill = PatternFill("solid", fgColor="D9D9D9")
+        neighbor_fill = PatternFill("solid", fgColor="D9D9D9")
         for r in range(2, ws.max_row + 1):
             v = str(ws.cell(row=r, column=action_idx).value or "")
             row_fill = None
@@ -134,8 +134,8 @@ def _style_recommendations_sheet(ws) -> None:
                 row_fill = order_now_fill
             elif v.startswith("ORDER WITH SPATIAL"):
                 row_fill = spatial_fill
-            elif v.startswith("EXCLUSION"):
-                row_fill = exclusion_fill
+            elif v.startswith("NEIGHBOR CONTROL") or v.startswith("EXCLUSION"):
+                row_fill = neighbor_fill
             elif v.startswith("REVIEW"):
                 row_fill = review_fill
             if row_fill is not None:
@@ -229,6 +229,53 @@ def _style_drug_refs_sheet(ws) -> None:
     ws.freeze_panes = "B2"
 
 
+def _style_marker_recall_sheet(ws) -> None:
+    header_fill = PatternFill("solid", fgColor="1F4E79")
+    target_fill = PatternFill("solid", fgColor="C6E0B4")
+    neighbor_fill = PatternFill("solid", fgColor="D9D9D9")
+    bold_white = Font(bold=True, color="FFFFFF")
+    wrap = Alignment(wrap_text=True, vertical="top")
+    widths = {
+        "region_user": 8,
+        "cell_type_label": 32,
+        "role": 18,
+        "cluster": 28,
+        "subclass": 30,
+        "supertype": 28,
+        "n_cells_in_cluster": 10,
+        "n_pos_markers_total": 10,
+        "n_pos_markers_in_data": 10,
+        "n_neg_markers_in_data": 10,
+        "mean_pos_log2": 11,
+        "mean_neg_log2": 11,
+        "pct_pos_avg": 10,
+        "pct_neg_avg": 10,
+        "n_pos_above_30pct": 12,
+        "frac_pos_above_30pct": 12,
+        "net_score": 11,
+        "specificity": 11,
+        "rank_within_celltype": 10,
+    }
+    headers = [c.value for c in ws[1]]
+    for idx, h in enumerate(headers, start=1):
+        cell = ws.cell(row=1, column=idx)
+        cell.font = bold_white
+        cell.fill = header_fill
+        ws.column_dimensions[get_column_letter(idx)].width = widths.get(h, 14)
+    role_idx = headers.index("role") + 1 if "role" in headers else None
+    for r in range(2, ws.max_row + 1):
+        if role_idx:
+            v = str(ws.cell(row=r, column=role_idx).value or "")
+            row_fill = target_fill if v == "target" else (neighbor_fill if v == "neighbor_control" else None)
+            if row_fill is not None:
+                for c in range(1, ws.max_column + 1):
+                    ws.cell(row=r, column=c).fill = row_fill
+        for c in range(1, ws.max_column + 1):
+            ws.cell(row=r, column=c).alignment = wrap
+    ws.row_dimensions[1].height = 30
+    ws.freeze_panes = "D2"
+
+
 def _make_legend() -> pd.DataFrame:
     return pd.DataFrame(
         [
@@ -244,16 +291,21 @@ def _make_legend() -> pd.DataFrame:
             {"sheet": "GPCR_Drug_References", "row": 10, "purpose": "Long-format drug citation table - 94 rows, ONE row per (gene, drug). Columns: drug_status, year, indication, drugbank_id, drugbank_url, fda_application, key_pmid, pubmed_url."},
             {"sheet": "GPCR_Drug_References", "row": 11, "purpose": "Use this sheet to look up additional drugs for any GPCR (FINAL_Recommendations only shows the top drug per gene)."},
             {"sheet": "", "row": 12, "purpose": ""},
-            {"sheet": "All sheets", "row": 13, "purpose": "Generated from v3/outputs/Final_Probe_Panel_v7_modular.xlsx by D05_make_recommendations_workbook.py."},
+            {"sheet": "MarkerBased_Cluster_Recall", "row": 13, "purpose": "NEW: Paper-marker-based recall of Allen WMB clusters for LM, RE, BMAp (the 3 regions with broad ROI dissection). For each cell type, the top 5 Allen clusters that best match the paper marker signature are listed with net_score, pct_pos_avg, n_pos_markers_above_30pct, etc."},
+            {"sheet": "MarkerBased_Cluster_Recall", "row": 14, "purpose": "Compare against the subclass anchor in CellType_Subclass_Anchors. If the recall returns a cluster from a DIFFERENT subclass than the v6 anchor, the paper marker set may be either (a) imprecise for the intended anatomical target, or (b) actually identifying a transcriptomically-related neighboring population. Inspect manually."},
+            {"sheet": "", "row": 15, "purpose": ""},
+            {"sheet": "All sheets", "row": 16, "purpose": "Generated from v3/outputs/Final_Probe_Panel_v8_modular.xlsx by D05_make_recommendations_workbook.py. Cluster recall computed by A05_marker_based_cluster_recall.py."},
         ]
     )
 
 
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("--src_xlsx", default="v3/outputs/Final_Probe_Panel_v7_modular.xlsx")
+    p.add_argument("--src_xlsx", default="v3/outputs/Final_Probe_Panel_v8_modular.xlsx")
     p.add_argument("--out_xlsx", default="v3/outputs/FINAL_decision.xlsx")
     p.add_argument("--top_mirror", default="outputs/FINAL_decision.xlsx")
+    p.add_argument("--marker_recall_csv",
+                   default="v3/outputs/marker_recall/MarkerBased_Cluster_Recall_TopN.csv")
     args = p.parse_args()
 
     src = Path(args.src_xlsx)
@@ -262,6 +314,13 @@ def main() -> None:
     drug_refs = pd.read_excel(src, sheet_name="GPCR_Drug_References")
     decision = summary[[c for c in DECISION_TABLE_COLUMNS if c in summary.columns]].copy()
     legend = _make_legend()
+
+    marker_recall_df = pd.DataFrame()
+    marker_recall_path = Path(args.marker_recall_csv)
+    if marker_recall_path.exists():
+        marker_recall_df = pd.read_csv(marker_recall_path)
+        print(f"[INFO] MarkerBased_Cluster_Recall_TopN: {marker_recall_df.shape}")
+
     print(
         f"[INFO] FINAL_Recommendations: {rec.shape}; "
         f"Decision_Table_full: {decision.shape}; "
@@ -275,6 +334,8 @@ def main() -> None:
             rec.to_excel(w, sheet_name="FINAL_Recommendations", index=False)
             decision.to_excel(w, sheet_name="Decision_Table_full", index=False)
             drug_refs.to_excel(w, sheet_name="GPCR_Drug_References", index=False)
+            if not marker_recall_df.empty:
+                marker_recall_df.to_excel(w, sheet_name="MarkerBased_Cluster_Recall", index=False)
 
         wb = load_workbook(out_path)
         # Style HOW_TO_READ minimally
@@ -294,6 +355,8 @@ def main() -> None:
         _style_recommendations_sheet(wb["FINAL_Recommendations"])
         _style_decision_sheet(wb["Decision_Table_full"])
         _style_drug_refs_sheet(wb["GPCR_Drug_References"])
+        if "MarkerBased_Cluster_Recall" in wb.sheetnames:
+            _style_marker_recall_sheet(wb["MarkerBased_Cluster_Recall"])
         wb.save(out_path)
         print(f"[OK] {out_path}")
 

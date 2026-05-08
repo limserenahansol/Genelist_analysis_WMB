@@ -1,0 +1,36 @@
+region_user,cell_type_label,role,cluster,subclass,supertype,n_cells_in_cluster,n_pos_markers_total,n_pos_markers_in_data,n_neg_markers_in_data,mean_pos_log2,mean_neg_log2,pct_pos_avg,pct_neg_avg,n_pos_above_30pct,frac_pos_above_30pct,net_score,specificity,rank_within_celltype
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,neighbor_control,0859 Sst Chodl Gaba_4,056 Sst Chodl Gaba,0241 Sst Chodl Gaba_4,24,13,13,4,5.0184,0.5298,60.9,9.38,9,0.692,4.8347,7.9677,1
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,neighbor_control,1258 MEA-BST Lhx6 Sp9 Gaba_5,074 MEA-BST Lhx6 Sp9 Gaba,0351 MEA-BST Lhx6 Sp9 Gaba_5,127,13,13,4,4.7215,0.5343,60.15,9.25,9,0.692,4.5334,7.444,2
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,neighbor_control,0850 Sst Chodl Gaba_2,056 Sst Chodl Gaba,0239 Sst Chodl Gaba_2,61,13,13,4,4.571,0.6092,57.0,10.66,8,0.615,4.2695,6.4455,3
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,neighbor_control,0861 Sst Chodl Gaba_5,056 Sst Chodl Gaba,0242 Sst Chodl Gaba_5,37,13,13,4,4.2796,0.2811,48.86,5.41,6,0.462,4.2292,11.2291,4
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,neighbor_control,0852 Sst Chodl Gaba_2,056 Sst Chodl Gaba,0239 Sst Chodl Gaba_2,25,13,13,4,4.2963,0.5489,52.62,10.0,8,0.615,4.0551,6.6211,5
+BMAp,BMA/MEA VGLUT2-like excitatory,target,2009 MEA-COA-BMA Ccdc42 Glut_3,113 MEA-COA-BMA Ccdc42 Glut,0507 MEA-COA-BMA Ccdc42 Glut_3,41,10,10,3,4.8852,0.5103,60.24,9.76,7,0.7,4.7249,8.0047,1
+BMAp,BMA/MEA VGLUT2-like excitatory,target,2008 MEA-COA-BMA Ccdc42 Glut_3,113 MEA-COA-BMA Ccdc42 Glut,0507 MEA-COA-BMA Ccdc42 Glut_3,1043,10,10,3,4.6242,0.6246,60.81,12.14,8,0.8,4.3997,6.3819,2
+BMAp,BMA/MEA VGLUT2-like excitatory,target,2207 MEA Otp Foxp2 Glut_1,120 MEA Otp Foxp2 Glut,0538 MEA Otp Foxp2 Glut_1,82,10,10,3,4.3625,0.5912,61.34,11.38,7,0.7,4.1213,6.3112,3
+BMAp,BMA/MEA VGLUT2-like excitatory,target,2204 MEA Otp Foxp2 Glut_1,120 MEA Otp Foxp2 Glut,0538 MEA Otp Foxp2 Glut_1,1215,10,10,3,4.4303,0.6271,60.6,12.15,6,0.6,4.1032,6.0932,4
+BMAp,BMA/MEA VGLUT2-like excitatory,target,2011 MEA-COA-BMA Ccdc42 Glut_4,113 MEA-COA-BMA Ccdc42 Glut,0508 MEA-COA-BMA Ccdc42 Glut_4,53,10,10,3,4.2159,0.5905,54.72,10.69,8,0.8,4.0254,6.1052,5
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,target,0192 MEA Slc17a7 Glut_1,012 MEA Slc17a7 Glut,0055 MEA Slc17a7 Glut_1,26,10,10,5,4.1162,0.6978,56.92,14.62,7,0.7,3.7684,5.1593,1
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,target,0200 MEA Slc17a7 Glut_1,012 MEA Slc17a7 Glut,0055 MEA Slc17a7 Glut_1,31,10,10,5,4.2872,1.1325,57.42,22.58,7,0.7,3.5048,3.4786,2
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,target,0194 MEA Slc17a7 Glut_1,012 MEA Slc17a7 Glut,0055 MEA Slc17a7 Glut_1,96,10,10,5,3.885,1.1766,51.25,25.21,6,0.6,3.0084,3.0432,3
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,target,0227 LA-BLA-BMA-PA Glut_1,014 LA-BLA-BMA-PA Glut,0060 LA-BLA-BMA-PA Glut_1,23,10,10,5,3.1042,0.2999,43.04,6.09,4,0.4,3.0042,7.7617,4
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,target,0212 MEA Slc17a7 Glut_2,012 MEA Slc17a7 Glut,0056 MEA Slc17a7 Glut_2,68,10,10,5,4.3103,1.6718,58.09,27.35,7,0.7,2.9885,2.4328,5
+LM,Lateral mammillary excitatory,target,2282 ARH-PVp Tbx3 Glut_3,126 ARH-PVp Tbx3 Glut,0556 ARH-PVp Tbx3 Glut_3,663,9,9,4,8.5277,1.1941,96.61,18.55,9,1.0,7.8335,6.5895,1
+LM,Lateral mammillary excitatory,target,2281 ARH-PVp Tbx3 Glut_3,126 ARH-PVp Tbx3 Glut,0556 ARH-PVp Tbx3 Glut_3,698,9,9,4,7.6839,1.493,89.7,22.06,9,1.0,6.6909,4.8236,2
+LM,Lateral mammillary excitatory,target,2487 PH Pitx2 Glut_2,138 PH Pitx2 Glut,0611 PH Pitx2 Glut_2,38,9,9,4,5.5814,0.1934,68.13,3.95,7,0.778,5.7769,19.0244,3
+LM,Lateral mammillary excitatory,target,2562 PH-SUM Foxa1 Glut_6,141 PH-SUM Foxa1 Glut,0627 PH-SUM Foxa1 Glut_6,71,9,9,4,5.6269,0.3047,70.27,5.63,7,0.778,5.7111,13.9043,4
+LM,Lateral mammillary excitatory,target,2489 PH Pitx2 Glut_2,138 PH Pitx2 Glut,0611 PH Pitx2 Glut_2,142,9,9,4,5.6068,0.4301,66.51,7.39,6,0.667,5.51,10.5766,5
+LM,Nearby hypothalamic exclusion populations,neighbor_control,2568 MM-ant Foxb1 Glut_1,143 MM-ant Foxb1 Glut,0629 MM-ant Foxb1 Glut_1,2271,9,8,4,4.8759,2.2519,58.42,25.9,5,0.625,2.9365,2.0732,1
+LM,Nearby hypothalamic exclusion populations,neighbor_control,2574 MM Foxb1 Glut_2,144 MM Foxb1 Glut,0631 MM Foxb1 Glut_2,3759,9,8,4,4.9588,2.3859,60.63,28.86,5,0.625,2.8853,1.9947,2
+LM,Nearby hypothalamic exclusion populations,neighbor_control,2569 MM-ant Foxb1 Glut_1,143 MM-ant Foxb1 Glut,0629 MM-ant Foxb1 Glut_1,139,9,8,4,4.928,2.3717,59.44,25.9,5,0.625,2.8687,1.9937,3
+LM,Nearby hypothalamic exclusion populations,neighbor_control,2565 MM-ant Foxb1 Glut_1,143 MM-ant Foxb1 Glut,0629 MM-ant Foxb1 Glut_1,846,9,8,4,4.8032,2.2876,59.06,26.15,5,0.625,2.8281,2.0117,4
+LM,Nearby hypothalamic exclusion populations,neighbor_control,2572 MM Foxb1 Glut_1,144 MM Foxb1 Glut,0630 MM Foxb1 Glut_1,547,9,8,4,4.9711,2.4648,60.47,26.69,5,0.625,2.8188,1.9382,5
+RE,Midline thalamic glutamatergic / reuniens,target,2660 TH Prkcd Grin2c Glut_6,151 TH Prkcd Grin2c Glut,0659 TH Prkcd Grin2c Glut_6,2407,5,5,4,9.6635,0.1871,98.56,3.38,5,1.0,9.9764,33.6548,1
+RE,Midline thalamic glutamatergic / reuniens,target,2654 TH Prkcd Grin2c Glut_4,151 TH Prkcd Grin2c Glut,0657 TH Prkcd Grin2c Glut_4,724,5,5,4,9.7659,0.3246,98.07,5.04,5,1.0,9.9413,23.0002,2
+RE,Midline thalamic glutamatergic / reuniens,target,2707 MG-POL-SGN Nts Glut_2,153 MG-POL-SGN Nts Glut,0673 MG-POL-SGN Nts Glut_2,48,5,5,4,9.5079,0.1914,97.92,3.12,5,1.0,9.8164,32.6244,3
+RE,Midline thalamic glutamatergic / reuniens,target,2667 TH Prkcd Grin2c Glut_7,151 TH Prkcd Grin2c Glut,0660 TH Prkcd Grin2c Glut_7,767,5,5,4,9.4495,0.166,96.77,2.67,5,1.0,9.7834,35.5195,4
+RE,Midline thalamic glutamatergic / reuniens,target,2705 MG-POL-SGN Nts Glut_1,153 MG-POL-SGN Nts Glut,0672 MG-POL-SGN Nts Glut_1,815,5,5,4,9.5785,0.3002,97.15,5.03,5,1.0,9.7783,23.9346,5
+RE,Reticular/inhibitory thalamic exclusion,neighbor_control,1592 RT-ZI Gnb3 Gaba_3,093 RT-ZI Gnb3 Gaba,0433 RT-ZI Gnb3 Gaba_3,496,7,7,5,6.6825,1.5571,71.2,24.68,6,0.857,5.554,4.0328,1
+RE,Reticular/inhibitory thalamic exclusion,neighbor_control,1604 RT-ZI Gnb3 Gaba_5,093 RT-ZI Gnb3 Gaba,0435 RT-ZI Gnb3 Gaba_5,159,7,7,5,6.7576,1.6887,67.92,27.3,6,0.857,5.4974,3.7779,2
+RE,Reticular/inhibitory thalamic exclusion,neighbor_control,1594 RT-ZI Gnb3 Gaba_3,093 RT-ZI Gnb3 Gaba,0433 RT-ZI Gnb3 Gaba_3,83,7,7,5,6.4464,1.3998,70.74,23.13,6,0.857,5.4752,4.2983,3
+RE,Reticular/inhibitory thalamic exclusion,neighbor_control,1593 RT-ZI Gnb3 Gaba_3,093 RT-ZI Gnb3 Gaba,0433 RT-ZI Gnb3 Gaba_3,1284,7,7,5,6.5799,1.5941,70.32,25.33,6,0.857,5.4144,3.8841,4
+RE,Reticular/inhibitory thalamic exclusion,neighbor_control,1601 RT-ZI Gnb3 Gaba_5,093 RT-ZI Gnb3 Gaba,0435 RT-ZI Gnb3 Gaba_5,938,7,7,5,6.5652,1.6852,69.08,26.61,6,0.857,5.3086,3.6776,5

@@ -1,0 +1,287 @@
+region_user,cell_type_label,gene,gene_role,source,confidence,notes
+CP,D1/direct-pathway SPN,Ppp1r1b,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Foxp1,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Drd1,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Tac1,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Pdyn,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Isl1,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Gnal,positive_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Drd2,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Adora2a,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Penk,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Gpr6,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D1/direct-pathway SPN,Gpr52,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D1 SPN markers (v6 list). Drd1 = Drd1a alias.
+CP,D2/indirect-pathway SPN,Ppp1r1b,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Foxp1,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Drd2,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Adora2a,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Penk,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Gpr6,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Gpr52,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Sp9,positive_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Drd1,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Tac1,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,D2/indirect-pathway SPN,Pdyn,exclusion_marker,v6_published_marker_canonical,high,Canonical striatal D2 SPN markers (v6 list). Sp9 KEY for D2 lineage.
+CP,Patch/striosome SPN,Oprm1,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Tac1,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Pdyn,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Ppp1r1b,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Pcdh8,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Tacr1,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Nnat,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Gfra1,positive_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Calb1,exclusion_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Crym,exclusion_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Wfs1,exclusion_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Patch/striosome SPN,Adora2a,exclusion_marker,v6_published_marker_canonical,high,Patch/striosome markers (v6 list). Oprm1 (mu-opioid) KEY enrichment in patch (Crittenden & Graybiel 2011).
+CP,Matrix/exopatch SPN,Ppp1r1b,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Foxp1,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Calb1,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Cnr1,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Crym,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Wfs1,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Ebf1,positive_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Pdyn,exclusion_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Oprm1,exclusion_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Foxp2,exclusion_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Matrix/exopatch SPN,Tacr1,exclusion_marker,v6_published_marker_canonical,high,Matrix/exopatch markers (v6 list). Calb1+ Wfs1+ identifies matrix; lower Pdyn than patch.
+CP,Cholinergic interneuron,Chat,positive_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Slc5a7,positive_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Slc18a3,positive_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Isl1,positive_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Lhx8,positive_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Nkx2-1,positive_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Drd1,exclusion_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Drd2,exclusion_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,Cholinergic interneuron,Slc17a7,exclusion_marker,v6_published_marker_canonical,high,ChAT-positive striatal interneurons (v6 list).
+CP,PV/SST/NPY interneurons,Gad1,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Gad2,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Slc32a1,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Sst,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Pvalb,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Npy,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Nos1,positive_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Drd1,exclusion_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Drd2,exclusion_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Chat,exclusion_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+CP,PV/SST/NPY interneurons,Slc17a7,exclusion_marker,v6_published_marker_canonical,high,Striatal PV/SST/NPY/NOS interneurons (v6 list). Tepper 2010 review.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Slc17a7,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Slc30a3,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Tcf4,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Meis2,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Calb2,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Dcn,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Mpped1,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Tac1,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Cd36,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Gpr101,positive_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Gad1,exclusion_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Gad2,exclusion_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Slc32a1,exclusion_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Slc17a6,exclusion_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,Drd1,exclusion_marker,v6_published_marker_canonical,high,VGLUT1 (Slc17a7+) BMA/pallial amygdala glutamatergic (v6 list). Gpr101 = amygdala-enriched orphan GPCR.
+BMAp,BMA/MEA VGLUT2-like excitatory,Slc17a6,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Slc6a1,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Baiap3,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Trh,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Meis2,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Krt9,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Matn2,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Tac1,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Cartpt,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Otp,positive_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Slc17a7,exclusion_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Gad1,exclusion_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,BMA/MEA VGLUT2-like excitatory,Slc32a1,exclusion_marker,v6_published_marker_canonical,moderate,VGLUT2 (Slc17a6+) BMA/MEA boundary glutamatergic (v6 list). Border population - spatially validate.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gad1,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gad2,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc32a1,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Penk,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Pax6,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Gpr88,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Ppp1r1b,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Foxp2,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Tshz1,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Lhx6,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Sox6,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Sp9,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Ebf1,positive_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc17a7,exclusion_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Slc17a6,exclusion_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Meis2,exclusion_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,Calb2,exclusion_marker,v6_published_marker_canonical,high,sAMY-like striatal-style inhibitory NEIGHBORS (v6 list). NOT a BMAp target - use as CONTAMINATION/EXCLUSION control. BMAp != sAMY in Allen ontology. Striatum-like markers (Ppp1r1b/Gpr88/Foxp2/Penk) appear here but in sAMY-like neighboring populations not BMAp itself.
+RE,Midline thalamic glutamatergic / reuniens,Slc17a6,positive_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Tcf7l2,positive_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Calb2,positive_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Pcp4,positive_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Spon1,positive_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Gad1,exclusion_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Gad2,exclusion_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Slc32a1,exclusion_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Midline thalamic glutamatergic / reuniens,Pvalb,exclusion_marker,v6_published_marker_canonical,high,Reuniens midline thalamic markers (v6 list). All Slc17a6+ midline thalamic glut.
+RE,Reticular/inhibitory thalamic exclusion,Gad1,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Gad2,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Slc32a1,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Pvalb,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Sox14,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Dlx1,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Dlx2,positive_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Slc17a6,exclusion_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Slc17a7,exclusion_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Tcf7l2,exclusion_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Calb2,exclusion_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+RE,Reticular/inhibitory thalamic exclusion,Pcp4,exclusion_marker,v6_published_marker_canonical,high,Reticular thalamus (RT/ZI) GABA EXCLUSION (v6 list). Pvalb+ Sox14+ Dlx1/2+ = RT-derived inhibitory cells; use as exclusion control to confirm RE probes are NOT picking up RT/ZI.
+LM,Lateral mammillary excitatory,Slc17a6,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Snap25,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Syt4,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Tac2,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Prlr,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Esr1,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Nr4a2,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Pdyn,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Kcnc2,positive_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Gad1,exclusion_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Gad2,exclusion_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Slc32a1,exclusion_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Lateral mammillary excitatory,Foxb1,exclusion_marker,v6_published_marker_canonical,high,Lateral mammillary excitatory markers (v6 list). Tac2/Prlr/Esr1/Nr4a2 are LM-enriched; Foxb1 in exclusion list because medial mammillary uses Foxb1.
+LM,Nearby hypothalamic exclusion populations,Rprm,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Cck,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Cartpt,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Lhx1os,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Foxb1,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Otp,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Fezf1,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Pdrm12,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Gsx1,positive_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Slc17a6,exclusion_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Tac2,exclusion_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Prlr,exclusion_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+LM,Nearby hypothalamic exclusion populations,Nr4a2,exclusion_marker,v6_published_marker_canonical,high,Hypothalamic EXCLUSION populations (v6 list). MM-medial: Rprm/Cck/Cartpt/Lhx1os/Foxb1+. Other hypothalamic neighbors: AHN/RCH/LHA Otp+/Fezf1+. Use as exclusion control for LM probes.
+ORBm,L2/3 IT excitatory,Slc17a7,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Satb2,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Cux1,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Cux2,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Rorb,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Calb1,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Cdh13,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Slc17a6,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Fst,positive_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Gad1,exclusion_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Gad2,exclusion_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Slc32a1,exclusion_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Foxp2,exclusion_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L2/3 IT excitatory,Bcl11b,exclusion_marker,v6_published_marker_canonical,high,Cortical L2/3 IT canonical markers (v6 list).
+ORBm,L5 IT / L5 ET/PT output neurons,Slc17a7,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Satb2,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Bcl11b,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Fezf2,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Etv1,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Crym,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Deptor,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Pde1c,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Fam84b,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Cux1,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Cux2,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Rorb,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,Gad1,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L6 CT / L6b,Slc17a7,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Foxp2,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Tle4,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Ntsr1,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Ctgf,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Ccn2,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Cplx3,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Nxph4,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Cux1,exclusion_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Cux2,exclusion_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Rorb,exclusion_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,L6 CT / L6b,Gad1,exclusion_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
+ORBm,Cortical interneurons,Gad1,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Gad2,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Slc32a1,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Sst,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Pvalb,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Vip,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Lamp5,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Sncg,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Cck,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Npy,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Reln,positive_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Slc17a7,exclusion_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Cux1,exclusion_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+ORBm,Cortical interneurons,Foxp2,exclusion_marker,v6_published_marker_canonical,high,Cortical PV/SST/VIP/LAMP5/SNCG interneurons (v6 list). Tasic 2018 / Yao 2021.
+AId,Upper-layer IT excitatory,Slc17a7,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Satb2,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Cux1,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Cux2,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Rorb,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Calb1,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Slc17a6,positive_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Gad1,exclusion_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Gad2,exclusion_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Slc32a1,exclusion_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Foxp2,exclusion_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Upper-layer IT excitatory,Bcl11b,exclusion_marker,v6_published_marker_canonical,high,Insula L2/3-L4 upper-layer IT markers (v6 list).
+AId,Deep-layer output neurons,Slc17a7,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Bcl11b,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Fezf2,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Etv1,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Crym,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Foxp2,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Tle4,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Ntsr1,positive_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Cux1,exclusion_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Cux2,exclusion_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Rorb,exclusion_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Deep-layer output neurons,Gad1,exclusion_marker,v6_published_marker_canonical,high,Insula L5 ET (Fezf2+) and L6 CT (Tle4+ Foxp2+ Ntsr1+) deep-layer output markers (v6 list).
+AId,Cortical interneurons,Gad1,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Gad2,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Slc32a1,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Sst,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Pvalb,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Vip,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Lamp5,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Sncg,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Cck,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Npy,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Reln,positive_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Slc17a7,exclusion_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Cux1,exclusion_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+AId,Cortical interneurons,Foxp2,exclusion_marker,v6_published_marker_canonical,high,Insular PV/SST/VIP/LAMP5/SNCG interneurons (v6 list).
+CA,CA1 pyramidal,Slc17a7,positive_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Wfs1,positive_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Mpped1,positive_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Pou3f1,positive_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Fibcd1,positive_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Spink8,positive_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Cnih3,exclusion_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Rgs14,exclusion_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Prox1,exclusion_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA1 pyramidal,Calb1,exclusion_marker,v6_published_marker_canonical,high,CA1 pyramidal canonical (Cembrowski 2016/2018 hippocampal atlas).
+CA,CA2 pyramidal,Slc17a7,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Rgs14,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Pcp4,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Map3k15,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Cacng5,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Amigo2,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Avpr1b,positive_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Wfs1,exclusion_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Cnih3,exclusion_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA2 pyramidal,Prox1,exclusion_marker,v6_published_marker_canonical,high,CA2 KEY markers Rgs14/Amigo2/Avpr1b (Hitti & Siegelbaum 2014).
+CA,CA3 pyramidal,Slc17a7,positive_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Cnih3,positive_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Coch,positive_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Lct,positive_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Calb2,positive_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Wfs1,exclusion_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Prox1,exclusion_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,CA3 pyramidal,Rgs14,exclusion_marker,v6_published_marker_canonical,high,CA3 pyramidal canonical (Cembrowski 2016).
+CA,DG granule cell,Slc17a7,positive_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Prox1,positive_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Calb1,positive_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Dock10,positive_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Dsp,positive_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,C1ql2,positive_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Wfs1,exclusion_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Cnih3,exclusion_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).
+CA,DG granule cell,Rgs14,exclusion_marker,v6_published_marker_canonical,high,Dentate gyrus granule cells (Prox1 KEY marker).

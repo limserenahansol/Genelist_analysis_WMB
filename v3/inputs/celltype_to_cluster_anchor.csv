@@ -1,0 +1,36 @@
+region_user,cell_type_label,allen_cluster_anchor,allen_subclass_of_cluster,n_cells,confidence,role,marker_recall_net_score,marker_recall_pct_pos_avg,marker_recall_pct_neg_avg,notes
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,0859 Sst Chodl Gaba_4,056 Sst Chodl Gaba,24,high,neighbor_control,4.8347,60.9,9.38,marker-recall rank 1; net_score=4.83; 9/13 pos markers >=30%
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,1258 MEA-BST Lhx6 Sp9 Gaba_5,074 MEA-BST Lhx6 Sp9 Gaba,127,high,neighbor_control,4.5334,60.15,9.25,marker-recall rank 2; net_score=4.53; 9/13 pos markers >=30%
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,0850 Sst Chodl Gaba_2,056 Sst Chodl Gaba,61,high,neighbor_control,4.2695,57.0,10.66,marker-recall rank 3; net_score=4.27; 8/13 pos markers >=30%
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,0861 Sst Chodl Gaba_5,056 Sst Chodl Gaba,37,medium,neighbor_control,4.2292,48.86,5.41,marker-recall rank 4; net_score=4.23; 6/13 pos markers >=30%
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,0852 Sst Chodl Gaba_2,056 Sst Chodl Gaba,25,high,neighbor_control,4.0551,52.62,10.0,marker-recall rank 5; net_score=4.06; 8/13 pos markers >=30%
+BMAp,BMA/MEA VGLUT2-like excitatory,2009 MEA-COA-BMA Ccdc42 Glut_3,113 MEA-COA-BMA Ccdc42 Glut,41,high,target,4.7249,60.24,9.76,marker-recall rank 1; net_score=4.72; 7/10 pos markers >=30%
+BMAp,BMA/MEA VGLUT2-like excitatory,2008 MEA-COA-BMA Ccdc42 Glut_3,113 MEA-COA-BMA Ccdc42 Glut,1043,high,target,4.3997,60.81,12.14,marker-recall rank 2; net_score=4.40; 8/10 pos markers >=30%
+BMAp,BMA/MEA VGLUT2-like excitatory,2207 MEA Otp Foxp2 Glut_1,120 MEA Otp Foxp2 Glut,82,high,target,4.1213,61.34,11.38,marker-recall rank 3; net_score=4.12; 7/10 pos markers >=30%
+BMAp,BMA/MEA VGLUT2-like excitatory,2204 MEA Otp Foxp2 Glut_1,120 MEA Otp Foxp2 Glut,1215,high,target,4.1032,60.6,12.15,marker-recall rank 4; net_score=4.10; 6/10 pos markers >=30%
+BMAp,BMA/MEA VGLUT2-like excitatory,2011 MEA-COA-BMA Ccdc42 Glut_4,113 MEA-COA-BMA Ccdc42 Glut,53,high,target,4.0254,54.72,10.69,marker-recall rank 5; net_score=4.03; 8/10 pos markers >=30%
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,0192 MEA Slc17a7 Glut_1,012 MEA Slc17a7 Glut,26,high,target,3.7684,56.92,14.62,marker-recall rank 1; net_score=3.77; 7/10 pos markers >=30%
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,0200 MEA Slc17a7 Glut_1,012 MEA Slc17a7 Glut,31,high,target,3.5048,57.42,22.58,marker-recall rank 2; net_score=3.50; 7/10 pos markers >=30%
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,0194 MEA Slc17a7 Glut_1,012 MEA Slc17a7 Glut,96,high,target,3.0084,51.25,25.21,marker-recall rank 3; net_score=3.01; 6/10 pos markers >=30%
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,0227 LA-BLA-BMA-PA Glut_1,014 LA-BLA-BMA-PA Glut,23,medium,target,3.0042,43.04,6.09,marker-recall rank 4; net_score=3.00; 4/10 pos markers >=30%
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,0212 MEA Slc17a7 Glut_2,012 MEA Slc17a7 Glut,68,high,target,2.9885,58.09,27.35,marker-recall rank 5; net_score=2.99; 7/10 pos markers >=30%
+LM,Lateral mammillary excitatory,2282 ARH-PVp Tbx3 Glut_3,126 ARH-PVp Tbx3 Glut,663,high,target,7.8335,96.61,18.55,marker-recall rank 1; net_score=7.83; 9/9 pos markers >=30%
+LM,Lateral mammillary excitatory,2281 ARH-PVp Tbx3 Glut_3,126 ARH-PVp Tbx3 Glut,698,high,target,6.6909,89.7,22.06,marker-recall rank 2; net_score=6.69; 9/9 pos markers >=30%
+LM,Lateral mammillary excitatory,2487 PH Pitx2 Glut_2,138 PH Pitx2 Glut,38,high,target,5.7769,68.13,3.95,marker-recall rank 3; net_score=5.78; 7/9 pos markers >=30%
+LM,Lateral mammillary excitatory,2562 PH-SUM Foxa1 Glut_6,141 PH-SUM Foxa1 Glut,71,high,target,5.7111,70.27,5.63,marker-recall rank 4; net_score=5.71; 7/9 pos markers >=30%
+LM,Lateral mammillary excitatory,2489 PH Pitx2 Glut_2,138 PH Pitx2 Glut,142,high,target,5.51,66.51,7.39,marker-recall rank 5; net_score=5.51; 6/9 pos markers >=30%
+LM,Nearby hypothalamic exclusion populations,2568 MM-ant Foxb1 Glut_1,143 MM-ant Foxb1 Glut,2271,high,neighbor_control,2.9365,58.42,25.9,marker-recall rank 1; net_score=2.94; 5/8 pos markers >=30%
+LM,Nearby hypothalamic exclusion populations,2574 MM Foxb1 Glut_2,144 MM Foxb1 Glut,3759,high,neighbor_control,2.8853,60.63,28.86,marker-recall rank 2; net_score=2.89; 5/8 pos markers >=30%
+LM,Nearby hypothalamic exclusion populations,2569 MM-ant Foxb1 Glut_1,143 MM-ant Foxb1 Glut,139,high,neighbor_control,2.8687,59.44,25.9,marker-recall rank 3; net_score=2.87; 5/8 pos markers >=30%
+LM,Nearby hypothalamic exclusion populations,2565 MM-ant Foxb1 Glut_1,143 MM-ant Foxb1 Glut,846,high,neighbor_control,2.8281,59.06,26.15,marker-recall rank 4; net_score=2.83; 5/8 pos markers >=30%
+LM,Nearby hypothalamic exclusion populations,2572 MM Foxb1 Glut_1,144 MM Foxb1 Glut,547,high,neighbor_control,2.8188,60.47,26.69,marker-recall rank 5; net_score=2.82; 5/8 pos markers >=30%
+RE,Midline thalamic glutamatergic / reuniens,2660 TH Prkcd Grin2c Glut_6,151 TH Prkcd Grin2c Glut,2407,high,target,9.9764,98.56,3.38,marker-recall rank 1; net_score=9.98; 5/5 pos markers >=30%
+RE,Midline thalamic glutamatergic / reuniens,2654 TH Prkcd Grin2c Glut_4,151 TH Prkcd Grin2c Glut,724,high,target,9.9413,98.07,5.04,marker-recall rank 2; net_score=9.94; 5/5 pos markers >=30%
+RE,Midline thalamic glutamatergic / reuniens,2707 MG-POL-SGN Nts Glut_2,153 MG-POL-SGN Nts Glut,48,high,target,9.8164,97.92,3.12,marker-recall rank 3; net_score=9.82; 5/5 pos markers >=30%
+RE,Midline thalamic glutamatergic / reuniens,2667 TH Prkcd Grin2c Glut_7,151 TH Prkcd Grin2c Glut,767,high,target,9.7834,96.77,2.67,marker-recall rank 4; net_score=9.78; 5/5 pos markers >=30%
+RE,Midline thalamic glutamatergic / reuniens,2705 MG-POL-SGN Nts Glut_1,153 MG-POL-SGN Nts Glut,815,high,target,9.7783,97.15,5.03,marker-recall rank 5; net_score=9.78; 5/5 pos markers >=30%
+RE,Reticular/inhibitory thalamic exclusion,1592 RT-ZI Gnb3 Gaba_3,093 RT-ZI Gnb3 Gaba,496,high,neighbor_control,5.554,71.2,24.68,marker-recall rank 1; net_score=5.55; 6/7 pos markers >=30%
+RE,Reticular/inhibitory thalamic exclusion,1604 RT-ZI Gnb3 Gaba_5,093 RT-ZI Gnb3 Gaba,159,high,neighbor_control,5.4974,67.92,27.3,marker-recall rank 2; net_score=5.50; 6/7 pos markers >=30%
+RE,Reticular/inhibitory thalamic exclusion,1594 RT-ZI Gnb3 Gaba_3,093 RT-ZI Gnb3 Gaba,83,high,neighbor_control,5.4752,70.74,23.13,marker-recall rank 3; net_score=5.48; 6/7 pos markers >=30%
+RE,Reticular/inhibitory thalamic exclusion,1593 RT-ZI Gnb3 Gaba_3,093 RT-ZI Gnb3 Gaba,1284,high,neighbor_control,5.4144,70.32,25.33,marker-recall rank 4; net_score=5.41; 6/7 pos markers >=30%
+RE,Reticular/inhibitory thalamic exclusion,1601 RT-ZI Gnb3 Gaba_5,093 RT-ZI Gnb3 Gaba,938,high,neighbor_control,5.3086,69.08,26.61,marker-recall rank 5; net_score=5.31; 6/7 pos markers >=30%
