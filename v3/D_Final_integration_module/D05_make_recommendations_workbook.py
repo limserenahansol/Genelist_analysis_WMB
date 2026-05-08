@@ -2,14 +2,15 @@
 """
 D05_make_recommendations_workbook.py
 
-Build the COMBINED 5-sheet decision workbook (one file, everything you need):
+Build the COMBINED 6-sheet decision workbook (one file, everything you need):
 
   Sheet 1  HOW_TO_READ                       - legend explaining the sheets
-  Sheet 2  FINAL_Recommendations             - conclusions only
-  Sheet 3  Decision_Table_full               - drilldown with metrics
-  Sheet 4  GPCR_Drug_References              - long-format drug citation
-  Sheet 5  MarkerBased_Cluster_Recall_TopN   - NEW: cluster-level recall
-                                                using paper markers (LM/RE/BMAp
+  Sheet 2  PI_Summary                        - PI-FACING short view (10 cols)
+  Sheet 3  FINAL_Recommendations             - conclusions only
+  Sheet 4  Decision_Table_full               - drilldown with metrics
+  Sheet 5  GPCR_Drug_References              - long-format drug citation
+  Sheet 6  MarkerBased_Cluster_Recall_TopN   - cluster-level recall using
+                                                paper markers (LM/RE/BMAp
                                                 only, since these are the
                                                 anatomically-broad ROI regions)
 
@@ -229,6 +230,99 @@ def _style_drug_refs_sheet(ws) -> None:
     ws.freeze_panes = "B2"
 
 
+PI_SUMMARY_COLUMNS = [
+    "region",
+    "cell_type",
+    "allen_subclass",
+    "cell_type_marker_genes",
+    "exclusion_markers",
+    "recommended_GPCR_panel",
+    "recommended_drugs_per_gene",
+    "n_genes_recommended",
+    "evidence_tier_per_gene",
+    "what_to_do",
+]
+
+PI_SUMMARY_WIDTHS = {
+    "region": 9,
+    "cell_type": 34,
+    "allen_subclass": 30,
+    "cell_type_marker_genes": 38,
+    "exclusion_markers": 26,
+    "recommended_GPCR_panel": 38,
+    "recommended_drugs_per_gene": 70,
+    "n_genes_recommended": 8,
+    "evidence_tier_per_gene": 50,
+    "what_to_do": 38,
+}
+
+
+def _style_pi_summary_sheet(ws) -> None:
+    header_fill = PatternFill("solid", fgColor="1F4E79")
+    marker_fill = PatternFill("solid", fgColor="F4B084")  # orange (cell-type markers)
+    excl_fill = PatternFill("solid", fgColor="D9D9D9")    # grey (exclusion markers)
+    gene_fill = PatternFill("solid", fgColor="9CC2E5")    # blue (GPCRs)
+    drug_fill = PatternFill("solid", fgColor="C9A0DC")    # purple (drugs)
+    action_fill = PatternFill("solid", fgColor="A9D08E")  # green (what_to_do)
+    bold_white = Font(bold=True, color="FFFFFF")
+    bold_black = Font(bold=True)
+    wrap = Alignment(wrap_text=True, vertical="top")
+
+    headers = [c.value for c in ws[1]]
+    for idx, h in enumerate(headers, start=1):
+        cell = ws.cell(row=1, column=idx)
+        cell.font = bold_white
+        cell.fill = header_fill
+        if h == "cell_type_marker_genes":
+            cell.fill = marker_fill
+            cell.font = bold_black
+        elif h == "exclusion_markers":
+            cell.fill = excl_fill
+            cell.font = bold_black
+        elif h == "recommended_GPCR_panel":
+            cell.fill = gene_fill
+            cell.font = bold_black
+        elif h == "recommended_drugs_per_gene":
+            cell.fill = drug_fill
+            cell.font = bold_black
+        elif h == "what_to_do":
+            cell.fill = action_fill
+            cell.font = bold_black
+        ws.column_dimensions[get_column_letter(idx)].width = PI_SUMMARY_WIDTHS.get(h, 18)
+
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=ws.max_column):
+        for cell in row:
+            cell.alignment = wrap
+
+    if "what_to_do" in headers:
+        action_idx = headers.index("what_to_do") + 1
+        order_now_fill = PatternFill("solid", fgColor="E2EFDA")
+        spatial_fill = PatternFill("solid", fgColor="FFF2CC")
+        review_fill = PatternFill("solid", fgColor="FCE4D6")
+        neighbor_fill = PatternFill("solid", fgColor="D9D9D9")
+        for r in range(2, ws.max_row + 1):
+            v = str(ws.cell(row=r, column=action_idx).value or "")
+            row_fill = None
+            if v.startswith("ORDER ("):
+                row_fill = order_now_fill
+            elif v.startswith("ORDER WITH SPATIAL"):
+                row_fill = spatial_fill
+            elif v.startswith("NEIGHBOR CONTROL") or v.startswith("EXCLUSION"):
+                row_fill = neighbor_fill
+            elif v.startswith("REVIEW"):
+                row_fill = review_fill
+            if row_fill is not None:
+                for c in range(1, ws.max_column + 1):
+                    target = ws.cell(row=r, column=c)
+                    if target.fill.fgColor.rgb in (None, "00000000", "FFFFFFFF"):
+                        target.fill = row_fill
+
+    ws.row_dimensions[1].height = 32
+    for r in range(2, ws.max_row + 1):
+        ws.row_dimensions[r].height = 60
+    ws.freeze_panes = "C2"
+
+
 def _style_marker_recall_sheet(ws) -> None:
     header_fill = PatternFill("solid", fgColor="1F4E79")
     target_fill = PatternFill("solid", fgColor="C6E0B4")
@@ -294,7 +388,9 @@ def _make_legend() -> pd.DataFrame:
             {"sheet": "MarkerBased_Cluster_Recall", "row": 13, "purpose": "NEW: Paper-marker-based recall of Allen WMB clusters for LM, RE, BMAp (the 3 regions with broad ROI dissection). For each cell type, the top 5 Allen clusters that best match the paper marker signature are listed with net_score, pct_pos_avg, n_pos_markers_above_30pct, etc."},
             {"sheet": "MarkerBased_Cluster_Recall", "row": 14, "purpose": "Compare against the subclass anchor in CellType_Subclass_Anchors. If the recall returns a cluster from a DIFFERENT subclass than the v6 anchor, the paper marker set may be either (a) imprecise for the intended anatomical target, or (b) actually identifying a transcriptomically-related neighboring population. Inspect manually."},
             {"sheet": "", "row": 15, "purpose": ""},
-            {"sheet": "All sheets", "row": 16, "purpose": "Generated from v3/outputs/Final_Probe_Panel_v8_modular.xlsx by D05_make_recommendations_workbook.py. Cluster recall computed by A05_marker_based_cluster_recall.py."},
+            {"sheet": "PI_Summary", "row": 16, "purpose": "PI-FACING short view: ONE row per (region, cell type, subclass) with only 10 columns (region | cell_type | allen_subclass | cell_type_marker_genes | exclusion_markers | recommended_GPCR_panel | recommended_drugs_per_gene | n_genes_recommended | evidence_tier_per_gene | what_to_do). No technical metadata, no warnings, no DrugBank IDs. Use this when sharing with PI."},
+            {"sheet": "", "row": 17, "purpose": ""},
+            {"sheet": "All sheets", "row": 18, "purpose": "Generated from v3/outputs/Final_Probe_Panel_v8_modular.xlsx by D05_make_recommendations_workbook.py. Cluster recall computed by A05_marker_based_cluster_recall.py."},
         ]
     )
 
@@ -313,6 +409,7 @@ def main() -> None:
     summary = pd.read_excel(src, sheet_name="Final_Summary")
     drug_refs = pd.read_excel(src, sheet_name="GPCR_Drug_References")
     decision = summary[[c for c in DECISION_TABLE_COLUMNS if c in summary.columns]].copy()
+    pi_summary = rec[[c for c in PI_SUMMARY_COLUMNS if c in rec.columns]].copy()
     legend = _make_legend()
 
     marker_recall_df = pd.DataFrame()
@@ -322,7 +419,8 @@ def main() -> None:
         print(f"[INFO] MarkerBased_Cluster_Recall_TopN: {marker_recall_df.shape}")
 
     print(
-        f"[INFO] FINAL_Recommendations: {rec.shape}; "
+        f"[INFO] PI_Summary: {pi_summary.shape}; "
+        f"FINAL_Recommendations: {rec.shape}; "
         f"Decision_Table_full: {decision.shape}; "
         f"GPCR_Drug_References: {drug_refs.shape}"
     )
@@ -331,6 +429,7 @@ def main() -> None:
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with pd.ExcelWriter(out_path, engine="openpyxl") as w:
             legend.to_excel(w, sheet_name="HOW_TO_READ", index=False)
+            pi_summary.to_excel(w, sheet_name="PI_Summary", index=False)
             rec.to_excel(w, sheet_name="FINAL_Recommendations", index=False)
             decision.to_excel(w, sheet_name="Decision_Table_full", index=False)
             drug_refs.to_excel(w, sheet_name="GPCR_Drug_References", index=False)
@@ -352,6 +451,8 @@ def main() -> None:
         for r in range(2, ws.max_row + 1):
             ws.row_dimensions[r].height = 32
 
+        if "PI_Summary" in wb.sheetnames:
+            _style_pi_summary_sheet(wb["PI_Summary"])
         _style_recommendations_sheet(wb["FINAL_Recommendations"])
         _style_decision_sheet(wb["Decision_Table_full"])
         _style_drug_refs_sheet(wb["GPCR_Drug_References"])
