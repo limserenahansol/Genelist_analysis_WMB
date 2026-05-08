@@ -144,6 +144,40 @@ def _format_top_gpcrs(rows: pd.DataFrame, top_n: int, with_status: bool = True) 
     return "; ".join(out)
 
 
+REGION_DISSECTION_WARNINGS: dict[str, str] = {
+    # Each entry explains the gap between the user-defined anatomical region
+    # and the Allen WMB-10X dissection ROI used to select cells. These warnings
+    # are propagated into Final_Summary and FINAL_Recommendations so the user
+    # knows when the underlying cell pool is BROADER than their stated target.
+    "CP": "OK: Allen ROI = STRd (dorsal striatum); aligns with user CP.",
+    "BMAp": (
+        "PARTIAL: Allen ROI = sAMY (striatum-like amygdalar); subclass with "
+        "'BMA' in name is closest available match. Cells may include MEA/COA "
+        "boundary."
+    ),
+    "RE": (
+        "PARTIAL: Allen ROI = TH (entire thalamus); subclass `152 RE-Xi Nox4 "
+        "Glut` is the most RE-specific transcriptomic class but it covers "
+        "both nucleus reuniens AND xiphoid nucleus."
+    ),
+    "LM": (
+        "BROAD: Allen ROI = HY (entire hypothalamus). Subclass `144 MM Foxb1 "
+        "Glut` and `143 MM-ant Foxb1 Glut` cover the WHOLE mammillary body "
+        "(lateral + medial + supramammillary) - NOT lateral-specific. To "
+        "restrict to LM, dissect lateral mammillary nucleus directly OR "
+        "co-stain with LM-discriminating markers (Lhx5, Cck, Calb2 vs "
+        "medial-mammillary markers)."
+    ),
+    "ORBm": "OK: Allen ROI = PL-ILA-ORB (orbital + prelimbic + infralimbic).",
+    "AId": "OK: Allen ROI = AI (agranular insular).",
+    "CA": (
+        "GOOD: Allen ROI = HIP (hippocampus); subclass anchors split "
+        "CA1 (016 CA1-ProS), CA2 (025 CA2-FC-IG), CA3 (017 CA3), and "
+        "DG (037 DG) cleanly."
+    ),
+}
+
+
 def build_final_summary(
     panel: pd.DataFrame,
     markers: pd.DataFrame,
@@ -192,6 +226,8 @@ def build_final_summary(
             role = str(anc.get("role", "target") or "target").strip().lower()
             is_exclusion = role == "exclusion_counterstain"
 
+            region_warn = REGION_DISSECTION_WARNINGS.get(region, "")
+
             tile = sub[(sub["region_user"] == region) & (sub["subclass"] == anchor)]
             if tile.empty:
                 rows.append(
@@ -202,6 +238,7 @@ def build_final_summary(
                         "anchor_confidence": confidence,
                         "anchor_role": role,
                         "anchor_notes": note,
+                        "region_dissection_warning": region_warn,
                         "n_cells_in_anchor": 0,
                         "cell_type_marker_genes": ", ".join(_markers_for(markers, region, cell_type, "positive_marker")),
                         "exclusion_markers": ", ".join(_markers_for(markers, region, cell_type, "exclusion_marker")),
@@ -224,6 +261,7 @@ def build_final_summary(
                         "allen_subclass_anchor": anchor,
                         "n_cells_in_anchor": 0,
                         "role": role,
+                        "region_dissection_warning": region_warn,
                         "cell_type_marker_genes": _markers_for(markers, region, cell_type, "positive_marker"),
                         "exclusion_markers": _markers_for(markers, region, cell_type, "exclusion_marker"),
                         "agreed_keep": [],
@@ -432,6 +470,7 @@ def build_final_summary(
                     "anchor_confidence": confidence,
                     "anchor_role": role,
                     "anchor_notes": note,
+                    "region_dissection_warning": region_warn,
                     "n_cells_in_anchor": n_cells,
                     "cell_type_marker_genes": ", ".join(
                         _markers_for(markers, region, cell_type, "positive_marker")
@@ -468,6 +507,7 @@ def build_final_summary(
                     "allen_subclass_anchor": anchor,
                     "n_cells_in_anchor": n_cells,
                     "role": role,
+                    "region_dissection_warning": region_warn,
                     "cell_type_marker_genes": _markers_for(markers, region, cell_type, "positive_marker"),
                     "exclusion_markers": _markers_for(markers, region, cell_type, "exclusion_marker"),
                     "agreed_keep": list(agreed_keep),
@@ -587,6 +627,7 @@ def build_final_recommendations(
                 "allen_subclass": anchor,
                 "role": role,
                 "n_cells_in_anchor": n_cells,
+                "region_dissection_warning": row.get("region_dissection_warning", ""),
                 "cell_type_marker_genes": ", ".join(row.get("cell_type_marker_genes") or []),
                 "exclusion_markers": ", ".join(row.get("exclusion_markers") or []),
                 "recommended_GPCR_panel": gene_panel,

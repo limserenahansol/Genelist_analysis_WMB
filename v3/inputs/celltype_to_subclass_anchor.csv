@@ -8,10 +8,25 @@ CP,Matrix/exopatch SPN,061 STR D1 Gaba,medium,target,Matrix-enriched within 061 
 CP,Matrix/exopatch SPN,062 STR D2 Gaba,medium,target,D2 SPN matrix-localized
 CP,Cholinergic interneuron,058 PAL-STR Gaba-Chol,high,target,Cholinergic-Gaba; ChAT-positive interneuron
 CP,PV/SST/NPY interneurons,054 STR Prox1 Lhx6 Gaba,high,target,Striatal SST/NPY/Calb2 interneurons (Prox1+ Lhx6+)
-BMAp,Posterior BMA glutamatergic VGLUT1-like,113 MEA-COA-BMA Ccdc42 Glut,medium,target,Major MEA-COA-BMA glutamatergic subclass in sAMY
+CP,PV/SST/NPY interneurons,056 Sst Chodl Gaba,high,target,Striatal long-range SST/NPY/NOS (Chodl) interneurons
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,012 MEA Slc17a7 Glut,high,target,VGLUT1 (Slc17a7+) glutamatergic in BMA/MEA boundary; pallial amygdala-type
+BMAp,Posterior BMA glutamatergic / pallial amygdala VGLUT1,113 MEA-COA-BMA Ccdc42 Glut,high,target,Major BMA-containing glutamatergic subclass; ANATOMY: BMAp != sAMY in Allen ontology - BMAp is basomedial/pallial amygdala
+BMAp,BMA/MEA VGLUT2-like excitatory,120 MEA Otp Foxp2 Glut,high,target,VGLUT2 (Slc17a6+) MEA glutamatergic; BMA/MEA boundary - spatially validate
+BMAp,BMA/MEA VGLUT2-like excitatory,121 MEA-BST Otp Zic2 Glut,high,target,VGLUT2 MEA-BST glutamatergic; spatially validate
+BMAp,BMA/MEA VGLUT2-like excitatory,119 SI-MA-LPO-LHA Skor1 Glut,medium,target,Substantia innominata Skor1+ Glut (boundary)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,exclusion_counterstain,sAMY-like exclusion: MEA Sox6+ GABA. BMAp != sAMY in Allen ontology; this is a NEIGHBOR/contamination control population (use to confirm BMAp probes are NOT picking up sAMY-like inhibitory cells)
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,exclusion_counterstain,sAMY-like exclusion: MEA-BST Lhx6+ Sp9+ GABA. NEIGHBOR/contamination control
+BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,exclusion_counterstain,sAMY-like exclusion: CEA-BST Ebf1+ Pdyn+ GABA. NEIGHBOR/contamination control
 RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,target,Exact reuniens (RE) and Xi nuclei subclass
+RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,target,PVT/PT midline thalamic glutamatergic
+RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,target,Medial habenula Tac2; adjacent midline structure
+RE,Reticular/inhibitory thalamic exclusion,093 RT-ZI Gnb3 Gaba,high,exclusion_counterstain,Reticular thalamus + Zona Incerta Gnb3+ GABA - KEY exclusion population
+RE,Reticular/inhibitory thalamic exclusion,109 LGv-ZI Otx2 Gaba,medium,exclusion_counterstain,LGv + ZI Otx2+ GABA
 LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,target,Foxb1+ mammillary body main subclass
 LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,target,Anterior mammillary Foxb1+
+LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,high,exclusion_counterstain,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+)
+LM,Nearby hypothalamic exclusion populations,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,exclusion_counterstain,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+)
+LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,exclusion_counterstain,DMH-LHA Gsx1+ GABA
 ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
 ORBm,L5 IT / L5 ET/PT output neurons,005 L5 IT CTX Glut,high,target,Cortical L5 IT
 ORBm,L5 IT / L5 ET/PT output neurons,022 L5 ET CTX Glut,high,target,Cortical L5 ET (pyramidal-tract / PT)
@@ -37,224 +52,3 @@ CA,CA1 pyramidal,016 CA1-ProS Glut,high,target,CA1 pyramidal + ProSubiculum (lar
 CA,CA2 pyramidal,025 CA2-FC-IG Glut,high,target,CA2 + Fasciola Cinerea + Indusium Griseum (~327 cells in WMB; Avpr1b/Rgs14 marker)
 CA,CA3 pyramidal,017 CA3 Glut,high,target,CA3 pyramidal canonical
 CA,DG granule cell,037 DG Glut,high,target,Dentate gyrus granule cells (largest hippocampal subclass)
-AId,001 CLA-EPd-CTX Car3 Glut,001 CLA-EPd-CTX Car3 Glut,auto,target,Auto-classified target (n=5779); class=glut_vglut1
-AId,002 IT EP-CLA Glut,002 IT EP-CLA Glut,auto,target,Auto-classified target (n=4037); class=glut_vglut1
-AId,003 L5/6 IT TPE-ENT Glut,003 L5/6 IT TPE-ENT Glut,auto,target,Auto-classified target (n=1278); class=glut_vglut1
-AId,004 L6 IT CTX Glut,004 L6 IT CTX Glut,auto,target,Auto-classified target (n=3372); class=glut_vglut1
-AId,005 L5 IT CTX Glut,005 L5 IT CTX Glut,auto,target,Auto-classified target (n=843); class=glut_vglut1
-AId,009 L2/3 IT PIR-ENTl Glut,009 L2/3 IT PIR-ENTl Glut,auto,target,Auto-classified target (n=816); class=glut_vglut1
-AId,027 L6b EPd Glut,027 L6b EPd Glut,auto,target,Auto-classified target (n=117); class=glut_vglut1
-AId,036 HPF CR Glut,036 HPF CR Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=49); class=glut_vglut1
-AId,044 OB Dopa-Gaba,044 OB Dopa-Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=46); class=gaba
-AId,047 Sncg Gaba,047 Sncg Gaba,auto,target,Auto-classified target (n=1662); class=gaba
-AId,050 Lamp5 Lhx6 Gaba,050 Lamp5 Lhx6 Gaba,auto,target,Auto-classified target (n=370); class=gaba
-AId,051 Pvalb chandelier Gaba,051 Pvalb chandelier Gaba,auto,target,Auto-classified target (n=285); class=gaba
-AId,056 Sst Chodl Gaba,056 Sst Chodl Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=360); class=gaba
-BMAp,009 L2/3 IT PIR-ENTl Glut,009 L2/3 IT PIR-ENTl Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=38); class=glut_vglut1
-BMAp,013 COAp Grxcr2 Glut,013 COAp Grxcr2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=60); class=glut_vglut2
-BMAp,014 LA-BLA-BMA-PA Glut,014 LA-BLA-BMA-PA Glut,auto,target,Auto-classified target (n=37); class=glut_vglut1
-BMAp,026 NLOT Rho Glut,026 NLOT Rho Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=286); class=glut_vglut2
-BMAp,035 OB Eomes Ms4a15 Glut,035 OB Eomes Ms4a15 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=43); class=glut_vglut2
-BMAp,036 HPF CR Glut,036 HPF CR Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=370); class=glut_vglut1
-BMAp,037 DG Glut,037 DG Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=262); class=glut_vglut1
-BMAp,046 Vip Gaba,046 Vip Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=437); class=gaba
-BMAp,047 Sncg Gaba,047 Sncg Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=111); class=gaba
-BMAp,048 RHP-COA Ndnf Gaba,048 RHP-COA Ndnf Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=176); class=gaba
-BMAp,049 Lamp5 Gaba,049 Lamp5 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=524); class=gaba
-BMAp,050 Lamp5 Lhx6 Gaba,050 Lamp5 Lhx6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=73); class=gaba
-BMAp,051 Pvalb chandelier Gaba,051 Pvalb chandelier Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=51); class=gaba
-BMAp,052 Pvalb Gaba,052 Pvalb Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=62); class=gaba
-BMAp,053 Sst Gaba,053 Sst Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=175); class=gaba
-BMAp,054 STR Prox1 Lhx6 Gaba,054 STR Prox1 Lhx6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=676); class=gaba
-BMAp,055 STR Lhx8 Gaba,055 STR Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=112); class=gaba
-BMAp,056 Sst Chodl Gaba,056 Sst Chodl Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=611); class=gaba
-BMAp,057 NDB-SI-MA-STRv Lhx8 Gaba,057 NDB-SI-MA-STRv Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1100); class=gaba
-BMAp,058 PAL-STR Gaba-Chol,058 PAL-STR Gaba-Chol,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=160); class=chol
-BMAp,059 GPe-SI Sox6 Cyp26b1 Gaba,059 GPe-SI Sox6 Cyp26b1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=186); class=gaba
-BMAp,061 STR D1 Gaba,061 STR D1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=572); class=gaba
-BMAp,062 STR D2 Gaba,062 STR D2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1808); class=gaba
-BMAp,063 STR D1 Sema5a Gaba,063 STR D1 Sema5a Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=201); class=gaba
-BMAp,064 STR-PAL Chst9 Gaba,064 STR-PAL Chst9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3766); class=gaba
-BMAp,065 IA Mgp Gaba,065 IA Mgp Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=262); class=gaba
-BMAp,066 NDB-SI-ant Prdm12 Gaba,066 NDB-SI-ant Prdm12 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=151); class=gaba
-BMAp,075 MEA-BST Lhx6 Nr2e1 Gaba,075 MEA-BST Lhx6 Nr2e1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2400); class=gaba
-BMAp,076 MEA-BST Lhx6 Nfib Gaba,076 MEA-BST Lhx6 Nfib Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3495); class=gaba
-BMAp,077 CEA-BST Gal Avp Gaba,077 CEA-BST Gal Avp Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=195); class=gaba
-BMAp,078 SI-MA-ACB Ebf1 Bnc2 Gaba,078 SI-MA-ACB Ebf1 Bnc2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=262); class=gaba
-BMAp,079 CEA-BST Six3 Cyp26b1 Gaba,079 CEA-BST Six3 Cyp26b1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4675); class=gaba
-BMAp,080 CEA-AAA-BST Six3 Sp9 Gaba,080 CEA-AAA-BST Six3 Sp9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3568); class=gaba
-BMAp,081 ACB-BST-FS D1 Gaba,081 ACB-BST-FS D1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=207); class=gaba
-BMAp,083 CEA-BST Rai14 Pdyn Crh Gaba,083 CEA-BST Rai14 Pdyn Crh Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=214); class=gaba
-BMAp,084 BST-SI-AAA Six3 Slc22a3 Gaba,084 BST-SI-AAA Six3 Slc22a3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=238); class=gaba
-BMAp,085 SI-MPO-LPO Lhx8 Gaba,085 SI-MPO-LPO Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=365); class=gaba
-BMAp,087 MPN-MPO-LPO Lhx6 Zfhx3 Gaba,087 MPN-MPO-LPO Lhx6 Zfhx3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=136); class=gaba
-BMAp,088 BST Tac2 Gaba,088 BST Tac2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=143); class=gaba
-BMAp,090 BST-MPN Six3 Nrgn Gaba,090 BST-MPN Six3 Nrgn Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=550); class=gaba
-BMAp,093 RT-ZI Gnb3 Gaba,093 RT-ZI Gnb3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=34); class=gaba
-BMAp,114 COAa-PAA-MEA Barhl2 Glut,114 COAa-PAA-MEA Barhl2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3677); class=glut_vglut2
-BMAp,117 LHA Barhl2 Glut,117 LHA Barhl2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=36); class=glut_vglut2
-BMAp,118 ADP-MPO Trp73 Glut,118 ADP-MPO Trp73 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=54); class=glut_vglut2
-BMAp,122 LHA-MEA Otp Glut,122 LHA-MEA Otp Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=752); class=glut_vglut2
-BMAp,131 LHA-AHN-PVH Otp Trh Glut,131 LHA-AHN-PVH Otp Trh Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=48); class=glut_vglut2
-BMAp,133 PVH-SO-PVa Otp Glut,133 PVH-SO-PVa Otp Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=136); class=glut_vglut2
-CA,015 ENTmv-PA-COAp Glut,015 ENTmv-PA-COAp Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=108); class=glut_vglut2
-CA,023 SUB-ProS Glut,023 SUB-ProS Glut,auto,target,Auto-classified target (n=384); class=glut_vglut1
-CA,033 NP SUB Glut,033 NP SUB Glut,auto,target,Auto-classified target (n=164); class=glut_vglut1
-CA,036 HPF CR Glut,036 HPF CR Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=639); class=glut_vglut1
-CA,038 DG-PIR Ex IMN,038 DG-PIR Ex IMN,auto,target,Auto-classified target (n=1094); class=other
-CA,045 OB-STR-CTX Inh IMN,045 OB-STR-CTX Inh IMN,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=185); class=other
-CA,046 Vip Gaba,046 Vip Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4064); class=gaba
-CA,047 Sncg Gaba,047 Sncg Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1148); class=gaba
-CA,048 RHP-COA Ndnf Gaba,048 RHP-COA Ndnf Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2061); class=gaba
-CA,049 Lamp5 Gaba,049 Lamp5 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2096); class=gaba
-CA,050 Lamp5 Lhx6 Gaba,050 Lamp5 Lhx6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4816); class=gaba
-CA,051 Pvalb chandelier Gaba,051 Pvalb chandelier Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=281); class=gaba
-CA,052 Pvalb Gaba,052 Pvalb Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=252); class=gaba
-CA,053 Sst Gaba,053 Sst Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1267); class=gaba
-CP,002 IT EP-CLA Glut,002 IT EP-CLA Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=37); class=glut_vglut1
-CP,004 L6 IT CTX Glut,004 L6 IT CTX Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=116); class=glut_vglut1
-CP,014 LA-BLA-BMA-PA Glut,014 LA-BLA-BMA-PA Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=76); class=glut_vglut1
-CP,030 L6 CT CTX Glut,030 L6 CT CTX Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=172); class=glut_vglut1
-CP,041 OB-in Frmd7 Gaba,041 OB-in Frmd7 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=77); class=gaba
-CP,042 OB-out Frmd7 Gaba,042 OB-out Frmd7 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=30); class=gaba
-CP,045 OB-STR-CTX Inh IMN,045 OB-STR-CTX Inh IMN,auto,target,Auto-classified target (n=1642); class=other
-CP,055 STR Lhx8 Gaba,055 STR Lhx8 Gaba,auto,target,Auto-classified target (n=178); class=gaba
-CP,064 STR-PAL Chst9 Gaba,064 STR-PAL Chst9 Gaba,auto,target,Auto-classified target (n=437); class=gaba
-LM,012 MEA Slc17a7 Glut,012 MEA Slc17a7 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=62); class=glut_vglut1
-LM,055 STR Lhx8 Gaba,055 STR Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=215); class=gaba
-LM,056 Sst Chodl Gaba,056 Sst Chodl Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=114); class=gaba
-LM,057 NDB-SI-MA-STRv Lhx8 Gaba,057 NDB-SI-MA-STRv Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1858); class=gaba
-LM,058 PAL-STR Gaba-Chol,058 PAL-STR Gaba-Chol,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=145); class=chol
-LM,059 GPe-SI Sox6 Cyp26b1 Gaba,059 GPe-SI Sox6 Cyp26b1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=88); class=gaba
-LM,060 OT D3 Folh1 Gaba,060 OT D3 Folh1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=60); class=gaba
-LM,064 STR-PAL Chst9 Gaba,064 STR-PAL Chst9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=343); class=gaba
-LM,068 LSX Otx2 Gaba,068 LSX Otx2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=45); class=gaba
-LM,069 LSX Nkx2-1 Gaba,069 LSX Nkx2-1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=61); class=gaba
-LM,073 MEA-BST Sox6 Gaba,073 MEA-BST Sox6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=573); class=gaba
-LM,074 MEA-BST Lhx6 Sp9 Gaba,074 MEA-BST Lhx6 Sp9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=750); class=gaba
-LM,075 MEA-BST Lhx6 Nr2e1 Gaba,075 MEA-BST Lhx6 Nr2e1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=35); class=gaba
-LM,076 MEA-BST Lhx6 Nfib Gaba,076 MEA-BST Lhx6 Nfib Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1930); class=gaba
-LM,078 SI-MA-ACB Ebf1 Bnc2 Gaba,078 SI-MA-ACB Ebf1 Bnc2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=87); class=gaba
-LM,080 CEA-AAA-BST Six3 Sp9 Gaba,080 CEA-AAA-BST Six3 Sp9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=139); class=gaba
-LM,081 ACB-BST-FS D1 Gaba,081 ACB-BST-FS D1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=94); class=gaba
-LM,082 CEA-BST Ebf1 Pdyn Gaba,082 CEA-BST Ebf1 Pdyn Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=65); class=gaba
-LM,084 BST-SI-AAA Six3 Slc22a3 Gaba,084 BST-SI-AAA Six3 Slc22a3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=246); class=gaba
-LM,085 SI-MPO-LPO Lhx8 Gaba,085 SI-MPO-LPO Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2098); class=gaba
-LM,086 MPO-ADP Lhx8 Gaba,086 MPO-ADP Lhx8 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1443); class=gaba
-LM,087 MPN-MPO-LPO Lhx6 Zfhx3 Gaba,087 MPN-MPO-LPO Lhx6 Zfhx3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=958); class=gaba
-LM,088 BST Tac2 Gaba,088 BST Tac2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=503); class=gaba
-LM,089 PVR Six3 Sox3 Gaba,089 PVR Six3 Sox3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3234); class=gaba
-LM,090 BST-MPN Six3 Nrgn Gaba,090 BST-MPN Six3 Nrgn Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4889); class=gaba
-LM,091 ARH-PVi Six6 Dopa-Gaba,091 ARH-PVi Six6 Dopa-Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=743); class=gaba
-LM,092 TMv-PMv Tbx3 Hist-Gaba,092 TMv-PMv Tbx3 Hist-Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=854); class=gaba
-LM,093 RT-ZI Gnb3 Gaba,093 RT-ZI Gnb3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1568); class=gaba
-LM,094 SCH Six6 Cdc14a Gaba,094 SCH Six6 Cdc14a Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4300); class=gaba
-LM,095 DMH Prdm13 Gaba,095 DMH Prdm13 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2407); class=gaba
-LM,096 PVHd Gsc Gaba,096 PVHd Gsc Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=224); class=gaba
-LM,097 PVHd-SBPV Six3 Prox1 Gaba,097 PVHd-SBPV Six3 Prox1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4906); class=gaba
-LM,099 SBPV-PVa Six6 Satb2 Gaba,099 SBPV-PVa Six6 Satb2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3939); class=gaba
-LM,100 AHN Onecut3 Gaba,100 AHN Onecut3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2611); class=gaba
-LM,101 ZI Pax6 Gaba,101 ZI Pax6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=9858); class=gaba
-LM,103 PVHd-DMH Lhx6 Gaba,103 PVHd-DMH Lhx6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3133); class=gaba
-LM,104 TU-ARH Otp Six6 Gaba,104 TU-ARH Otp Six6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=6477); class=gaba
-LM,105 TMd-DMH Foxd2 Gaba,105 TMd-DMH Foxd2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2209); class=gaba
-LM,106 PVpo-VMPO-MPN Hmx2 Gaba,106 PVpo-VMPO-MPN Hmx2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=5944); class=gaba
-LM,107 DMH Hmx2 Gaba,107 DMH Hmx2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=6439); class=gaba
-LM,108 ARH-PVp Tbx3 Gaba,108 ARH-PVp Tbx3 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3145); class=gaba
-LM,109 LGv-ZI Otx2 Gaba,109 LGv-ZI Otx2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=692); class=gaba
-LM,111 TRS-BAC Sln Glut,111 TRS-BAC Sln Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=47); class=glut_vglut2
-LM,112 GPi Tbr1 Cngb3 Gaba-Glut,112 GPi Tbr1 Cngb3 Gaba-Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=123); class=mixed
-LM,115 MS-SF Bsx Glut,115 MS-SF Bsx Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=363); class=glut_vglut2
-LM,116 AVPV-MEPO-SFO Tbr1 Glut,116 AVPV-MEPO-SFO Tbr1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2513); class=glut_vglut2
-LM,117 LHA Barhl2 Glut,117 LHA Barhl2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1295); class=glut_vglut2
-LM,118 ADP-MPO Trp73 Glut,118 ADP-MPO Trp73 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=951); class=glut_vglut2
-LM,119 SI-MA-LPO-LHA Skor1 Glut,119 SI-MA-LPO-LHA Skor1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2179); class=glut_vglut2
-LM,121 MEA-BST Otp Zic2 Glut,121 MEA-BST Otp Zic2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=85); class=glut_vglut2
-LM,122 LHA-MEA Otp Glut,122 LHA-MEA Otp Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=126); class=glut_vglut2
-LM,123 DMH Nkx2-4 Glut,123 DMH Nkx2-4 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3633); class=glut_vglut2
-LM,124 MPN-MPO-PVpo Hmx2 Glut,124 MPN-MPO-PVpo Hmx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4531); class=glut_vglut2
-LM,125 DMH Hmx2 Glut,125 DMH Hmx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2338); class=glut_vglut2
-LM,126 ARH-PVp Tbx3 Glut,126 ARH-PVp Tbx3 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=4103); class=glut_vglut2
-LM,127 DMH-LHA Vgll2 Glut,127 DMH-LHA Vgll2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=880); class=glut_vglut2
-LM,128 VMH Fezf1 Glut,128 VMH Fezf1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2538); class=glut_vglut2
-LM,129 VMH Nr5a1 Glut,129 VMH Nr5a1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=7800); class=glut_vglut2
-LM,130 LHA Pmch Glut,130 LHA Pmch Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=834); class=glut_vglut2
-LM,131 LHA-AHN-PVH Otp Trh Glut,131 LHA-AHN-PVH Otp Trh Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2158); class=glut_vglut2
-LM,133 PVH-SO-PVa Otp Glut,133 PVH-SO-PVa Otp Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=6126); class=glut_vglut2
-LM,134 PH-ant-LHA Otp Bsx Glut,134 PH-ant-LHA Otp Bsx Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=6336); class=glut_vglut2
-LM,135 STN-PSTN Pitx2 Glut,135 STN-PSTN Pitx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=5535); class=glut_vglut2
-LM,136 PMv-TMv Pitx2 Glut,136 PMv-TMv Pitx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2749); class=glut_vglut2
-LM,137 PH-an Pitx2 Glut,137 PH-an Pitx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=968); class=glut_vglut2
-LM,138 PH Pitx2 Glut,138 PH Pitx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1795); class=glut_vglut2
-LM,139 PH-LHA Foxb1 Glut,139 PH-LHA Foxb1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3351); class=glut_vglut2
-LM,140 PMd-LHA Foxb1 Glut,140 PMd-LHA Foxb1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2136); class=glut_vglut2
-LM,141 PH-SUM Foxa1 Glut,141 PH-SUM Foxa1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2921); class=glut_vglut2
-LM,142 HY Gnrh1 Glut,142 HY Gnrh1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=110); class=glut_vglut2
-LM,149 PVT-PT Ntrk1 Glut,149 PVT-PT Ntrk1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=392); class=glut_vglut2
-LM,151 TH Prkcd Grin2c Glut,151 TH Prkcd Grin2c Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=109); class=glut_vglut2
-LM,152 RE-Xi Nox4 Glut,152 RE-Xi Nox4 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=519); class=glut_vglut2
-LM,156 MB-ant-ve Dmrta2 Glut,156 MB-ant-ve Dmrta2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=52); class=glut_vglut2
-LM,159 IF-RL-CLI-PAG Foxa1 Glut,159 IF-RL-CLI-PAG Foxa1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=359); class=glut_vglut2
-LM,167 PRC-PAG Tcf7l2 Irx2 Glut,167 PRC-PAG Tcf7l2 Irx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=115); class=glut_vglut2
-LM,168 SPA-SPFm-SPFp-POL-PIL-PoT Sp9 Glut,168 SPA-SPFm-SPFp-POL-PIL-PoT Sp9 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=790); class=glut_vglut2
-LM,202 PRT Tcf7l2 Gaba,202 PRT Tcf7l2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=49); class=gaba
-LM,203 LGv-SPFp-SPFm Nkx2-2 Tcf7l2 Gaba,203 LGv-SPFp-SPFm Nkx2-2 Tcf7l2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=245); class=gaba
-LM,213 SCsg Gabrr2 Gaba,213 SCsg Gabrr2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=50); class=gaba
-LM,215 SNc-VTA-RAmb Foxa1 Dopa,215 SNc-VTA-RAmb Foxa1 Dopa,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=103); class=other
-ORBm,001 CLA-EPd-CTX Car3 Glut,001 CLA-EPd-CTX Car3 Glut,auto,target,Auto-classified target (n=377); class=glut_vglut1
-ORBm,002 IT EP-CLA Glut,002 IT EP-CLA Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=733); class=glut_vglut1
-ORBm,003 L5/6 IT TPE-ENT Glut,003 L5/6 IT TPE-ENT Glut,auto,target,Auto-classified target (n=711); class=glut_vglut1
-ORBm,006 L4/5 IT CTX Glut,006 L4/5 IT CTX Glut,auto,target,Auto-classified target (n=14152); class=glut_vglut1
-ORBm,010 IT AON-TT-DP Glut,010 IT AON-TT-DP Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=332); class=glut_vglut1
-ORBm,036 HPF CR Glut,036 HPF CR Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=78); class=glut_vglut1
-ORBm,039 OB Meis2 Thsd7b Gaba,039 OB Meis2 Thsd7b Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=51); class=gaba
-ORBm,041 OB-in Frmd7 Gaba,041 OB-in Frmd7 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=61); class=gaba
-ORBm,042 OB-out Frmd7 Gaba,042 OB-out Frmd7 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=62); class=gaba
-ORBm,044 OB Dopa-Gaba,044 OB Dopa-Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=78); class=gaba
-ORBm,047 Sncg Gaba,047 Sncg Gaba,auto,target,Auto-classified target (n=1450); class=gaba
-ORBm,050 Lamp5 Lhx6 Gaba,050 Lamp5 Lhx6 Gaba,auto,target,Auto-classified target (n=176); class=gaba
-ORBm,051 Pvalb chandelier Gaba,051 Pvalb chandelier Gaba,auto,target,Auto-classified target (n=195); class=gaba
-ORBm,056 Sst Chodl Gaba,056 Sst Chodl Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=285); class=gaba
-ORBm,061 STR D1 Gaba,061 STR D1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=312); class=gaba
-ORBm,062 STR D2 Gaba,062 STR D2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=355); class=gaba
-ORBm,063 STR D1 Sema5a Gaba,063 STR D1 Sema5a Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=61); class=gaba
-ORBm,064 STR-PAL Chst9 Gaba,064 STR-PAL Chst9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=58); class=gaba
-RE,037 DG Glut,037 DG Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=33); class=glut_vglut1
-RE,061 STR D1 Gaba,061 STR D1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=30); class=gaba
-RE,064 STR-PAL Chst9 Gaba,064 STR-PAL Chst9 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=46); class=gaba
-RE,097 PVHd-SBPV Six3 Prox1 Gaba,097 PVHd-SBPV Six3 Prox1 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=138); class=gaba
-RE,098 AHN-SBPV-PVHd Pdrm12 Gaba,098 AHN-SBPV-PVHd Pdrm12 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=31); class=gaba
-RE,101 ZI Pax6 Gaba,101 ZI Pax6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=3702); class=gaba
-RE,103 PVHd-DMH Lhx6 Gaba,103 PVHd-DMH Lhx6 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=69); class=gaba
-RE,110 BST-po Iigp1 Glut,110 BST-po Iigp1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=70); class=glut_vglut2
-RE,117 LHA Barhl2 Glut,117 LHA Barhl2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=39); class=glut_vglut2
-RE,132 AHN-RCH-LHA Otp Fezf1 Glut,132 AHN-RCH-LHA Otp Fezf1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=36); class=glut_vglut2
-RE,133 PVH-SO-PVa Otp Glut,133 PVH-SO-PVa Otp Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=82); class=glut_vglut2
-RE,134 PH-ant-LHA Otp Bsx Glut,134 PH-ant-LHA Otp Bsx Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=56); class=glut_vglut2
-RE,138 PH Pitx2 Glut,138 PH Pitx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=201); class=glut_vglut2
-RE,141 PH-SUM Foxa1 Glut,141 PH-SUM Foxa1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=173); class=glut_vglut2
-RE,146 LH Pou4f1 Sox1 Glut,146 LH Pou4f1 Sox1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2754); class=glut_vglut2
-RE,147 AD Serpinb7 Glut,147 AD Serpinb7 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=716); class=glut_vglut2
-RE,148 AV Col27a1 Glut,148 AV Col27a1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=7321); class=glut_vglut2
-RE,150 CM-IAD-CL-PCN Sema5b Glut,150 CM-IAD-CL-PCN Sema5b Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=13590); class=glut_vglut2
-RE,151 TH Prkcd Grin2c Glut,151 TH Prkcd Grin2c Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=68125); class=glut_vglut2
-RE,153 MG-POL-SGN Nts Glut,153 MG-POL-SGN Nts Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2047); class=glut_vglut2
-RE,154 PF Fzd5 Glut,154 PF Fzd5 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=6626); class=glut_vglut2
-RE,155 PRC-PAG Pax6 Glut,155 PRC-PAG Pax6 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=199); class=glut_vglut2
-RE,156 MB-ant-ve Dmrta2 Glut,156 MB-ant-ve Dmrta2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=73); class=glut_vglut2
-RE,159 IF-RL-CLI-PAG Foxa1 Glut,159 IF-RL-CLI-PAG Foxa1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=62); class=glut_vglut2
-RE,163 APN C1ql2 Glut,163 APN C1ql2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1072); class=glut_vglut2
-RE,164 APN C1ql4 Glut,164 APN C1ql4 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1068); class=glut_vglut2
-RE,166 MRN Pou3f1 C1ql4 Glut,166 MRN Pou3f1 C1ql4 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=135); class=glut_vglut2
-RE,167 PRC-PAG Tcf7l2 Irx2 Glut,167 PRC-PAG Tcf7l2 Irx2 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2248); class=glut_vglut2
-RE,168 SPA-SPFm-SPFp-POL-PIL-PoT Sp9 Glut,168 SPA-SPFm-SPFp-POL-PIL-PoT Sp9 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=10752); class=glut_vglut2
-RE,169 PAG-SC Pou4f1 Zic1 Glut,169 PAG-SC Pou4f1 Zic1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=41); class=glut_vglut2
-RE,170 PAG-MRN Tfap2b Glut,170 PAG-MRN Tfap2b Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=58); class=glut_vglut2
-RE,177 SCig-an-PPT Foxb1 Glut,177 SCig-an-PPT Foxb1 Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=36); class=glut_vglut2
-RE,181 IC Tfap2d Maf Glut,181 IC Tfap2d Maf Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=109); class=glut_vglut2
-RE,198 IC Six3 En2 Gaba,198 IC Six3 En2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=42); class=gaba
-RE,202 PRT Tcf7l2 Gaba,202 PRT Tcf7l2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=1349); class=gaba
-RE,203 LGv-SPFp-SPFm Nkx2-2 Tcf7l2 Gaba,203 LGv-SPFp-SPFm Nkx2-2 Tcf7l2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=5614); class=gaba
-RE,210 PRT Mecom Gaba,210 PRT Mecom Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=439); class=gaba
-RE,213 SCsg Gabrr2 Gaba,213 SCsg Gabrr2 Gaba,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=2082); class=gaba
-RE,262 Pineal Crx Glut,262 Pineal Crx Glut,auto,exclusion_counterstain,Auto-classified exclusion_counterstain (n=306); class=glut_vglut2
