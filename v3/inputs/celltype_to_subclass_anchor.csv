@@ -1,4 +1,4 @@
-﻿region_user,cell_type_label,allen_subclass_anchor,confidence,role,notes
+region_user,cell_type_label,allen_subclass_anchor,confidence,role,notes
 CP,D1/direct-pathway SPN,061 STR D1 Gaba,high,target,Canonical D1 SPN; matches Drd1/Tac1/Pdyn markers
 CP,D1/direct-pathway SPN,063 STR D1 Sema5a Gaba,medium,target,D1 SPN Sema5a variant
 CP,D2/indirect-pathway SPN,062 STR D2 Gaba,high,target,Canonical D2 SPN; matches Drd2/Adora2a/Penk markers
@@ -17,15 +17,16 @@ BMAp,BMA/MEA VGLUT2-like excitatory,119 SI-MA-LPO-LHA Skor1 Glut,medium,target,S
 BMAp,Amygdala GABA / striatal-like inhibitory neighbors,073 MEA-BST Sox6 Gaba,high,neighbor_control,sAMY-like exclusion: MEA Sox6+ GABA. BMAp != sAMY in Allen ontology; this is a NEIGHBOR/contamination control population (use to confirm BMAp probes are NOT picking up sAMY-like inhibitory cells)
 BMAp,Amygdala GABA / striatal-like inhibitory neighbors,074 MEA-BST Lhx6 Sp9 Gaba,high,neighbor_control,sAMY-like exclusion: MEA-BST Lhx6+ Sp9+ GABA. NEIGHBOR/contamination control
 BMAp,Amygdala GABA / striatal-like inhibitory neighbors,082 CEA-BST Ebf1 Pdyn Gaba,medium,neighbor_control,sAMY-like exclusion: CEA-BST Ebf1+ Pdyn+ GABA. NEIGHBOR/contamination control
-RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,target,Exact reuniens (RE) and Xi nuclei subclass
-RE,Midline thalamic glutamatergic / reuniens,149 PVT-PT Ntrk1 Glut,medium,target,PVT/PT midline thalamic glutamatergic
-RE,Midline thalamic glutamatergic / reuniens,145 MH Tac2 Glut,medium,target,Medial habenula Tac2; adjacent midline structure
+RE,Midline thalamic glutamatergic / reuniens,152 RE-Xi Nox4 Glut,high,target,"Exact reuniens (RE) and Xi nuclei subclass - Nox4 is RE-Xi specific marker (Allen WMB-10X named subclass uses Nox4)."
+RE,Midline thalamic glutamatergic / reuniens,151 TH Prkcd Grin2c Glut,medium,target,"v8 secondary anchor: 151 TH Prkcd Grin2c Glut covers broader midline thalamic. Includes some RE-adjacent cells but NOT RE-specific. Use only with spatial validation."
 RE,Reticular/inhibitory thalamic exclusion,093 RT-ZI Gnb3 Gaba,high,neighbor_control,Reticular thalamus + Zona Incerta Gnb3+ GABA - KEY exclusion population
 RE,Reticular/inhibitory thalamic exclusion,109 LGv-ZI Otx2 Gaba,medium,neighbor_control,LGv + ZI Otx2+ GABA
-LM,Lateral mammillary excitatory,144 MM Foxb1 Glut,high,target,Foxb1+ mammillary body main subclass
-LM,Lateral mammillary excitatory,143 MM-ant Foxb1 Glut,medium,target,Anterior mammillary Foxb1+
-LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,high,neighbor_control,Hypothalamic glut not mammillary (AHN/RCH/LHA Otp+ Fezf1+)
-LM,Nearby hypothalamic exclusion populations,098 AHN-SBPV-PVHd Pdrm12 Gaba,high,neighbor_control,Hypothalamic GABA not mammillary (AHN/SBPV/PVHd Pdrm12+)
+LM,Lateral mammillary excitatory,138 PH Pitx2 Glut,high,target,"v8 update: Allen 138 PH Pitx2 Glut = Posterior Hypothalamic Pitx2+ glut, the closest Allen subclass for Lateral mammillary nucleus (Pitx2 = key LM/PH TF; Sagner 2025 PMC12302022). Allen WMB taxonomy does not have an explicit 'LM-only' subclass."
+LM,Lateral mammillary excitatory,141 PH-SUM Foxa1 Glut,medium,target,"v8 update: PH-SUM Foxa1+ glut. SUM-related but shares Pitx2/Foxa1 lineage with LM. Use as secondary anchor."
+LM,Nearby hypothalamic exclusion populations,144 MM Foxb1 Glut,high,neighbor_control,"v8 update: MEDIAL mammillary nucleus (NOT lateral). Major mammillary subclass with Foxb1+/Lhx1/5+/Uncx+ MMN markers. Use as exclusion to confirm LM probes do NOT pick up MMN cells."
+LM,Nearby hypothalamic exclusion populations,143 MM-ant Foxb1 Glut,high,neighbor_control,"v8 update: Anterior MEDIAL mammillary (Foxb1+). Same MMN lineage; exclusion control."
+LM,Nearby hypothalamic exclusion populations,126 ARH-PVp Tbx3 Glut,high,neighbor_control,"v8 update: ARCUATE-Periventricular Tbx3+ glut. Confounding population - shares Tac2/Prlr/Esr1 markers with LM but is anatomically arcuate, NOT mammillary. Critical exclusion."
+LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,medium,neighbor_control,"AHN/RCH/LHA Otp+ Fezf1+ glut neighbor population."
 LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,neighbor_control,DMH-LHA Gsx1+ GABA
 ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
 ORBm,L5 IT / L5 ET/PT output neurons,005 L5 IT CTX Glut,high,target,Cortical L5 IT
