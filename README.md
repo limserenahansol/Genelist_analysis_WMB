@@ -23,19 +23,26 @@ Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mo
 >                                 per drug with DrugBank URL + PubMed URL + FDA app.
 > ```
 >
-> **Coverage (24 cell types across 7 regions, ALL probe targets):**
+> **Coverage: 259 rows (every Allen subclass with n_cells >= 30 in each ROI), tagged target / exclusion by STRICT anatomical name matching.**
 >
-> | Region | Cell types (all get GPCR panel + drug recommendations) |
-> |---|---|
-> | **CP** | D1 SPN, D2 SPN, Patch/striosome SPN, Matrix/exopatch SPN, Cholinergic IN, PV/SST/NPY IN |
-> | **BMAp** | Posterior BMA glut VGLUT1-like, BMA/MEA VGLUT2-like, Amygdala GABA / striatal-like neighbors |
-> | **RE** | Midline thalamic glut / reuniens, Reticular/inhibitory thalamic neighbors |
-> | **LM** | Lateral mammillary excitatory, Nearby hypothalamic neighbors |
-> | **ORBm** | L2/3 IT, L5 IT/L5 ET-PT, L6 CT/L6b, Cortical IN |
-> | **AId** | Upper-layer IT, Deep-layer output, Cortical IN |
-> | **CA** | CA1, CA2, CA3, DG granule |
+> Rule: a subclass is `target` ONLY if its Allen name contains the user-defined region's anatomical acronym; everything else in the ROI is `exclusion_counterstain`.
 >
-> Every row has `role = target` and gets full GPCR panel + drug recommendation + ORDER/SPATIAL verdict. The "neighbors" cell types (e.g. `Reticular/inhibitory thalamic neighbors`) are populations adjacent to the canonical target — also probe-orderable, useful as co-stains or independent target panels. Verdict distribution: **25 ORDER (cell-type-specific picks)** + **28 ORDER WITH SPATIAL CONSTRAINT (broadly detectable)** = **53 / 53 orderable**.
+> | Region | Target rule | Targets | Exclusion |
+> |---|---|---|---|
+> | **CP** | `STR` in subclass name | 12 (all D1/D2/Patch/Matrix/Cholinergic/IN STR-named) | 6 |
+> | **BMAp** | `BMA` in subclass name | **2** (`113 MEA-COA-BMA Ccdc42 Glut`, `014 LA-BLA-BMA-PA Glut`) — MEA-only / CEA / BST / COA / AAA all moved to exclusion | 46 |
+> | **RE** | `RE` in subclass name | **1** (`152 RE-Xi Nox4 Glut`) — PVT / MH / RT-ZI all moved to exclusion | 39 |
+> | **LM** | `MM` in subclass name | 2 (`144 MM Foxb1 Glut`, `143 MM-ant Foxb1 Glut`) — AHN / LHA / DMH all moved to exclusion | 81 |
+> | **ORBm** | cortical (`L?`/`CTX`/cortical IN) | 17 | 12 |
+> | **AId** | cortical | 20 | 3 |
+> | **CA** | `CA1`/`CA2`/`CA3`/`DG`/`ProS`/`SUB` | 7 | 11 |
+>
+> **Color coding in `FINAL_Recommendations`**:
+> - 🟢 green = `target` + cell-type-specific picks → `ORDER`
+> - 🟡 yellow = `target` + only broadly-detectable picks → `ORDER WITH SPATIAL CONSTRAINT`
+> - ⚪ grey = `exclusion_counterstain` → `EXCLUSION COUNTER-STAIN` (in the ROI but anatomically outside the named region; useful as nearby-population reference)
+>
+> Auto-classified row labels use the Allen subclass name directly (e.g. `113 MEA-COA-BMA Ccdc42 Glut`), with generic class-level markers (Slc17a7 / Slc17a6 / Gad1+Slc32a1 / Chat). Hand-curated v6 labels are preserved when their underlying anchor passes the strict rule.
 >
 > Use sheet 2 for at-a-glance ordering. Sheet 3 when you need the reasoning. Sheet 4 to look up additional drugs.
 >
