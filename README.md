@@ -2,7 +2,7 @@
 
 Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mouse brain regions** (BMAp, LM, RE, CP, ORBm, AId, **CA**), built by **combining** [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/) WMB-10X single-cell data with curated published-literature GPCR suggestions. Both data sources are used **together**, not against each other — every recommended GPCR is tagged with the evidence (paper, Allen, or both) that supports it.
 
-**Cross-repo & LLM wiki:** [`wiki/README.md`](wiki/README.md) · [central research wiki](https://github.com/limserenahansol/research-wiki/blob/main/index.md)
+**Cross-repo & LLM wiki:** [`wiki/README.md`](wiki/README.md) · [research hub (index)](https://github.com/limserenahansol/TRAP_analysis/blob/main/wiki/research_hub/index.md)
 
 ![v3 pipeline overview](v3/docs/images/v3_pipeline_overview.png)
 
