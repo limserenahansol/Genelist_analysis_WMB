@@ -226,7 +226,7 @@ ORBm,L5 IT / L5 ET/PT output neurons,,Etv1,positive_marker,v6_published_marker_c
 ORBm,L5 IT / L5 ET/PT output neurons,,Crym,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
 ORBm,L5 IT / L5 ET/PT output neurons,,Deptor,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
 ORBm,L5 IT / L5 ET/PT output neurons,,Pde1c,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
-ORBm,L5 IT / L5 ET/PT output neurons,,Fam84b,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
+ORBm,L5 IT / L5 ET/PT output neurons,,Lratd2,positive_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
 ORBm,L5 IT / L5 ET/PT output neurons,,Cux1,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
 ORBm,L5 IT / L5 ET/PT output neurons,,Cux2,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
 ORBm,L5 IT / L5 ET/PT output neurons,,Rorb,exclusion_marker,v6_published_marker_canonical,high,L5 IT and L5 ET (PT) output neuron markers (v6 list). Fezf2 KEY for ET/PT lineage.
@@ -235,7 +235,6 @@ ORBm,L6 CT / L6b,,Slc17a7,positive_marker,v6_published_marker_canonical,high,L6 
 ORBm,L6 CT / L6b,,Foxp2,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
 ORBm,L6 CT / L6b,,Tle4,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
 ORBm,L6 CT / L6b,,Ntsr1,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
-ORBm,L6 CT / L6b,,Ctgf,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
 ORBm,L6 CT / L6b,,Ccn2,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
 ORBm,L6 CT / L6b,,Cplx3,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).
 ORBm,L6 CT / L6b,,Nxph4,positive_marker,v6_published_marker_canonical,high,L6 CT (Foxp2+ Tle4+ Ntsr1+) and L6b (Ctgf/Ccn2+ Cplx3+ Nxph4+) markers (v6 list).

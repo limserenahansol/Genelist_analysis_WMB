@@ -149,10 +149,12 @@ CANONICAL_PANEL = [
     "Gad1", "Gad2", "Slc32a1", "Slc6a1",
     # cortical excitatory layer identity
     "Satb2", "Cux1", "Cux2", "Rorb", "Calb1", "Cdh13", "Fst", "Otof",
-    "Bcl11b", "Fezf2", "Etv1", "Crym", "Deptor", "Pde1c", "Fam84b",
+    # Lratd2 is the current symbol for the L5 ET marker formerly called Fam84b;
+    # Ccn2 likewise replaces Ctgf. The old aliases are absent from Allen metadata.
+    "Bcl11b", "Fezf2", "Etv1", "Crym", "Deptor", "Pde1c", "Lratd2",
     "Npnt", "Slco2a1", "Vat1l", "Chrna6", "Batf3", "Scnn1a", "Whrn",
     "Tshz2", "Hsd11b1", "Trhr", "Nxph1", "Foxp2", "Tle4", "Ntsr1",
-    "Syt6", "Rprm", "Osr1", "Ccn2", "Ctgf", "Cplx3", "Nxph4", "Moxd1",
+    "Syt6", "Rprm", "Osr1", "Ccn2", "Cplx3", "Nxph4", "Moxd1",
     "Zfp804b", "Sulf1", "Oprk1", "Car3", "Tbr1", "Sla",
     # cortical inhibitory
     "Sst", "Pvalb", "Vip", "Lamp5", "Sncg", "Cck", "Npy", "Reln",

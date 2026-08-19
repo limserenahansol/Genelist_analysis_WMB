@@ -12,9 +12,10 @@ AId,007 L2/3 IT CTX Glut,Matn2,7697,4.2245,65.61,False,True,-0.5978,4.8223,1.712
 AId,007 L2/3 IT CTX Glut,Cux1,7697,6.4638,90.09,False,True,-1.1218,7.5856,0.8962,5.5676,False,Upper-layer IT excitatory,target,1,UNIQUE_to_subclass,20.8962,6,False,"001 CLA-EPd-CTX Car3 Glut in same dissection is higher (7.59, 93%)"
 AId,007 L2/3 IT CTX Glut,Nos1,7697,4.5797,67.03,False,True,-6.5961,11.1758,0.5102,4.0695,False,Upper-layer IT excitatory,target,1,UNIQUE_to_subclass,20.5102,7,False,"056 Sst Chodl Gaba in same dissection is higher (11.18, 96%)"
 AId,022 L5 ET CTX Glut,Pou3f1,1134,7.6007,97.71,False,True,4.9344,2.6663,4.9344,2.6663,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,24.9344,1,True,
-AId,022 L5 ET CTX Glut,Vat1l,1134,6.1487,90.12,False,True,1.1102,5.0385,1.1102,5.0385,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,21.1102,2,True,
-AId,022 L5 ET CTX Glut,Fezf2,1134,7.4585,97.18,False,True,0.9476,6.5109,0.9476,6.5109,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,20.9476,3,True,
-AId,022 L5 ET CTX Glut,Bcl11b,1134,8.9183,99.65,False,True,0.6689,8.2494,0.7326,8.1857,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,20.7326,4,True,
+AId,022 L5 ET CTX Glut,Lratd2,1134,3.2437,58.99,False,True,2.8281,0.4156,2.9254,0.3183,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,22.9254,2,True,
+AId,022 L5 ET CTX Glut,Vat1l,1134,6.1487,90.12,False,True,1.1102,5.0385,1.1102,5.0385,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,21.1102,3,True,
+AId,022 L5 ET CTX Glut,Fezf2,1134,7.4585,97.18,False,True,0.9476,6.5109,0.9476,6.5109,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,20.9476,4,True,
+AId,022 L5 ET CTX Glut,Bcl11b,1134,8.9183,99.65,False,True,0.6689,8.2494,0.7326,8.1857,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,20.7326,5,True,
 AId,029 L6b CTX Glut,Nxph4,439,5.1204,68.34,False,True,-1.004,6.1244,4.8736,0.2468,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,24.8736,1,False,"027 L6b EPd Glut in same dissection is higher (6.12, 86%)"
 AId,029 L6b CTX Glut,Ccn2,439,5.9779,72.44,False,True,-2.1668,8.1447,4.1154,1.8625,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,24.1154,2,False,"027 L6b EPd Glut in same dissection is higher (8.14, 97%)"
 AId,029 L6b CTX Glut,Drd1,439,4.6956,73.8,False,True,-0.5589,5.2545,2.8823,1.8133,False,Deep-layer output neurons,target,1,UNIQUE_to_subclass,22.8823,3,False,"027 L6b EPd Glut in same dissection is higher (5.25, 81%)"
@@ -322,8 +323,9 @@ ORBm,007 L2/3 IT CTX Glut,Matn2,8869,4.6508,68.44,False,True,0.6408,4.01,1.7314,
 ORBm,007 L2/3 IT CTX Glut,Wfs1,8869,5.0945,72.98,False,True,1.022,4.0725,1.2203,3.8742,False,L2/3 IT excitatory,target,1,UNIQUE_to_subclass,21.2203,4,True,
 ORBm,007 L2/3 IT CTX Glut,Gpr88,8869,4.1194,65.2,False,True,-6.2169,10.3363,0.8286,3.2908,False,L2/3 IT excitatory,target,1,UNIQUE_to_subclass,20.8286,5,False,"063 STR D1 Sema5a Gaba in same dissection is higher (10.34, 100%)"
 ORBm,022 L5 ET CTX Glut,Pou3f1,3739,7.0529,92.06,False,True,2.7341,4.3188,4.5654,2.4875,False,L5 IT / L5 ET/PT output neurons,target,1,UNIQUE_to_subclass,24.5654,1,True,
-ORBm,022 L5 ET CTX Glut,Vat1l,3739,6.2066,87.88,False,True,1.1018,5.1048,1.1018,5.1048,False,L5 IT / L5 ET/PT output neurons,target,1,UNIQUE_to_subclass,21.1018,2,True,
-ORBm,022 L5 ET CTX Glut,Fezf2,3739,7.1323,94.12,False,True,0.6297,6.5026,0.6297,6.5026,False,L5 IT / L5 ET/PT output neurons,target,1,UNIQUE_to_subclass,20.6297,3,True,
+ORBm,022 L5 ET CTX Glut,Lratd2,3739,2.789,47.26,False,True,2.3297,0.4593,2.4815,0.3075,False,L5 IT / L5 ET/PT output neurons,target,1,UNIQUE_to_subclass,22.4815,2,True,
+ORBm,022 L5 ET CTX Glut,Vat1l,3739,6.2066,87.88,False,True,1.1018,5.1048,1.1018,5.1048,False,L5 IT / L5 ET/PT output neurons,target,1,UNIQUE_to_subclass,21.1018,3,True,
+ORBm,022 L5 ET CTX Glut,Fezf2,3739,7.1323,94.12,False,True,0.6297,6.5026,0.6297,6.5026,False,L5 IT / L5 ET/PT output neurons,target,1,UNIQUE_to_subclass,20.6297,4,True,
 ORBm,029 L6b CTX Glut,Nxph4,1586,4.9133,65.45,False,True,1.3618,3.5515,4.6146,0.2987,False,L6 CT / L6b,target,1,UNIQUE_to_subclass,24.6146,1,True,
 ORBm,029 L6b CTX Glut,Ccn2,1586,6.1371,76.92,False,True,4.1362,2.0009,4.1362,2.0009,False,L6 CT / L6b,target,1,UNIQUE_to_subclass,24.1362,2,True,
 ORBm,029 L6b CTX Glut,Gfra1,1586,3.6567,55.74,False,True,-4.4795,8.1362,1.9874,1.6693,False,L6 CT / L6b,target,1,UNIQUE_to_subclass,21.9874,3,False,"001 CLA-EPd-CTX Car3 Glut in same dissection is higher (8.14, 98%)"

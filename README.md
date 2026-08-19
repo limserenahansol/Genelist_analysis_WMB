@@ -361,6 +361,45 @@ python v3/D_Final_integration_module/D06_add_subclass_marker_sheets.py `
   --gpcr_tiers_csv v3/outputs/subclass_markers_all/GPCR_Specificity_Tiers.csv
 ```
 
+### D07 — the two-region TRAP ordering list
+
+`D07_make_trap_ordering_workbook.py` collapses everything above into one orderable probe list for the two regions actually going into the TRAP experiment, **BMAp and ORBm**, and writes `v3/outputs/FINAL_ordering_BMAp_ORBm_TRAP.xlsx`. The deliverable sheet is `final ordering for each brain`: gene counts at the top, then one row per (region, gene) in four blocks.
+
+| Block | What it answers | Source |
+|---|---|---|
+| 1 `cell_type_unique_marker` | which cell am I looking at | A06 `UNIQUE_separator_genes`, plus the genes in a combination recipe when a population has no unique gene |
+| 2 `GPCR_cell_type_specific` | druggable **and** cell-type-informative | A06 `gpcr_tier_panel == cell_type_specific` |
+| 3 `GPCR_broad_or_shared_marker` | druggable but group-level; only interpretable next to a block-1 gene | `intermediate` / `universal` tiers, plus curated markers that label a family rather than one population |
+| 4 `IEG_reporter_backbone` | was the cell active, was it TRAPped, what class is it | `v3/inputs/ieg_and_reporter_genes.csv` |
+
+Block 4 is curated for TRAP2 (`Fos2A-iCreER`, JAX 030323) crossed to a tdTomato reporter (Ai14/Ai9): `Fos` reads the driver locus itself, `Npas4` is the one strictly neuron-selective IEG so it confirms the signal is activity-driven, `Arc` is the standard second marker, and `tdTomato` / `iCre` report the permanent tag. Those two plus `EGFP` and `WPRE` are **not mouse genes**, so they are flagged `CUSTOM_probe_required` — no standard panel contains them and Allen has no expression data for them.
+
+Two corrections fell out of building this list:
+
+- **GPCRs detected in zero populations were being labelled `cell_type_specific`.** The tier is a *fraction* ("detected in ≤30% of the panel"), which a gene detected in 0/8 subclasses also satisfies. 21 such GPCRs (`Adora2a`, `Avpr1a`, `Avpr1b`, `Chrm4`, `Gpr6`, `Gpr52`, `Hcrtr1`, `Ntsr2` in BMAp and more in ORBm) would have been ordered as must-have probes despite having no expression. D07 now requires `n_panel_detected >= 1` and records every exclusion with its actual percentages in `GPCR_excluded_not_detected`.
+- **Two curated markers were dead symbols.** `Ctgf` and `Fam84b` return nothing from Allen because they were renamed; they are now `Ccn2` and `Lratd2` in `curated_marker_template.csv` and in A06's canonical panel. B01/B02 confirm 0 remaining absent symbols.
+
+Priorities are load-bearing rather than decorative: priority 1 is the minimum that still identifies **all 20 populations** (top 3 unique markers each, cell-type-specific GPCRs, the TRAP tag, the neurotransmitter backbone) and, for `005 L5 IT CTX Glut`, all 13 genes of its combination recipe, since dropping any one of them makes that population uncallable.
+
+| | BMAp | ORBm | Union |
+|---|---|---|---|
+| Populations covered | 8 | 12 | 20 |
+| Total genes | 124 | 128 | **168** |
+| Priority 1 (minimal panel) | 38 | 52 | **77** |
+
+```powershell
+python v3/D_Final_integration_module/D07_make_trap_ordering_workbook.py `
+  --anchor_panel_csv v3/outputs/subclass_markers_all/Subclass_Marker_Panel_perAnchor.csv `
+  --disc_top_csv v3/outputs/subclass_markers_all/Subclass_Discriminating_Markers_top.csv `
+  --gpcr_tiers_csv v3/outputs/subclass_markers_all/GPCR_Specificity_Tiers.csv `
+  --pairwise_csv v3/outputs/subclass_markers_all/Subclass_Pairwise_Separators.csv `
+  --marker_csv v3/inputs/curated_marker_template.csv `
+  --ieg_csv v3/inputs/ieg_and_reporter_genes.csv `
+  --drug_references_csv v3/inputs/gpcr_drug_targets_detailed.csv `
+  --marker_presence_csv v3/outputs/markers/Marker_Presence_In_Allen.csv `
+  --out_xlsx v3/outputs/FINAL_ordering_BMAp_ORBm_TRAP.xlsx
+```
+
 ---
 
 ## What was actually run for the published outputs
