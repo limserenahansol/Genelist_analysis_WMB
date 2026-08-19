@@ -400,6 +400,23 @@ python v3/D_Final_integration_module/D07_make_trap_ordering_workbook.py `
   --out_xlsx v3/outputs/FINAL_ordering_BMAp_ORBm_TRAP.xlsx
 ```
 
+### E_Planning — turning the list into an order, and into a plan
+
+A Xenium custom add-on is capped at **100 genes** on top of a pre-designed base panel, so the number that decides the budget is not how many genes we want but how many we have to *pay a custom slot for*. `xenium_base_panel_crosscheck.py` answers that: it pulls the 248-gene **Xenium Mouse Brain v1** panel (from the `gene_panel.json` shipped with the public demo dataset for that panel, cached to `v3/outputs/xenium_mouse_brain_base_panel.txt`) and matches it against the D07 list.
+
+| Priority 1, by block | Genes | Already on base panel | Add-on slots |
+|---|---|---|---|
+| 1 Cell-type unique markers | 62 | 20 | 42 |
+| 2 Cell-type-specific GPCRs | 7 | 1 | 6 |
+| 4 IEG + reporter + backbone | 8 | 5 | 3 |
+| **Total** | **77** | **26** | **51** |
+
+So the whole priority-1 panel costs **51 of the 100 slots**, and the 49 spare slots absorb 49 of the 85 priority-2 backups — an ordered panel carrying **146 of the 162** curated genes. This closes what had been the open procurement risk and removes any need for Xenium Prime 5K. `Fos` and `Arc` are both already on the base panel; the only genes that cannot be, and so need advanced custom design from a supplied sequence, are **`tdTomato` and `iCre`**. Per-gene verdicts are in `v3/outputs/Xenium_addon_vs_base_panel.csv`.
+
+`power_checks.py` holds the sample-size arithmetic. The binding constraint on Experiment 1 is the exact rank-sum null rather than power: at **3 vs 3 mice the smallest attainable two-tailed p is 0.10**, so no result of any magnitude can reach significance, while 4 vs 4 gives 0.029. That is the argument for n=4, and it is also why the primary Xenium analyses are within-animal contrasts (tdTomato+ vs tdTomato− cells, tdTomato∩Fos overlap vs chance) where each mouse is its own control.
+
+`make_next_phase_deck.py` builds the PI-facing deck at `outputs/NextPhase_Plan_ORBm_BMAp_TRAP.pptx` (17 slides), and `check_deck_layout.py` validates it. No renderer is installed on this machine, so the check is geometric: PowerPoint auto-grows table rows, which silently pushes content off a slide, so the validator re-estimates every row height from its text and flags growth, out-of-bounds shapes, and panel/table collisions.
+
 ---
 
 ## What was actually run for the published outputs

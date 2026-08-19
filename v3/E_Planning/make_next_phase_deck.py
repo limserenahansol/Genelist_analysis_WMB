@@ -310,7 +310,9 @@ def s01_title(prs):
           "WHAT I AM ASKING FOR",
           [("1.  Approval to run the Xenium pilot with Alina's lab in September, "
             "using the base mouse brain panel on tissue we already have.", False),
-           ("2.  Approval to order the custom probe panel in October once pilot QC passes.", False),
+           ("2.  Approval to order the panel in October: base Mouse Brain panel plus an add-on. "
+            "I have matched our gene list against the real base panel, and it needs only "
+            "51 of the 100 custom slots, so this is the cheaper of the two routes.", False),
            ("3.  Agreement on one design change to the chemogenetics plan: "
             "test at protracted abstinence rather than inside the 3-day Post window. "
             "Slides 8-9 show why the original plan would have produced a false negative.", False),
@@ -465,8 +467,12 @@ def s05_exp1_design(prs):
     rows = [["", "Specification", "Why this and not something else"],
             ["Mice", "TRAP2;Ai14 (Fos2A-iCreER × Ai14)\nJAX 030323 × 007914",
              "Ai14 is the reporter you have chosen; tdTomato mRNA is the TRAP tag Xenium reads."],
-            ["Groups", "Active n=3, Passive n=3",
-             "Pilot scale. Statistics caveat on the next slide."],
+            ["Groups", "Active n=4, Passive n=4",
+             "At n=3 a rank-sum test cannot reach p<0.05 at all (best possible p = 0.10). "
+             "n=4 makes p=0.029 attainable. Two mice buy the option of a real test."],
+            ["Housing", "Single-housed from day 10\n(48 h before tagging), all groups alike",
+             "BMAp abuts MEA, the social/conspecific nucleus. A cage mate inside the 6-h "
+             "tagging window would tag social Fos and we would call it morphine."],
             ["Tag", "4-OHT 50 mg/kg i.p. immediately after the\nbehaviour day 12 session (Post day 2)",
              "TRAP2 labels within ~6 h centred on the injection, so this captures the Post state."],
             ["Behaviour", "Unchanged, days 1-18\n(FR, Pre, During, Post, Withdrawal, Re-exposure)",
@@ -480,65 +486,65 @@ def s05_exp1_design(prs):
             ["Readouts", "tdTomato (Post ensemble) + Fos (relapse\nensemble) + 20 subclasses + GPCRs",
              "The overlap of tdTomato and Fos is the single most informative measurement here."]]
     table(s, rows, M, BODY_TOP, W - 2 * M, col_w=[0.95, 3.1, 4.4],
-          align=["l", "l", "l"], size=10.5, hdr_size=11,
-          row_h=Inches(0.53), hdr_h=Inches(0.3))
+          align=["l", "l", "l"], size=10, hdr_size=11,
+          row_h=Inches(0.45), hdr_h=Inches(0.28))
 
-    callout(s, M, Inches(6.42), W - 2 * M, Inches(0.6),
+    callout(s, M, Inches(6.32), W - 2 * M, Inches(0.6),
             "Key point: tagging at Post and reading out at relapse turns one experiment into two "
             "measurements — what the Post ensemble is, and how much of it comes back at relapse.",
             fill=LIGHT, edge=BLUE, size=12)
-    footer(s, "TRAP2 6-h window and 50 mg/kg 4-OHT: DeNardo et al. 2019 Nat Neurosci.")
+    footer(s, "TRAP2 6-h window, 50 mg/kg 4-OHT and 48-h single housing before tagging: "
+              "DeNardo et al. 2019 Nat Neurosci.")
 
 
 def s06_exp1_panel(prs):
     s = blank(prs)
-    title(s, "Experiment 1 — the panel is built, with one procurement risk",
-          "168 genes in four blocks; the risk is the 100-gene cap on custom add-ons",
+    title(s, "Experiment 1 — the panel fits, at half the add-on budget",
+          "I matched our list against the real 10x base panel: the 77 priority-1 genes need only 51 of the 100 custom slots",
           kicker="Experiment 1")
 
-    rows = [["Block", "What it answers", "BMAp", "ORBm", "Union"],
-            ["1  Cell-type unique markers", "Which of the 20 populations is this cell?", "68", "77", "—"],
-            ["2  Cell-type-specific GPCRs", "Druggable AND informative about cell type", "6", "3", "—"],
-            ["3  Broad GPCRs / shared markers", "Druggable but group-level only", "29", "29", "—"],
-            ["4  IEG + reporter + backbone", "Was it active, was it TRAPped, what class", "21", "19", "—"],
-            ["TOTAL genes to order", "", "124", "128", "168"],
-            ["Minimum that still IDs all 20", "", "38", "52", "77"]]
-    cc = {(5, j): RGBColor(0xFF, 0xF2, 0xCC) for j in range(5)}
+    rows = [["Block", "What it answers", "Genes", "Free", "Add-on"],
+            ["1  Cell-type unique", "Which of the 20 populations is this?", "62", "20", "42"],
+            ["2  Cell-type GPCRs", "Druggable AND cell-type informative", "7", "1", "6"],
+            ["4  IEG + reporter + class", "Active? TRAPped? Which class?", "8", "5", "3"],
+            ["PRIORITY-1 TOTAL", "What we order: BMAp 38, ORBm 52", "77", "26", "51"],
+            ["10x add-on cap", "Limit on a pre-designed panel", "—", "—", "100"],
+            ["Slots still free", "Room for priority-2 backups", "—", "—", "49"]]
+    cc = {(4, j): RGBColor(0xFF, 0xF2, 0xCC) for j in range(5)}
     cc.update({(6, j): RGBColor(0xD8, 0xEC, 0xD8) for j in range(5)})
-    table(s, rows, M, BODY_TOP, Inches(7.15), col_w=[2.5, 3.0, 0.75, 0.75, 0.8],
+    table(s, rows, M, BODY_TOP, Inches(7.15), col_w=[2.15, 2.9, 0.7, 0.65, 0.75],
           align=["l", "l", "c", "c", "c"], size=10.5, row_h=Inches(0.34),
-          hdr_h=Inches(0.32), cell_colors=cc)
+          hdr_h=Inches(0.3), cell_colors=cc)
 
-    panel(s, M, Inches(4.42), Inches(7.15), Inches(1.65),
-          "BLOCK 4 IS THE TRAP READOUT — 4 GENES NEED CUSTOM PROBES",
-          [("tdTomato and iCre are not mouse genes. Xenium supports exogenous targets, "
-            "but 10x does not validate them, so these are at our risk.", False),
-           ("tdTomato = the permanent tag (Ai14). iCre = the driver, which separates "
-            "cells that expressed the driver from cells that completed recombination.", False),
-           ("Fos, Npas4 and Arc give activity at the time of the test; "
-            "Slc17a7 / Slc17a6 / Gad1 / Gad2 give the neurotransmitter class.", False)],
-          accent=RGBColor(0x7A, 0x3E, 0x8C), size=11.5)
+    panel(s, M, Inches(4.15), Inches(7.15), Inches(2.0),
+          "THE ONLY PANEL RISK LEFT — TWO CUSTOM-SEQUENCE PROBES",
+          [("tdTomato and iCre are not mouse genes, so they need advanced custom design "
+            "from a FASTA of at least 80 bp, and 10x does not validate them.", True),
+           ("tdTomato in Ai14 is very highly expressed. I will ask 10x to reduce its probe-set "
+            "count, otherwise it crowds the optical field and depresses counts for every other gene.", False),
+           ("If tdTomato still reads weakly: iCre reports the same cells independently, and "
+            "tdTomato antibody staining on adjacent sections is a third, orthogonal route.", False)],
+          accent=RGBColor(0x7A, 0x3E, 0x8C), size=11)
 
-    panel(s, Inches(8.00), BODY_TOP, Inches(4.78), Inches(3.4),
-          "PROCUREMENT RISK — RESOLVE BEFORE ORDERING",
-          [("A Xenium custom add-on is capped at 100 genes on top of a "
-            "pre-designed base panel. Our list is 168.", True),
-           ("Option A (preferred): Xenium Prime 5K mouse panel as the base. "
-            "It should already contain nearly all 164 endogenous genes, "
-            "leaving only the 4 transgenes as custom.", False),
-           ("Option B: base mouse brain panel + 100-gene add-on. "
-            "Feasible because the 77-gene minimum panel plus the transgenes "
-            "fits inside the cap. This is exactly why I tiered the list.", False),
-           ("Action: cross-check our 168 genes against the base panel gene lists "
-            "and get a quote for both options. Two days of work, must happen "
-            "before the October order.", True)],
-          accent=RED, size=11.5)
+    panel(s, Inches(8.00), BODY_TOP, Inches(4.78), Inches(4.85),
+          "WHAT THE CROSS-CHECK CHANGED",
+          [("This was the open procurement risk in my first draft. It is now closed.", True),
+           ("I pulled the 248-gene Xenium Mouse Brain v1 panel from 10x and matched it "
+            "gene by gene against our list. 26 of the 77 priority-1 genes are already on it — "
+            "including Fos and Arc, the two activity readouts — so we do not pay for them.", False),
+           ("That leaves 51 add-on slots, half of the 100 available.", False),
+           ("The 49 spare slots absorb 49 of the 85 priority-2 backups, so the panel we order "
+            "can carry 146 of our 162 curated genes rather than 77.", False),
+           ("Consequence for the budget: Xenium Prime 5K is no longer needed. "
+            "Base Mouse Brain panel plus one add-on does everything, at the lower price point.", True),
+           ("I would not fill all 100 blindly. I propose spending the spare slots on the "
+            "priority-2 genes that rescue the subclasses which currently have no single unique "
+            "marker, then on the GPCRs that already have ligands, and holding ~10 slots back.", False)],
+          accent=GREEN, size=11)
 
-    callout(s, Inches(8.00), Inches(4.43), Inches(4.78), Inches(1.07),
-            "Statistics caveat: n=3 per group means the unit of inference is the mouse, not the cell. "
-            "I will analyse cells nested within mouse and report mouse-level effects. Treat Experiment 1 "
-            "as descriptive; if QC passes I would extend to n=5 per group.",
-            fill=RGBColor(0xFD, 0xE9, 0xE9), edge=RED, size=11, bold=False)
+    footer(s, "Base panel content read from the 10x gene_panel.json for Xenium_V1_FF_Mouse_Brain_MultiSection_1 "
+              "(248 targets + 27 negative controls). Cap and exogenous-target rules: 10x CG000643 / CG000683. "
+              "Full match table: outputs/Xenium_addon_vs_base_panel.csv")
 
 
 def s07_exp1_schedule(prs):
@@ -555,25 +561,27 @@ def s07_exp1_schedule(prs):
                          "negative-probe rate, segmentation quality, registration of "
                          "ORBm and BMAp to Allen, and recovery of the expected subclasses.",
              "Agree the numeric thresholds with Alina BEFORE the run, so pass/fail is not a judgement call."],
-            ["Sep-Oct 2026", "Cross-check the 168 genes against base panel content; "
-                             "quote Prime 5K vs base + 100 add-on.",
-             "Pilot QC passed."],
-            ["Oct 2026", "Submit panel design, including the 4 transgene FASTA sequences "
-                         "(tdTomato, iCre, and EGFP/WPRE if wanted).",
-             "Budget option chosen; Ai14 and TRAP2 construct sequences in hand."],
+            ["Sep-Oct 2026", "Choose which priority-2 genes fill the 49 spare add-on slots. "
+                             "The cross-check against the base panel is already done.",
+             "Pilot QC passed. This is now a scientific choice, not a feasibility question."],
+            ["Oct 2026", "Submit the design: base Mouse Brain panel + ~85-gene add-on, "
+                         "including FASTA for tdTomato and iCre.",
+             "Ai14 tdTomato and Fos2A-iCreER sequences in hand — request these now, they are "
+             "the one item with no substitute."],
             ["Oct-Nov 2026", "Panel manufacture and delivery (allow 6-8 weeks).",
              "Order placed."],
-            ["Nov 2026", "Run the behaviour cohort for Experiment 1 (n=3+3) "
+            ["Nov 2026", "Run the behaviour cohort for Experiment 1 (n=4+4) "
                          "so tissue is ready when the panel arrives.",
-             "Mice genotyped TRAP2;Ai14; 4-OHT prepared fresh."],
+             "Mice genotyped TRAP2;Ai14; single-housed from day 10; 4-OHT prepared fresh."],
             ["Dec 2026 - Jan 2027", "Xenium run on ORBm and BMAp; analysis.",
              "Panel delivered; sections cut and QC'd."]]
     table(s, rows, M, BODY_TOP, W - 2 * M, col_w=[1.35, 4.6, 3.9],
           align=["l", "l", "l"], size=10.5, row_h=Inches(0.62), hdr_h=Inches(0.3))
 
     callout(s, M, Inches(6.35), W - 2 * M, Inches(0.6),
-            "The one thing that can slip this schedule is the panel cross-check. "
-            "If we discover in October that our genes do not fit the cap, we lose the manufacturing slot.",
+            "The critical path is now the two transgene sequences, not the gene list. "
+            "Advanced custom design has a longer queue than a standard add-on, so the FASTA files "
+            "need to be in hand before we submit in October.",
             size=12)
 
 
@@ -610,11 +618,11 @@ def s08_problem(prs):
             ["Post phase long enough to test inside it", "~17 days", "3 days (day 11-13)", "FAILS"]]
     cc = {(2, 3): RGBColor(0xFD, 0xD8, 0xD8), (3, 3): RGBColor(0xFD, 0xD8, 0xD8),
           (1, 3): RGBColor(0xFF, 0xF2, 0xCC)}
-    table(s, rows, M, Inches(3.53), Inches(8.4), col_w=[3.4, 1.2, 1.6, 1.1],
+    table(s, rows, M, Inches(3.92), Inches(8.4), col_w=[3.4, 1.2, 1.6, 1.1],
           align=["l", "c", "c", "c"], size=11, row_h=Inches(0.33), hdr_h=Inches(0.32),
           cell_colors=cc)
 
-    callout(s, Inches(9.25), Inches(3.53), Inches(3.53), Inches(1.65),
+    callout(s, Inches(9.25), Inches(3.92), Inches(3.53), Inches(1.65),
             "A null result from an underpowered, under-expressed experiment is the "
             "worst outcome available to us: it costs a full cohort and answers nothing. "
             "The next slide is the fix.",
@@ -855,16 +863,18 @@ def s12_controls(prs):
           accent=RGBColor(0x7A, 0x3E, 0x8C), size=11.5)
 
     panel(s, Inches(9.25), Inches(4.22), Inches(3.53), Inches(2.5),
-          "OPEN QUESTION I NEED HELP WITH",
-          [("The TRAP2 protocol single-houses mice for 48 h before tagging, to keep "
-            "background labelling low.", False),
-           ("Our yoked design pairs each Active with a Passive partner. If yoking "
-            "requires them to be co-housed on day 12, we cannot single-house them.", False),
-           ("Fallback: keep normal housing, treat both groups identically, and measure "
-            "the background with the home-cage 4-OHT control rather than trying to "
-            "eliminate it.", True)],
-          accent=AMBER, size=10.5)
-    footer(s, "CNO reverse metabolism: Gomez et al. 2017 Science; Manvich et al. 2018 Sci Rep. DCZ: Nagai et al. 2020 Nat Neurosci.")
+          "HOUSING — RESOLVED, SINGLE CAGE",
+          [("I had flagged a possible conflict with the yoked design. There is none: "
+            "yoking is implemented in software, by replaying the Active partner's reward "
+            "log into a separate Passive session, so partners never share a box.", False),
+           ("So we single-house from day 10 at no cost to the paradigm — and the paradigm "
+            "runs in the operant rig, not the home cage, so the apparatus is unchanged too.", False),
+           ("Applied identically to Active, Passive and control, and started 48 h ahead so "
+            "the isolation itself is not the salient event being tagged.", True)],
+          accent=GREEN, size=10.5)
+    footer(s, "CNO reverse metabolism: Gomez et al. 2017 Science; Manvich et al. 2018 Sci Rep. "
+              "DCZ: Nagai et al. 2020 Nat Neurosci. Yoking implementation: MicroLogReplayExperiment, "
+              "experiments/ratio_tasks.py.")
 
 
 def s13_alternatives(prs):
@@ -972,22 +982,27 @@ def s15_decisions(prs):
           kicker="Decisions")
 
     panel(s, M, BODY_TOP, COL2_W, Inches(4.6), "DECISIONS I NEED",
-          [("1.  Budget route for the panel: Xenium Prime 5K base, or base panel plus a "
-            "100-gene add-on. This changes what I can order in October.", False),
-           ("2.  Which region first for chemogenetics. I recommend ORBm — larger effect in "
+          [("1.  Which region first for chemogenetics. I recommend ORBm — larger effect in "
             "the screen, easier bilateral target, and cortex is more forgiving of spread.", False),
-           ("3.  Group sizes: do you accept cohort 1 as an explicitly underpowered "
+           ("2.  Group sizes: do you accept cohort 1 as an explicitly underpowered "
             "expression pilot, with the powered cohort gated on its result?", False),
-           ("4.  Housing on the tagging day — whether the yoked design can tolerate "
-            "48 h of single housing before day 12, or whether we measure background instead.", False),
-           ("5.  Sex as a variable. The current cohort needs checking; if it is male-only "
-            "I would like to add females to the powered cohort rather than to the pilot.", False),
-           ("6.  Whether to start the TRAP2 × R26-hM4Di cross now, so the within-Post "
-            "question is answerable in 2027.", False)],
+           ("3.  Sex. The behaviour cohort was 7 female / 7 male with within-sex yoked pairs, "
+            "but sex is not recorded for the first 8 TRAP mice. I would balance sex in the "
+            "powered cohort rather than in the pilot.", False),
+           ("4.  Whether to start the TRAP2 × R26-hM4Di cross now, so the within-Post "
+            "question is answerable in 2027.", False),
+           ("5.  Two records I could not find anywhere in the code, manifests or notes, "
+            "and need from the lab: the housing condition and the exact 4-OHT protocol "
+            "used for the existing 20-mouse TRAP cohort.", True)],
           accent=BLUE, size=11.5)
 
     panel(s, COL2_L, BODY_TOP, COL2_W, Inches(4.6), "RISKS, AND WHAT I WOULD DO",
-          [("Custom transgene probes are not validated by 10x. If tdTomato detection is weak, "
+          [("If the existing TRAP cohort was group-housed, its labelling baseline differs from "
+            "the single-housed cohort, and the Xenium result is not strictly comparable to the "
+            "density screen that chose these two regions. Mitigation: the home-cage 4-OHT "
+            "control measures the new baseline directly, so the comparison can be corrected "
+            "rather than lost.", True),
+           ("Custom transgene probes are not validated by 10x. If tdTomato detection is weak, "
             "iCre gives a second independent readout of the same cells, and immunostaining on "
             "adjacent sections is the fallback.", False),
            ("BMAp is small and next to MEA, BLA and the sAMY-like GABA populations. "
@@ -996,14 +1011,55 @@ def s15_decisions(prs):
            ("Our Post ensemble may not be one cell type. If Xenium shows it is heterogeneous, "
             "the chemogenetic result becomes harder to interpret — which is a reason to let "
             "Experiment 1 report before the powered cohort is locked.", False),
-           ("Morphine dose and delivery volume are not written down anywhere I can find in the "
-            "code or manifests. I need them for the methods section and for the licence.", True),
-           ("Oral lick-based self-administration is less standard than IV, so reviewers will ask "
-            "for intake per session in mg/kg. Worth agreeing how we report that now.", False)],
+           ("Morphine dose is now specified (next slide). The one number still missing is the "
+            "Micro4 flow rate: the rig pulses the pump for 0.3 s per reward, so volume per "
+            "reward = rate × 0.3 s. One calibration measurement closes the methods section.", False)],
           accent=AMBER, size=11.5)
 
 
-def s16_refs(prs):
+def s16_params(prs):
+    s = blank(prs)
+    title(s, "Parameters now locked",
+          "Nothing on this slide is still open, so the October panel order and the November surgery can both proceed",
+          kicker="Locked")
+
+    rows = [["", "Value", "Note"],
+            ["Driver × reporter", "TRAP2 (Fos2A-iCreER, JAX 030323) × Ai14 (JAX 007914)",
+             "tdTomato mRNA is the permanent tag that Xenium reads."],
+            ["Tagging", "4-OHT 50 mg/kg i.p., single dose, straight after the day-12 session",
+             "Labels within a ~6 h window centred on the injection."],
+            ["Housing", "Single cage from day 10 onward, applied identically to every group",
+             "48 h of habituation before tagging. Costs nothing: yoking is software, "
+             "and the task runs in the rig rather than the home cage."],
+            ["Xenium panel", "Base Mouse Brain panel (248 genes) + custom add-on",
+             "77 priority-1 genes need 51 add-on slots; 49 slots spare for priority-2 backups."],
+            ["Custom probes", "tdTomato, iCre",
+             "The only two non-mouse targets, and the only long-lead item."],
+            ["Xenium group size", "4 Active + 4 Passive per region, plus 2 tagging controls",
+             "Primary analyses are within-animal, so this n is doing more work than it looks."],
+            ["Chemogenetic ligand", "DCZ, 0.1 mg/kg i.p.",
+             "Chosen over CNO, which back-converts to clozapine — see slide 12."],
+            ["Morphine, target", "15 mg/kg/day, self-titrated by licking",
+             "Dose is set by how many rewards the animal earns, not by the experimenter."],
+            ["Morphine, measured", "~16 mg/kg at 30 rewards (PR 30)  →  ~0.53 mg/kg per reward",
+             "~13 µg per reward in a 25 g mouse. Volume per reward follows from the "
+             "Micro4 flow rate × the 0.3 s pulse the rig sends."]]
+    table(s, rows, M, BODY_TOP, W - 2 * M, col_w=[1.85, 4.35, 6.0],
+          align=["l", "l", "l"], size=10, hdr_size=10.5,
+          row_h=Inches(0.45), hdr_h=Inches(0.26))
+
+    panel(s, M, Inches(6.05), W - 2 * M, Inches(1.25),
+          "WHY A SELF-TITRATED DOSE IS AN ADVANTAGE HERE, NOT A WEAKNESS",
+          [("Active and Passive intake are matched by construction rather than by assumption: "
+            "the Passive session replays the Active partner's reward log, so reward count and "
+            "timing are identical. That is precisely what makes the Active-versus-Passive "
+            "contrast a test of volition rather than a test of drug exposure.", True),
+           ("I will still report mg/kg per mouse per session and carry it as a covariate, "
+            "because reviewers of oral self-administration always ask for it.", False)],
+          accent=BLUE, size=11)
+
+
+def s17_refs(prs):
     s = blank(prs)
     title(s, "References for every parameter used in this deck", kicker="References")
 
@@ -1040,9 +1096,17 @@ def s16_refs(prs):
              "design from a FASTA of ≥80 bp, but 10x does not validate them; add-on panels are "
              "capped at 100 genes",
              "10x Genomics CG000683 Xenium Custom Panel Design; CG000643 Designing Custom "
-             "Xenium Panels"]]
+             "Xenium Panels"],
+            ["Xenium Mouse Brain v1 base panel = 248 genes (+27 negative controls); 26 of our "
+             "77 priority-1 genes are already on it, so the add-on requirement is 51",
+             "10x gene_panel.json for Xenium_V1_FF_Mouse_Brain_MultiSection_1; matched in "
+             "v3/E_Planning against the D07 ordering list. Table: outputs/Xenium_addon_vs_base_panel.csv"],
+            ["At n=3 vs 3 the smallest attainable two-tailed rank-sum p is 0.10, so p<0.05 is "
+             "unreachable; at n=4 vs 4 it is 0.029",
+             "Exact Mann-Whitney null distribution: 20 and 70 possible orderings respectively. "
+             "Verified in v3/E_Planning power checks"]]
     table(s, rows, M, BODY_TOP, W - 2 * M, col_w=[4.6, 7.6],
-          align=["l", "l"], size=9.5, hdr_size=10.5, row_h=Inches(0.5), hdr_h=Inches(0.26))
+          align=["l", "l"], size=9, hdr_size=10.5, row_h=Inches(0.42), hdr_h=Inches(0.24))
 
 
 def main() -> None:
@@ -1050,7 +1114,7 @@ def main() -> None:
     for fn in (s01_title, s02_where_we_are, s03_result, s04_two_questions,
                s05_exp1_design, s06_exp1_panel, s07_exp1_schedule, s08_problem,
                s09_solution, s10_exp2_design, s11_exp2_schedule, s12_controls,
-               s13_alternatives, s14_gantt, s15_decisions, s16_refs):
+               s13_alternatives, s14_gantt, s15_decisions, s16_params, s17_refs):
         fn(prs)
     out = Path(__file__).resolve().parents[2] / "outputs" / "NextPhase_Plan_ORBm_BMAp_TRAP.pptx"
     out.parent.mkdir(parents=True, exist_ok=True)
