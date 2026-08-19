@@ -18,3 +18,7 @@ outputs/*.xlsx
 v3/outputs/**/_expr_cache_*.parquet
 # D06 pre-patch workbook backups
 *_before_D06.xlsx
+
+v3/outputs/_deck_png/
+outputs/_deck_png/
+v3/outputs/_deck_png/
