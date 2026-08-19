@@ -29,6 +29,7 @@ LM,Nearby hypothalamic exclusion populations,126 ARH-PVp Tbx3 Glut,high,neighbor
 LM,Nearby hypothalamic exclusion populations,132 AHN-RCH-LHA Otp Fezf1 Glut,medium,neighbor_control,"AHN/RCH/LHA Otp+ Fezf1+ glut neighbor population."
 LM,Nearby hypothalamic exclusion populations,102 DMH-LHA Gsx1 Gaba,medium,neighbor_control,DMH-LHA Gsx1+ GABA
 ORBm,L2/3 IT excitatory,007 L2/3 IT CTX Glut,high,target,Cortical L2/3 IT canonical
+ORBm,L4/5 IT excitatory,006 L4/5 IT CTX Glut,high,target,"v9 addition: 006 L4/5 IT CTX Glut is the 2nd largest ORBm population (14152 cells) but was missing from the anchor list, while AId already had it. Its absence left 005 L5 IT with Rorb as its only panel separator, which is wrong because Rorb is really an L4/5 IT marker."
 ORBm,L5 IT / L5 ET/PT output neurons,005 L5 IT CTX Glut,high,target,Cortical L5 IT
 ORBm,L5 IT / L5 ET/PT output neurons,022 L5 ET CTX Glut,high,target,Cortical L5 ET (pyramidal-tract / PT)
 ORBm,L5 IT / L5 ET/PT output neurons,032 L5 NP CTX Glut,medium,target,Cortical L5 NP (near-projecting)

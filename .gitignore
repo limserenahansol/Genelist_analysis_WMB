@@ -13,3 +13,8 @@ outputs/*.xlsx
 *.pre_gpcr_compute_backup.xlsx
 ~$*.xlsx
 
+
+# A06 expression panel cache (regenerable, large)
+v3/outputs/**/_expr_cache_*.parquet
+# D06 pre-patch workbook backups
+*_before_D06.xlsx

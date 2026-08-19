@@ -290,10 +290,10 @@ flowchart TB
     classDef mod fill:#eef,stroke:#446,stroke-width:1.5px;
     classDef sh  fill:#fef,stroke:#864,stroke-width:1.5px;
 
-    A[A: Allen-only computation<br/>A00, A01, A02, A03]:::mod
+    A[A: Allen-only computation<br/>A00, A01, A02, A03,<br/>A05 cluster recall, A06 subclass markers]:::mod
     B[B: Published markers<br/>B01, B02]:::mod
     C[C: Paper raw data optional<br/>C01, C02, C03]:::mod
-    D[D: Final integration<br/>D01, D02, D03]:::mod
+    D[D: Final integration<br/>D01, D02, D04, D05, D06]:::mod
     SH[shared common/config.py<br/>+ project_config.yaml<br/>+ run_log.jsonl]:::sh
 
     A --> D
@@ -310,6 +310,56 @@ flowchart TB
 - **C. Paper raw data (optional)** — template adapters for paper-specific scRNA-seq datasets (figshare / ArrayExpress); included for future expansion.
 - **D. Final integration** — joins A + B + C, applies thresholds from `project_config.yaml`, and writes the final workbook.
 - All four modules read the same `project_config.yaml` and append to the same `run_log.jsonl` for full provenance.
+
+### A06 / D06 — per-subclass marker separation
+
+`curated_marker_template.csv` is keyed on `cell_type_label`, but each cell type maps to 2–3 Allen subclass anchors. Every anchor under one cell type therefore inherited an **identical** marker list, so nothing distinguished `012 MEA Slc17a7 Glut` from `113 MEA-COA-BMA Ccdc42 Glut`, or `120 MEA Otp Foxp2 Glut` from `121 MEA-BST Otp Zic2 Glut`.
+
+`A06_subclass_discriminating_markers.py` fixes this by computing markers at **subclass** granularity:
+
+1. Candidate panel = gene tokens auto-parsed from Allen subclass names (this is where `Ccdc42`, `Foxp2`, `Zic2`, `Skor1` come from) + curated markers + a canonical cortical/amygdala/striatal panel. 137–188 genes after validation against Allen gene metadata.
+2. Pull log2 expression for cells in the dissection ROIs, compute `mean_log2_expr` and `pct_expr` per (region, subclass, gene).
+3. Two specificity flavours, because they answer different questions:
+
+   | Metric | Competitor set | Question it answers |
+   |---|---|---|
+   | `specificity_log2_vs_panel` | the other **anchor** subclasses of the same region | Does this gene separate cell type 1 from 2 and 3? **Primary criterion.** |
+   | `specificity_log2_vs_neuronal` | all neuronal subclasses the dissection captured | Is it also clean against everything else in the ROI? Strict extra tier. |
+
+   The distinction matters: `Foxp2` is 9.27 (99% of cells) in `120 MEA Otp Foxp2 Glut` vs 0.38 (7.5%) in `012 MEA Slc17a7 Glut`, so it is an excellent panel separator — but the sAMY dissection also contains `Foxp2`-high striatal D1/D2 SPNs, so `vs_neuronal` alone would wrongly discard it.
+
+4. Each passing gene is labelled `UNIQUE_to_subclass` / `shared_within_cell_type` / `shared_across_cell_types`. The UNIQUE set is what actually splits cell type 1 / 2 / 3.
+5. Pairwise separators: for every ordered anchor pair, the genes ON in A (`pct >= 25%`) and OFF in B (`pct <= 15%`), ranked by log2 gap.
+
+GPCRs are tiered the same way, over the fraction of anchor subclasses in which they are detected:
+
+| Tier | Detected in | Meaning |
+|---|---|---|
+| `cell_type_specific` | ≤30% of the panel | Carries cell-type information — usable to identify a population |
+| `intermediate` | 30–70% | |
+| `universal` | ≥70% | Still a legitimate **drug** target, but tells you nothing about cell identity, so it must be paired with a cell-type marker |
+
+Running A06 also exposed a gap in the anchor list: **`006 L4/5 IT CTX Glut` (14,152 cells — the 2nd largest ORBm population) was missing from ORBm** while `AId` already had it. Its absence left `005 L5 IT CTX Glut` with `Rorb` as its only panel separator, which is wrong because `Rorb` is really an L4/5 IT marker. After adding `006` under a new `L4/5 IT excitatory` cell type, `Rorb` correctly moved to `006` and `005` became the one anchor in the project with **no single unique gene** — expected, since L5 IT is transcriptomically intermediate between L4/5 IT and L6 IT. `A06` writes an explicit combination recipe for such cases:
+
+> `Rorb+` `Adcyap1+` `Slc30a3+` together with `Cux2−` (rules out 006 and 007), `Foxp2−` (030 L6 CT), `Tshz2−` (032 L5 NP), `Reln−` (022 L5 ET), `Ccn2−` (029 L6b), `Whrn−` (004 L6 IT)
+
+`D06_add_subclass_marker_sheets.py` merges the result back into `FINAL_decision.xlsx` (idempotent — safe to re-run), adding four columns to `FINAL_Recommendations` / `PI_Summary` (`subclass_UNIQUE_marker_genes`, `subclass_BEST_markers_ROI_clean`, `how_to_separate_from_siblings`, `GPCR_cell_type_specific` / `GPCR_universal`) plus sheets `Subclass_Markers_Corrected`, `Pairwise_Separators`, `GPCR_Specificity_Tiers`.
+
+```powershell
+python v3/A_Allen_only_computational_module/A06_subclass_discriminating_markers.py `
+  --out_dir v3/outputs/subclass_markers_all `
+  --marker_csv v3/inputs/curated_marker_template.csv `
+  --anchor_csv v3/inputs/celltype_to_subclass_anchor.csv `
+  --region_mapping_csv v3/outputs/region_mapping/Region_Mapping_Auto_Draft.csv `
+  --gpcr_subclass_csv v3/outputs/gpcr_full/Allen_GPCR_Ranking_subclass.csv `
+  --target_regions CP BMAp RE LM ORBm AId CA
+
+python v3/D_Final_integration_module/D06_add_subclass_marker_sheets.py `
+  --workbook v3/outputs/FINAL_decision.xlsx `
+  --anchor_panel_csv v3/outputs/subclass_markers_all/Subclass_Marker_Panel_perAnchor.csv `
+  --pairwise_csv v3/outputs/subclass_markers_all/Subclass_Pairwise_Separators.csv `
+  --gpcr_tiers_csv v3/outputs/subclass_markers_all/GPCR_Specificity_Tiers.csv
+```
 
 ---
 

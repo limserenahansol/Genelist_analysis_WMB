@@ -27,10 +27,23 @@ def main():
     df=pd.read_csv(args.markers_csv)
     rows=[]
     for _, r in df.iterrows():
+        anchor = str(r.get("allen_subclass_anchor", "") or "").strip()
+        for g in split_genes(r.get('subclass_defining_markers','')):
+            rows.append({
+                'region_user': r.get('region_user'),
+                'cell_type_label': r.get('cell_type_label'),
+                'allen_subclass_anchor': anchor,
+                'gene': g,
+                'gene_role': 'defining_marker',
+                'source': r.get('source',''),
+                'confidence': r.get('confidence',''),
+                'notes': r.get('notes',''),
+            })
         for g in split_genes(r.get('marker_genes','')):
             rows.append({
                 'region_user': r.get('region_user'),
                 'cell_type_label': r.get('cell_type_label'),
+                'allen_subclass_anchor': anchor,
                 'gene': g,
                 'gene_role': 'positive_marker',
                 'source': r.get('source',''),
@@ -41,6 +54,7 @@ def main():
             rows.append({
                 'region_user': r.get('region_user'),
                 'cell_type_label': r.get('cell_type_label'),
+                'allen_subclass_anchor': anchor,
                 'gene': g,
                 'gene_role': 'exclusion_marker',
                 'source': r.get('source',''),
