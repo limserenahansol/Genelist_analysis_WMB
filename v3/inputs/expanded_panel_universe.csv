@@ -1,0 +1,209 @@
+gene_symbol,category,subcategory,region_relevance,priority_hint,rationale
+Snap25,class_backbone,pan_neuronal,both,2,Pan-neuronal SNARE. Confirms a segmented object is a neuron before any subclass call.
+Syt1,class_backbone,pan_neuronal,both,3,Pan-neuronal synaptotagmin. Backup to Snap25.
+Rbfox3,class_backbone,pan_neuronal,both,2,NeuN. Standard neuron call in histology so it links Xenium to IHC.
+Slc17a7,class_backbone,glutamatergic,both,1,VGLUT1. Cortical/pallial excitatory backbone; required for ORBm IT/ET/CT and the 012 MEA Slc17a7 Glut population.
+Slc17a6,class_backbone,glutamatergic,both,1,VGLUT2. Subcortical/MEA excitatory backbone; separates BMAp VGLUT2 populations from VGLUT1.
+Slc17a8,class_backbone,glutamatergic,both,3,VGLUT3. Small but distinct population; avoids miscalling sparse VGLUT3 cells.
+Slc1a2,class_backbone,glutamate_clearance,both,3,GLT-1 astrocyte. Helps exclude astrocytic transcript bleed from neuronal calls.
+Gad1,class_backbone,gabaergic,both,1,GAD67. Inhibitory backbone.
+Gad2,class_backbone,gabaergic,both,1,GAD65. Inhibitory backbone; the pair is more robust than either alone.
+Slc32a1,class_backbone,gabaergic,both,1,VGAT. Definitive GABAergic call independent of GAD level.
+Slc6a1,class_backbone,gabaergic,both,3,GAT1. Secondary inhibitory marker.
+Th,class_backbone,dopaminergic,both,2,Tyrosine hydroxylase. Catecholaminergic; also labels a cortical interneuron population.
+Slc6a3,class_backbone,dopaminergic,both,3,DAT. Definitive dopaminergic; expected near-absent in ORBm/BMAp so it acts as a negative control.
+Slc18a2,class_backbone,monoaminergic,both,3,VMAT2. Any monoamine cell.
+Ddc,class_backbone,monoaminergic,both,3,AADC. Shared catecholamine/serotonin synthesis step.
+Dbh,class_backbone,noradrenergic,both,3,Noradrenergic. Expected absent; negative control for fibre contamination.
+Chat,class_backbone,cholinergic,both,2,Cholinergic. Basal forebrain cholinergic neighbours BMAp.
+Slc5a7,class_backbone,cholinergic,both,3,High-affinity choline transporter. Confirms Chat.
+Slc18a3,class_backbone,cholinergic,both,3,VAChT.
+Tph2,class_backbone,serotonergic,both,3,Serotonergic. Expected absent; negative control.
+Slc6a5,class_backbone,glycinergic,both,3,GlyT2. Expected absent in forebrain; negative control.
+Hdc,class_backbone,histaminergic,both,3,Histaminergic. TMN neighbours hypothalamic border.
+Aqp4,class_backbone,astrocyte,both,2,Astrocyte. Non-neuronal gate for segmentation QC.
+Gja1,class_backbone,astrocyte,both,3,Connexin43 astrocyte.
+Mbp,class_backbone,oligodendrocyte,both,2,Myelin. Oligodendrocyte gate; high expressor so request reduced probe sets.
+Sox10,class_backbone,oligodendrocyte,both,3,Oligodendrocyte lineage TF.
+Pdgfra,class_backbone,OPC,both,3,OPC.
+Cx3cr1,class_backbone,microglia,both,2,Microglia.
+P2ry12,class_backbone,microglia,both,3,Homeostatic microglia.
+Cldn5,class_backbone,endothelial,both,2,Endothelial/vascular.
+Flt1,class_backbone,endothelial,both,3,Endothelial.
+Fos,IEG_rapid,activity,both,1,TRAP2 driver locus. Reports endogenous transcript and confirms tagged cells were Fos+ at 4-OHT.
+Fosb,IEG_rapid,activity,both,1,FosB/deltaFosB. The canonical chronic-drug accumulating IEG; central to addiction plasticity.
+Junb,IEG_rapid,activity,both,2,AP-1 partner of Fos. Rises with Fos and stabilises the activity call.
+Jun,IEG_rapid,activity,both,3,c-Jun AP-1.
+Egr1,IEG_rapid,activity,both,1,Zif268. Second independent activity axis; different induction kinetics from Fos.
+Egr2,IEG_rapid,activity,both,3,Krox20.
+Egr3,IEG_rapid,activity,both,3,"Activity-dependent, NMDA-linked."
+Egr4,IEG_rapid,activity,both,3,Neuron-enriched EGR family.
+Arc,IEG_rapid,activity,both,1,Arg3.1. Synaptic-activity IEG; nuclear vs cytoplasmic signal can time two epochs.
+Npas4,IEG_rapid,activity,both,1,The only strictly neuron-specific activity IEG. Cleanest control that Fos is activity-driven not stress/growth-factor driven.
+Nr4a1,IEG_rapid,activity,both,2,Nur77.
+Nr4a2,IEG_rapid,activity,both,2,Nurr1. Also a dopaminergic/claustral identity TF.
+Nr4a3,IEG_rapid,activity,both,3,Nor1.
+Dusp1,IEG_rapid,activity,both,3,MKP-1 rapid IEG.
+Ier2,IEG_rapid,activity,both,3,Immediate early response 2.
+Btg2,IEG_rapid,activity,both,3,PC3/Tis21.
+Atf3,IEG_rapid,stress,both,3,Stress/injury IEG; flags surgery or cannula damage.
+Per1,IEG_rapid,circadian,both,3,Circadian + activity. Controls for time-of-day differences between tagging sessions.
+Sgk1,IEG_rapid,glucocorticoid,both,3,Glucocorticoid-responsive; separates stress-driven from activity-driven labelling.
+Bdnf,IEG_delayed,plasticity,both,1,Delayed-response gene and the main plasticity growth factor. Opioid-regulated.
+Homer1,IEG_delayed,plasticity,both,1,Homer1a is the activity-induced short form; scaffold for mGluR signalling.
+Nptx2,IEG_delayed,plasticity,both,2,Narp. Activity-dependent AMPA clustering at PV synapses.
+Scg2,IEG_delayed,neuropeptide,both,3,"Secretogranin II, activity-regulated."
+Vgf,IEG_delayed,neuropeptide,both,3,Activity- and BDNF-induced.
+Rgs2,IEG_delayed,signalling,both,3,Activity-regulated GPCR signalling brake.
+Sik1,IEG_delayed,signalling,both,3,"Salt-inducible kinase, activity-regulated."
+Crem,IEG_delayed,transcription,both,3,CREB family; ICER isoform is activity-induced.
+Camk2a,plasticity,postsynaptic,both,1,Excitatory postsynaptic kinase; also a broad excitatory-neuron marker in cortex.
+Camk2b,plasticity,postsynaptic,both,3,CaMKII beta subunit.
+Dlg4,plasticity,postsynaptic_scaffold,both,2,PSD-95. Core excitatory postsynaptic density.
+Shank3,plasticity,postsynaptic_scaffold,both,3,PSD scaffold.
+Syngap1,plasticity,postsynaptic_signalling,both,3,Ras-GAP at the PSD; sets plasticity threshold.
+Grin1,plasticity,NMDA_receptor,both,1,Obligatory NMDAR subunit. Plasticity capacity.
+Grin2a,plasticity,NMDA_receptor,both,2,NR2A. Mature synapse.
+Grin2b,plasticity,NMDA_receptor,both,2,NR2B. Immature/plastic synapse; NR2B/NR2A ratio is a plasticity readout after opioids.
+Gria1,plasticity,AMPA_receptor,both,1,GluA1. Trafficking of GluA1 is the canonical substrate of drug-induced plasticity.
+Gria2,plasticity,AMPA_receptor,both,1,GluA2. Ca-permeable AMPAR switch during incubation of craving.
+Gria3,plasticity,AMPA_receptor,both,3,GluA3.
+Nrgn,plasticity,calmodulin,both,3,"Neurogranin. Calmodulin buffer, LTP-linked."
+Ppp3ca,plasticity,phosphatase,both,3,Calcineurin A alpha. LTD arm.
+Ppp1r1b,plasticity,signal_integration,both,1,DARPP-32. Dopamine/GPCR signal integration; also the striatal-like sAMY marker for BMAp neighbours.
+Prkca,plasticity,kinase,both,3,PKC alpha.
+Cdk5,plasticity,kinase,both,3,Cdk5. Chronic opioid and cocaine plasticity.
+Rgs4,plasticity,GPCR_signalling,both,2,Regulator of G-protein signalling 4; opioid-regulated and interneuron-enriched.
+Rgs9,plasticity,GPCR_signalling,both,3,Rgs9-2 modulates opioid reward and tolerance.
+Ntrk2,plasticity,growth_factor_receptor,both,2,TrkB. BDNF receptor; required for BDNF plasticity readout to be interpretable.
+Syn1,plasticity,presynaptic,both,3,Synapsin I.
+Syp,plasticity,presynaptic,both,3,Synaptophysin.
+Sv2a,plasticity,presynaptic,both,3,SV2A.
+Cplx1,plasticity,presynaptic,both,3,Complexin 1.
+Nrxn1,plasticity,adhesion,both,3,Neurexin 1 presynaptic adhesion.
+Nrxn3,plasticity,adhesion,both,3,Neurexin 3; addiction GWAS locus.
+Nlgn1,plasticity,adhesion,both,3,Neuroligin 1 excitatory.
+Nlgn2,plasticity,adhesion,both,3,Neuroligin 2 inhibitory.
+Cbln1,plasticity,adhesion,both,3,Cerebellin 1 synapse organiser.
+Cbln2,plasticity,adhesion,both,2,Cerebellin 2; cortical layer and amygdala patterned.
+Lrrtm2,plasticity,adhesion,both,3,Excitatory synapse organiser.
+Plk2,plasticity,homeostatic,both,3,SNK. Homeostatic scaling.
+Satb2,TF_identity,cortical_IT,ORBm,1,Callosal/IT identity TF. Separates IT from ET/CT in ORBm.
+Tbr1,TF_identity,cortical_deep,ORBm,2,Deep-layer and L6 identity.
+Fezf2,TF_identity,cortical_ET,ORBm,1,Subcerebral/ET identity TF. Core ORBm L5 ET call.
+Bcl11b,TF_identity,cortical_ET,ORBm,1,Ctip2. ET/PT identity; also striatal.
+Cux1,TF_identity,cortical_upper,ORBm,3,Upper-layer identity.
+Cux2,TF_identity,cortical_upper,ORBm,1,L2/3-L4 IT identity. Required to call 007 L2/3 IT and 006 L4/5 IT.
+Rorb,TF_identity,cortical_L4_5,ORBm,1,L4/5 IT identity. Distinguishes 006 L4/5 IT from 005 L5 IT.
+Foxp2,TF_identity,deep_and_amygdala,both,1,L6 CT in cortex AND the unique separator of 120 MEA Otp Foxp2 Glut in BMAp. Dual value.
+Tle4,TF_identity,cortical_L6CT,ORBm,2,L6 CT corepressor.
+Etv1,TF_identity,cortical_L5,ORBm,2,Er81. L5 IT/ET patterning.
+Sox5,TF_identity,cortical_deep,ORBm,3,"Deep-layer identity, represses IT fate."
+Zbtb20,TF_identity,cortical,ORBm,3,Cortical and hippocampal patterning.
+Pou3f1,TF_identity,cortical_L5,ORBm,2,Oct6. L5 IT.
+Pou3f2,TF_identity,cortical_upper,ORBm,3,Brn2 upper layer.
+Pou3f3,TF_identity,cortical_upper,ORBm,3,Brn1 upper layer.
+Neurod2,TF_identity,pallial_excitatory,both,3,Pallial excitatory lineage; shared by cortex and basolateral amygdala.
+Neurod6,TF_identity,pallial_excitatory,both,2,NEX. Pallial excitatory; supports the claim that BMAp is pallial not striatal.
+Emx1,TF_identity,pallial_lineage,both,2,Dorsal pallium lineage. Key for the BMAp pallial-vs-sAMY question.
+Lhx2,TF_identity,pallial_lineage,both,3,Cortical/pallial patterning.
+Bhlhe22,TF_identity,patterning,both,3,Bhlhb5. Cortical and amygdalar patterning.
+Lhx6,TF_identity,MGE_interneuron,both,1,MGE interneuron lineage. Required for 074 MEA-BST Lhx6 Sp9 Gaba.
+Nkx2-1,TF_identity,MGE_interneuron,both,3,MGE lineage upstream of Lhx6.
+Prox1,TF_identity,CGE_interneuron,both,2,CGE interneuron lineage.
+Sp8,TF_identity,CGE_interneuron,both,3,CGE lineage.
+Sp9,TF_identity,interneuron_striatal,BMAp,1,Named separator of 074 MEA-BST Lhx6 Sp9 Gaba.
+Adarb2,TF_identity,CGE_interneuron,both,3,CGE interneuron.
+Dlx1,TF_identity,GABAergic_lineage,both,1,Pan-GABAergic lineage TF; separates 073 MEA-BST Sox6 Gaba.
+Dlx2,TF_identity,GABAergic_lineage,both,3,Pan-GABAergic lineage.
+Dlx5,TF_identity,GABAergic_lineage,both,3,GABAergic lineage.
+Dlx6,TF_identity,GABAergic_lineage,both,3,GABAergic lineage.
+Mafb,TF_identity,interneuron,both,3,Interneuron maturation.
+Satb1,TF_identity,interneuron,both,3,SST interneuron.
+Zeb2,TF_identity,interneuron,both,3,Interneuron fate.
+Otp,TF_identity,amygdala_hypothalamic,BMAp,1,Orthopedia. Defines the 120/121 MEA Otp populations; hypothalamic-like lineage inside amygdala.
+Zic1,TF_identity,amygdala,BMAp,2,Zic family patterning in MEA-BST.
+Zic2,TF_identity,amygdala,BMAp,1,Named separator of 121 MEA-BST Otp Zic2 Glut.
+Sim1,TF_identity,amygdala_hypothalamic,BMAp,1,Hypothalamic-like lineage in medial amygdala.
+Foxp1,TF_identity,striatal,BMAp,2,Striatal projection neuron TF; part of the sAMY-like exclusion call.
+Meis2,TF_identity,striatal_amygdala,BMAp,2,Striatal and amygdalar patterning.
+Isl1,TF_identity,striatal,BMAp,1,LGE/striatal lineage; separates striatal-like from pallial in BMAp.
+Lhx8,TF_identity,cholinergic_lineage,BMAp,3,MGE cholinergic lineage.
+Six3,TF_identity,striatal,BMAp,3,Striatal/LGE lineage.
+Pax6,TF_identity,pallial_boundary,both,3,Pallial-subpallial boundary.
+Barhl2,TF_identity,diencephalic,BMAp,3,Diencephalic-like lineage marker in amygdala border.
+Nr2e1,TF_identity,pallial,BMAp,2,Tlx. Pallial amygdala patterning.
+Tfap2b,TF_identity,patterning,BMAp,3,AP-2 beta; boundary populations.
+Tfap2d,TF_identity,patterning,BMAp,3,AP-2 delta.
+Skor1,TF_identity,boundary,BMAp,1,Named separator of 119 SI-MA-LPO-LHA Skor1 Glut.
+Ebf1,TF_identity,striatal,BMAp,2,Striatal projection neuron TF.
+Nfib,TF_identity,patterning,both,2,Nuclear factor I B; amygdala and cortical patterning.
+Nfix,TF_identity,patterning,both,3,Nuclear factor I X.
+Tcf4,TF_identity,patterning,both,3,Broad neurodevelopmental TF.
+Tcf7l2,TF_identity,thalamic,BMAp,2,Thalamic/diencephalic identity; flags thalamic contamination in BMAp sections.
+Zfhx3,TF_identity,patterning,BMAp,3,Amygdalar and hypothalamic patterning.
+Bnc2,TF_identity,patterning,BMAp,3,Basonuclin 2 patterning.
+Prdm12,TF_identity,patterning,BMAp,3,Patterning TF in amygdalar populations.
+Sox6,TF_identity,interneuron_MGE,BMAp,1,Named separator of 073 MEA-BST Sox6 Gaba.
+Tshz1,TF_identity,striatal,BMAp,3,Teashirt 1 striatal.
+Tshz2,TF_identity,cortical_L5NP,ORBm,2,Teashirt 2; L5 NP cortical identity.
+Rarb,TF_identity,striatal,BMAp,3,Retinoic acid receptor beta; striatal.
+Oprm1,opioid_system,receptor,both,1,Mu opioid receptor. The direct pharmacological target of morphine; must be on the panel.
+Oprd1,opioid_system,receptor,both,2,Delta opioid receptor.
+Oprk1,opioid_system,receptor,both,1,Kappa opioid receptor; dysphoria/withdrawal arm and a BMAp cell-type marker.
+Oprl1,opioid_system,receptor,both,3,NOP receptor.
+Pdyn,opioid_system,peptide,both,1,Prodynorphin. Kappa ligand; also a cell-type marker.
+Penk,opioid_system,peptide,both,1,Proenkephalin. Delta/mu ligand; also a striatal-like marker.
+Pnoc,opioid_system,peptide,both,3,Prepronociceptin.
+Pomc,opioid_system,peptide,both,3,Proopiomelanocortin.
+tdTomato,reporter_transgene,reporter,both,1,Ai14 reporter transcript. THE permanent TRAP tag Xenium reads. Custom sequence probe; ask 10x to reduce probe-set count because Ai14 tdTomato is a very high expressor.
+iCre,reporter_transgene,driver,both,1,Fos2A-iCreER driver transcript. Independent readout of the same tagged cells if tdTomato reads weakly.
+EGFP,reporter_transgene,reporter,both,3,Only needed if a GFP-tagged virus is used. Not required for Ai14.
+mCherry,reporter_transgene,virus_tag,both,2,Tags AAV-DIO-hM4Di-mCherry and AAV-DIO-mCherry. Required if the same panel is used on chemogenetics tissue.
+WPRE,reporter_transgene,virus_element,both,2,Present in essentially every AAV construct. One probe reports transduction regardless of which virus is used.
+Calb2,published_BMAp,VGLUT1_posterior_BMA,BMAp,1,"Calretinin. One of the three genes (with Meis2, Dcn) shared by all six posterior-BMA VGLUT1 types. Hochgerner 2023 Nat Neurosci amygdala atlas"
+Dcn,published_BMAp,VGLUT1_posterior_BMA,BMAp,1,Decorin. Core posterior-BMA VGLUT1 gene. Hochgerner 2023 Nat Neurosci amygdala atlas
+Mpped1,published_BMAp,VGLUT1_subtype,BMAp,2,Splits posterior-BMA VGLUT1 types together with Tac1. Hochgerner 2023 Nat Neurosci amygdala atlas
+Tac1,published_BMAp,VGLUT1_subtype,BMAp,2,Substance P precursor. Pairs with Mpped1 to split BMA VGLUT1 types. Hochgerner 2023 Nat Neurosci amygdala atlas
+Cd36,published_BMAp,VGLUT1_subtype,BMAp,2,Marks one posterior-BMA VGLUT1 type. Hochgerner 2023 Nat Neurosci amygdala atlas
+Gpr101,published_BMAp,VGLUT1_subtype,BMAp,2,Orphan GPCR marking a posterior-BMA VGLUT1 type. Doubles as a GPCR candidate. Hochgerner 2023 Nat Neurosci amygdala atlas
+Cartpt,published_BMAp,VGLUT1_subtype,BMAp,1,"CART peptide. GLUT1-14 was validated by multiplex FISH in posterior BMA, so it is the best FISH-proven BMAp type marker. Hochgerner 2023 Nat Neurosci amygdala atlas"
+St8sia2,published_BMAp,VGLUT1_subtype,BMAp,2,Polysialyltransferase marking a posterior-BMA VGLUT1 type. Hochgerner 2023 Nat Neurosci amygdala atlas
+Ptpru,published_BMAp,VGLUT1_subtype,BMAp,2,Marks a posterior-BMA VGLUT1 type. Hochgerner 2023 Nat Neurosci amygdala atlas
+Htr2c,published_BMAp,VGLUT1_subtype_GPCR,BMAp,1,Serotonin 2C receptor. Both a posterior-BMA VGLUT1 type marker and a druggable GPCR. Hochgerner 2023 Nat Neurosci amygdala atlas
+Fezf1,published_BMAp,MEA_vs_BMA_discriminator,BMAp,1,THE single gene that separates molecularly similar VGLUT2 types of MEA (Fezf1+) from BMA (Fezf1-). Directly resolves our BMAp-vs-MEA boundary problem. Hochgerner 2023 Nat Neurosci amygdala atlas
+Scn5a,published_BMAp,VGLUT2_BMA_subtype,BMAp,2,Marks a specific BMA VGLUT2 subtype. Hochgerner 2023 Nat Neurosci amygdala atlas
+Rxfp1,published_BMAp,VGLUT2_BMA_subtype,BMAp,2,Relaxin family receptor. Marks a BMA VGLUT2 subtype and is a GPCR. Hochgerner 2023 Nat Neurosci amygdala atlas
+Crh,published_BMAp,VGLUT2_BMA_subtype,BMAp,1,CRF. Marks a BMA subtype with Tacr1; also the central stress peptide for withdrawal. Hochgerner 2023 Nat Neurosci amygdala atlas
+Tacr1,published_BMAp,VGLUT2_BMA_subtype,BMAp,2,NK1 receptor. Pairs with Crh to mark a BMA subtype; druggable GPCR. Hochgerner 2023 Nat Neurosci amygdala atlas
+Nxph4,published_BMAp,VGLUT2_clade,BMAp,3,"Neurexophilin 4, retained across the BMA/anterodorsal-MEA VGLUT2 clade. Hochgerner 2023 Nat Neurosci amygdala atlas"
+Synpr,published_BMAp,COA_exclusion,BMAp,2,"Synaptoporin. Positive in anterior COA VGLUT2 types, negative in BMA types, so it is an exclusion gate for COA contamination. Hochgerner 2023 Nat Neurosci amygdala atlas"
+Tgfb2,published_BMAp,COA_exclusion,BMAp,2,Co-expressed with Synpr in anterior COA; negative in BMA. Second COA exclusion gate. Hochgerner 2023 Nat Neurosci amygdala atlas
+Adcyap1,published_BMAp,BMA_neuropeptide,BMAp,2,PACAP. The one neuropeptide previously known to be present in BMA. Hochgerner 2023 Nat Neurosci amygdala atlas
+Trh,published_BMAp,COA_MEA_exclusion,BMAp,2,Trh+Calb1+Zeb2- defines accessory-olfactory COA/MEA types. Exclusion gate for BMAp. Hochgerner 2023 Nat Neurosci amygdala atlas
+Calb1,published_BMAp,COA_MEA_exclusion,BMAp,2,Calbindin. Part of the Trh+Calb1+Zeb2- accessory-olfactory signature. Hochgerner 2023 Nat Neurosci amygdala atlas
+Grp,published_BMAp,LA_BMA_VGLUT1,BMAp,2,Gastrin-releasing peptide. Grp-VGLUT1 populations validated by FISH in LA and posterior BMA. Hochgerner 2023 Nat Neurosci amygdala atlas
+Rspo2,published_BMAp,BLA_exclusion,BMAp,2,R-spondin 2. Canonical BLA/LA anterior marker; negative gate that keeps BLA out of the BMAp call. Hochgerner 2023 Nat Neurosci amygdala atlas
+Pappa2,published_BMAp,MEA_exclusion,BMAp,3,Pappa2/Prlr/Nts defines a discrete MEA VGLUT2 cluster. MEA exclusion gate. Hochgerner 2023 Nat Neurosci amygdala atlas
+Prlr,published_BMAp,MEA_exclusion,BMAp,3,Prolactin receptor. Part of the discrete MEA cluster signature. Hochgerner 2023 Nat Neurosci amygdala atlas
+Nts,published_BMAp,MEA_exclusion,BMAp,3,Neurotensin. Part of the discrete MEA cluster signature. Hochgerner 2023 Nat Neurosci amygdala atlas
+St18,published_BMAp,MEA_Esr1_types,BMAp,3,Marks Esr1+ MEA cell types. Hochgerner 2023 Nat Neurosci amygdala atlas
+Calcr,published_BMAp,MEA_Esr1_types,BMAp,3,Calcitonin receptor. Esr1+ MEA type marker and a GPCR. Hochgerner 2023 Nat Neurosci amygdala atlas
+Esr1,published_BMAp,MEA_Esr1_types,BMAp,2,Estrogen receptor alpha. Defines the socially relevant MEA populations that border BMAp. Hochgerner 2023 Nat Neurosci amygdala atlas
+Esr2,published_BMAp,MEA_Esr1_types,BMAp,3,Estrogen receptor beta in MEA types. Hochgerner 2023 Nat Neurosci amygdala atlas
+Ucn3,published_BMAp,MEA_GABA,BMAp,3,Urocortin 3. A rare one-gene-one-type marker (MEA GABA 24). Hochgerner 2023 Nat Neurosci amygdala atlas
+Cdh23,published_BMAp,MEA_subset,BMAp,3,Marks a subset of the Pappa2/Prlr/Nts MEA cluster. Hochgerner 2023 Nat Neurosci amygdala atlas
+C1ql1,published_BMAp,NLOT,BMAp,3,Sim1-C1ql1 neurons form a large validated NLOT population adjacent to BMA. Exclusion gate. Hochgerner 2023 Nat Neurosci amygdala atlas
+C1ql2,published_BMAp,pallial_amygdala,BMAp,2,"C1q-like 2, patterned across pallial amygdala; already used in our BMAp anchor panel. Hochgerner 2023 Nat Neurosci amygdala atlas"
+Sema5a,published_BMAp,pallial_amygdala,BMAp,3,Patterned across pallial amygdala; carried over from the v6 curated BMAp list.
+Grem1,published_BMAp,pallial_amygdala,BMAp,3,Gremlin 1; carried over from the v6 curated BMAp list.
+Baiap3,published_BMAp,amygdala_hypothalamic,BMAp,3,"BAI1-associated protein 3, enriched in MEA/hypothalamic-like amygdalar neurons."
+Slc30a3,published_BMAp,pallial_marker,BMAp,2,ZnT3. Zinc-containing pallial glutamatergic terminals; supports the pallial (not striatal) identity of BMAp.
+Cd44,published_ORBm,PFC_cluster_exemplar,ORBm,2,Exemplar marker of one of the seven Rbp4-Cre PFC transcriptomic clusters. Lui 2021 Cell PFC projection classes
+Vegfd,published_ORBm,PFC_cluster_exemplar,ORBm,2,Formerly Figf. Exemplar of a PFC cluster; co-labelled with Otof/Cxcr7 in validation FISH. Lui 2021 Cell PFC projection classes
+Otof,published_ORBm,PFC_L2_3,ORBm,1,"Otoferlin. Validated as L2/3-specific in PFC, so it anchors the superficial ORBm layer. Lui 2021 Cell PFC projection classes"
+Pld5,published_ORBm,OFC_enriched,ORBm,1,Enriched in OFC relative to dmPFC/vmPFC. One of only two genes reported to distinguish OFC from medial PFC. Lui 2021 Cell PFC projection classes
+Ackr3,published_ORBm,OFC_enriched,ORBm,1,"Formerly Cxcr7. The second OFC-vs-mPFC enriched gene, and an atypical chemokine GPCR. Lui 2021 Cell PFC projection classes"
+Npr3,published_ORBm,PFC_deep_L5,ORBm,1,"Natriuretic peptide receptor 3. Deep-L5 PFC cluster, spatially distinct from Tshz2 by co-localisation analysis. Lui 2021 Cell PFC projection classes"
+Rbp4,published_ORBm,L5_driver_line,ORBm,2,The Cre line the PFC atlas was built on. Including it lets us align our Xenium clusters to that dataset directly. Lui 2021 Cell PFC projection classes
+Mc4r,published_ORBm,OFC_behaviour_GPCR,ORBm,1,"Melanocortin 4 receptor. A molecularly defined OFC population that drives compulsive-like behaviour, and a druggable Gs GPCR. Pitts 2024 Neuropharmacology OFC Mc4r"

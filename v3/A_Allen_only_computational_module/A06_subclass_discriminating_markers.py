@@ -426,6 +426,16 @@ def main() -> None:
     p.add_argument("--anchor_csv", required=True)
     p.add_argument("--region_mapping_csv", required=True)
     p.add_argument("--gpcr_subclass_csv", required=True)
+    p.add_argument(
+        "--extra_genes_csv",
+        default=None,
+        help=(
+            "Optional CSV with a gene_symbol column (e.g. inputs/expanded_panel_universe.csv). "
+            "Its genes are added to the expression panel so that TF / plasticity / IEG / "
+            "reporter / class-backbone categories get the same per-subclass statistics as "
+            "the curated cell-type markers."
+        ),
+    )
     p.add_argument("--target_regions", nargs="+", default=["BMAp", "ORBm"])
     p.add_argument("--min_cells", type=int, default=30)
     p.add_argument("--top_n", type=int, default=12)
@@ -466,7 +476,13 @@ def main() -> None:
         if col in markers_tpl.columns:
             for v in markers_tpl[col].dropna():
                 from_curated.update(g.strip() for g in str(v).split(",") if g.strip())
-    candidates = sorted(from_names | from_curated | set(CANONICAL_PANEL))
+    from_extra: set[str] = set()
+    if args.extra_genes_csv:
+        extra = pd.read_csv(args.extra_genes_csv)
+        col = "gene_symbol" if "gene_symbol" in extra.columns else extra.columns[0]
+        from_extra = {str(g).strip() for g in extra[col].dropna() if str(g).strip()}
+        print(f"[INFO] extra universe genes: {len(from_extra)} from {args.extra_genes_csv}")
+    candidates = sorted(from_names | from_curated | from_extra | set(CANONICAL_PANEL))
     print(f"[INFO] candidate panel before Allen validation: {len(candidates)}")
 
     print("[INFO] loading WMB-10X cell metadata + gene metadata")

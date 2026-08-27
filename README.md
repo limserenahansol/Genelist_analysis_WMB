@@ -400,6 +400,49 @@ python v3/D_Final_integration_module/D07_make_trap_ordering_workbook.py `
   --out_xlsx v3/outputs/FINAL_ordering_BMAp_ORBm_TRAP.xlsx
 ```
 
+### A07 — the finalized Xenium panel, with the categories beyond markers and GPCRs
+
+D07 answered "which cell-type markers and GPCRs do we need". It did not carry transcription factors, synaptic-plasticity genes, the full IEG set, the general neurotransmitter-class backbone, or the published region-specific markers. `A07_finalize_xenium_panel.py` adds all of those and then spends the 100-slot budget, writing `v3/outputs/FINAL_Xenium_panel_ORBm_BMAp.xlsx`.
+
+The extra candidates live in `v3/inputs/expanded_panel_universe.csv` (208 genes, each with a category and a written rationale). They are fed into A06 through the new `--extra_genes_csv` flag so they get exactly the same per-subclass statistics as the curated markers — 271 genes over the 226,886 ORBm and BMAp cells:
+
+| Block | Genes in universe | What it buys |
+|---|---|---|
+| `class_backbone` | 31 | glutamatergic / GABAergic / dopaminergic / cholinergic / serotonergic / glial identity, so a segmented object can be typed before any subclass call |
+| `TF_identity` | 60 | lineage TFs (`Satb2`, `Fezf2`, `Cux2`, `Otp`, `Lhx6`, `Emx1`, `Isl1`) that make a cluster call developmentally interpretable |
+| `IEG_rapid` + `IEG_delayed` | 27 | `Fos`, `Fosb`, `Arc`, `Egr1`, `Npas4` and the delayed `Bdnf` / `Homer1` / `Nptx2` arm |
+| `plasticity` | 31 | AMPA/NMDA subunits, PSD scaffolds, adhesion molecules — the substrate of drug-induced plasticity |
+| `opioid_system` | 8 | `Oprm1`, `Oprk1`, `Oprd1`, `Pdyn`, `Penk` and partners |
+| `reporter_transgene` | 5 | `tdTomato`, `iCre`, `mCherry`, `WPRE` |
+| `published_BMAp` / `published_ORBm` | 46 | see below |
+
+The published block stands in for Dan's amygdala and Jesse's ORBm lists until those arrive. Amygdala comes from Hochgerner et al. 2023 *Nat Neurosci*: the six VGLUT1 types that map to posterior BMA (`Meis2`/`Calb2`/`Dcn` plus `Cartpt`, `Mpped1`/`Tac1`, `Cd36`, `Gpr101`, `St8sia2`, `Ptpru`, `Htr2c`), the VGLUT2 BMA subtypes (`Scn5a`, `Rxfp1`, `Crh`/`Tacr1`), and — the single most useful addition — **`Fezf1`, which is the one gene that separates the molecularly near-identical VGLUT2 types of MEA (`Fezf1`+) from BMA (`Fezf1`−)**. Orbitofrontal comes from Lui et al. 2021 *Cell*: **`Pld5` and `Ackr3` are the only two genes reported to distinguish OFC from medial PFC**, with `Otof` marking L2/3 and `Npr3` deep L5, plus `Mc4r` from Pitts 2024.
+
+Selection is **tier-first, then block-ordered**. An earlier block-first version spent 22 of the 100 slots on immediate-early genes and 24 on universal GPCRs before it ever reached the published block, which cut `Fezf1`, `Cartpt`, `Pld5` and `Ackr3` — the four genes with the strongest published claim on the panel. Sorting by tier (1 = must have, 2 = should have, 3 = optional) before block fixes this: everything now dropped is tier 3, plus nine tier-2 secondary markers on the shared panel.
+
+| | ORBm only | BMAp only | **Shared (recommended)** |
+|---|---|---|---|
+| Curated genes on the panel | 140 | 126 | **144** |
+| Free (already on base panel) | 40 | 26 | **44** |
+| Custom add-on slots used | 100 | 100 | **100** |
+| Genes on the slide | 348 | 348 | **348** |
+| All 20 cell types separable | yes | yes | **yes** |
+
+**One shared panel is the recommendation.** It keeps at least one unique separator for all 20 populations in both regions (`ANCHOR_COVERAGE`, column `OK_shared_panel`), so ORBm and BMAp can be sectioned from the same mouse onto the same slide in one run, for one order instead of two. Of its 144 genes, 80 serve both regions, 36 are ORBm-specific and 28 BMAp-specific. The price is 34 genes relative to buying both region panels: nine tier-2 BMA subtype refinements (`Adcyap1`, `Esr1`, `Slc30a3`, `Ptpru`, `Cd36`, `St8sia2`, `Tgfb2`, `C1ql2`, `Vegfd`) and 25 tier-3 optionals. No tier-1 gene is lost.
+
+```powershell
+python v3/A_Allen_only_computational_module/A06_subclass_discriminating_markers.py `
+  --out_dir v3/outputs/subclass_markers_expanded `
+  --marker_csv v3/inputs/curated_marker_template.csv `
+  --anchor_csv v3/inputs/celltype_to_subclass_anchor.csv `
+  --region_mapping_csv v3/outputs/region_mapping/Region_Mapping_Auto_Draft.csv `
+  --gpcr_subclass_csv v3/outputs/gpcr_full/Allen_GPCR_Ranking_subclass.csv `
+  --extra_genes_csv v3/inputs/expanded_panel_universe.csv `
+  --target_regions BMAp ORBm
+
+python v3/A_Allen_only_computational_module/A07_finalize_xenium_panel.py
+```
+
 ### E_Planning — turning the list into an order, and into a plan
 
 A Xenium custom add-on is capped at **100 genes** on top of a pre-designed base panel, so the number that decides the budget is not how many genes we want but how many we have to *pay a custom slot for*. `xenium_base_panel_crosscheck.py` answers that: it pulls the 248-gene **Xenium Mouse Brain v1** panel (from the `gene_panel.json` shipped with the public demo dataset for that panel, cached to `v3/outputs/xenium_mouse_brain_base_panel.txt`) and matches it against the D07 list.
