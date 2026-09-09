@@ -478,7 +478,7 @@ Jesse's PL-ILA-ORB morphine DEGs and Dan's amygdala spatial 98-gene panel arrive
 | `Mchr1` | 32% L5 ET; only 2 anchors ≥20% | skip |
 | `Camk2g` | 93% all anchors | add only to read morphine Down |
 
-4-slide decision deck: `v3/outputs/Add_genes_Jesse_Allen_Dan_4slides.pptx`. Tables: `v3/outputs/jesse_allen_gpcr_abundance/`.
+English 3-slide decision deck (Dan considered → Jesse considered → final add): `v3/outputs/Add_genes_Jesse_Allen_Dan_4slides.pptx`. Tables: `v3/outputs/jesse_allen_gpcr_abundance/`.
 
 ```powershell
 python v3/E_Planning/score_jesse_gpcrs_allen.py
