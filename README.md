@@ -462,14 +462,29 @@ Jesse's PL-ILA-ORB morphine DEGs and Dan's amygdala spatial 98-gene panel arrive
 
 **What is on the order sheet now.** Shared = **158** genes (original 144 + Dan block `12_GSE283418_added`: `Col23a1, Slc29a4, Cck, Gfra1, Sp8, Abca8a, Calcrl, Lamb3, Syndig1l, Tspan18, Gabre, Nos1, Oprl1, Dnah5`). That is **114 custom** if every Dan extra is kept (cap is 100).
 
-**What Jesse adds.** His top activity IEGs (`Fos, Arc, Egr1, Junb, Nr4a1`) and opioid receptors are already on the 144. The missing morphine-state layer is `Per2, Pcsk1, Per1` plus `Rxfp1` (free on the Xenium base panel). Those ask whether an ORBm cell looks morphine-dependent; they are not cell-type separators. Of his ORB-enriched GPCR top hits, only `Cckbr` and `Hcrtr2` are on the panel and confirmed abundant in our Allen ORBm tables. `Mas1`, `Gpr68`, `Mchr1`, and most other Jesse GPCRs were never in our 40-GPCR Allen pull.
+**What Jesse adds.** His top activity IEGs (`Fos, Arc, Egr1, Junb, Nr4a1`) and opioid receptors are already on the 144. The missing morphine-state layer is `Per2, Pcsk1, Per1` plus `Rxfp1` (free on the Xenium base panel).
+
+**Allen ORBm re-score (2026-09-09, 106,122 cells).** Jesse’s ORB-enriched GPCRs that were missing from our 40-GPCR pull were scored in the 12 ORBm anchors. Absolute % expressing, not relative enrichment:
+
+| Gene | Allen max % | Decision |
+|---|---|---|
+| `Chrm1` | 92% L2/3 (9/12 anchors ≥50%) | add |
+| `Grm8` | 99% L5 ET (8/12 ≥50%) | add |
+| `Gpr26` | 86% L4/5 IT | add if slots remain |
+| `Cckbr` / `Hcrtr2` | 74% / 67% | already on panel |
+| `Rxfp1` | 34% L5 ET | add (free on base) |
+| `Mas1` | 45% L5 ET; GABA 1–2% | optional, glut only |
+| `Gpr68` | 40% L6 IT | optional |
+| `Mchr1` | 32% L5 ET; only 2 anchors ≥20% | skip |
+| `Camk2g` | 93% all anchors | add only to read morphine Down |
+
+4-slide decision deck: `v3/outputs/Add_genes_Jesse_Allen_Dan_4slides.pptx`. Tables: `v3/outputs/jesse_allen_gpcr_abundance/`.
 
 ```powershell
+python v3/E_Planning/score_jesse_gpcrs_allen.py
+python v3/E_Planning/make_addgene_4slides.py
 python v3/E_Planning/compare_jesse_orb_panel.py
 python v3/E_Planning/compare_jesse_allen_abundance.py
-python v3/E_Planning/check_jesse_genes_on_panel.py
-python v3/E_Planning/make_jesse_orb_figures.py
-python v3/E_Planning/make_jesse_dan_decision_deck.py
 ```
 
 ### E_Planning — turning the list into an order, and into a plan
