@@ -1,0 +1,39 @@
+annotation_level,cell_type,roi_cells,functional_category,n_enriched_gpcrs,enriched_gpcrs
+subclass,002 IT EP-CLA Glut,733,excitatory,23,Drd1;Htr2a;Chrm1;Chrm3;Cckbr;Vipr1;Grm1;Mas1;Adgrd1;Adrb1;Hrh1;Lpar1;Ntsr1;Rxfp1;Gpr26;Adra1a;Oxtr;Tacr1;Adra1b;Htr6;Npsr1;Gpr3;Gpr68
+subclass,002 IT EP-CLA Glut,733,inhibitory,17,Grm8;Gpr22;Chrm2;Sstr2;Mas1;Sstr3;Oprk1;Cnr1;Lpar1;Rxfp1;Adra2a;Hrh3;Npy1r;Npy2r;Htr1a;Gpr68;Sstr4
+subclass,003 L5/6 IT TPE-ENT Glut,711,excitatory,26,Rxfp1;Chrm1;Drd1;Cckbr;Grm1;Vipr1;Mas1;Adrb1;Gpr26;Ntsr1;Adra1b;Adra1a;Crhr1;Gpr68;Hrh1;Gpr27;Kiss1r;Trhr;Tacr1;Htr6;Mchr1;Prokr2;Adgrd1;Gpr3;Oxtr;Gipr
+subclass,003 L5/6 IT TPE-ENT Glut,711,inhibitory,25,Rxfp1;Cnr1;Grm8;Hrh3;Gpr22;Mas1;Sstr2;Oprd1;Sstr3;Adra2c;Npy2r;Npy1r;Gpr68;Grm2;Chrm2;Ptger3;Oprl1;Drd2;Sstr1;Mchr1;Htr5a;Npbwr1;Htr1a;Oprk1;Sstr4
+subclass,004 L6 IT CTX Glut,11335,excitatory,23,Chrm1;Htr2a;Chrm3;Cckbr;Drd1;Vipr1;Grm1;Adrb1;Adra1b;Hrh1;Lpar1;Gpr26;Mas1;Adgrd1;Rxfp1;Adra1a;Ntsr1;Gpr68;Crhr1;Htr6;Gpr3;Tacr1;Oxtr
+subclass,004 L6 IT CTX Glut,11335,inhibitory,19,Grm8;Gpr22;Chrm2;Sstr3;Lpar1;Cnr1;Oprk1;Sstr2;Npy1r;Mas1;Rxfp1;Gpr68;Oprd1;Htr1b;Sstr1;Adra2c;Npy2r;Htr5a;Sstr4
+subclass,005 L5 IT CTX Glut,4418,excitatory,24,Htr2a;Chrm1;Vipr1;Adrb1;Gpr26;Hrh1;Chrm3;Crhr1;Adra1a;Cckbr;Adra1b;Adgrd1;Rxfp1;Gpr27;Gpr68;Ntsr1;Drd1;S1pr3;Mas1;Bdkrb1;Gpr3;Htr6;Mchr1;Hrh2
+subclass,005 L5 IT CTX Glut,4418,inhibitory,26,Grm8;Hrh3;Gpr22;Npy1r;Sstr3;Chrm2;Sstr2;Adora1;Grm3;Grm2;Cnr1;Adra2c;Oprd1;Htr1b;Rxfp1;Htr1a;Sstr1;Gpr68;S1pr3;Npy5r;Htr5a;Mas1;Bdkrb1;Mchr1;Sstr4;Npy2r
+subclass,006 L4/5 IT CTX Glut,14145,excitatory,21,Gpr26;Chrm1;Htr2a;Cckbr;Adrb1;Crhr1;Vipr1;Hrh1;Adra1b;Gpr27;S1pr3;Gpr153;Gpr68;Bdkrb1;Gpr3;Adgrd1;Mas1;Adrb3;Htr6;Kiss1r;Hrh2
+subclass,006 L4/5 IT CTX Glut,14145,inhibitory,21,Hrh3;Grm2;Cnr1;Gpr22;Npy1r;Grm3;Adora1;Sstr3;Grm8;Htr1a;S1pr3;Ptger3;Oprd1;Gpr68;Bdkrb1;Adra2c;Htr5a;Npy5r;Sstr2;Htr1b;Mas1
+subclass,007 L2/3 IT CTX Glut,8869,excitatory,26,Chrm1;Cckbr;Chrm3;Grm1;Adrb1;Gpr26;Hrh1;Gpr27;Vipr1;Htr2a;Adgrd1;Crhr1;Mas1;Gpr68;Hrh2;Adrb3;Mchr1;Oxtr;Ntsr1;Bdkrb1;Kiss1r;Gpr75;Qrfpr;Trhr;Htr6;S1pr3
+subclass,007 L2/3 IT CTX Glut,8869,inhibitory,20,Gpr22;Cnr1;Npy1r;Adra2c;Grm2;Oprd1;Sstr3;Mas1;Gpr68;Htr1b;Sstr1;Npy5r;Mchr1;Bdkrb1;Npy2r;P2ry14;Htr1a;Qrfpr;Htr5a;S1pr3
+subclass,022 L5 ET CTX Glut,3739,excitatory,25,Adra1a;Chrm1;Cckbr;Chrm3;Htr4;Adrb1;Mas1;Grm1;Gpr26;Vipr1;Rxfp1;Gpr27;Mchr1;Mc4r;Npsr1;Crhr1;Adgrd1;Gpr3;Ednra;Gipr;Ntsr1;Gpr75;Htr6;Gpr4;Prokr2
+subclass,022 L5 ET CTX Glut,3739,inhibitory,17,Grm8;Cnr1;Gpr22;Mas1;Oprl1;Rxfp1;Sstr2;Mchr1;Htr1b;Htr1a;Grm2;Sstr4;Ptger3;Adra2c;Adra2a;Npy5r;Gpr4
+subclass,029 L6b CTX Glut,1586,excitatory,20,Drd1;Cckbr;Chrm3;Chrm1;Htr2a;Lpar1;Hcrtr2;Ntsr1;Hrh1;Mas1;Rxfp1;Adra1b;Drd5;Trhr;Rxfp2;Mchr1;Gpr3;Gipr;Hcrtr1;Gpr4
+subclass,029 L6b CTX Glut,1586,inhibitory,18,Ptger3;Adora1;Grm8;Grm3;Oprm1;Chrm2;Lpar1;Adra2a;Hcrtr2;Hrh3;Htr1d;Mas1;Rxfp1;Rxfp2;Mchr1;Sstr4;Hcrtr1;Gpr4
+subclass,030 L6 CT CTX Glut,21452,excitatory,14,Chrm3;Chrm1;Cckbr;Adra1a;Drd1;Gpr26;Rxfp1;Vipr1;Ntsr1;Hcrtr1;Drd5;Adgrd1;Mas1;Htr6
+subclass,030 L6 CT CTX Glut,21452,inhibitory,13,Grm8;Adora1;Grm3;Sstr2;Oprd1;Rxfp1;Oprm1;Hcrtr1;Sstr4;Sstr1;Mas1;Htr1a;Adra2a
+subclass,032 L5 NP CTX Glut,3988,excitatory,15,Trhr;Htr2c;Htr4;Gpr26;Adra1a;Drd1;Hcrtr2;Hrh2;Rxfp1;Pth1r;Avpr1a;Drd5;Gpr39;Gipr;Bdkrb2
+subclass,032 L5 NP CTX Glut,3988,inhibitory,11,Chrm2;Grm8;Adora1;Grm3;Hcrtr2;Grm4;Oprm1;Rxfp1;Ptger3;Bdkrb2;Htr1d
+subclass,046 Vip Gaba,3277,excitatory,12,Adra1b;Chrm3;Grpr;Htr4;Adra1a;Htr2c;Hcrtr2;Hrh2;Tshr;Gpr3;Qrfpr;Oxtr
+subclass,046 Vip Gaba,3277,inhibitory,7,Cnr1;Npy1r;Npy2r;Hcrtr2;Npy5r;Npffr1;Qrfpr
+subclass,047 Sncg Gaba,1450,excitatory,18,Htr2c;Adra1b;Chrm3;Hrh2;Adcyap1r1;Htr7;Adra1a;Gpr12;Rxfp1;P2ry1;Hcrtr2;Tshr;Gpr3;Mchr1;Drd1;Trhr;Htr6;Chrm5
+subclass,047 Sncg Gaba,1450,inhibitory,15,Cnr1;Npy1r;Npy2r;Gpr12;Rxfp1;Npy5r;Npffr1;Hcrtr2;Hrh3;Adra2c;Adra2a;Ptger3;Htr5a;Sstr2;Mchr1
+subclass,049 Lamp5 Gaba,2339,excitatory,11,Adra1a;Hcrtr2;Htr2a;Adra1b;Gpr12;Rxfp1;Mrgprx2;Gpr6;Agtr1a;Drd1;Mchr1
+subclass,049 Lamp5 Gaba,2339,inhibitory,13,Hcrtr2;Cnr1;Oprm1;Gpr12;Rxfp1;Hrh3;Sstr2;Mrgprx2;Gpr6;Agtr1a;Htr5a;Mchr1;Npy2r
+subclass,051 Pvalb chandelier Gaba,195,excitatory,9,Gpr12;Tacr1;Chrm3;Vipr2;Adcyap1r1;Adra1a;Adrb1;Tshr;Gpr3
+subclass,051 Pvalb chandelier Gaba,195,inhibitory,8,Oprd1;Gpr12;Oprm1;Sstr2;Hrh3;Htr1a;Sstr4;Htr1d
+subclass,052 Pvalb Gaba,2869,excitatory,11,Adra1a;Htr2a;Adcyap1r1;Chrm3;Gpr12;Drd1;Gpr3;Cckbr;Gpr68;Ffar4;Pth1r
+subclass,052 Pvalb Gaba,2869,inhibitory,6,Oprd1;Gpr22;Cnr1;Hrh3;Gpr12;Gpr68
+subclass,053 Sst Gaba,5377,excitatory,12,Chrm3;Grm1;Adcyap1r1;Adra1a;Oxtr;S1pr3;Crhr2;Ffar4;Hrh2;Gpr3;Prokr2;Ptger4
+subclass,053 Sst Gaba,5377,inhibitory,10,Cnr1;Oprd1;Oprm1;Sstr1;Hrh3;S1pr3;Htr1a;Rxfp3;Agtr2;Drd2
+subclass,056 Sst Chodl Gaba,285,excitatory,18,Tacr1;Adra1a;Oxtr;Drd1;Htr7;Grm1;Adra1b;Npsr1;Adcyap1r1;Hcrtr1;Gpr153;Prokr2;Gpr139;Htr2a;Gpr75;Pth1r;Bdkrb2;Gpr3
+subclass,056 Sst Chodl Gaba,285,inhibitory,15,Chrm2;Ptger3;Htr1a;Oprm1;Hcrtr1;Gpr22;Oprl1;Hrh3;Galr1;Rxfp3;Agtr2;Npy2r;Bdkrb2;Npffr2;Htr1d
+subclass,319 Astro-TE NN,6109,excitatory,10,Ntsr2;Ednrb;Adgrg1;Adra1a;Adora2b;Hrh1;Sctr;Lpar4;Ednra;Lpar6
+subclass,319 Astro-TE NN,6109,inhibitory,9,S1pr1;Gpr37l1;Ednrb;Fzd2;Grm3;Smo;Lpar4;Lpar6;Fzd7
+subclass,334 Microglia NN,3144,excitatory,6,P2ry6;Ptafr;Adgrg1;Lpar6;Adrb2;Cysltr1
+subclass,334 Microglia NN,3144,inhibitory,15,Cx3cr1;Gpr34;Ccr5;P2ry13;Gpr183;Ptafr;Cmklr1;Lpar6;C5ar1;Adora3;Smo;Gpr84;S1pr1;Cnr2;Ccr6

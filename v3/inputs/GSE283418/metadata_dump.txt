@@ -1,0 +1,704 @@
+===== SERIES MATRIX =====
+!Series_title	"Spatial molecular profiling of amygdalar neurons enables precision pharmacology against pain unpleasantness"
+!Series_geo_accession	"GSE283418"
+!Series_status	"Public on Nov 26 2025"
+!Series_submission_date	"Dec 03 2024"
+!Series_last_update_date	"Nov 26 2025"
+!Series_summary	"Spatially resolved the expression of 97 genes encoding amygdala cell-type-selective marker genes, including novel gene markers identified from our scRNA-seq study of the amygdala."
+!Series_overall_design	"Individual mouse brains were dissected and amygdalas sections for single-molecular fluorescence in situ hybridization using Resolve Biosciences' Molecular Cartography platform."
+!Series_type	"Other"
+!Series_contributor	"Berg,,Daniel"
+!Series_contributor	"Scherrer,,Gregory"
+!Series_sample_id	"GSM8662286 GSM8662287 GSM8662288 GSM8662289 GSM8662290 GSM8662291 GSM8662292 GSM8662293 GSM8662294 GSM8662295 "
+!Series_contact_name	"Daniel,,Berg"
+!Series_contact_institute	"Stanford University"
+!Series_contact_address	"2005 California Street"
+!Series_contact_city	"Mountain View"
+!Series_contact_state	"CA"
+!Series_contact_zip/postal_code	"94040"
+!Series_contact_country	"USA"
+!Series_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE283nnn/GSE283418/suppl/GSE283418_RAW.tar"
+!Series_platform_id	"GPL35157"
+!Series_platform_taxid	"10090"
+!Series_sample_taxid	"10090"
+!Series_relation	"BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1193607"
+
+!Sample_title	"Female slide F4 slice A2"	"Female slide F4 slice B2"	"Female slide F4 slice C2"	"Female slide F4 slice D2"	"Male slide M2 slice A1"	"Male slide M2 slice B1"	"Male slide M2 slice B2"	"Male slide M2 slice C1"	"Male slide M2 slice D1"	"Male slide M2 slice D2"
+!Sample_geo_accession	"GSM8662286"	"GSM8662287"	"GSM8662288"	"GSM8662289"	"GSM8662290"	"GSM8662291"	"GSM8662292"	"GSM8662293"	"GSM8662294"	"GSM8662295"
+!Sample_status	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"	"Public on Nov 26 2025"
+!Sample_submission_date	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"	"Dec 03 2024"
+!Sample_last_update_date	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"	"Nov 26 2025"
+!Sample_type	"RNA"	"RNA"	"RNA"	"RNA"	"RNA"	"RNA"	"RNA"	"RNA"	"RNA"	"RNA"
+!Sample_channel_count	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"
+!Sample_source_name_ch1	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"	"amygdala brain tissue"
+!Sample_organism_ch1	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"	"Mus musculus"
+!Sample_characteristics_ch1	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"	"tissue: amygdala brain tissue"
+!Sample_characteristics_ch1	"Sex: female"	"Sex: female"	"Sex: female"	"Sex: female"	"Sex: male"	"Sex: male"	"Sex: male"	"Sex: male"	"Sex: male"	"Sex: male"
+!Sample_characteristics_ch1	"bregma coordinate: -1.155"	"bregma coordinate: -1.355"	"bregma coordinate: -1.955"	"bregma coordinate: -1.955"	"bregma coordinate: -1.155"	"bregma coordinate: -1.155"	"bregma coordinate: -1.355"	"bregma coordinate: -1.955"	"bregma coordinate: -1.955"	"bregma coordinate: -1.955"
+!Sample_molecule_ch1	"total RNA"	"total RNA"	"total RNA"	"total RNA"	"total RNA"	"total RNA"	"total RNA"	"total RNA"	"total RNA"	"total RNA"
+!Sample_extract_protocol_ch1	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."	"Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C."
+!Sample_label_ch1	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"	"fluorescence"
+!Sample_label_protocol_ch1	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"	"Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization"
+!Sample_taxid_ch1	"10090"	"10090"	"10090"	"10090"	"10090"	"10090"	"10090"	"10090"	"10090"	"10090"
+!Sample_hyb_protocol	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"
+!Sample_scan_protocol	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"	"n/a"
+!Sample_description	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."	"Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain."
+!Sample_data_processing	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."	"Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata."
+!Sample_data_processing	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"	"transcript per cell"
+!Sample_platform_id	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"	"GPL35157"
+!Sample_contact_name	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"	"Daniel,,Berg"
+!Sample_contact_institute	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"	"Stanford University"
+!Sample_contact_address	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"	"2005 California Street"
+!Sample_contact_city	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"	"Mountain View"
+!Sample_contact_state	"CA"	"CA"	"CA"	"CA"	"CA"	"CA"	"CA"	"CA"	"CA"	"CA"
+!Sample_contact_zip/postal_code	"94040"	"94040"	"94040"	"94040"	"94040"	"94040"	"94040"	"94040"	"94040"	"94040"
+!Sample_contact_country	"USA"	"USA"	"USA"	"USA"	"USA"	"USA"	"USA"	"USA"	"USA"	"USA"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_F_A2_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_F_B2_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_F_C2_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_F_D2_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_M_A1_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_M_B1_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_M_B2_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_M_C1_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_M_D1_segmentation.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_M_D2_segmentation.csv.gz"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_F_A2_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_F_B2_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_F_C2_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_F_D2_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_M_A1_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_M_B1_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_M_B2_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_M_C1_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_M_D1_segmentation_cell_stats.csv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_M_D2_segmentation_cell_stats.csv.gz"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_F_A2_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_F_B2_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_F_C2_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_F_D2_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_M_A1_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_M_B1_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_M_B2_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_M_C1_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_M_D1_segmentation_counts.tsv.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_M_D2_segmentation_counts.tsv.gz"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_DAPI.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_DAPI.tiff.gz"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_brightfield.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_brightfield.tiff.gz"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_raw.tiff.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_raw.tiff.gz"
+!Sample_supplementary_file	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_results.txt.gz"	"ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_results.txt.gz"
+!Sample_data_row_count	"0"	"0"	"0"	"0"	"0"	"0"	"0"	"0"	"0"	"0"
+!series_matrix_table_begin
+"ID_REF"	"GSM8662286"	"GSM8662287"	"GSM8662288"	"GSM8662289"	"GSM8662290"	"GSM8662291"	"GSM8662292"	"GSM8662293"	"GSM8662294"	"GSM8662295"
+!series_matrix_table_end
+
+===== SOFT =====
+^DATABASE = GeoMiame
+!Database_name = Gene Expression Omnibus (GEO)
+!Database_institute = NCBI NLM NIH
+!Database_web_link = http://www.ncbi.nlm.nih.gov/geo
+!Database_email = geo@ncbi.nlm.nih.gov
+^SERIES = GSE283418
+!Series_title = Spatial molecular profiling of amygdalar neurons enables precision pharmacology against pain unpleasantness
+!Series_geo_accession = GSE283418
+!Series_status = Public on Nov 26 2025
+!Series_submission_date = Dec 03 2024
+!Series_last_update_date = Nov 26 2025
+!Series_summary = Spatially resolved the expression of 97 genes encoding amygdala cell-type-selective marker genes, including novel gene markers identified from our scRNA-seq study of the amygdala.
+!Series_overall_design = Individual mouse brains were dissected and amygdalas sections for single-molecular fluorescence in situ hybridization using Resolve Biosciences' Molecular Cartography platform.
+!Series_type = Other
+!Series_contributor = Berg,,Daniel
+!Series_contributor = Scherrer,,Gregory
+!Series_sample_id = GSM8662286
+!Series_sample_id = GSM8662287
+!Series_sample_id = GSM8662288
+!Series_sample_id = GSM8662289
+!Series_sample_id = GSM8662290
+!Series_sample_id = GSM8662291
+!Series_sample_id = GSM8662292
+!Series_sample_id = GSM8662293
+!Series_sample_id = GSM8662294
+!Series_sample_id = GSM8662295
+!Series_contact_name = Daniel,,Berg
+!Series_contact_institute = Stanford University
+!Series_contact_address = 2005 California Street
+!Series_contact_city = Mountain View
+!Series_contact_state = CA
+!Series_contact_zip/postal_code = 94040
+!Series_contact_country = USA
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE283nnn/GSE283418/suppl/GSE283418_RAW.tar
+!Series_platform_id = GPL35157
+!Series_platform_taxid = 10090
+!Series_sample_taxid = 10090
+!Series_relation = BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1193607
+^PLATFORM = GPL35157
+!Platform_title = Resolve Biosciences Molecular Cartography Mouse Amygdala custom platform (98 genes)
+!Platform_geo_accession = GPL35157
+!Platform_status = Public on Nov 26 2025
+!Platform_submission_date = Dec 03 2024
+!Platform_last_update_date = Nov 26 2025
+!Platform_technology = other
+!Platform_distribution = custom-commercial
+!Platform_organism = Mus musculus
+!Platform_taxid = 10090
+!Platform_manufacturer = Resolve Biosciences
+!Platform_manufacture_protocol = Probe panel for 98 genes designed using Resolve Biosciences proprietary design software, as previously reported (reference paper PMID: 35021063).
+!Platform_contact_name = Daniel,,Berg
+!Platform_contact_institute = Stanford University
+!Platform_contact_address = 2005 California Street
+!Platform_contact_city = Mountain View
+!Platform_contact_state = CA
+!Platform_contact_zip/postal_code = 94040
+!Platform_contact_country = USA
+!Platform_data_row_count = 98
+#ID = Gene Name
+#ORF = ORF Name
+#Functional unit/ inclusion criteria = target brain region
+!platform_table_begin
+ID	ORF	Functional unit/ inclusion criteria
+Abca8a	Abca8a	Amygdala brain region
+Adgrg6	Adgrg6	Amygdala brain region
+Adora2a	Adora2a	Amygdala brain region
+Bcan	Bcan	Amygdala brain region
+Blnk	Blnk	Amygdala brain region
+C1ql1	C1ql1	Amygdala brain region
+C1ql2	C1ql2	Amygdala brain region
+Calb1	Calb1	Amygdala brain region
+Calb2	Calb2	Amygdala brain region
+Calcrl	Calcrl	Amygdala brain region
+Car8	Car8	Amygdala brain region
+Cartpt	Cartpt	Amygdala brain region
+Cck	Cck	Amygdala brain region
+Col23a1	Col23a1	Amygdala brain region
+Crh	Crh	Amygdala brain region
+Crhbp	Crhbp	Amygdala brain region
+Ctxn3	Ctxn3	Amygdala brain region
+Dnah5	Dnah5	Amygdala brain region
+Drd1	Drd1	Amygdala brain region
+Drd2	Drd2	Amygdala brain region
+Ebf1	Ebf1	Amygdala brain region
+Fos	Fos	Amygdala brain region
+Foxp2	Foxp2	Amygdala brain region
+Gabre	Gabre	Amygdala brain region
+Gad1	Gad1	Amygdala brain region
+Galr1	Galr1	Amygdala brain region
+Gfra1	Gfra1	Amygdala brain region
+Glipr1	Glipr1	Amygdala brain region
+Hapln1	Hapln1	Amygdala brain region
+Htr1f	Htr1f	Amygdala brain region
+Htr2a	Htr2a	Amygdala brain region
+Htr3a	Htr3a	Amygdala brain region
+Igfbp2	Igfbp2	Amygdala brain region
+Isl1	Isl1	Amygdala brain region
+Itgal	Itgal	Amygdala brain region
+Lamb3	Lamb3	Amygdala brain region
+Lgals1	Lgals1	Amygdala brain region
+Lhx6	Lhx6	Amygdala brain region
+Lpl	Lpl	Amygdala brain region
+Mc4r	Mc4r	Amygdala brain region
+Mctp2	Mctp2	Amygdala brain region
+Mgp	Mgp	Amygdala brain region
+Neb	Neb	Amygdala brain region
+Nos1	Nos1	Amygdala brain region
+Npy	Npy	Amygdala brain region
+Nts	Nts	Amygdala brain region
+Ntsr1	Ntsr1	Amygdala brain region
+Oprd1	Oprd1	Amygdala brain region
+Oprk1	Oprk1	Amygdala brain region
+Oprl1	Oprl1	Amygdala brain region
+Oprm1	Oprm1	Amygdala brain region
+Otof	Otof	Amygdala brain region
+Oxtr	Oxtr	Amygdala brain region
+Pamr1	Pamr1	Amygdala brain region
+Pdyn	Pdyn	Amygdala brain region
+Penk	Penk	Amygdala brain region
+Pld5	Pld5	Amygdala brain region
+Pltp	Pltp	Amygdala brain region
+Pnoc	Pnoc	Amygdala brain region
+Pomc	Pomc	Amygdala brain region
+Ppp1r1b	Ppp1r1b	Amygdala brain region
+Prkcd	Prkcd	Amygdala brain region
+Prss23	Prss23	Amygdala brain region
+Pthlh	Pthlh	Amygdala brain region
+Ptprc	Ptprc	Amygdala brain region
+Pvalb	Pvalb	Amygdala brain region
+Rasa4	Rasa4	Amygdala brain region
+Rbms3	Rbms3	Amygdala brain region
+Rbp4	Rbp4	Amygdala brain region
+Rhpn1	Rhpn1	Amygdala brain region
+Rnd2	Rnd2	Amygdala brain region
+Rorb	Rorb	Amygdala brain region
+Rspo2	Rspo2	Amygdala brain region
+S100b	S100b	Amygdala brain region
+Sall1	Sall1	Amygdala brain region
+Scn4b	Scn4b	Amygdala brain region
+Sema3e	Sema3e	Amygdala brain region
+Sfrp1	Sfrp1	Amygdala brain region
+Slc17a6	Slc17a6	Amygdala brain region
+Slc17a7	Slc17a7	Amygdala brain region
+Slc29a4	Slc29a4	Amygdala brain region
+Slc4a11	Slc4a11	Amygdala brain region
+Sncg	Sncg	Amygdala brain region
+Sp8	Sp8	Amygdala brain region
+Sst	Sst	Amygdala brain region
+Syndig1l	Syndig1l	Amygdala brain region
+Tac1	Tac1	Amygdala brain region
+Tac2	Tac2	Amygdala brain region
+Thsd4	Thsd4	Amygdala brain region
+Tnfaip6	Tnfaip6	Amygdala brain region
+Trpc3	Trpc3	Amygdala brain region
+Tspan18	Tspan18	Amygdala brain region
+Unc5b	Unc5b	Amygdala brain region
+Upk1b	Upk1b	Amygdala brain region
+Vdr	Vdr	Amygdala brain region
+Vip	Vip	Amygdala brain region
+Vipr2	Vipr2	Amygdala brain region
+Zfp57	Zfp57	Amygdala brain region
+!platform_table_end
+^SAMPLE = GSM8662286
+!Sample_title = Female slide F4 slice A2
+!Sample_geo_accession = GSM8662286
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: female
+!Sample_characteristics_ch1 = bregma coordinate: -1.155
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_F_A2_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_F_A2_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_F_A2_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662286/suppl/GSM8662286_P22344_slideF4_20230221_A2-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662287
+!Sample_title = Female slide F4 slice B2
+!Sample_geo_accession = GSM8662287
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: female
+!Sample_characteristics_ch1 = bregma coordinate: -1.355
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_F_B2_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_F_B2_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_F_B2_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662287/suppl/GSM8662287_P22344_slideF4_20230221_B2-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662288
+!Sample_title = Female slide F4 slice C2
+!Sample_geo_accession = GSM8662288
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: female
+!Sample_characteristics_ch1 = bregma coordinate: -1.955
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_F_C2_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_F_C2_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_F_C2_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662288/suppl/GSM8662288_P22344_slideF4_20230221_C2-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662289
+!Sample_title = Female slide F4 slice D2
+!Sample_geo_accession = GSM8662289
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: female
+!Sample_characteristics_ch1 = bregma coordinate: -1.955
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_F_D2_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_F_D2_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_F_D2_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662289/suppl/GSM8662289_P22344_slideF4_20230221_D2-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662290
+!Sample_title = Male slide M2 slice A1
+!Sample_geo_accession = GSM8662290
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: male
+!Sample_characteristics_ch1 = bregma coordinate: -1.155
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_M_A1_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_M_A1_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_M_A1_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662290/suppl/GSM8662290_P22344_SlideM2_20230302_A1-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662291
+!Sample_title = Male slide M2 slice B1
+!Sample_geo_accession = GSM8662291
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: male
+!Sample_characteristics_ch1 = bregma coordinate: -1.155
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_M_B1_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_M_B1_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_M_B1_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662291/suppl/GSM8662291_P22344_SlideM2_20230302_B1-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662292
+!Sample_title = Male slide M2 slice B2
+!Sample_geo_accession = GSM8662292
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: male
+!Sample_characteristics_ch1 = bregma coordinate: -1.355
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_M_B2_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_M_B2_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_M_B2_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662292/suppl/GSM8662292_P22344_SlideM2_20230302_B2-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662293
+!Sample_title = Male slide M2 slice C1
+!Sample_geo_accession = GSM8662293
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: male
+!Sample_characteristics_ch1 = bregma coordinate: -1.955
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_M_C1_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_M_C1_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_M_C1_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662293/suppl/GSM8662293_P22344_SlideM2_20230302_C1-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662294
+!Sample_title = Male slide M2 slice D1
+!Sample_geo_accession = GSM8662294
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: male
+!Sample_characteristics_ch1 = bregma coordinate: -1.955
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_M_D1_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_M_D1_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_M_D1_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662294/suppl/GSM8662294_P22344_SlideM2_20230302_D1-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+^SAMPLE = GSM8662295
+!Sample_title = Male slide M2 slice D2
+!Sample_geo_accession = GSM8662295
+!Sample_status = Public on Nov 26 2025
+!Sample_submission_date = Dec 03 2024
+!Sample_last_update_date = Nov 26 2025
+!Sample_type = RNA
+!Sample_channel_count = 1
+!Sample_source_name_ch1 = amygdala brain tissue
+!Sample_organism_ch1 = Mus musculus
+!Sample_taxid_ch1 = 10090
+!Sample_characteristics_ch1 = tissue: amygdala brain tissue
+!Sample_characteristics_ch1 = Sex: male
+!Sample_characteristics_ch1 = bregma coordinate: -1.955
+!Sample_molecule_ch1 = total RNA
+!Sample_extract_protocol_ch1 = Mouse brain was dissected and right hemisphere immersed in OCT with cryo-mold in isopentane dry ice bath and stored at -80.  The frozen brains were sectioned into 10 μm coronal slices on a cryostat at -20°C.
+!Sample_label_ch1 = fluorescence
+!Sample_label_protocol_ch1 = Resolve Biosciences’ Molecular Cartography platform for labeling, hybridization, and imaging with 100-plex combinatorial single molecule fluorescence in-situ hybridization
+!Sample_hyb_protocol = n/a
+!Sample_scan_protocol = n/a
+!Sample_description = Resolve Biosciences Molecular Cartography technology was used to spatially resolve distinct cell populations by using 98 specific gene markers in amygdala of mouse brain.
+!Sample_data_processing = Cell nuclei segmentation masks were obtained using the DAPI channel as input to Cellpose with diameter set to 65 and mask threshold -0.1. This mask was used as prior segmentation information to Baysor (confidence: 0.9; scale: 45; scale_sfd: 50%) to obtain final segmentation counts and cell metadata.
+!Sample_data_processing = transcript per cell
+!Sample_platform_id = GPL35157
+!Sample_contact_name = Daniel,,Berg
+!Sample_contact_institute = Stanford University
+!Sample_contact_address = 2005 California Street
+!Sample_contact_city = Mountain View
+!Sample_contact_state = CA
+!Sample_contact_zip/postal_code = 94040
+!Sample_contact_country = USA
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_M_D2_segmentation.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_M_D2_segmentation_cell_stats.csv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_M_D2_segmentation_counts.tsv.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_DAPI.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_brightfield.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_raw.tiff.gz
+!Sample_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8662nnn/GSM8662295/suppl/GSM8662295_P22344_SlideM2_20230302_D2-1_results.txt.gz
+!Sample_series_id = GSE283418
+!Sample_data_row_count = 0
+
+===== FILELIST =====
+#Archive/File	Name	Time	Size	Type
+Archive	GSE283418_RAW.tar	11/26/2025 00:22:49	8903659520	TAR
+File	GSM8662286_F_A2_segmentation.csv.gz	12/03/2024 13:30:20	33819116	CSV
+File	GSM8662286_F_A2_segmentation_cell_stats.csv.gz	12/03/2024 13:30:20	245304	CSV
+File	GSM8662286_F_A2_segmentation_counts.tsv.gz	12/03/2024 13:30:20	209035	TSV
+File	GSM8662286_P22344_slideF4_20230221_A2-1_DAPI.tiff.gz	12/03/2024 13:30:36	256509186	TIFF
+File	GSM8662286_P22344_slideF4_20230221_A2-1_brightfield.tiff.gz	12/03/2024 13:30:48	329223047	TIFF
+File	GSM8662286_P22344_slideF4_20230221_A2-1_raw.tiff.gz	12/03/2024 13:31:06	262780105	TIFF
+File	GSM8662286_P22344_slideF4_20230221_A2-1_results.txt.gz	12/03/2024 13:31:08	11087416	TXT
+File	GSM8662287_F_B2_segmentation.csv.gz	12/03/2024 13:31:13	31239418	CSV
+File	GSM8662287_F_B2_segmentation_cell_stats.csv.gz	12/03/2024 13:31:13	225796	CSV
+File	GSM8662287_F_B2_segmentation_counts.tsv.gz	12/03/2024 13:31:13	197642	TSV
+File	GSM8662287_P22344_slideF4_20230221_B2-1_DAPI.tiff.gz	12/03/2024 13:31:28	251826047	TIFF
+File	GSM8662287_P22344_slideF4_20230221_B2-1_brightfield.tiff.gz	12/03/2024 13:31:41	315749991	TIFF
+File	GSM8662287_P22344_slideF4_20230221_B2-1_raw.tiff.gz	12/03/2024 13:31:58	255812300	TIFF
+File	GSM8662287_P22344_slideF4_20230221_B2-1_results.txt.gz	12/03/2024 13:32:01	9842003	TXT
+File	GSM8662288_F_C2_segmentation.csv.gz	12/03/2024 13:32:05	28348960	CSV
+File	GSM8662288_F_C2_segmentation_cell_stats.csv.gz	12/03/2024 13:32:05	181892	CSV
+File	GSM8662288_F_C2_segmentation_counts.tsv.gz	12/03/2024 13:32:05	166299	TSV
+File	GSM8662288_P22344_slideF4_20230221_C2-1_DAPI.tiff.gz	12/03/2024 13:32:18	212130703	TIFF
+File	GSM8662288_P22344_slideF4_20230221_C2-1_brightfield.tiff.gz	12/03/2024 13:32:29	267570386	TIFF
+File	GSM8662288_P22344_slideF4_20230221_C2-1_raw.tiff.gz	12/03/2024 13:32:43	220710077	TIFF
+File	GSM8662288_P22344_slideF4_20230221_C2-1_results.txt.gz	12/03/2024 13:32:45	9142016	TXT
+File	GSM8662289_F_D2_segmentation.csv.gz	12/03/2024 13:32:50	31753216	CSV
+File	GSM8662289_F_D2_segmentation_cell_stats.csv.gz	12/03/2024 13:32:50	203031	CSV
+File	GSM8662289_F_D2_segmentation_counts.tsv.gz	12/03/2024 13:32:50	184992	TSV
+File	GSM8662289_P22344_slideF4_20230221_D2-1_DAPI.tiff.gz	12/03/2024 13:33:04	231156725	TIFF
+File	GSM8662289_P22344_slideF4_20230221_D2-1_brightfield.tiff.gz	12/03/2024 13:33:15	294126354	TIFF
+File	GSM8662289_P22344_slideF4_20230221_D2-1_raw.tiff.gz	12/03/2024 13:33:32	235459539	TIFF
+File	GSM8662289_P22344_slideF4_20230221_D2-1_results.txt.gz	12/03/2024 13:33:34	10154583	TXT
+File	GSM8662290_M_A1_segmentation.csv.gz	12/03/2024 13:33:40	38650516	CSV
+File	GSM8662290_M_A1_segmentation_cell_stats.csv.gz	12/03/2024 13:33:40	210716	CSV
+File	GSM8662290_M_A1_segmentation_counts.tsv.gz	12/03/2024 13:33:41	203439	TSV
+File	GSM8662290_P22344_SlideM2_20230302_A1-1_DAPI.tiff.gz	12/03/2024 13:33:54	242933464	TIFF
+File	GSM8662290_P22344_SlideM2_20230302_A1-1_brightfield.tiff.gz	12/03/2024 13:34:05	292863636	TIFF
+File	GSM8662290_P22344_SlideM2_20230302_A1-1_raw.tiff.gz	12/03/2024 13:34:22	227558678	TIFF
+File	GSM8662290_P22344_SlideM2_20230302_A1-1_results.txt.gz	12/03/2024 13:34:25	12614762	TXT
+File	GSM8662291_M_B1_segmentation.csv.gz	12/03/2024 13:34:32	41046443	CSV
+File	GSM8662291_M_B1_segmentation_cell_stats.csv.gz	12/03/2024 13:34:32	220243	CSV
+File	GSM8662291_M_B1_segmentation_counts.tsv.gz	12/03/2024 13:34:32	215319	TSV
+File	GSM8662291_P22344_SlideM2_20230302_B1-1_DAPI.tiff.gz	12/03/2024 13:34:45	263512752	TIFF
+File	GSM8662291_P22344_SlideM2_20230302_B1-1_brightfield.tiff.gz	12/03/2024 13:34:56	307885417	TIFF
+File	GSM8662291_P22344_SlideM2_20230302_B1-1_raw.tiff.gz	12/03/2024 13:35:13	240482775	TIFF
+File	GSM8662291_P22344_SlideM2_20230302_B1-1_results.txt.gz	12/03/2024 13:35:17	13572670	TXT
+File	GSM8662292_M_B2_segmentation.csv.gz	12/03/2024 13:35:27	69726229	CSV
+File	GSM8662292_M_B2_segmentation_cell_stats.csv.gz	12/03/2024 13:35:27	305452	CSV
+File	GSM8662292_M_B2_segmentation_counts.tsv.gz	12/03/2024 13:35:27	297258	TSV
+File	GSM8662292_P22344_SlideM2_20230302_B2-1_DAPI.tiff.gz	12/03/2024 13:35:44	345877254	TIFF
+File	GSM8662292_P22344_SlideM2_20230302_B2-1_brightfield.tiff.gz	12/03/2024 13:35:58	397578745	TIFF
+File	GSM8662292_P22344_SlideM2_20230302_B2-1_raw.tiff.gz	12/03/2024 13:36:21	315462159	TIFF
+File	GSM8662292_P22344_SlideM2_20230302_B2-1_results.txt.gz	12/03/2024 13:36:26	21740661	TXT
+File	GSM8662293_M_C1_segmentation.csv.gz	12/03/2024 13:36:32	40223156	CSV
+File	GSM8662293_M_C1_segmentation_cell_stats.csv.gz	12/03/2024 13:36:32	216014	CSV
+File	GSM8662293_M_C1_segmentation_counts.tsv.gz	12/03/2024 13:36:32	213379	TSV
+File	GSM8662293_P22344_SlideM2_20230302_C1-1_DAPI.tiff.gz	12/03/2024 13:36:46	267814067	TIFF
+File	GSM8662293_P22344_SlideM2_20230302_C1-1_brightfield.tiff.gz	12/03/2024 13:36:57	316074921	TIFF
+File	GSM8662293_P22344_SlideM2_20230302_C1-1_raw.tiff.gz	12/03/2024 13:37:17	246958088	TIFF
+File	GSM8662293_P22344_SlideM2_20230302_C1-1_results.txt.gz	12/03/2024 13:37:20	12773487	TXT
+File	GSM8662294_M_D1_segmentation.csv.gz	12/03/2024 13:37:27	46668924	CSV
+File	GSM8662294_M_D1_segmentation_cell_stats.csv.gz	12/03/2024 13:37:28	249095	CSV
+File	GSM8662294_M_D1_segmentation_counts.tsv.gz	12/03/2024 13:37:28	246723	TSV
+File	GSM8662294_P22344_SlideM2_20230302_D1-1_DAPI.tiff.gz	12/03/2024 13:37:41	288710203	TIFF
+File	GSM8662294_P22344_SlideM2_20230302_D1-1_brightfield.tiff.gz	12/03/2024 13:37:53	333673138	TIFF
+File	GSM8662294_P22344_SlideM2_20230302_D1-1_raw.tiff.gz	12/03/2024 13:38:12	261126446	TIFF
+File	GSM8662294_P22344_SlideM2_20230302_D1-1_results.txt.gz	12/03/2024 13:38:16	14800400	TXT
+File	GSM8662295_M_D2_segmentation.csv.gz	12/03/2024 13:38:23	46475678	CSV
+File	GSM8662295_M_D2_segmentation_cell_stats.csv.gz	12/03/2024 13:38:23	231181	CSV
+File	GSM8662295_M_D2_segmentation_counts.tsv.gz	12/03/2024 13:38:23	221853	TSV
+File	GSM8662295_P22344_SlideM2_20230302_D2-1_DAPI.tiff.gz	12/03/2024 13:38:37	284792331	TIFF
+File	GSM8662295_P22344_SlideM2_20230302_D2-1_brightfield.tiff.gz	12/03/2024 13:38:49	336705898	TIFF
+File	GSM8662295_P22344_SlideM2_20230302_D2-1_raw.tiff.gz	12/03/2024 13:39:09	257603487	TIFF
+File	GSM8662295_P22344_SlideM2_20230302_D2-1_results.txt.gz	12/03/2024 13:39:13	14810579	TXT

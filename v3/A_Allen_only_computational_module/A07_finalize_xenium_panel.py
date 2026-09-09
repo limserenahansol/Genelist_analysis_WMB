@@ -549,7 +549,8 @@ def main() -> int:
          "Amygdala: Hochgerner et al. 2023 Nat Neurosci (posterior-BMA VGLUT1 types 10-15; Fezf1 "
          "separates MEA from BMA). Orbitofrontal: Lui et al. 2021 Cell (Pld5 and Ackr3 are the two "
          "genes that distinguish OFC from medial PFC; Otof marks L2/3; Npr3 marks deep L5) and "
-         "Pitts 2024 (Mc4r). These stand in until Dan's and Jesse's own lists arrive. "
+         "Pitts 2024 (Mc4r). Dan GSE283418 (Resolve 98-gene smFISH) and Jesse PL-ILA-ORB "
+         "morphine DEGs arrived 2026-09-09: compared in v3/outputs, not used to rebuild this 144. "
          "Full bibliography is the SOURCES sheet; every gene row has paper_cited + doi."),
         ("Allen Institute transcriptomic data - did we get it?",
          "YES. We downloaded the official Allen Brain Cell Atlas WMB-10X processed cell-by-gene "
@@ -560,6 +561,118 @@ def main() -> int:
          "raw matrices - those papers contributed published marker lists, then each gene was "
          "re-checked in Allen. Details in ALLEN_DATA_ACCESS."),
     ], columns=["item", "detail"])
+
+    sheets["FOR_PI"] = pd.DataFrame([
+        ("Please look at",
+         "1) FOR_PI (this sheet). 2) SHARED_PANEL_ORDER (the list to order). "
+         "3) HOW_WE_CHOSE_GENES (how activity/plasticity genes were filtered). "
+         "4) ANCHOR_COVERAGE (all 20 cell types still separable). 5) SOURCES (papers)."),
+        ("What this file is",
+         "Finalized Xenium gene list for ORBm and BMAp: one shared panel of 144 curated genes "
+         "(44 already free on the 10x Mouse Brain v1 base panel, 100 custom add-on slots). "
+         "Both regions can be read from the same mouse on the same slide."),
+        ("What is new vs the earlier marker+GPCR list",
+         "We now also include transcription-factor identity genes, IEGs, synaptic plasticity genes, "
+         "neurotransmitter/class backbone, TRAP reporters (tdTomato/iCre), and published "
+         "amygdala/OFC markers. All mouse genes were scored on Allen WMB-10X "
+         "(226,886 cells: ORBm 106,122 / BMAp 120,764)."),
+        ("Were activity/plasticity genes added at random?",
+         "No. They were not taken from a generic list and were not taken from the amygdala/OFC "
+         "cell-type papers. See HOW_WE_CHOSE_GENES."),
+        ("Step 1 - nominate",
+         "Start from genes required for THIS experiment (TRAP: Fos, Arc, Npas4) and genes that are "
+         "standard readouts of morphine/synaptic plasticity (Gria1/Gria2 AMPA, Grin1/Grin2b NMDA, "
+         "Camk2a, Bdnf). Hochgerner 2023 and Lui 2021 were used for CELL-TYPE markers "
+         "(Fezf1, Cartpt, Pld5, Ackr3), not for the IEG/plasticity block."),
+        ("Step 2 - require expression here",
+         "Keep only genes actually expressed in Allen WMB-10X ORBm and BMAp cells "
+         "(detected in the 20 anchor subclasses). Genes near-absent in these regions were dropped."),
+        ("Step 3 - spend the 100-slot cap",
+         "When the custom add-on cap filled, drop lowest priority first (tier 3, then tier 2). "
+         "Result: 27 IEG candidates -> 11 kept; 31 plasticity candidates -> 13 kept. "
+         "Dropped examples: Atf3, Per1, Egr2 (IEG); Syp, Shank3, Cdk5 (plasticity)."),
+        ("Dual-use genes",
+         "A few activity/plasticity genes independently also separate cell types in the Allen data "
+         "(Egr1, Bdnf, Nptx2, Ppp1r1b), so they were kept for both reasons. "
+         "Gene-by-gene kept vs dropped is IEG_PLASTICITY_AUDIT."),
+    ], columns=["item", "detail"])
+
+    sheets["HOW_WE_CHOSE_GENES"] = pd.DataFrame([
+        ("Rule", "This panel is not 'all known IEG/plasticity genes'. Three filters were applied in order."),
+        ("Filter 1. Nomination (why a gene is even a candidate)",
+         "TRAP experiment needs: Fos (TRAP2 driver), Arc, Npas4 (neuron-specific activity IEG). "
+         "Morphine/synaptic plasticity standards: Gria1 and Gria2 (AMPA trafficking / Ca-permeable AMPAR switch), "
+         "Grin1 / Grin2a / Grin2b (NMDA), Camk2a, Bdnf/Ntrk2, Homer1, Dlg4. "
+         "These come from TRAP method papers and the opioid-plasticity literature, NOT from "
+         "Hochgerner 2023 (amygdala atlas) or Lui 2021 (OFC/PFC classes)."),
+        ("Filter 2. Present in OUR regions (Allen WMB-10X)",
+         "Every nominated mouse gene was scored in 226,886 Allen cells from the ORBm and BMAp "
+         "dissection ROIs. If it was barely expressed there, it was removed even if it is famous "
+         "in other brain areas. Transgenes (tdTomato, iCre, mCherry, WPRE) skip this filter "
+         "because they are not mouse genes."),
+        ("Filter 3. 100 custom add-on slots",
+         "Genes already on the 10x Mouse Brain v1 base panel are free. Everything else costs a slot. "
+         "Tier 1 (must have) is bought first, then tier 2, then tier 3. Optional IEGs and "
+         "generic synapse genes were the first to be cut."),
+        ("What Hochgerner 2023 and Lui 2021 actually contributed",
+         "Cell-type identity, not activity genes. Amygdala: Fezf1 (MEA vs BMA), Cartpt (posterior BMA "
+         "FISH-validated type), Calb2/Dcn/Htr2c and related BMA subtype markers. "
+         "OFC: Pld5 and Ackr3 (the two genes reported to distinguish OFC from medial PFC), "
+         "Otof (L2/3), Npr3 (deep L5), Mc4r (Pitts 2024)."),
+        ("Counts after the three filters",
+         "IEG universe 27 -> 11 on the shared panel. Plasticity universe 31 -> 13 on the shared panel. "
+         "Full kept/dropped table: IEG_PLASTICITY_AUDIT."),
+        ("Dual-use (activity/plasticity AND cell-type separator in Allen)",
+         "Egr1, Bdnf, Nptx2, Ppp1r1b. These survived both because they are activity/plasticity "
+         "readouts and because they help call a specific subclass in ORBm or BMAp."),
+    ], columns=["item", "detail"])
+
+    uni = data["universe"]
+    long = data["long"]
+    act = uni[uni["category"].isin(["IEG_rapid", "IEG_delayed", "plasticity"])].copy()
+    keep_set = set(sheets["SHARED_PANEL_ORDER"]["gene"])
+    # Allen evidence across both regions' neuronal/anchor rows
+    allen = long.groupby("gene").agg(
+        allen_max_pct=("pct_expr", "max"),
+        allen_max_mean=("mean_log2_expr", "max"),
+        allen_n_subclasses_detected=("pct_expr", lambda s: int((s >= MIN_PCT).sum())),
+    )
+    audit_rows = []
+    for _, r in act.iterrows():
+        g = str(r["gene_symbol"])
+        on = g in keep_set
+        ev = allen.loc[g] if g in allen.index else None
+        pct = float(ev["allen_max_pct"]) if ev is not None else float("nan")
+        mean = float(ev["allen_max_mean"]) if ev is not None else float("nan")
+        detected = bool(ev is not None and pct >= MIN_PCT and mean >= MIN_MEAN)
+        if on:
+            fate = "KEPT on shared panel"
+            reason = "Passed nomination + Allen expression + 100-slot budget (tier high enough)."
+        elif not detected:
+            fate = "DROPPED before budget"
+            reason = "Nominated, but not clearly expressed in Allen ORBm/BMAp anchor cells."
+        else:
+            fate = "DROPPED by 100-slot cap"
+            reason = "Expressed here, but lower priority (tier 3 / optional) so the slot went to a higher-tier gene."
+        dual = g in {"Egr1", "Bdnf", "Nptx2", "Ppp1r1b"}
+        audit_rows.append({
+            "gene": g,
+            "category": r["category"],
+            "subcategory": r.get("subcategory", ""),
+            "priority_hint": r.get("priority_hint", ""),
+            "on_shared_panel": "yes" if on else "no",
+            "fate": fate,
+            "also_a_celltype_separator": "yes" if dual else "no",
+            "allen_detected_in_ORBm_or_BMAp": "yes" if detected else "no",
+            "allen_max_pct": round(pct, 2) if pct == pct else "",
+            "allen_max_mean_log2": round(mean, 2) if mean == mean else "",
+            "why_it_was_a_candidate": str(r.get("rationale", ""))[:280],
+            "why_kept_or_dropped": reason,
+            "NOT_from": "Not nominated by Hochgerner 2023 or Lui 2021. Those papers supplied cell-type markers.",
+        })
+    sheets["IEG_PLASTICITY_AUDIT"] = pd.DataFrame(audit_rows).sort_values(
+        ["on_shared_panel", "category", "gene"], ascending=[False, True, True]
+    )
 
     sheets["SOURCES"] = data["citations"].copy()
     sheets["ALLEN_DATA_ACCESS"] = pd.DataFrame([
@@ -595,23 +708,37 @@ def main() -> int:
         ("Lui 2021 OFC/PFC scRNA-seq raw matrix?",
          "NOT downloaded. Marker lists were taken from the paper; each gene was then tested in Allen."),
         ("Dan / Jesse datasets?",
-         "Not in hand. Hochgerner 2023 (amygdala) and Lui 2021 (OFC) are the published stand-ins. "
-         "If those lists arrive, re-run A07 with them added to expanded_panel_universe.csv."),
+         "In hand 2026-09-09. Dan = GSE283418 Resolve 98-gene smFISH (not Hochgerner). "
+         "14 extras were appended on MSGS111 (block 12_GSE283418_added); this A07 workbook "
+         "stays the 144 curated shared panel. Jesse = PL-ILA-ORB morphine DEGs + ORB-enriched "
+         "GPCRs (v3/inputs/Jesse_ORB). Compared, not appended. Proposed morphine-state extras: "
+         "Rxfp1 (free on base), Per2, Pcsk1, Per1. See Jesse_ORB_vs_Xenium_panel.xlsx."),
     ], columns=["item", "detail"])
 
+    sheet_order = [
+        "FOR_PI", "HOW_WE_CHOSE_GENES", "IEG_PLASTICITY_AUDIT",
+        "READ_ME_first", "SHARED_PANEL_ORDER", "ORBm_ORDER", "BMAp_ORDER",
+        "ANCHOR_COVERAGE", "SUMMARY_by_block", "CUT_genes",
+        "SOURCES", "ALLEN_DATA_ACCESS",
+    ]
     xlsx = out_dir / "FINAL_Xenium_panel_ORBm_BMAp.xlsx"
-    with pd.ExcelWriter(xlsx, engine="openpyxl") as w:
-        for name in ["READ_ME_first", "SHARED_PANEL_ORDER", "ORBm_ORDER", "BMAp_ORDER",
-                     "ANCHOR_COVERAGE", "SUMMARY_by_block", "CUT_genes",
-                     "SOURCES", "ALLEN_DATA_ACCESS"]:
-            sheets[name].to_excel(w, sheet_name=name[:31], index=False)
-        for ws in w.book.worksheets:
-            ws.freeze_panes = "A2"
-            for cells in ws.columns:
-                letter = cells[0].column_letter
-                longest = max((len(str(c.value)) for c in cells if c.value is not None), default=8)
-                ws.column_dimensions[letter].width = min(max(longest + 2, 10), 60)
+    xlsx_pi = out_dir / "FINAL_Xenium_panel_ORBm_BMAp_for_PI.xlsx"
+
+    def _write(path: Path) -> None:
+        with pd.ExcelWriter(path, engine="openpyxl") as w:
+            for name in sheet_order:
+                sheets[name].to_excel(w, sheet_name=name[:31], index=False)
+            for ws in w.book.worksheets:
+                ws.freeze_panes = "A2"
+                for cells in ws.columns:
+                    letter = cells[0].column_letter
+                    longest = max((len(str(c.value)) for c in cells if c.value is not None), default=8)
+                    ws.column_dimensions[letter].width = min(max(longest + 2, 10), 60)
+
+    _write(xlsx)
+    _write(xlsx_pi)
     print(f"[DONE] {xlsx}")
+    print(f"[DONE] {xlsx_pi}")
 
     cov = sheets["ANCHOR_COVERAGE"]
     for col, label in (("OK_region_panel", "region-specific panels"),

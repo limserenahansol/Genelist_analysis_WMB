@@ -443,6 +443,35 @@ python v3/A_Allen_only_computational_module/A06_subclass_discriminating_markers.
 python v3/A_Allen_only_computational_module/A07_finalize_xenium_panel.py
 ```
 
+### Collaborator lists (Jesse ORB + Dan GSE283418) — 2026-09-09
+
+Jesse's PL-ILA-ORB morphine DEGs and Dan's amygdala spatial 98-gene panel arrived after the 144-gene shared order was locked. They were compared to Allen ORBm/BMAp scores and to `FINAL_Xenium_panel_ORBm_BMAp_for_MSGS111.xlsx`. They were **not** used to rebuild A07 from scratch.
+
+| Input | Path |
+|---|---|
+| Jesse DEG + enriched GPCRs | `v3/inputs/Jesse_ORB/` |
+| Dan GSE283418 metadata + novel genes | `v3/inputs/GSE283418/` |
+
+| Output | Path |
+|---|---|
+| Current PI / order workbook (144 + 14 Dan) | `v3/outputs/FINAL_Xenium_panel_ORBm_BMAp_for_MSGS111.xlsx` |
+| Jesse vs panel | `v3/outputs/Jesse_ORB_vs_Xenium_panel.xlsx` |
+| Dan 98 vs panel | `v3/outputs/GSE283418_vs_BMAp_panel.xlsx` |
+| Combined 20-slide deck | `v3/outputs/ORBm_BMAp_Jesse_Dan_panel_decision.pptx` |
+| Figures | `v3/outputs/jesse_orb_figures/`, `v3/outputs/jesse_dan_figures/` |
+
+**What is on the order sheet now.** Shared = **158** genes (original 144 + Dan block `12_GSE283418_added`: `Col23a1, Slc29a4, Cck, Gfra1, Sp8, Abca8a, Calcrl, Lamb3, Syndig1l, Tspan18, Gabre, Nos1, Oprl1, Dnah5`). That is **114 custom** if every Dan extra is kept (cap is 100).
+
+**What Jesse adds.** His top activity IEGs (`Fos, Arc, Egr1, Junb, Nr4a1`) and opioid receptors are already on the 144. The missing morphine-state layer is `Per2, Pcsk1, Per1` plus `Rxfp1` (free on the Xenium base panel). Those ask whether an ORBm cell looks morphine-dependent; they are not cell-type separators. Of his ORB-enriched GPCR top hits, only `Cckbr` and `Hcrtr2` are on the panel and confirmed abundant in our Allen ORBm tables. `Mas1`, `Gpr68`, `Mchr1`, and most other Jesse GPCRs were never in our 40-GPCR Allen pull.
+
+```powershell
+python v3/E_Planning/compare_jesse_orb_panel.py
+python v3/E_Planning/compare_jesse_allen_abundance.py
+python v3/E_Planning/check_jesse_genes_on_panel.py
+python v3/E_Planning/make_jesse_orb_figures.py
+python v3/E_Planning/make_jesse_dan_decision_deck.py
+```
+
 ### E_Planning — turning the list into an order, and into a plan
 
 A Xenium custom add-on is capped at **100 genes** on top of a pre-designed base panel, so the number that decides the budget is not how many genes we want but how many we have to *pay a custom slot for*. `xenium_base_panel_crosscheck.py` answers that: it pulls the 248-gene **Xenium Mouse Brain v1** panel (from the `gene_panel.json` shipped with the public demo dataset for that panel, cached to `v3/outputs/xenium_mouse_brain_base_panel.txt`) and matches it against the D07 list.

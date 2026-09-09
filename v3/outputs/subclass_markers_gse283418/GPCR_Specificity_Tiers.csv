@@ -1,0 +1,40 @@
+region_user,gpcr_gene,n_panel_detected,n_panel_subclasses,frac_panel_detected,gpcr_tier_panel,n_roi_detected,n_roi_subclasses,frac_roi_detected,gpcr_tier_roi,top_panel_subclass,top_panel_mean_log2,top_panel_pct,top_panel_specificity_log2
+BMAp,Adcyap1r1,8,8,1.0,universal,53,55,0.964,universal,121 MEA-BST Otp Zic2 Glut,4.966037273406982,79.04382470119522,0.2907
+BMAp,Adora2a,0,8,0.0,cell_type_specific,2,55,0.036,cell_type_specific,074 MEA-BST Lhx6 Sp9 Gaba,0.0926985740661621,1.7025228292833927,0.0227
+BMAp,Avpr1a,0,8,0.0,cell_type_specific,0,55,0.0,cell_type_specific,082 CEA-BST Ebf1 Pdyn Gaba,0.3434143960475921,6.1297731840367495,0.1224
+BMAp,Avpr1b,0,8,0.0,cell_type_specific,0,55,0.0,cell_type_specific,121 MEA-BST Otp Zic2 Glut,0.0093121854588389,0.1593625498007968,0.0044
+BMAp,Cckbr,6,8,0.75,universal,26,55,0.473,intermediate,012 MEA Slc17a7 Glut,3.312624454498291,57.98192771084337,0.0913
+BMAp,Chrm2,6,8,0.75,universal,37,55,0.673,intermediate,119 SI-MA-LPO-LHA Skor1 Glut,4.591220855712891,58.30275229357799,0.9385
+BMAp,Chrm4,0,8,0.0,cell_type_specific,0,55,0.0,cell_type_specific,012 MEA Slc17a7 Glut,0.048460129648447,1.0040160642570282,0.0192
+BMAp,Cnr1,6,8,0.75,universal,48,55,0.873,universal,082 CEA-BST Ebf1 Pdyn Gaba,5.597784519195557,83.20413436692506,1.3178
+BMAp,Crhr1,7,8,0.875,universal,30,55,0.545,intermediate,120 MEA Otp Foxp2 Glut,2.9253363609313965,52.659574468085104,0.1937
+BMAp,Drd1,4,8,0.5,intermediate,17,55,0.309,intermediate,113 MEA-COA-BMA Ccdc42 Glut,2.971357822418213,51.543401698777714,0.6798
+BMAp,Drd2,1,8,0.125,cell_type_specific,10,55,0.182,cell_type_specific,119 SI-MA-LPO-LHA Skor1 Glut,1.8590705394744875,28.853211009174316,1.0654
+BMAp,Gabbr1,8,8,1.0,universal,55,55,1.0,universal,120 MEA Otp Foxp2 Glut,8.43860149383545,99.40159574468083,0.0008
+BMAp,Gabbr2,8,8,1.0,universal,55,55,1.0,universal,012 MEA Slc17a7 Glut,8.675822257995605,99.67369477911646,0.2995
+BMAp,Galr1,2,8,0.25,cell_type_specific,11,55,0.2,cell_type_specific,113 MEA-COA-BMA Ccdc42 Glut,2.079326868057251,35.61218147917962,0.464
+BMAp,Gpr101,6,8,0.75,universal,29,55,0.527,intermediate,082 CEA-BST Ebf1 Pdyn Gaba,5.658235549926758,78.85443583118001,0.9186
+BMAp,Gpr52,0,8,0.0,cell_type_specific,0,55,0.0,cell_type_specific,120 MEA Otp Foxp2 Glut,0.2406878024339676,4.986702127659575,0.044
+BMAp,Gpr6,0,8,0.0,cell_type_specific,1,55,0.018,cell_type_specific,082 CEA-BST Ebf1 Pdyn Gaba,0.3677773475646972,6.804478897502153,0.0511
+BMAp,Gpr88,6,8,0.75,universal,32,55,0.582,intermediate,082 CEA-BST Ebf1 Pdyn Gaba,4.888200759887695,72.30835486649441,0.0897
+BMAp,Grm1,8,8,1.0,universal,52,55,0.945,universal,119 SI-MA-LPO-LHA Skor1 Glut,9.20915412902832,97.38532110091744,0.9807
+BMAp,Grm5,8,8,1.0,universal,55,55,1.0,universal,121 MEA-BST Otp Zic2 Glut,10.89627742767334,100.0,0.352
+BMAp,Hcrtr1,0,8,0.0,cell_type_specific,1,55,0.018,cell_type_specific,113 MEA-COA-BMA Ccdc42 Glut,0.8371877670288086,15.85871141495753,0.1638
+BMAp,Hcrtr2,2,8,0.25,cell_type_specific,22,55,0.4,intermediate,119 SI-MA-LPO-LHA Skor1 Glut,3.4669010639190674,48.48623853211009,0.1825
+BMAp,Htr1a,6,8,0.75,universal,19,55,0.345,intermediate,119 SI-MA-LPO-LHA Skor1 Glut,1.4949424266815186,25.59633027522936,0.0728
+BMAp,Htr1b,4,8,0.5,intermediate,25,55,0.455,intermediate,082 CEA-BST Ebf1 Pdyn Gaba,3.2423484325408936,51.93798449612403,0.1475
+BMAp,Htr1f,8,8,1.0,universal,48,55,0.873,universal,119 SI-MA-LPO-LHA Skor1 Glut,3.8213279247283936,54.86238532110092,0.654
+BMAp,Htr2a,4,8,0.5,intermediate,30,55,0.545,intermediate,120 MEA Otp Foxp2 Glut,4.461013317108154,70.27925531914893,2.0624
+BMAp,Htr2c,8,8,1.0,universal,53,55,0.964,universal,120 MEA Otp Foxp2 Glut,9.192038536071776,98.3377659574468,1.6762
+BMAp,Mc4r,2,8,0.25,cell_type_specific,6,55,0.109,cell_type_specific,120 MEA Otp Foxp2 Glut,2.1736044883728027,38.49734042553192,1.0591
+BMAp,Npy1r,7,8,0.875,universal,34,55,0.618,intermediate,120 MEA Otp Foxp2 Glut,4.204797744750977,68.21808510638297,0.4966
+BMAp,Npy2r,6,8,0.75,universal,30,55,0.545,intermediate,012 MEA Slc17a7 Glut,5.071427822113037,75.70281124497991,2.6862
+BMAp,Ntsr1,2,8,0.25,cell_type_specific,14,55,0.255,cell_type_specific,012 MEA Slc17a7 Glut,1.865362524986267,34.98995983935743,0.3215
+BMAp,Ntsr2,0,8,0.0,cell_type_specific,0,55,0.0,cell_type_specific,012 MEA Slc17a7 Glut,0.288607656955719,5.948795180722891,0.0271
+BMAp,Oprd1,3,8,0.375,intermediate,17,55,0.309,intermediate,113 MEA-COA-BMA Ccdc42 Glut,1.982660174369812,36.016159105034184,0.8459
+BMAp,Oprk1,5,8,0.625,intermediate,23,55,0.418,intermediate,119 SI-MA-LPO-LHA Skor1 Glut,2.4568893909454346,39.26605504587156,0.3887
+BMAp,Oprm1,8,8,1.0,universal,52,55,0.945,universal,120 MEA Otp Foxp2 Glut,6.73340368270874,91.5558510638298,0.3735
+BMAp,Oxtr,2,8,0.25,cell_type_specific,22,55,0.4,intermediate,012 MEA Slc17a7 Glut,3.342653274536133,58.182730923694784,1.9968
+BMAp,Sstr2,6,8,0.75,universal,32,55,0.582,intermediate,120 MEA Otp Foxp2 Glut,3.611842393875122,62.43351063829788,1.1432
+BMAp,Tacr1,5,8,0.625,intermediate,29,55,0.527,intermediate,012 MEA Slc17a7 Glut,3.940103054046631,61.6214859437751,1.3659
+BMAp,Tacr3,3,8,0.375,intermediate,12,55,0.218,cell_type_specific,082 CEA-BST Ebf1 Pdyn Gaba,1.8414124250411987,30.117714613838647,0.5593
