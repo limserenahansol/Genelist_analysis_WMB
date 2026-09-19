@@ -1,0 +1,30 @@
+panel,n_genes_measured,capture_rate,level,balanced_acc
+v11_lean296,294,1.0,subclass (cell type),0.9205
+v11_superset316,314,1.0,subclass (cell type),0.9184
+v7_252,250,1.0,subclass (cell type),0.9128
+d301,299,1.0,subclass (cell type),0.9206
+ULTIMATE261,228,1.0,subclass (cell type),0.9152
+IDEAL178,176,1.0,subclass (cell type),0.9067
+v8_237,235,1.0,subclass (cell type),0.9137
+v11_lean296,294,0.3,subclass (cell type),0.9167
+v11_superset316,314,0.3,subclass (cell type),0.9191
+v7_252,250,0.3,subclass (cell type),0.9165
+d301,299,0.3,subclass (cell type),0.9261
+ULTIMATE261,228,0.3,subclass (cell type),0.9181
+IDEAL178,176,0.3,subclass (cell type),0.9106
+v8_237,235,0.3,subclass (cell type),0.9177
+v11_lean296,294,0.1,subclass (cell type),0.9232
+v11_superset316,314,0.1,subclass (cell type),0.9253
+v7_252,250,0.1,subclass (cell type),0.9211
+d301,299,0.1,subclass (cell type),0.9251
+ULTIMATE261,228,0.1,subclass (cell type),0.9227
+IDEAL178,176,0.1,subclass (cell type),0.9124
+v8_237,235,0.1,subclass (cell type),0.9216
+v11_lean296,294,1.0,"supertype (sub-population, mean over cell types)",0.8242
+v11_superset316,314,1.0,"supertype (sub-population, mean over cell types)",0.8223
+d301,299,1.0,"supertype (sub-population, mean over cell types)",0.8166
+v7_252,250,1.0,"supertype (sub-population, mean over cell types)",0.8127
+v11_lean296,294,0.1,"supertype (sub-population, mean over cell types)",0.8255
+v11_superset316,314,0.1,"supertype (sub-population, mean over cell types)",0.8233
+d301,299,0.1,"supertype (sub-population, mean over cell types)",0.8203
+v7_252,250,0.1,"supertype (sub-population, mean over cell types)",0.8192

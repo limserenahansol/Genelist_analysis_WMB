@@ -1,0 +1,17 @@
+panel,file,genes,measured_locally,median_det_pct_at_best_anchor,median_det_pct_own_population,n_under_50pct_at_best_anchor,n_under_50pct_own_population,n_too_low_to_map,anchors_with_dedicated_marker_of_20,supertypes_with_dedicated_marker_of_96,SOW_named_genes_of_8,SOW_missing,duplicate_rows,region_sheet_orphans
+"A 166 (100-slot add-on, Sep 18 10:59)",PANEL_A_current_166genes_119custom.xlsx,166,164,80.3,95.0,29,6,2,14,59,6,Creb1; Adrb1,0,41
+MSGS 168 (Sep 18 10:33),FINAL_Xenium_panel_ORBm_BMAp_for_MSGS11122.xlsx,168,164,80.3,95.0,29,6,2,14,59,6,Creb1; Adrb1,0,41
+IDEAL by category (Sep 18 14:29),FINAL_Xenium_panel_ORBm_BMAp_IDEAL_by_category.xlsx,178,176,86.2,96.3,12,5,1,14,62,8,-,0,0
+standalone 197 (Sep 18 14:19),FINAL_Xenium_panel_ORBm_BMAp_standalone_197genes.xlsx,197,195,84.8,95.6,9,3,0,14,63,7,Creb1,0,32
+C 245 expanded (Sep 18 10:59),PANEL_C_expanded_standalone_245genes.xlsx,245,243,75.7,91.7,58,22,12,14,66,6,Creb1; Adrb1,0,32
+standalone 246 (Sep 18 14:14),FINAL_Xenium_panel_ORBm_BMAp_standalone_246genes.xlsx,246,244,75.7,91.7,58,22,12,14,66,7,Creb1,0,32
+C 246 + Adrb1 (Sep 18 14:12),PANEL_C_FINAL_246_with_Adrb1.xlsx,246,244,75.7,91.7,58,22,12,14,66,7,Creb1,0,32
+ULTIMATE v2 261 (Sep 18 13:55),FINAL_ULTIMATE_PANEL_v2.xlsx,261,224,81.2,94.8,19,5,1,17,96,6,Creb1; Adrb1,0,0
+v6 232 (Sep 18 14:31),PANEL_FINAL_v6_ORBm_BMAp_complete.xlsx,232,230,85.3,95.8,18,7,2,15,64,8,-,0,15
+v7 252 (Sep 18 15:52),PANEL_FINAL_v7_ORBm_BMAp_optimal.xlsx,252,250,82.8,95.2,28,7,2,15,66,8,-,0,0
+v8 237 goal-aligned (Sep 18 17:33),PANEL_FINAL_v8_ORBm_BMAp_GOAL_ALIGNED.xlsx,237,235,84.5,95.6,24,7,2,15,66,8,-,0,0
+301 discovery-heavy (Sep 18 17:42),FINAL_Xenium_panel_ORBm_BMAp_301genes.xlsx,301,299,75.7,91.9,73,27,15,15,96,6,Creb1; Adrb1,0,31
+v9 superset 307 (no trim),PANEL_FINAL_v9_ORBm_BMAp_UNLIMITED.xlsx,307,301,81.2,95.5,45,10,3,17,96,8,-,0,0
+"v10 lean, no SOW clock (287)",PANEL_FINAL_v10_ORBm_BMAp_BEST.xlsx,287,283,81.4,95.6,41,10,3,17,96,8,-,0,0
+v11 LEAN 297 (recommended),PANEL_FINAL_v11_ORBm_BMAp_LEAN.xlsx,297,293,81.2,95.5,42,10,3,17,96,8,-,0,0
+v11 SUPERSET 317 (no trim),PANEL_FINAL_v11_ORBm_BMAp_SUPERSET.xlsx,317,311,81.1,95.1,46,10,3,17,96,8,-,0,0

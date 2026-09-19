@@ -34,61 +34,54 @@ def card(ax, x, y, w, h, edge, fill="white", lw=1.6, r=0.035):
 fig, ax = plt.subplots(figsize=(12.6, 5.28))
 ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
 
-STAGES = [
-    (NAVY, "SOURCES", [
-        ("Allen WMB-10X atlas", "32,245 genes x 226,886 cells\nfrom ORBm and BMAp"),
-        ("Jesse Niehaus", "5-day escalating morphine\nDESeq2, PL-ILA-ORB"),
-        ("Dan Berg GSE283418", "amygdala spatial panel"),
-        ("Literature + IUPHAR", "canonical markers,\ndruggable receptors")]),
-    (BLUE, "RESTRICT TO THE TARGET", [
-        ("20 cell populations", "12 in ORBm, 8 in BMAp\n124,115 cells"),
-        ("86 sub-populations", "Allen supertypes inside\nthose 20"),
-        ("Scored in-region only", "not a whole-brain average")]),
-    (GREEN, "MEASURE EVERY GENE TWICE", [
-        ("Can it SEPARATE?", "gap in % positive vs the\nneighbouring populations"),
-        ("Is it DETECTED?", "% of cells carrying it\nin its best population"),
-        ("Judged by its job", "identity genes need the 1st,\nstate genes need the 2nd")]),
-    (RED, "APPLY CAPS, SET IN ADVANCE", [
-        ("<= 4 markers", "per cell population"),
-        ("2 or 1 markers", "per sub-population,\nby its size"),
-        ("1 gene per mechanism", "no paralogue pairs"),
-        ("Drop no-contrast genes", "~100% everywhere with\n<12pp separation")]),
+STEPS = [
+    (NAVY, "1", "Start with the data", [
+        "Allen atlas of these two regions",
+        "   226,886 cells in ORBm + BMAp",
+        "Jesse: 5-day morphine in cortex",
+        "Dan: amygdala spatial panel",
+    ]),
+    (BLUE, "2", "Ask one question per gene", [
+        "Does it name one of the 20",
+        "   cell types in these regions?",
+        "Or does it report morphine,",
+        "   circadian, or receptor state?",
+    ]),
+    (RED, "3", "Drop genes that cannot help", [
+        "On in every cell (no contrast)",
+        "Too rare for the instrument",
+        "   to make a usable map",
+        "Same job as a gene already kept",
+    ]),
+    (GREEN, "4", "Keep only what earned a slot", [
+        "259 genes on one shared panel",
+        "All 20 cell types can be named",
+        "Sub-types inside them too",
+        "Read from the same mouse",
+    ]),
 ]
-X0, W, GAPX = 1.2, 18.6, 2.0
-for si, (col, head, items) in enumerate(STAGES):
-    x = X0 + si * (W + GAPX)
-    ax.text(x + W / 2, 95.5, head, ha="center", va="center", fontsize=11,
+X0, W, GAP = 1.4, 21.6, 2.4
+for i, (col, num, head, lines) in enumerate(STEPS):
+    x = X0 + i * (W + GAP)
+    card(ax, x, 12, W, 78, col, fill="white", lw=1.8)
+    circ = plt.Circle((x + 2.4, 82.6), 1.7, fc=col, ec="none", zorder=3)
+    ax.add_patch(circ)
+    ax.text(x + 2.4, 82.6, num, ha="center", va="center", fontsize=12,
+            color="white", fontweight="bold", zorder=4)
+    ax.text(x + 4.8, 82.6, head, ha="left", va="center", fontsize=12.2,
             color=col, fontweight="bold")
-    y = 88
-    for t, sub in items:
-        h = 9.4 + 3.4 * sub.count("\n")
-        y -= h + 1.8
-        card(ax, x, y, W, h, col, fill="white")
-        ax.text(x + 1.0, y + h - 2.3, t, fontsize=9.8, color=col, fontweight="bold",
-                va="top")
-        ax.text(x + 1.0, y + h - 5.3, sub, fontsize=8.3, color=GREY, va="top")
-    if si < len(STAGES) - 1:
-        ax.add_patch(FancyArrowPatch((x + W + 0.3, 52), (x + W + GAPX - 0.3, 52),
-                                     arrowstyle="-|>", mutation_scale=16,
-                                     color="#9AA5B1", lw=1.7))
+    yy = 70
+    for ln in lines:
+        ax.text(x + 1.4, yy, ln, ha="left", va="top", fontsize=11,
+                color=DARK if not ln.startswith("   ") else GREY)
+        yy -= 11.5
+    if i < 3:
+        ax.add_patch(FancyArrowPatch((x + W + 0.25, 51), (x + W + GAP - 0.25, 51),
+                                     arrowstyle="-|>", mutation_scale=18,
+                                     color="#9AA5B1", lw=1.8))
 
-xr, WR = X0 + 4 * (W + GAPX), 15.0
-card(ax, xr, 12, WR, 80, NAVY, fill=CREAM, lw=2.2)
-cx = xr + WR / 2
-ax.text(cx, 86, "FINAL PANEL", ha="center", fontsize=10.5, color=NAVY,
-        fontweight="bold")
-ax.text(cx, 75, "259", ha="center", fontsize=33, color=NAVY, fontweight="bold")
-ax.text(cx, 68.5, "genes", ha="center", fontsize=10, color=GREY)
-for i, (n, lab) in enumerate([("20 / 20", "populations called\n(held-out recall)"),
-                              ("86 / 86", "sub-populations\nresolved"),
-                              ("10", "probes with no\ncontrast, down from 28")]):
-    yy = 58 - i * 16
-    ax.text(cx, yy, n, ha="center", fontsize=14.5, color=BLUE, fontweight="bold")
-    ax.text(cx, yy - 4.6, lab, ha="center", fontsize=8.2, color=GREY, va="top")
-
-ax.text(50, 6.5, "Nothing is included because a document names it. Every gene on the "
-                 "panel has a measured number attached to a stated job.",
-        ha="center", fontsize=10.5, color=DARK, style="italic")
+ax.text(50, 5.5, "Read left to right: data  →  question  →  drop  →  the 259-gene list.",
+        ha="center", fontsize=12, color=NAVY, fontweight="bold")
 fig.savefig(FIG / "s1_workflow.png", dpi=190, bbox_inches="tight",
             facecolor="white", pad_inches=0.08)
 plt.close(fig)

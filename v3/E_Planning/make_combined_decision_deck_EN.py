@@ -159,21 +159,24 @@ def fig_jesse_gpcrs(allen: pd.DataFrame) -> Path:
     )
 
     a = allen.set_index("gene")
+    # abundance order, colored by the panel decision
     order = ["Chrm1", "Grm8", "Gpr26", "Cckbr", "Hcrtr2", "Mas1", "Rxfp1", "Gpr68", "Mchr1"]
     order = [g for g in order if g in a.index]
     ax = axes[1]
     y = np.arange(len(order))
     vals = [float(a.loc[g, "max_pct"]) for g in order]
-    cols = []
-    for g in order:
-        if g in ("Cckbr", "Hcrtr2"):
-            cols.append(SAGE)
-        elif g == "Rxfp1":
-            cols.append(TEAL)
-        elif g in ("Chrm1", "Grm8"):
-            cols.append(RUST)
-        else:
-            cols.append(GREY)
+    decision_col = {
+        "Chrm1": RUST,
+        "Grm8": RUST,
+        "Rxfp1": TEAL,
+        "Cckbr": SAGE,
+        "Hcrtr2": SAGE,
+        "Gpr26": RUST,
+        "Mas1": GREY,
+        "Gpr68": GREY,
+        "Mchr1": GREY,
+    }
+    cols = [decision_col.get(g, GREY) for g in order]
     ax.barh(y, vals, color=cols, height=0.7)
     ax.set_yticks(y)
     ax.set_yticklabels(order, fontsize=9)
@@ -184,9 +187,21 @@ def fig_jesse_gpcrs(allen: pd.DataFrame) -> Path:
     ax.set_title("B.  Allen: will Xenium actually see it?  (absolute)")
     for i, v in enumerate(vals):
         ax.text(v + 1.5, i, f"{v:.0f}%", va="center", fontsize=8, color="#444")
+    ax.legend(
+        handles=[
+            plt.Rectangle((0, 0), 1, 1, color=RUST, label="ADD"),
+            plt.Rectangle((0, 0), 1, 1, color=TEAL, label="ADD, free"),
+            plt.Rectangle((0, 0), 1, 1, color=SAGE, label="already on"),
+            plt.Rectangle((0, 0), 1, 1, color=GREY, label="do not add"),
+        ],
+        fontsize=7.5,
+        loc="upper right",
+        frameon=False,
+        handlelength=1.0,
+    )
 
     fig.suptitle(
-        "Relative enrichment is not the same as abundance.  106,122 Allen ORBm cells.",
+        "Left picks candidates.  Right decides.  106,122 Allen ORBm cells.",
         fontsize=9,
         color="#555",
         y=1.02,
@@ -339,9 +354,9 @@ def main() -> None:
     p = tf.add_paragraph()
     set_run(
         p,
-        "Considered from this figure:  Per2, Pcsk1, Per1  (clock / peptide program).  "
-        "Arid5b is equally broad (8/12) but is a chromatin TF — a weaker use of a custom slot.  "
-        "Camk2g is the strongest Down gene (6/12 glut only).",
+        "ADD from this figure:  Per2, Pcsk1, Per1, Camk2g  +  Bhlhe40, Sema3e (free on base).  "
+        "Do not add the other ~263 custom Jesse DEGs — 304 unique genes is a transcriptome, not a 100-slot panel.  "
+        "Arid5b (8/12) is a chromatin TF and was left out.",
         14,
         False,
         INK,
@@ -350,7 +365,7 @@ def main() -> None:
     s = new_slide(
         prs,
         "Jesse  |  how the ORB GPCRs look  —  relative vs absolute",
-        "Left: Jesse's enrichment vs the rest of the atlas.  Right: % expressing in 106,122 Allen ORBm cells.  These are different questions.",
+        "Left ranks by enrichment.  Right is the buy list: ADD red / teal, skip grey.  Gpr26 is included (86%).",
         2,
     )
     s.shapes.add_picture(str(p2), Inches(0.35), Inches(0.95), Inches(12.6), Inches(5.05))
@@ -359,7 +374,8 @@ def main() -> None:
     tf.word_wrap = True
     set_run(
         tf.paragraphs[0],
-        "Cckbr and Hcrtr2 are already on the panel and are abundant.  Rxfp1 is Jesse's #2 and free on the Xenium base panel (Allen 34%).",
+        "ADD:  Chrm1 (92%)   Grm8 (99%)   Gpr26 (86%)   Rxfp1 (free, 34%).  "
+        "Already on:  Cckbr (74%)   Hcrtr2 (67%).",
         14,
         False,
         INK,
@@ -367,8 +383,8 @@ def main() -> None:
     p = tf.add_paragraph()
     set_run(
         p,
-        "Mas1 is Jesse's #1 by enrichment, but only 45% in L5 ET and ~1% in GABA.  "
-        "Chrm1 (92%) and Grm8 (99%) were never in our 40-GPCR pull — they are the genes Xenium will actually see.",
+        "DO NOT ADD:  Mas1 (Jesse #1, but 45% and ~1% in GABA)   Gpr68 (40%)   Mchr1 (32%, only 2 anchors ≥20%).  "
+        "Enrichment is not abundance — those three fail the 50% line.",
         14,
         False,
         INK,
@@ -387,9 +403,9 @@ def main() -> None:
     tf.word_wrap = True
     set_run(
         tf.paragraphs[0],
-        "Nothing further from Dan.  Best leftover is Sfrp1 at spec 0.89.  "
-        "Honest caveat: Nos1 (0.76), Oprl1 (0.57) and Dnah5 (0.53) already on the sheet sit below Sfrp1 / Glipr1 / Vdr.  "
-        "Those three were kept for pharmacology, not specificity.",
+        "DO NOT ADD Sfrp1 / Glipr1 / Vdr.  All three fail spec > 1.0.  "
+        "Sfrp1 (21%) peaks in 119 SI–LHA, not BMAp.  Vdr (11%) peaks in 082 CEA–BST.  "
+        "Glipr1 (22%) is true 113 Ccdc42, but Penk (2.31) and Lamb3 (1.51) already cover it.",
         14,
         False,
         INK,
@@ -397,7 +413,8 @@ def main() -> None:
     p = tf.add_paragraph()
     set_run(
         p,
-        "Glipr1 (0.88) marks true BMAp (113 Ccdc42), but that anchor already has Penk (2.31) and Lamb3 (1.51).  Do not add a third, weaker probe.",
+        "Caveat: Nos1 / Oprl1 / Dnah5 on the sheet sit below those leftovers on spec.  "
+        "That is a reason to drop them later if we hit the 100-slot cap — not a reason to stack three more weak probes.",
         14,
         False,
         INK,
@@ -406,7 +423,7 @@ def main() -> None:
     s = new_slide(
         prs,
         "Final decision  |  genes added to the panel",
-        "Jesse DEGs ranked on our 12 anchors  +  Jesse GPCRs filtered by Allen abundance  +  Dan stopped at the 14 already on MSGS111.",
+        "These 10 genes are now on SHARED_PANEL_ORDER (168 genes).  Skip Mas1 / Gpr68 / Mchr1, Dan leftovers Sfrp1 / Glipr1 / Vdr, and the rest of Jesse's 304 DEGs.",
         4,
         bar="#C44536",
     )
@@ -417,37 +434,31 @@ def main() -> None:
             [
                 "Already on sheet",
                 "Dan 14   +   Fos Arc Egr1  Cckbr Hcrtr2",
-                "Cell-type 144 and Dan extras stay.  No Dan gene added this round.",
+                "Cell-type 144 and Dan extras stay.  No further Dan gene this round.",
                 "done",
             ],
             [
-                "ADD  now",
-                "Per2    Pcsk1    Per1",
-                "Slide 1: broadest missing IEGs (11 / 9 / 8 of 12).  Morphine-state clock / peptide program.",
-                "3 custom",
+                "ADDED  (Jesse state)",
+                "Per2    Pcsk1    Per1    Camk2g    Bhlhe40    Sema3e",
+                "Slide 1: broadest missing morphine DEGs (11 / 9 / 8 / 6 of 12).  Bhlhe40 and Sema3e are free on base.",
+                "4 + 2 free",
             ],
             [
-                "ADD  now",
-                "Chrm1    Grm8    Rxfp1",
-                "Slide 2: ORB GPCRs that Allen actually sees (92% / 99% / free 34%).  Chrm2 and Grm5 are already on.",
-                "2 + 0",
+                "ADDED  (Jesse GPCR)",
+                "Chrm1    Grm8    Gpr26    Rxfp1",
+                "Slide 2: ORB GPCRs Allen actually sees (92% / 99% / 86% / free 34%).  Chrm2 and Grm5 are already on.",
+                "3 + 1 free",
             ],
             [
-                "Optional",
-                "Camk2g",
-                "Slide 1: strongest Down gene, 93% abundant.  Add only if you want a direction control.",
-                "1 custom",
-            ],
-            [
-                "Free extras",
-                "Sema3e    Bhlhe40",
-                "On the Xenium base panel.  Cheap to curate.  Not required for the argument.",
-                "0",
+                "On SHARED_PANEL_ORDER",
+                "168 genes   =   144 + Dan 14 + Jesse 10",
+                "47 free on the Xenium base panel + 121 custom.  Original add-on cap is 100 — confirm extras with 10x.",
+                "7 new custom",
             ],
             [
                 "Do not add",
-                "Arid5b   Gadd45a   Mas1   Mchr1   more Dan",
-                "TF / 1-anchor / low Allen % / spec < 1.0.  Spend the slot on Chrm1/Grm8 instead of Arid5b.",
+                "Mas1  Gpr68  Mchr1    Sfrp1  Glipr1  Vdr    Arid5b  Gadd45a    rest of Jesse",
+                "Low Allen %  /  wrong nucleus or spec < 1.0  /  TF  /  263 other custom DEGs.  Not a transcriptome panel.",
                 "—",
             ],
         ],
@@ -463,15 +474,15 @@ def main() -> None:
     tf.word_wrap = True
     set_run(
         tf.paragraphs[0],
-        "Final new add:    Per2   Pcsk1   Per1    +    Chrm1   Grm8    +    Rxfp1 (free)",
-        18,
+        "On the order sheet:    Per2  Pcsk1  Per1  Camk2g  Bhlhe40  Sema3e    +    Chrm1  Grm8  Gpr26  Rxfp1",
+        16,
         True,
         RUST_R,
     )
     p = tf.add_paragraph()
     set_run(
         p,
-        "Five custom slots on top of Dan 14  →  119 if every Dan gene is kept.  Original cap is 100 — confirm with 10x, or drop CEA-border Dan genes first.",
+        "Seven new custom slots on top of Dan 14  →  121 custom if every Dan gene is kept.  Cap is 100 — confirm with 10x, or drop CEA-border Dan genes first.",
         13,
         False,
         INK,
@@ -480,13 +491,18 @@ def main() -> None:
     ppt = OUT / "ORBm_BMAp_panel_decision_combined_EN.pptx"
     prs.save(ppt)
     print("PPT", ppt, ppt.stat().st_size)
-    for dest in (
+    extras = [
+        DL / "ORBm_BMAp_panel_decision_hansol_.pptx",
         DL / "ORBm_BMAp_panel_decision_combined_EN.pptx",
         DL / "Add_genes_Dan_Jesse_final_EN.pptx",
-    ):
+        DL / "ORBm_BMAp_panel_decision_combined_EN_v2.pptx",
+        V3.parents[1] / "TRAP_analysis" / "docs" / "xenium_ORBm_BMAp_2026-09" / "ORBm_BMAp_panel_decision_combined_EN.pptx",
+    ]
+    for dest in extras:
+        dest.parent.mkdir(parents=True, exist_ok=True)
         try:
             prs.save(dest)
-            print("also", dest.name)
+            print("also", dest)
         except OSError as e:
             print("skip", dest.name, type(e).__name__)
 

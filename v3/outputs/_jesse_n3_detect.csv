@@ -1,0 +1,26 @@
+gene,n_orbm,lists,direction,anchor_max_pct,best_anchor,pct_ORBm_anchors
+Rapgef2,3,SynPlast,Up,98.7,012 MEA Slc17a7 Glut,93.5
+Nuak1,3,TF,Up,95.2,006 L4/5 IT CTX Glut,75.3
+Zmiz1,3,TF,Up,93.6,029 L6b CTX Glut,81.2
+Kdm7a,3,TF,Up,88.8,012 MEA Slc17a7 Glut,76.6
+Hnrnpll,3,TF,Up,87.5,029 L6b CTX Glut,70.7
+Zfp941,3,TF,Down,87.2,113 MEA-COA-BMA Ccdc42 Glut,36.9
+Bbx,3,TF,Up,86.9,082 CEA-BST Ebf1 Pdyn Gaba,45.8
+Clk1,3,TF,Up,85.4,012 MEA Slc17a7 Glut,65.9
+Rbm3,3,TF,Up,74.6,012 MEA Slc17a7 Glut,60.3
+Odc1,3,TF,Up,74.2,120 MEA Otp Foxp2 Glut,51.3
+Bcl6,3,TF,Up,72.1,022 L5 ET CTX Glut,16.3
+Dusp22,3,TF,Down,67.1,120 MEA Otp Foxp2 Glut,49.4
+Zdhhc5,3,TF,Up,60.2,119 SI-MA-LPO-LHA Skor1 Glut,40.7
+Pparg,3,TF,Down,56.7,006 L4/5 IT CTX Glut,28.4
+Zfp938,3,TF,Up,49.6,120 MEA Otp Foxp2 Glut,38.5
+Zfp286,3,TF,Down,47.6,022 L5 ET CTX Glut,35.1
+Hes1,3,TF,Up,44.2,004 L6 IT CTX Glut,24.3
+Zfp414,3,TF,Down,40.5,121 MEA-BST Otp Zic2 Glut,31.7
+Arid3b,3,TF,Up,28.7,005 L5 IT CTX Glut,19.4
+Osgin2,3,IEG,Up,26.0,012 MEA Slc17a7 Glut,19.5
+Rel,3,IEG,Up,22.5,005 L5 IT CTX Glut,14.7
+Dmc1,3,TF,Up,22.2,121 MEA-BST Otp Zic2 Glut,9.2
+Irf9,3,TF,Up,21.2,113 MEA-COA-BMA Ccdc42 Glut,9.6
+Zfp867,3,TF,Down,16.2,119 SI-MA-LPO-LHA Skor1 Glut,9.1
+Prox2,3,TF,Up,6.4,012 MEA Slc17a7 Glut,2.5

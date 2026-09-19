@@ -1,0 +1,11 @@
+non-neuronal class,with the 8 probes,without them,change (pp),n_cells_tested
+318 Astro-NT NN,90.6,90.5,-0.1,3572
+319 Astro-TE NN,90.9,90.8,-0.1,3725
+326 OPC NN,99.6,99.7,0.1,3094
+327 Oligo NN,99.7,99.6,-0.1,3831
+330 VLMC NN,99.2,100.0,0.8,125
+331 Peri NN,97.5,94.7,-2.8,357
+332 SMC NN,96.3,92.9,-3.4,351
+333 Endo NN,100.0,99.5,-0.5,1298
+334 Microglia NN,99.9,99.9,0.0,2557
+335 BAM NN,99.2,98.4,-0.8,125

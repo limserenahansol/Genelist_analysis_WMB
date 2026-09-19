@@ -1,0 +1,10 @@
+gene,best_target_type,pct_in,next_highest_target,gap_pp,mean_log2_there
+Frem3,074 MEA-BST Lhx6 Sp9 Gaba,54.5,12.1,42.4,3.38
+Blnk,004 L6 IT CTX Glut,54.5,17.6,36.9,3.58
+Tnnc1,006 L4/5 IT CTX Glut,53.5,31.0,22.4,3.53
+Colq,005 L5 IT CTX Glut,39.3,21.3,18.1,2.48
+Adam19,005 L5 IT CTX Glut,57.7,40.6,17.1,3.43
+Man2a1,005 L5 IT CTX Glut,76.9,60.6,16.3,5.11
+Ldlrad3,005 L5 IT CTX Glut,68.7,52.5,16.2,4.37
+Chn2,073 MEA-BST Sox6 Gaba,88.8,74.0,14.8,6.56
+Ankfn1,073 MEA-BST Sox6 Gaba,79.9,71.6,8.3,6.3

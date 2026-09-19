@@ -22,3 +22,10 @@ v3/outputs/**/_expr_cache_*.parquet
 v3/outputs/_deck_png/
 outputs/_deck_png/
 v3/outputs/_deck_png/
+
+# large regenerable caches from the 2026-09 panel re-analysis
+v3/outputs/_cache*.npy
+v3/outputs/_cache*.parquet
+v3/outputs/_GW_pct.pkl
+v3/outputs/allen_extract*/
+v3/outputs/allen_genomewide/

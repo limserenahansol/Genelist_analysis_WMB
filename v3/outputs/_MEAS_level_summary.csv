@@ -1,0 +1,586 @@
+gene,own_best_subclass,own_pct,own_mean_log2,best_anchor,anchor_pct,anchor_mean_log2,n_subclasses_ge50,level_verdict
+2010300C02Rik,026 NLOT Rho Glut,99.0,8.14,022 L5 ET CTX Glut,95.0,7.13,40,strong in its own population
+Abca8a,330 VLMC NN,82.3,7.16,012 MEA Slc17a7 Glut,31.9,1.83,2,strong in its own population
+Ackr3,332 SMC NN,59.1,4.91,004 L6 IT CTX Glut,21.3,1.21,1,usable in its own population
+Acsbg1,318 Astro-NT NN,95.2,8.49,049 Lamp5 Gaba,2.9,0.17,2,strong in its own population
+Acsl4,058 PAL-STR Gaba-Chol,93.8,5.8,022 L5 ET CTX Glut,84.8,5.6,55,strong in its own population
+Acta2,332 SMC NN,95.8,11.62,119 SI-MA-LPO-LHA Skor1 Glut,0.8,0.04,1,strong in its own population
+Acvrl1,333 Endo NN,84.9,7.42,032 L5 NP CTX Glut,14.6,0.9,2,strong in its own population
+Adamts2,121 MEA-BST Otp Zic2 Glut,67.7,4.28,121 MEA-BST Otp Zic2 Glut,67.7,4.28,5,usable in its own population
+Adamtsl1,059 GPe-SI Sox6 Cyp26b1 Gaba,90.3,7.3,012 MEA Slc17a7 Glut,65.5,5.16,8,strong in its own population
+Adcyap1r1,058 PAL-STR Gaba-Chol,96.9,6.12,053 Sst Gaba,80.0,5.75,52,strong in its own population
+Adgrl4,333 Endo NN,98.8,10.77,121 MEA-BST Otp Zic2 Glut,0.9,0.05,1,strong in its own population
+Adra1a,055 STR Lhx8 Gaba,95.5,7.9,049 Lamp5 Gaba,93.3,8.05,37,strong in its own population
+Adra1b,046 Vip Gaba,76.2,6.13,046 Vip Gaba,75.5,6.09,6,strong in its own population
+Ahctf1,083 CEA-BST Rai14 Pdyn Crh Gaba,84.1,5.12,012 MEA Slc17a7 Glut,76.3,4.47,51,strong in its own population
+Aldh1a2,330 VLMC NN,87.1,7.51,012 MEA Slc17a7 Glut,1.4,0.07,1,strong in its own population
+Angpt1,133 PVH-SO-PVa Otp Glut,93.4,8.18,121 MEA-BST Otp Zic2 Glut,72.6,5.41,8,strong in its own population
+Ano1,331 Peri NN,81.8,7.76,052 Pvalb Gaba,4.4,0.27,3,strong in its own population
+Aqp4,318 Astro-NT NN,91.0,7.9,012 MEA Slc17a7 Glut,4.9,0.24,2,strong in its own population
+Arc,001 CLA-EPd-CTX Car3 Glut,87.0,6.25,006 L4/5 IT CTX Glut,83.6,6.09,9,strong in its own population
+Arhgap12,133 PVH-SO-PVa Otp Glut,94.1,6.16,119 SI-MA-LPO-LHA Skor1 Glut,78.8,4.93,47,strong in its own population
+Arhgap25,030 L6 CT CTX Glut,72.6,4.8,030 L6 CT CTX Glut,72.6,4.8,3,strong in its own population
+Arhgap6,079 CEA-BST Six3 Cyp26b1 Gaba,95.9,8.77,120 MEA Otp Foxp2 Glut,87.2,6.17,27,strong in its own population
+Arhgef28,026 NLOT Rho Glut,98.6,7.39,113 MEA-COA-BMA Ccdc42 Glut,88.2,6.13,31,strong in its own population
+Arid5b,022 L5 ET CTX Glut,96.4,7.37,022 L5 ET CTX Glut,96.4,7.37,63,strong in its own population
+Baiap3,077 CEA-BST Gal Avp Gaba,99.0,7.45,120 MEA Otp Foxp2 Glut,97.7,7.63,31,strong in its own population
+Banp,026 NLOT Rho Glut,89.5,5.64,012 MEA Slc17a7 Glut,82.6,5.04,51,strong in its own population
+Bcl11b,026 NLOT Rho Glut,100.0,8.74,022 L5 ET CTX Glut,99.7,8.87,42,strong in its own population
+Bdnf,013 COAp Grxcr2 Glut,95.0,8.95,005 L5 IT CTX Glut,84.2,6.24,17,strong in its own population
+Bhlhe22,026 NLOT Rho Glut,97.2,6.92,012 MEA Slc17a7 Glut,91.5,6.5,9,strong in its own population
+Bhlhe40,022 L5 ET CTX Glut,93.8,7.28,022 L5 ET CTX Glut,93.8,7.28,27,strong in its own population
+Btbd11,077 CEA-BST Gal Avp Gaba,98.5,7.62,052 Pvalb Gaba,96.2,8.45,38,strong in its own population
+C1ql1,326 OPC NN,96.3,8.49,119 SI-MA-LPO-LHA Skor1 Glut,12.4,0.83,3,strong in its own population
+C1ql2,133 PVH-SO-PVa Otp Glut,80.2,5.33,012 MEA Slc17a7 Glut,10.1,0.54,1,strong in its own population
+Cabp7,058 PAL-STR Gaba-Chol,64.4,3.42,119 SI-MA-LPO-LHA Skor1 Glut,36.6,2.1,2,usable in its own population
+Cacna2d2,058 PAL-STR Gaba-Chol,100.0,8.27,120 MEA Otp Foxp2 Glut,94.6,6.97,43,strong in its own population
+Calb1,013 COAp Grxcr2 Glut,100.0,8.31,007 L2/3 IT CTX Glut,94.7,7.41,31,strong in its own population
+Calb2,042 OB-out Frmd7 Gaba,96.8,10.74,120 MEA Otp Foxp2 Glut,91.2,6.92,18,strong in its own population
+Calcrl,326 OPC NN,87.0,7.15,120 MEA Otp Foxp2 Glut,68.1,4.43,5,strong in its own population
+Camk2a,002 IT EP-CLA Glut,100.0,9.51,022 L5 ET CTX Glut,100.0,9.5,61,strong in its own population
+Camk2g,077 CEA-BST Gal Avp Gaba,99.0,6.86,120 MEA Otp Foxp2 Glut,97.5,7.51,63,strong in its own population
+Car4,333 Endo NN,71.8,6.46,049 Lamp5 Gaba,57.7,3.97,5,strong in its own population
+Carmn,332 SMC NN,87.5,7.48,005 L5 IT CTX Glut,0.6,0.03,2,strong in its own population
+Cartpt,076 MEA-BST Lhx6 Nfib Gaba,70.0,6.4,052 Pvalb Gaba,54.2,3.94,3,usable in its own population
+Cbln1,121 MEA-BST Otp Zic2 Glut,65.9,4.91,121 MEA-BST Otp Zic2 Glut,65.9,4.91,2,usable in its own population
+Cbln2,077 CEA-BST Gal Avp Gaba,100.0,9.74,032 L5 NP CTX Glut,89.2,7.07,14,strong in its own population
+Cbln4,059 GPe-SI Sox6 Cyp26b1 Gaba,91.4,6.35,005 L5 IT CTX Glut,57.9,4.06,6,strong in its own population
+Ccdc42,113 MEA-COA-BMA Ccdc42 Glut,48.0,2.73,113 MEA-COA-BMA Ccdc42 Glut,48.0,2.73,0,high level in a minority of cells (sparse but real)
+Cck,002 IT EP-CLA Glut,100.0,9.92,005 L5 IT CTX Glut,100.0,10.07,23,strong in its own population
+Cckbr,013 COAp Grxcr2 Glut,91.7,6.44,022 L5 ET CTX Glut,74.2,4.78,13,strong in its own population
+Ccn2,330 VLMC NN,80.6,7.52,029 L6b CTX Glut,76.9,6.14,2,strong in its own population
+Cd24a,078 SI-MA-ACB Ebf1 Bnc2 Gaba,47.9,3.11,012 MEA Slc17a7 Glut,33.7,2.11,0,high level in a minority of cells (sparse but real)
+Cd300c2,334 Microglia NN,88.4,7.64,053 Sst Gaba,2.5,0.14,2,strong in its own population
+Cd44,058 PAL-STR Gaba-Chol,56.2,3.85,082 CEA-BST Ebf1 Pdyn Gaba,19.7,1.16,1,usable in its own population
+Cd53,334 Microglia NN,91.2,8.03,005 L5 IT CTX Glut,1.1,0.06,2,strong in its own population
+Cd68,335 BAM NN,87.3,7.47,074 MEA-BST Lhx6 Sp9 Gaba,11.1,0.57,2,strong in its own population
+Cd93,333 Endo NN,72.3,6.17,022 L5 ET CTX Glut,0.8,0.03,1,strong in its own population
+Cdh13,010 IT AON-TT-DP Glut,100.0,9.55,029 L6b CTX Glut,99.3,9.77,56,strong in its own population
+Cdh20,318 Astro-NT NN,93.6,8.55,049 Lamp5 Gaba,76.3,5.88,13,strong in its own population
+Cdh4,083 CEA-BST Rai14 Pdyn Crh Gaba,100.0,9.49,121 MEA-BST Otp Zic2 Glut,98.4,8.48,50,strong in its own population
+Cdh6,029 L6b CTX Glut,85.8,6.5,029 L6b CTX Glut,85.8,6.5,17,strong in its own population
+Cdh9,037 DG Glut,98.1,8.52,004 L6 IT CTX Glut,90.5,7.42,39,strong in its own population
+Chat,058 PAL-STR Gaba-Chol,84.4,7.36,046 Vip Gaba,12.2,0.88,1,strong in its own population
+Chd2,077 CEA-BST Gal Avp Gaba,98.0,7.05,119 SI-MA-LPO-LHA Skor1 Glut,94.4,6.77,71,strong in its own population
+Chodl,056 Sst Chodl Gaba,63.7,4.76,113 MEA-COA-BMA Ccdc42 Glut,21.8,1.2,1,usable in its own population
+Chrd,022 L5 ET CTX Glut,48.6,2.79,022 L5 ET CTX Glut,48.6,2.79,0,high level in a minority of cells (sparse but real)
+Chrm1,026 NLOT Rho Glut,98.2,7.07,007 L2/3 IT CTX Glut,92.0,6.68,42,strong in its own population
+Chrm2,058 PAL-STR Gaba-Chol,98.1,8.68,032 L5 NP CTX Glut,90.7,7.83,26,strong in its own population
+Chrm3,001 CLA-EPd-CTX Car3 Glut,99.7,9.8,007 L2/3 IT CTX Glut,97.9,8.99,48,strong in its own population
+Cldn5,333 Endo NN,99.0,10.96,005 L5 IT CTX Glut,0.9,0.04,1,strong in its own population
+Clmn,319 Astro-TE NN,91.8,8.12,074 MEA-BST Lhx6 Sp9 Gaba,86.6,5.88,31,strong in its own population
+Cnih3,026 NLOT Rho Glut,97.5,7.26,006 L4/5 IT CTX Glut,94.2,7.38,34,strong in its own population
+Cnr1,026 NLOT Rho Glut,100.0,8.22,046 Vip Gaba,98.5,9.53,40,strong in its own population
+Cntn6,133 PVH-SO-PVa Otp Glut,98.5,7.86,120 MEA Otp Foxp2 Glut,94.0,7.21,42,strong in its own population
+Cntnap4,055 STR Lhx8 Gaba,100.0,9.22,052 Pvalb Gaba,95.9,8.34,38,strong in its own population
+Cntnap5b,051 Pvalb chandelier Gaba,100.0,10.52,121 MEA-BST Otp Zic2 Glut,94.8,8.68,51,strong in its own population
+Cobll1,332 SMC NN,93.2,8.34,073 MEA-BST Sox6 Gaba,11.8,0.67,9,strong in its own population
+Coch,001 CLA-EPd-CTX Car3 Glut,63.4,3.97,006 L4/5 IT CTX Glut,56.7,3.43,3,usable in its own population
+Col19a1,048 RHP-COA Ndnf Gaba,94.4,8.28,053 Sst Gaba,78.1,6.57,16,strong in its own population
+Col1a1,330 VLMC NN,95.0,8.97,012 MEA Slc17a7 Glut,9.6,0.5,1,strong in its own population
+Col23a1,012 MEA Slc17a7 Glut,80.2,5.81,012 MEA Slc17a7 Glut,80.2,5.81,5,strong in its own population
+Col6a1,022 L5 ET CTX Glut,70.9,4.51,022 L5 ET CTX Glut,70.9,4.51,10,strong in its own population
+Cort,052 Pvalb Gaba,62.0,4.8,052 Pvalb Gaba,62.0,4.8,2,usable in its own population
+Cplx3,049 Lamp5 Gaba,89.3,7.0,049 Lamp5 Gaba,89.1,7.0,3,strong in its own population
+Cpne4,001 CLA-EPd-CTX Car3 Glut,100.0,10.09,032 L5 NP CTX Glut,96.9,8.73,45,strong in its own population
+Cpne6,026 NLOT Rho Glut,92.3,6.04,012 MEA Slc17a7 Glut,89.9,5.86,41,strong in its own population
+Cpne8,050 Lamp5 Lhx6 Gaba,89.6,6.71,074 MEA-BST Lhx6 Sp9 Gaba,88.5,6.71,36,strong in its own population
+Crem,005 L5 IT CTX Glut,64.1,3.86,005 L5 IT CTX Glut,64.1,3.86,14,usable in its own population
+Crh,046 Vip Gaba,56.1,4.85,046 Vip Gaba,56.5,4.96,1,usable in its own population
+Crhr1,006 L4/5 IT CTX Glut,65.5,4.04,006 L4/5 IT CTX Glut,65.5,4.04,3,usable in its own population
+Cspg4,326 OPC NN,97.3,8.79,005 L5 IT CTX Glut,2.2,0.11,3,strong in its own population
+Ctxn3,058 PAL-STR Gaba-Chol,32.5,1.77,120 MEA Otp Foxp2 Glut,15.8,0.91,0,too low to map reliably
+Cux2,007 L2/3 IT CTX Glut,94.7,7.38,007 L2/3 IT CTX Glut,94.7,7.38,30,strong in its own population
+Cwh43,001 CLA-EPd-CTX Car3 Glut,69.0,4.39,004 L6 IT CTX Glut,45.0,2.77,2,usable in its own population
+Cx3cr1,334 Microglia NN,100.0,12.27,119 SI-MA-LPO-LHA Skor1 Glut,15.0,0.77,1,strong in its own population
+Cyp1b1,330 VLMC NN,85.4,7.27,046 Vip Gaba,2.8,0.18,1,strong in its own population
+Dcn,330 VLMC NN,99.3,10.88,004 L6 IT CTX Glut,6.8,0.43,1,strong in its own population
+Deptor,059 GPe-SI Sox6 Cyp26b1 Gaba,93.0,6.56,006 L4/5 IT CTX Glut,54.7,3.5,9,strong in its own population
+Dkk3,004 L6 IT CTX Glut,98.5,8.24,004 L6 IT CTX Glut,98.5,8.24,17,strong in its own population
+Dlg4,013 COAp Grxcr2 Glut,100.0,7.77,022 L5 ET CTX Glut,99.2,8.11,64,strong in its own population
+Dlx1,087 MPN-MPO-LPO Lhx6 Zfhx3 Gaba,94.1,6.43,046 Vip Gaba,80.7,6.39,18,strong in its own population
+Dnah5,013 COAp Grxcr2 Glut,58.3,3.23,012 MEA Slc17a7 Glut,48.4,2.76,1,usable in its own population
+Dner,013 COAp Grxcr2 Glut,100.0,8.2,049 Lamp5 Gaba,99.7,9.71,59,strong in its own population
+Dpy19l1,026 NLOT Rho Glut,97.9,7.19,004 L6 IT CTX Glut,89.5,6.45,40,strong in its own population
+Dpyd,133 PVH-SO-PVa Otp Glut,100.0,9.73,113 MEA-COA-BMA Ccdc42 Glut,96.7,8.4,38,strong in its own population
+Drd1,061 STR D1 Gaba,96.7,7.89,029 L6b CTX Glut,67.2,4.36,12,strong in its own population
+Drd2,062 STR D2 Gaba,94.6,7.69,119 SI-MA-LPO-LHA Skor1 Glut,28.9,1.86,3,strong in its own population
+Dusp1,332 SMC NN,82.8,7.64,006 L4/5 IT CTX Glut,54.5,3.34,8,strong in its own population
+Dusp4,013 COAp Grxcr2 Glut,31.7,1.66,119 SI-MA-LPO-LHA Skor1 Glut,18.2,0.96,0,too low to map reliably
+Dusp5,013 COAp Grxcr2 Glut,46.7,2.53,032 L5 NP CTX Glut,40.6,2.67,0,high level in a minority of cells (sparse but real)
+E2f6,058 PAL-STR Gaba-Chol,77.5,4.06,119 SI-MA-LPO-LHA Skor1 Glut,63.5,3.71,30,strong in its own population
+Ebf1,332 SMC NN,99.7,10.77,082 CEA-BST Ebf1 Pdyn Gaba,73.3,6.31,7,strong in its own population
+Ebf3,133 PVH-SO-PVa Otp Glut,91.9,8.2,121 MEA-BST Otp Zic2 Glut,18.5,1.25,3,strong in its own population
+Egr1,026 NLOT Rho Glut,98.6,7.84,006 L4/5 IT CTX Glut,98.0,8.9,47,strong in its own population
+Egr3,001 CLA-EPd-CTX Car3 Glut,96.8,7.93,006 L4/5 IT CTX Glut,96.5,7.88,27,strong in its own population
+Egr4,013 COAp Grxcr2 Glut,71.7,4.74,006 L4/5 IT CTX Glut,60.1,3.85,5,strong in its own population
+Emcn,333 Endo NN,85.2,7.64,120 MEA Otp Foxp2 Glut,3.1,0.15,2,strong in its own population
+Emx1,013 COAp Grxcr2 Glut,61.7,3.5,012 MEA Slc17a7 Glut,41.2,2.18,1,usable in its own population
+Ep300,133 PVH-SO-PVa Otp Glut,95.6,6.21,012 MEA Slc17a7 Glut,87.5,5.48,67,strong in its own population
+Epha4,013 COAp Grxcr2 Glut,100.0,7.55,006 L4/5 IT CTX Glut,99.5,8.81,42,strong in its own population
+Etv1,032 L5 NP CTX Glut,99.8,9.89,032 L5 NP CTX Glut,99.8,9.89,20,strong in its own population
+Etv5,022 L5 ET CTX Glut,95.8,7.59,022 L5 ET CTX Glut,95.8,7.59,28,strong in its own population
+Eya4,052 Pvalb Gaba,50.6,3.88,052 Pvalb Gaba,51.3,3.95,1,usable in its own population
+Fezf1,120 MEA Otp Foxp2 Glut,71.7,4.49,120 MEA Otp Foxp2 Glut,71.7,4.49,2,strong in its own population
+Fezf2,022 L5 ET CTX Glut,94.1,7.13,022 L5 ET CTX Glut,94.1,7.13,6,strong in its own population
+Fgd5,333 Endo NN,86.0,7.57,046 Vip Gaba,15.5,1.01,2,strong in its own population
+Fhl2,026 NLOT Rho Glut,84.3,4.94,004 L6 IT CTX Glut,82.1,5.57,12,strong in its own population
+Fhod3,006 L4/5 IT CTX Glut,96.8,7.74,006 L4/5 IT CTX Glut,96.8,7.74,41,strong in its own population
+Fibcd1,058 PAL-STR Gaba-Chol,49.4,2.45,053 Sst Gaba,31.6,1.99,0,high level in a minority of cells (sparse but real)
+Fign,084 BST-SI-AAA Six3 Slc22a3 Gaba,98.7,8.94,120 MEA Otp Foxp2 Glut,88.0,6.7,18,strong in its own population
+Fmod,330 VLMC NN,48.8,4.8,029 L6b CTX Glut,1.2,0.07,0,high level in a minority of cells (sparse but real)
+Fn1,333 Endo NN,93.8,9.21,119 SI-MA-LPO-LHA Skor1 Glut,3.3,0.2,1,strong in its own population
+Fos,332 SMC NN,87.9,9.77,006 L4/5 IT CTX Glut,62.4,4.07,11,strong in its own population
+Fosb,013 COAp Grxcr2 Glut,71.7,4.56,022 L5 ET CTX Glut,34.5,2.08,3,strong in its own population
+Fosl2,013 COAp Grxcr2 Glut,81.7,5.66,005 L5 IT CTX Glut,49.0,2.98,3,strong in its own population
+Foxp1,005 L5 IT CTX Glut,99.9,9.51,005 L5 IT CTX Glut,99.9,9.51,73,strong in its own population
+Foxp2,064 STR-PAL Chst9 Gaba,100.0,10.6,120 MEA Otp Foxp2 Glut,99.0,9.27,17,strong in its own population
+Fxr1,133 PVH-SO-PVa Otp Glut,96.3,6.79,119 SI-MA-LPO-LHA Skor1 Glut,88.2,5.84,64,strong in its own population
+Gabbr1,013 COAp Grxcr2 Glut,100.0,8.35,022 L5 ET CTX Glut,99.7,8.81,69,strong in its own population
+Gabbr2,013 COAp Grxcr2 Glut,100.0,8.91,004 L6 IT CTX Glut,99.9,9.35,64,strong in its own population
+Gabpa,026 NLOT Rho Glut,43.4,2.17,012 MEA Slc17a7 Glut,38.1,1.97,0,high level in a minority of cells (sparse but real)
+Gabre,077 CEA-BST Gal Avp Gaba,91.8,6.72,082 CEA-BST Ebf1 Pdyn Gaba,32.0,1.95,1,strong in its own population
+Gad1,048 RHP-COA Ndnf Gaba,100.0,9.63,049 Lamp5 Gaba,100.0,10.87,40,strong in its own population
+Gad2,048 RHP-COA Ndnf Gaba,100.0,11.11,049 Lamp5 Gaba,100.0,11.44,40,strong in its own population
+Gadd45a,030 L6 CT CTX Glut,61.3,4.06,030 L6 CT CTX Glut,61.3,4.06,1,usable in its own population
+Galnt14,002 IT EP-CLA Glut,97.4,8.27,004 L6 IT CTX Glut,92.3,7.53,28,strong in its own population
+Galr1,077 CEA-BST Gal Avp Gaba,87.7,5.47,113 MEA-COA-BMA Ccdc42 Glut,35.6,2.08,1,strong in its own population
+Garnl3,030 L6 CT CTX Glut,98.6,9.15,030 L6 CT CTX Glut,98.6,9.15,58,strong in its own population
+Gfap,318 Astro-NT NN,24.1,1.88,012 MEA Slc17a7 Glut,1.4,0.07,0,too low to map reliably
+Gfra1,001 CLA-EPd-CTX Car3 Glut,97.6,8.14,121 MEA-BST Otp Zic2 Glut,64.0,4.07,13,strong in its own population
+Gfra2,005 L5 IT CTX Glut,93.5,6.79,005 L5 IT CTX Glut,93.5,6.79,19,strong in its own population
+Gjb2,330 VLMC NN,64.3,5.5,121 MEA-BST Otp Zic2 Glut,0.3,0.02,1,usable in its own population
+Gjc3,327 Oligo NN,98.2,9.34,012 MEA Slc17a7 Glut,1.9,0.09,2,strong in its own population
+Gli3,319 Astro-TE NN,93.6,8.31,113 MEA-COA-BMA Ccdc42 Glut,3.3,0.18,2,strong in its own population
+Glipr1,026 NLOT Rho Glut,30.8,1.51,113 MEA-COA-BMA Ccdc42 Glut,22.0,1.19,0,too low to map reliably
+Gm19410,022 L5 ET CTX Glut,94.8,7.08,022 L5 ET CTX Glut,94.8,7.08,4,strong in its own population
+Gm2115,058 PAL-STR Gaba-Chol,36.2,1.76,005 L5 IT CTX Glut,11.5,0.61,0,too low to map reliably
+Gng12,029 L6b CTX Glut,97.2,7.9,029 L6b CTX Glut,97.2,7.9,23,strong in its own population
+Gpr101,122 LHA-MEA Otp Glut,91.6,6.99,082 CEA-BST Ebf1 Pdyn Gaba,78.8,5.66,11,strong in its own population
+Gpr12,051 Pvalb chandelier Gaba,56.1,3.65,012 MEA Slc17a7 Glut,47.9,2.55,2,usable in its own population
+Gpr17,326 OPC NN,98.3,9.29,082 CEA-BST Ebf1 Pdyn Gaba,1.3,0.06,1,strong in its own population
+Gpr22,013 COAp Grxcr2 Glut,100.0,7.83,004 L6 IT CTX Glut,91.4,6.63,41,strong in its own population
+Gpr26,026 NLOT Rho Glut,98.2,7.17,006 L4/5 IT CTX Glut,85.8,6.0,25,strong in its own population
+Gpr3,052 Pvalb Gaba,23.3,1.32,052 Pvalb Gaba,23.4,1.32,0,too low to map reliably
+Gpr63,048 RHP-COA Ndnf Gaba,10.1,0.48,049 Lamp5 Gaba,2.7,0.14,0,too low to map reliably
+Gpr68,077 CEA-BST Gal Avp Gaba,51.3,2.78,012 MEA Slc17a7 Glut,43.6,2.3,1,usable in its own population
+Gpr88,063 STR D1 Sema5a Gaba,100.0,9.43,120 MEA Otp Foxp2 Glut,75.3,4.8,21,strong in its own population
+Gria1,002 IT EP-CLA Glut,100.0,10.21,012 MEA Slc17a7 Glut,100.0,10.55,67,strong in its own population
+Gria2,001 CLA-EPd-CTX Car3 Glut,100.0,9.99,022 L5 ET CTX Glut,100.0,10.42,68,strong in its own population
+Grik3,059 GPe-SI Sox6 Cyp26b1 Gaba,98.9,7.76,029 L6b CTX Glut,98.5,8.18,35,strong in its own population
+Grin1,013 COAp Grxcr2 Glut,100.0,8.11,022 L5 ET CTX Glut,99.2,8.22,65,strong in its own population
+Grin2a,013 COAp Grxcr2 Glut,100.0,9.92,005 L5 IT CTX Glut,99.9,9.72,59,strong in its own population
+Grin2b,001 CLA-EPd-CTX Car3 Glut,100.0,10.18,007 L2/3 IT CTX Glut,100.0,11.14,67,strong in its own population
+Grm1,035 OB Eomes Ms4a15 Glut,100.0,10.77,012 MEA Slc17a7 Glut,98.2,7.84,57,strong in its own population
+Grm5,001 CLA-EPd-CTX Car3 Glut,100.0,9.64,022 L5 ET CTX Glut,100.0,10.43,64,strong in its own population
+Grm8,064 STR-PAL Chst9 Gaba,99.6,10.19,022 L5 ET CTX Glut,98.7,8.28,43,strong in its own population
+Gsg1l,001 CLA-EPd-CTX Car3 Glut,93.9,6.97,007 L2/3 IT CTX Glut,92.3,6.96,23,strong in its own population
+Gucy1a1,332 SMC NN,94.0,8.42,007 L2/3 IT CTX Glut,90.3,6.62,39,strong in its own population
+Hapln1,050 Lamp5 Lhx6 Gaba,98.0,9.77,049 Lamp5 Gaba,89.0,7.64,5,strong in its own population
+Hat1,133 PVH-SO-PVa Otp Glut,38.2,1.9,119 SI-MA-LPO-LHA Skor1 Glut,30.4,1.65,0,too low to map reliably
+Hcrtr1,026 NLOT Rho Glut,16.4,0.76,113 MEA-COA-BMA Ccdc42 Glut,15.9,0.84,0,too low to map reliably
+Hcrtr2,050 Lamp5 Lhx6 Gaba,89.2,7.64,049 Lamp5 Gaba,67.3,5.08,5,strong in its own population
+Hivep1,029 L6b CTX Glut,90.0,6.55,029 L6b CTX Glut,90.0,6.55,39,strong in its own population
+Homer1,001 CLA-EPd-CTX Car3 Glut,100.0,9.86,006 L4/5 IT CTX Glut,99.6,9.1,61,strong in its own population
+Hpcal1,013 COAp Grxcr2 Glut,100.0,7.51,012 MEA Slc17a7 Glut,94.8,7.0,34,strong in its own population
+Hrh1,120 MEA Otp Foxp2 Glut,70.2,4.14,120 MEA Otp Foxp2 Glut,70.2,4.14,14,strong in its own population
+Hrh3,006 L4/5 IT CTX Glut,81.1,5.54,006 L4/5 IT CTX Glut,81.1,5.54,19,strong in its own population
+Hs3st2,030 L6 CT CTX Glut,98.2,8.45,030 L6 CT CTX Glut,98.2,8.45,15,strong in its own population
+Hsd17b12,058 PAL-STR Gaba-Chol,90.6,5.7,119 SI-MA-LPO-LHA Skor1 Glut,74.5,4.56,57,strong in its own population
+Hsf5,058 PAL-STR Gaba-Chol,24.4,1.09,012 MEA Slc17a7 Glut,20.1,1.02,0,too low to map reliably
+Hspa5,133 PVH-SO-PVa Otp Glut,100.0,8.0,074 MEA-BST Lhx6 Sp9 Gaba,87.4,5.84,67,strong in its own population
+Htr1a,058 PAL-STR Gaba-Chol,63.1,3.59,005 L5 IT CTX Glut,28.3,1.54,1,usable in its own population
+Htr1b,026 NLOT Rho Glut,88.1,5.33,082 CEA-BST Ebf1 Pdyn Gaba,51.9,3.24,7,strong in its own population
+Htr1f,064 STR-PAL Chst9 Gaba,96.9,9.16,030 L6 CT CTX Glut,93.7,7.53,27,strong in its own population
+Htr2a,001 CLA-EPd-CTX Car3 Glut,96.8,7.75,005 L5 IT CTX Glut,78.6,5.53,15,strong in its own population
+Htr2c,120 MEA Otp Foxp2 Glut,98.3,9.19,120 MEA Otp Foxp2 Glut,98.3,9.19,35,strong in its own population
+Htr6,083 CEA-BST Rai14 Pdyn Crh Gaba,8.9,0.45,004 L6 IT CTX Glut,5.2,0.28,0,too low to map reliably
+Hunk,133 PVH-SO-PVa Otp Glut,68.4,4.04,052 Pvalb Gaba,63.4,4.29,8,usable in its own population
+Id2,001 CLA-EPd-CTX Car3 Glut,99.2,8.78,049 Lamp5 Gaba,97.0,8.44,31,strong in its own population
+Igf1,047 Sncg Gaba,95.2,8.25,046 Vip Gaba,94.8,8.96,9,strong in its own population
+Igf2,330 VLMC NN,98.8,10.69,074 MEA-BST Lhx6 Sp9 Gaba,0.1,0.01,1,strong in its own population
+Igfbp4,055 STR Lhx8 Gaba,99.1,8.69,022 L5 ET CTX Glut,78.9,5.66,10,strong in its own population
+Igfbp5,077 CEA-BST Gal Avp Gaba,94.9,6.56,012 MEA Slc17a7 Glut,83.3,5.56,26,strong in its own population
+Igfbp6,007 L2/3 IT CTX Glut,84.7,6.15,007 L2/3 IT CTX Glut,84.7,6.15,8,strong in its own population
+Igsf21,002 IT EP-CLA Glut,94.8,7.37,030 L6 CT CTX Glut,93.5,7.08,25,strong in its own population
+Ikzf1,334 Microglia NN,95.3,9.0,120 MEA Otp Foxp2 Glut,0.5,0.03,2,strong in its own population
+Inpp4b,064 STR-PAL Chst9 Gaba,99.6,10.01,120 MEA Otp Foxp2 Glut,98.4,9.39,49,strong in its own population
+Isl1,077 CEA-BST Gal Avp Gaba,94.9,6.36,082 CEA-BST Ebf1 Pdyn Gaba,54.8,3.67,9,strong in its own population
+Junb,334 Microglia NN,95.9,11.15,006 L4/5 IT CTX Glut,72.8,4.89,25,strong in its own population
+Kcnh5,064 STR-PAL Chst9 Gaba,95.7,8.16,006 L4/5 IT CTX Glut,82.5,6.2,22,strong in its own population
+Kcnmb2,052 Pvalb Gaba,99.0,9.15,052 Pvalb Gaba,99.0,9.16,19,strong in its own population
+Kctd12,334 Microglia NN,98.0,10.14,012 MEA Slc17a7 Glut,73.4,4.65,29,strong in its own population
+Kctd8,059 GPe-SI Sox6 Cyp26b1 Gaba,96.2,7.58,053 Sst Gaba,88.8,7.22,31,strong in its own population
+Kdr,333 Endo NN,84.6,7.66,119 SI-MA-LPO-LHA Skor1 Glut,11.4,0.65,1,strong in its own population
+Kitl,001 CLA-EPd-CTX Car3 Glut,96.5,7.65,007 L2/3 IT CTX Glut,79.2,5.47,10,strong in its own population
+Klf10,001 CLA-EPd-CTX Car3 Glut,78.5,5.15,005 L5 IT CTX Glut,75.9,4.78,13,strong in its own population
+Krt9,113 MEA-COA-BMA Ccdc42 Glut,52.7,3.13,113 MEA-COA-BMA Ccdc42 Glut,52.7,3.13,1,usable in its own population
+Lamb3,113 MEA-COA-BMA Ccdc42 Glut,66.7,4.03,113 MEA-COA-BMA Ccdc42 Glut,66.7,4.03,1,usable in its own population
+Lamp5,050 Lamp5 Lhx6 Gaba,97.6,8.18,049 Lamp5 Gaba,91.5,7.97,18,strong in its own population
+Laptm5,334 Microglia NN,99.3,10.41,007 L2/3 IT CTX Glut,1.0,0.05,2,strong in its own population
+Lhx6,055 STR Lhx8 Gaba,100.0,7.72,074 MEA-BST Lhx6 Sp9 Gaba,88.7,6.19,14,strong in its own population
+Lratd2,022 L5 ET CTX Glut,47.3,2.79,022 L5 ET CTX Glut,47.3,2.79,0,high level in a minority of cells (sparse but real)
+Ly6a,333 Endo NN,94.2,9.22,052 Pvalb Gaba,0.5,0.02,1,strong in its own population
+Lypd6,055 STR Lhx8 Gaba,94.6,7.32,053 Sst Gaba,92.9,8.11,12,strong in its own population
+Lyz2,335 BAM NN,99.5,11.11,052 Pvalb Gaba,1.1,0.06,1,strong in its own population
+Maf,050 Lamp5 Lhx6 Gaba,99.6,8.99,049 Lamp5 Gaba,91.5,7.65,14,strong in its own population
+Maml3,026 NLOT Rho Glut,100.0,8.99,005 L5 IT CTX Glut,81.2,5.9,56,strong in its own population
+Mapk4,013 COAp Grxcr2 Glut,100.0,9.38,007 L2/3 IT CTX Glut,90.9,7.05,51,strong in its own population
+Mas1,013 COAp Grxcr2 Glut,90.0,5.68,022 L5 ET CTX Glut,44.8,2.56,2,strong in its own population
+Matn2,026 NLOT Rho Glut,95.1,6.39,007 L2/3 IT CTX Glut,68.4,4.65,8,strong in its own population
+Mbnl2,013 COAp Grxcr2 Glut,100.0,9.17,012 MEA Slc17a7 Glut,99.8,8.75,73,strong in its own population
+Mbp,327 Oligo NN,99.5,12.12,113 MEA-COA-BMA Ccdc42 Glut,90.2,6.27,44,strong in its own population
+Mc4r,026 NLOT Rho Glut,62.6,3.36,120 MEA Otp Foxp2 Glut,38.5,2.17,1,usable in its own population
+Mchr1,022 L5 ET CTX Glut,32.0,1.75,022 L5 ET CTX Glut,32.0,1.75,0,too low to map reliably
+Mdga1,120 MEA Otp Foxp2 Glut,82.0,5.71,120 MEA Otp Foxp2 Glut,82.0,5.71,10,strong in its own population
+Mecom,333 Endo NN,93.0,9.26,119 SI-MA-LPO-LHA Skor1 Glut,1.2,0.07,1,strong in its own population
+Meis2,041 OB-in Frmd7 Gaba,100.0,11.84,007 L2/3 IT CTX Glut,99.0,9.1,36,strong in its own population
+Mgp,332 SMC NN,81.8,7.19,012 MEA Slc17a7 Glut,15.8,0.82,2,strong in its own population
+Mpped1,029 L6b CTX Glut,99.6,9.01,029 L6b CTX Glut,99.6,9.01,36,strong in its own population
+Myl4,032 L5 NP CTX Glut,92.4,7.96,032 L5 NP CTX Glut,92.4,7.96,2,strong in its own population
+Myo16,041 OB-in Frmd7 Gaba,98.4,10.02,012 MEA Slc17a7 Glut,87.7,6.01,51,strong in its own population
+Ndnf,036 HPF CR Glut,99.1,10.57,049 Lamp5 Gaba,54.5,4.85,6,strong in its own population
+Ndst3,022 L5 ET CTX Glut,99.0,8.53,022 L5 ET CTX Glut,99.0,8.53,44,strong in its own population
+Ndst4,056 Sst Chodl Gaba,93.5,8.3,119 SI-MA-LPO-LHA Skor1 Glut,75.0,6.73,10,strong in its own population
+Necab1,047 Sncg Gaba,99.0,9.47,082 CEA-BST Ebf1 Pdyn Gaba,94.2,7.91,37,strong in its own population
+Necab2,013 COAp Grxcr2 Glut,95.0,6.65,113 MEA-COA-BMA Ccdc42 Glut,87.8,5.88,34,strong in its own population
+Nell1,077 CEA-BST Gal Avp Gaba,100.0,8.62,113 MEA-COA-BMA Ccdc42 Glut,87.0,6.94,44,strong in its own population
+Neto2,026 NLOT Rho Glut,99.7,7.84,032 L5 NP CTX Glut,98.3,8.81,53,strong in its own population
+Neurod2,026 NLOT Rho Glut,98.6,7.45,029 L6b CTX Glut,95.0,7.16,16,strong in its own population
+Neurod6,005 L5 IT CTX Glut,96.9,7.52,005 L5 IT CTX Glut,96.9,7.52,13,strong in its own population
+Nfib,010 IT AON-TT-DP Glut,100.0,9.71,022 L5 ET CTX Glut,100.0,9.5,36,strong in its own population
+Nos1,120 MEA Otp Foxp2 Glut,99.7,9.77,120 MEA Otp Foxp2 Glut,99.7,9.77,27,strong in its own population
+Nostrin,333 Endo NN,85.7,7.71,053 Sst Gaba,4.1,0.24,1,strong in its own population
+Npas4,013 COAp Grxcr2 Glut,45.0,2.6,006 L4/5 IT CTX Glut,34.2,2.06,0,high level in a minority of cells (sparse but real)
+Npnt,058 PAL-STR Gaba-Chol,60.0,3.38,119 SI-MA-LPO-LHA Skor1 Glut,33.7,2.15,1,usable in its own population
+Npr3,022 L5 ET CTX Glut,70.8,4.49,022 L5 ET CTX Glut,70.8,4.49,3,strong in its own population
+Nptx2,013 COAp Grxcr2 Glut,95.0,7.65,004 L6 IT CTX Glut,64.2,4.67,7,strong in its own population
+Npy,056 Sst Chodl Gaba,92.0,9.76,049 Lamp5 Gaba,88.0,9.36,6,strong in its own population
+Npy1r,026 NLOT Rho Glut,85.0,5.17,120 MEA Otp Foxp2 Glut,68.2,4.21,15,strong in its own population
+Npy2r,012 MEA Slc17a7 Glut,75.7,5.07,012 MEA Slc17a7 Glut,75.7,5.07,6,strong in its own population
+Nr2e1,075 MEA-BST Lhx6 Nr2e1 Gaba,84.0,5.66,074 MEA-BST Lhx6 Sp9 Gaba,58.6,3.5,4,strong in its own population
+Nr2f2,026 NLOT Rho Glut,100.0,10.06,119 SI-MA-LPO-LHA Skor1 Glut,99.4,8.66,34,strong in its own population
+Nr4a1,006 L4/5 IT CTX Glut,86.0,6.33,006 L4/5 IT CTX Glut,86.0,6.33,17,strong in its own population
+Nr4a2,001 CLA-EPd-CTX Car3 Glut,100.0,10.53,029 L6b CTX Glut,57.7,3.91,5,strong in its own population
+Nr4a3,013 COAp Grxcr2 Glut,80.0,5.8,004 L6 IT CTX Glut,63.4,4.15,6,strong in its own population
+Nrep,057 NDB-SI-MA-STRv Lhx8 Gaba,71.1,4.1,052 Pvalb Gaba,68.6,4.52,22,strong in its own population
+Nrn1,013 COAp Grxcr2 Glut,100.0,9.0,006 L4/5 IT CTX Glut,99.7,9.16,24,strong in its own population
+Nrp2,013 COAp Grxcr2 Glut,100.0,8.96,012 MEA Slc17a7 Glut,98.6,7.96,46,strong in its own population
+Ntrk2,013 COAp Grxcr2 Glut,100.0,9.68,006 L4/5 IT CTX Glut,99.9,9.37,67,strong in its own population
+Nts,066 NDB-SI-ant Prdm12 Gaba,48.1,3.51,120 MEA Otp Foxp2 Glut,34.1,2.02,0,high level in a minority of cells (sparse but real)
+Ntsr1,059 GPe-SI Sox6 Cyp26b1 Gaba,71.5,4.27,012 MEA Slc17a7 Glut,35.0,1.86,4,strong in its own population
+Ntsr2,318 Astro-NT NN,99.1,9.45,005 L5 IT CTX Glut,8.5,0.43,2,strong in its own population
+Nwd2,007 L2/3 IT CTX Glut,96.7,7.91,007 L2/3 IT CTX Glut,96.7,7.91,30,strong in its own population
+Nxph3,029 L6b CTX Glut,98.6,8.46,029 L6b CTX Glut,98.6,8.46,3,strong in its own population
+Nxph4,114 COAa-PAA-MEA Barhl2 Glut,86.5,6.09,029 L6b CTX Glut,65.5,4.91,3,strong in its own population
+Omg,048 RHP-COA Ndnf Gaba,75.4,4.54,029 L6b CTX Glut,67.3,4.34,46,strong in its own population
+Opalin,327 Oligo NN,79.3,7.13,004 L6 IT CTX Glut,1.7,0.1,1,strong in its own population
+Opn3,055 STR Lhx8 Gaba,77.7,5.37,006 L4/5 IT CTX Glut,33.4,1.87,1,strong in its own population
+Oprd1,051 Pvalb chandelier Gaba,68.7,4.64,052 Pvalb Gaba,68.1,4.58,4,usable in its own population
+Oprk1,001 CLA-EPd-CTX Car3 Glut,90.2,7.09,119 SI-MA-LPO-LHA Skor1 Glut,39.3,2.46,2,strong in its own population
+Oprl1,088 BST Tac2 Gaba,79.0,4.67,120 MEA Otp Foxp2 Glut,77.8,4.76,34,strong in its own population
+Oprm1,084 BST-SI-AAA Six3 Slc22a3 Gaba,95.0,7.37,120 MEA Otp Foxp2 Glut,91.6,6.73,43,strong in its own population
+Orai2,026 NLOT Rho Glut,88.1,5.28,082 CEA-BST Ebf1 Pdyn Gaba,76.8,4.61,39,strong in its own population
+Otof,064 STR-PAL Chst9 Gaba,88.0,6.64,120 MEA Otp Foxp2 Glut,71.5,4.7,14,strong in its own population
+Otp,133 PVH-SO-PVa Otp Glut,98.5,7.96,120 MEA Otp Foxp2 Glut,97.9,7.97,4,strong in its own population
+Oxtr,059 GPe-SI Sox6 Cyp26b1 Gaba,76.3,4.78,012 MEA Slc17a7 Glut,58.2,3.34,3,strong in its own population
+Paqr5,333 Endo NN,74.2,6.29,053 Sst Gaba,11.6,0.68,1,strong in its own population
+Parm1,077 CEA-BST Gal Avp Gaba,100.0,8.96,049 Lamp5 Gaba,96.2,8.59,40,strong in its own population
+Pcsk1,133 PVH-SO-PVa Otp Glut,99.3,7.49,029 L6b CTX Glut,67.4,4.43,15,strong in its own population
+Pcsk5,026 NLOT Rho Glut,95.8,7.31,022 L5 ET CTX Glut,92.3,6.87,23,strong in its own population
+Pde11a,083 CEA-BST Rai14 Pdyn Crh Gaba,97.2,8.03,049 Lamp5 Gaba,75.7,6.63,8,strong in its own population
+Pde7b,061 STR D1 Gaba,99.5,9.76,082 CEA-BST Ebf1 Pdyn Gaba,87.5,6.65,42,strong in its own population
+Pdgfra,326 OPC NN,99.9,10.77,046 Vip Gaba,4.3,0.28,2,strong in its own population
+Pdyn,133 PVH-SO-PVa Otp Glut,98.5,8.06,082 CEA-BST Ebf1 Pdyn Gaba,63.0,4.61,7,strong in its own population
+Pdzd2,036 HPF CR Glut,96.9,9.47,022 L5 ET CTX Glut,95.8,7.37,40,strong in its own population
+Pdzrn3,006 L4/5 IT CTX Glut,95.0,8.01,006 L4/5 IT CTX Glut,95.0,8.01,12,strong in its own population
+Pecam1,333 Endo NN,93.2,8.79,074 MEA-BST Lhx6 Sp9 Gaba,9.4,0.49,1,strong in its own population
+Penk,062 STR D2 Gaba,96.0,9.39,113 MEA-COA-BMA Ccdc42 Glut,75.7,5.2,10,strong in its own population
+Per1,013 COAp Grxcr2 Glut,65.0,3.67,006 L4/5 IT CTX Glut,63.2,3.86,6,usable in its own population
+Per2,013 COAp Grxcr2 Glut,68.3,3.98,006 L4/5 IT CTX Glut,60.9,3.68,6,usable in its own population
+Pglyrp1,333 Endo NN,79.5,6.9,119 SI-MA-LPO-LHA Skor1 Glut,11.3,0.59,1,strong in its own population
+Pip5k1b,049 Lamp5 Gaba,98.2,8.58,012 MEA Slc17a7 Glut,98.1,7.77,50,strong in its own population
+Pkib,012 MEA Slc17a7 Glut,89.3,5.87,012 MEA Slc17a7 Glut,89.3,5.87,17,strong in its own population
+Plch1,026 NLOT Rho Glut,96.5,6.81,052 Pvalb Gaba,33.3,2.09,4,strong in its own population
+Plcxd2,078 SI-MA-ACB Ebf1 Bnc2 Gaba,88.2,5.97,032 L5 NP CTX Glut,87.9,7.14,41,strong in its own population
+Plcxd3,051 Pvalb chandelier Gaba,99.6,9.67,032 L5 NP CTX Glut,94.6,8.12,42,strong in its own population
+Pld5,026 NLOT Rho Glut,100.0,8.2,049 Lamp5 Gaba,90.4,7.43,25,strong in its own population
+Plekha2,010 IT AON-TT-DP Glut,61.1,3.92,004 L6 IT CTX Glut,50.9,3.28,6,usable in its own population
+Pln,332 SMC NN,85.9,8.84,032 L5 NP CTX Glut,15.4,0.97,1,strong in its own population
+Pnoc,077 CEA-BST Gal Avp Gaba,95.4,7.31,049 Lamp5 Gaba,81.5,6.43,6,strong in its own population
+Pou3f1,026 NLOT Rho Glut,99.3,8.19,022 L5 ET CTX Glut,92.1,7.05,8,strong in its own population
+Ppp1r1b,061 STR D1 Gaba,99.8,9.25,030 L6 CT CTX Glut,73.3,4.95,9,strong in its own population
+Prdm8,026 NLOT Rho Glut,97.2,6.82,012 MEA Slc17a7 Glut,90.9,6.46,5,strong in its own population
+Prox1,037 DG Glut,99.2,8.54,046 Vip Gaba,89.3,7.58,9,strong in its own population
+Prph,029 L6b CTX Glut,7.7,0.43,029 L6b CTX Glut,7.7,0.43,0,too low to map reliably
+Prr16,077 CEA-BST Gal Avp Gaba,98.0,7.99,006 L4/5 IT CTX Glut,94.6,7.56,44,strong in its own population
+Prss35,030 L6 CT CTX Glut,55.9,3.67,030 L6 CT CTX Glut,55.9,3.67,1,usable in its own population
+Pthlh,051 Pvalb chandelier Gaba,95.1,7.53,046 Vip Gaba,45.6,3.33,1,strong in its own population
+Ptpru,001 CLA-EPd-CTX Car3 Glut,91.5,6.59,119 SI-MA-LPO-LHA Skor1 Glut,77.7,5.04,15,strong in its own population
+Pvalb,052 Pvalb Gaba,70.8,6.11,052 Pvalb Gaba,71.3,6.18,2,strong in its own population
+Rab3b,053 Sst Gaba,98.8,8.75,053 Sst Gaba,98.8,8.79,21,strong in its own population
+Rai14,029 L6b CTX Glut,86.5,6.41,029 L6b CTX Glut,86.5,6.41,8,strong in its own population
+Rasa4,335 BAM NN,50.5,3.68,119 SI-MA-LPO-LHA Skor1 Glut,20.3,1.11,1,usable in its own population
+Rasgrf2,133 PVH-SO-PVa Otp Glut,99.3,7.4,049 Lamp5 Gaba,96.4,8.55,48,strong in its own population
+Rasl10a,007 L2/3 IT CTX Glut,95.6,7.69,007 L2/3 IT CTX Glut,95.6,7.69,12,strong in its own population
+Rbfox3,001 CLA-EPd-CTX Car3 Glut,100.0,9.09,012 MEA Slc17a7 Glut,99.5,8.68,61,strong in its own population
+Rbms3,013 COAp Grxcr2 Glut,100.0,8.54,120 MEA Otp Foxp2 Glut,99.5,9.41,55,strong in its own population
+Rbp4,053 Sst Gaba,87.8,7.15,053 Sst Gaba,89.7,7.33,2,strong in its own population
+Rfx4,319 Astro-TE NN,91.5,7.87,082 CEA-BST Ebf1 Pdyn Gaba,7.8,0.39,3,strong in its own population
+Rgs4,055 STR Lhx8 Gaba,100.0,8.64,006 L4/5 IT CTX Glut,99.3,9.47,55,strong in its own population
+Rgs9,063 STR D1 Sema5a Gaba,93.5,7.71,082 CEA-BST Ebf1 Pdyn Gaba,80.5,5.03,27,strong in its own population
+Rims3,058 PAL-STR Gaba-Chol,98.1,6.9,119 SI-MA-LPO-LHA Skor1 Glut,93.7,6.59,48,strong in its own population
+Rmst,026 NLOT Rho Glut,100.0,8.99,120 MEA Otp Foxp2 Glut,99.9,10.21,33,strong in its own population
+Rnf152,032 L5 NP CTX Glut,94.6,7.82,032 L5 NP CTX Glut,94.6,7.82,16,strong in its own population
+Ror1,330 VLMC NN,91.6,8.73,012 MEA Slc17a7 Glut,24.0,1.49,4,strong in its own population
+Rorb,319 Astro-TE NN,99.5,10.37,006 L4/5 IT CTX Glut,96.4,8.55,10,strong in its own population
+Rprm,026 NLOT Rho Glut,99.7,7.78,030 L6 CT CTX Glut,91.3,7.38,13,strong in its own population
+Rspo1,077 CEA-BST Gal Avp Gaba,92.8,6.18,113 MEA-COA-BMA Ccdc42 Glut,57.5,3.45,3,strong in its own population
+Rspo2,003 L5/6 IT TPE-ENT Glut,89.2,6.46,004 L6 IT CTX Glut,88.1,6.42,7,strong in its own population
+Rxfp1,001 CLA-EPd-CTX Car3 Glut,92.0,8.13,022 L5 ET CTX Glut,34.1,2.1,2,strong in its own population
+S1pr3,331 Peri NN,84.6,7.69,006 L4/5 IT CTX Glut,24.3,1.39,3,strong in its own population
+Satb2,005 L5 IT CTX Glut,98.8,8.16,005 L5 IT CTX Glut,98.8,8.16,12,strong in its own population
+Scn5a,083 CEA-BST Rai14 Pdyn Crh Gaba,94.9,7.11,074 MEA-BST Lhx6 Sp9 Gaba,90.2,6.38,21,strong in its own population
+Sdk2,029 L6b CTX Glut,99.0,8.67,029 L6b CTX Glut,99.0,8.67,37,strong in its own population
+Sema3a,120 MEA Otp Foxp2 Glut,97.5,9.39,120 MEA Otp Foxp2 Glut,97.5,9.39,25,strong in its own population
+Sema3d,326 OPC NN,90.8,7.59,120 MEA Otp Foxp2 Glut,37.2,2.29,1,strong in its own population
+Sema3e,002 IT EP-CLA Glut,93.3,7.28,004 L6 IT CTX Glut,88.8,6.7,12,strong in its own population
+Sema5a,113 MEA-COA-BMA Ccdc42 Glut,95.7,7.71,113 MEA-COA-BMA Ccdc42 Glut,95.7,7.71,37,strong in its own population
+Sema5b,063 STR D1 Sema5a Gaba,94.3,7.88,029 L6b CTX Glut,75.8,5.45,14,strong in its own population
+Sema6a,048 RHP-COA Ndnf Gaba,97.8,8.02,121 MEA-BST Otp Zic2 Glut,95.4,7.89,40,strong in its own population
+Sfrp1,056 Sst Chodl Gaba,71.7,5.17,049 Lamp5 Gaba,21.1,1.33,2,strong in its own population
+Shisa6,026 NLOT Rho Glut,99.0,7.41,046 Vip Gaba,89.8,7.72,21,strong in its own population
+Siglech,334 Microglia NN,98.2,9.76,052 Pvalb Gaba,0.5,0.02,2,strong in its own population
+Sim1,026 NLOT Rho Glut,100.0,9.13,121 MEA-BST Otp Zic2 Glut,88.0,6.49,4,strong in its own population
+Sipa1l3,058 PAL-STR Gaba-Chol,86.9,5.1,012 MEA Slc17a7 Glut,78.5,4.71,53,strong in its own population
+Skor1,119 SI-MA-LPO-LHA Skor1 Glut,53.6,3.15,119 SI-MA-LPO-LHA Skor1 Glut,53.6,3.15,1,usable in its own population
+Sla,030 L6 CT CTX Glut,68.1,4.5,030 L6 CT CTX Glut,68.1,4.5,2,usable in its own population
+Slc13a4,330 VLMC NN,65.3,5.72,121 MEA-BST Otp Zic2 Glut,1.3,0.06,1,usable in its own population
+Slc17a6,119 SI-MA-LPO-LHA Skor1 Glut,99.5,8.38,119 SI-MA-LPO-LHA Skor1 Glut,99.5,8.38,12,strong in its own population
+Slc17a7,001 CLA-EPd-CTX Car3 Glut,100.0,9.65,029 L6b CTX Glut,100.0,10.06,17,strong in its own population
+Slc29a4,058 PAL-STR Gaba-Chol,65.0,3.19,012 MEA Slc17a7 Glut,64.9,3.82,4,usable in its own population
+Slc32a1,055 STR Lhx8 Gaba,100.0,8.0,074 MEA-BST Lhx6 Sp9 Gaba,98.7,7.87,37,strong in its own population
+Slc39a12,318 Astro-NT NN,97.0,8.95,120 MEA Otp Foxp2 Glut,46.1,2.77,2,strong in its own population
+Slc44a5,059 GPe-SI Sox6 Cyp26b1 Gaba,96.8,7.44,012 MEA Slc17a7 Glut,85.4,5.9,41,strong in its own population
+Slc6a3,044 OB Dopa-Gaba,22.8,1.77,082 CEA-BST Ebf1 Pdyn Gaba,4.6,0.26,0,too low to map reliably
+Slfn5,333 Endo NN,81.6,7.18,022 L5 ET CTX Glut,1.0,0.06,2,strong in its own population
+Slit2,026 NLOT Rho Glut,100.0,8.83,052 Pvalb Gaba,94.1,8.12,30,strong in its own population
+Smad5,133 PVH-SO-PVa Otp Glut,79.4,4.78,119 SI-MA-LPO-LHA Skor1 Glut,54.5,3.1,9,strong in its own population
+Snap25,001 CLA-EPd-CTX Car3 Glut,100.0,11.07,007 L2/3 IT CTX Glut,100.0,10.65,66,strong in its own population
+Sncg,047 Sncg Gaba,68.3,4.82,046 Vip Gaba,1.8,0.12,2,usable in its own population
+Sntb1,331 Peri NN,88.8,8.55,121 MEA-BST Otp Zic2 Glut,46.5,3.22,4,strong in its own population
+Sorcs3,083 CEA-BST Rai14 Pdyn Crh Gaba,100.0,9.25,004 L6 IT CTX Glut,98.5,9.05,55,strong in its own population
+Sox10,326 OPC NN,97.7,8.84,119 SI-MA-LPO-LHA Skor1 Glut,2.4,0.12,2,strong in its own population
+Sox11,077 CEA-BST Gal Avp Gaba,95.4,6.92,074 MEA-BST Lhx6 Sp9 Gaba,84.1,5.62,45,strong in its own population
+Sox12,133 PVH-SO-PVa Otp Glut,64.7,3.64,012 MEA Slc17a7 Glut,49.1,2.59,1,usable in its own population
+Sox17,333 Endo NN,75.5,6.38,052 Pvalb Gaba,0.5,0.02,1,strong in its own population
+Sox5,001 CLA-EPd-CTX Car3 Glut,99.5,8.71,004 L6 IT CTX Glut,96.3,7.75,29,strong in its own population
+Sox6,055 STR Lhx8 Gaba,100.0,9.13,052 Pvalb Gaba,94.5,8.1,15,strong in its own population
+Sox8,326 OPC NN,86.0,6.86,007 L2/3 IT CTX Glut,50.1,3.0,6,strong in its own population
+Sp8,047 Sncg Gaba,70.2,4.89,073 MEA-BST Sox6 Gaba,31.6,1.91,2,strong in its own population
+Sp9,054 STR Prox1 Lhx6 Gaba,89.6,6.28,074 MEA-BST Lhx6 Sp9 Gaba,79.0,5.2,14,strong in its own population
+Spag16,121 MEA-BST Otp Zic2 Glut,15.5,0.95,121 MEA-BST Otp Zic2 Glut,15.5,0.95,0,too low to map reliably
+Spi1,335 BAM NN,85.4,7.01,005 L5 IT CTX Glut,0.2,0.01,2,strong in its own population
+Spp1,330 VLMC NN,74.9,6.97,052 Pvalb Gaba,2.8,0.19,1,strong in its own population
+Sst,053 Sst Gaba,98.7,10.9,053 Sst Gaba,99.0,10.96,4,strong in its own population
+Sstr2,001 CLA-EPd-CTX Car3 Glut,96.5,7.79,120 MEA Otp Foxp2 Glut,62.4,3.61,6,strong in its own population
+Sstr4,013 COAp Grxcr2 Glut,3.3,0.15,022 L5 ET CTX Glut,1.4,0.06,0,too low to map reliably
+Stard5,032 L5 NP CTX Glut,75.8,5.62,032 L5 NP CTX Glut,75.8,5.62,2,strong in its own population
+Stk40,026 NLOT Rho Glut,79.7,4.65,006 L4/5 IT CTX Glut,59.5,3.55,18,strong in its own population
+Strip2,026 NLOT Rho Glut,98.2,7.05,007 L2/3 IT CTX Glut,49.3,2.99,6,strong in its own population
+Syndig1,026 NLOT Rho Glut,97.5,6.9,006 L4/5 IT CTX Glut,89.4,6.33,33,strong in its own population
+Syndig1l,061 STR D1 Gaba,92.3,7.0,082 CEA-BST Ebf1 Pdyn Gaba,46.5,2.96,4,strong in its own population
+Synpr,001 CLA-EPd-CTX Car3 Glut,100.0,10.54,046 Vip Gaba,99.8,10.54,28,strong in its own population
+Syt17,003 L5/6 IT TPE-ENT Glut,95.6,7.31,007 L2/3 IT CTX Glut,92.0,6.82,20,strong in its own population
+Syt2,059 GPe-SI Sox6 Cyp26b1 Gaba,57.5,3.86,052 Pvalb Gaba,30.7,2.24,1,usable in its own population
+Syt6,030 L6 CT CTX Glut,91.7,6.9,030 L6 CT CTX Glut,91.7,6.9,9,strong in its own population
+Tac1,061 STR D1 Gaba,86.5,7.51,052 Pvalb Gaba,70.1,5.78,7,strong in its own population
+Tac2,088 BST Tac2 Gaba,80.4,7.25,046 Vip Gaba,47.7,4.23,2,strong in its own population
+Tacr1,058 PAL-STR Gaba-Chol,90.0,6.96,012 MEA Slc17a7 Glut,61.6,3.94,9,strong in its own population
+Tacr3,133 PVH-SO-PVa Otp Glut,61.0,3.71,082 CEA-BST Ebf1 Pdyn Gaba,30.1,1.84,3,usable in its own population
+Tanc1,013 COAp Grxcr2 Glut,90.0,6.1,012 MEA Slc17a7 Glut,66.3,4.36,9,strong in its own population
+Tbr1,030 L6 CT CTX Glut,96.6,7.57,030 L6 CT CTX Glut,96.6,7.57,18,strong in its own population
+Tcf7l2,318 Astro-NT NN,88.9,7.57,119 SI-MA-LPO-LHA Skor1 Glut,44.8,4.57,7,strong in its own population
+Th,044 OB Dopa-Gaba,57.0,4.87,052 Pvalb Gaba,11.3,0.8,1,usable in its own population
+Thsd7a,051 Pvalb chandelier Gaba,100.0,11.14,012 MEA Slc17a7 Glut,83.3,6.52,41,strong in its own population
+Thsd7b,088 BST Tac2 Gaba,98.6,9.42,030 L6 CT CTX Glut,91.8,7.4,36,strong in its own population
+Tiparp,013 COAp Grxcr2 Glut,70.0,4.36,012 MEA Slc17a7 Glut,55.8,3.27,7,strong in its own population
+Tle4,077 CEA-BST Gal Avp Gaba,100.0,8.9,029 L6b CTX Glut,98.9,8.38,44,strong in its own population
+Tmem132d,001 CLA-EPd-CTX Car3 Glut,99.7,8.95,004 L6 IT CTX Glut,96.6,7.96,49,strong in its own population
+Tmem163,001 CLA-EPd-CTX Car3 Glut,98.7,8.49,119 SI-MA-LPO-LHA Skor1 Glut,95.6,7.51,16,strong in its own population
+Tmem255a,077 CEA-BST Gal Avp Gaba,99.0,7.77,121 MEA-BST Otp Zic2 Glut,88.3,6.51,31,strong in its own population
+Tox,022 L5 ET CTX Glut,99.8,9.2,022 L5 ET CTX Glut,99.8,9.2,33,strong in its own population
+Trbc2,030 L6 CT CTX Glut,92.8,7.36,030 L6 CT CTX Glut,92.8,7.36,2,strong in its own population
+Trem2,334 Microglia NN,94.0,8.84,005 L5 IT CTX Glut,5.0,0.25,2,strong in its own population
+Trh,120 MEA Otp Foxp2 Glut,64.0,4.29,120 MEA Otp Foxp2 Glut,64.0,4.29,3,usable in its own population
+Trhr,037 DG Glut,89.7,6.73,012 MEA Slc17a7 Glut,87.3,6.58,9,strong in its own population
+Trp73,036 HPF CR Glut,94.0,8.57,119 SI-MA-LPO-LHA Skor1 Glut,3.5,0.19,2,strong in its own population
+Trpc4,059 GPe-SI Sox6 Cyp26b1 Gaba,92.5,6.67,052 Pvalb Gaba,86.5,6.6,33,strong in its own population
+Tshz2,084 BST-SI-AAA Six3 Slc22a3 Gaba,100.0,9.87,032 L5 NP CTX Glut,100.0,11.91,35,strong in its own population
+Tspan18,077 CEA-BST Gal Avp Gaba,77.4,4.74,119 SI-MA-LPO-LHA Skor1 Glut,26.8,1.58,1,strong in its own population
+Unc13c,121 MEA-BST Otp Zic2 Glut,99.0,9.44,121 MEA-BST Otp Zic2 Glut,99.0,9.44,30,strong in its own population
+Upk1b,079 CEA-BST Six3 Cyp26b1 Gaba,54.1,3.36,113 MEA-COA-BMA Ccdc42 Glut,17.6,0.97,1,usable in its own population
+Vat1l,077 CEA-BST Gal Avp Gaba,100.0,7.8,082 CEA-BST Ebf1 Pdyn Gaba,98.2,8.39,44,strong in its own population
+Vdr,082 CEA-BST Ebf1 Pdyn Gaba,11.2,0.92,082 CEA-BST Ebf1 Pdyn Gaba,11.2,0.92,0,too low to map reliably
+Vip,046 Vip Gaba,88.3,10.12,046 Vip Gaba,92.9,10.68,1,strong in its own population
+Vipr2,051 Pvalb chandelier Gaba,43.1,2.74,082 CEA-BST Ebf1 Pdyn Gaba,8.2,0.58,0,high level in a minority of cells (sparse but real)
+Vps13a,133 PVH-SO-PVa Otp Glut,97.8,7.19,012 MEA Slc17a7 Glut,96.8,7.09,64,strong in its own population
+Vwc2l,032 L5 NP CTX Glut,97.1,8.83,032 L5 NP CTX Glut,97.1,8.83,20,strong in its own population
+Wfs1,081 ACB-BST-FS D1 Gaba,92.3,6.81,082 CEA-BST Ebf1 Pdyn Gaba,83.6,5.82,24,strong in its own population
+Zbtb25,077 CEA-BST Gal Avp Gaba,44.6,2.31,082 CEA-BST Ebf1 Pdyn Gaba,34.1,1.77,0,high level in a minority of cells (sparse but real)
+Zbtb40,058 PAL-STR Gaba-Chol,43.1,2.0,119 SI-MA-LPO-LHA Skor1 Glut,28.5,1.54,0,high level in a minority of cells (sparse but real)
+Zdbf2,133 PVH-SO-PVa Otp Glut,98.5,8.15,121 MEA-BST Otp Zic2 Glut,95.1,7.04,50,strong in its own population
+Zfp366,333 Endo NN,80.2,7.18,121 MEA-BST Otp Zic2 Glut,0.5,0.03,1,strong in its own population
+Zfp46,026 NLOT Rho Glut,74.1,4.15,012 MEA Slc17a7 Glut,54.6,2.99,3,strong in its own population
+Zfp536,050 Lamp5 Lhx6 Gaba,100.0,10.32,049 Lamp5 Gaba,99.6,9.96,26,strong in its own population
+Zfp580,026 NLOT Rho Glut,64.7,3.39,005 L5 IT CTX Glut,43.5,2.44,3,usable in its own population
+Zfp641,048 RHP-COA Ndnf Gaba,65.4,3.66,052 Pvalb Gaba,51.5,3.17,10,usable in its own population
+Zfp933,083 CEA-BST Rai14 Pdyn Crh Gaba,76.2,4.39,082 CEA-BST Ebf1 Pdyn Gaba,70.0,4.06,48,strong in its own population
+Zfpm2,013 COAp Grxcr2 Glut,100.0,9.05,012 MEA Slc17a7 Glut,99.7,9.65,20,strong in its own population
+Zhx2,013 COAp Grxcr2 Glut,83.3,5.12,012 MEA Slc17a7 Glut,79.4,4.91,9,strong in its own population
+Zic1,058 PAL-STR Gaba-Chol,98.8,8.12,121 MEA-BST Otp Zic2 Glut,69.7,5.5,8,strong in its own population
+Zic2,330 VLMC NN,78.7,6.3,121 MEA-BST Otp Zic2 Glut,60.6,3.53,4,strong in its own population
+Zkscan16,090 BST-MPN Six3 Nrgn Gaba,77.1,4.78,121 MEA-BST Otp Zic2 Glut,75.5,4.75,35,strong in its own population
+Zkscan2,330 VLMC NN,67.7,5.32,119 SI-MA-LPO-LHA Skor1 Glut,50.5,2.83,16,usable in its own population
+Adcyap1,026 NLOT Rho Glut,88.1,6.04,113 MEA-COA-BMA Ccdc42 Glut,84.5,6.22,9,strong in its own population
+Adra2a,001 CLA-EPd-CTX Car3 Glut,61.0,3.79,012 MEA Slc17a7 Glut,42.9,2.31,2,usable in its own population
+Adrb1,026 NLOT Rho Glut,84.3,4.93,005 L5 IT CTX Glut,80.6,5.24,20,strong in its own population
+Adrb2,335 BAM NN,50.7,3.76,032 L5 NP CTX Glut,5.1,0.31,1,usable in its own population
+Arhgap32,013 COAp Grxcr2 Glut,100.0,8.42,022 L5 ET CTX Glut,99.2,8.25,68,strong in its own population
+Arntl,013 COAp Grxcr2 Glut,90.0,5.49,006 L4/5 IT CTX Glut,78.2,5.07,45,strong in its own population
+Bhlhe41,113 MEA-COA-BMA Ccdc42 Glut,79.5,5.21,113 MEA-COA-BMA Ccdc42 Glut,79.5,5.21,21,strong in its own population
+Btg2,334 Microglia NN,95.7,10.3,007 L2/3 IT CTX Glut,46.2,2.89,7,strong in its own population
+Camk2b,013 COAp Grxcr2 Glut,100.0,9.13,012 MEA Slc17a7 Glut,99.7,8.68,63,strong in its own population
+Ccbe1,007 L2/3 IT CTX Glut,74.5,5.25,007 L2/3 IT CTX Glut,74.5,5.25,4,strong in its own population
+Cdh8,084 BST-SI-AAA Six3 Slc22a3 Gaba,98.7,7.92,073 MEA-BST Sox6 Gaba,89.7,7.19,48,strong in its own population
+Clock,058 PAL-STR Gaba-Chol,96.9,6.57,012 MEA Slc17a7 Glut,96.8,6.79,66,strong in its own population
+Creb1,058 PAL-STR Gaba-Chol,90.6,5.22,012 MEA Slc17a7 Glut,84.9,5.23,63,strong in its own population
+Cry1,013 COAp Grxcr2 Glut,63.3,3.77,012 MEA Slc17a7 Glut,36.6,1.9,1,usable in its own population
+Cry2,058 PAL-STR Gaba-Chol,90.6,5.46,006 L4/5 IT CTX Glut,89.3,6.2,61,strong in its own population
+Csf1r,334 Microglia NN,99.8,10.99,119 SI-MA-LPO-LHA Skor1 Glut,3.7,0.19,2,strong in its own population
+Dbp,062 STR D2 Gaba,57.8,3.69,113 MEA-COA-BMA Ccdc42 Glut,51.2,2.96,6,usable in its own population
+Ddc,079 CEA-BST Six3 Cyp26b1 Gaba,66.8,4.29,082 CEA-BST Ebf1 Pdyn Gaba,44.8,2.58,4,usable in its own population
+Ddx3y,133 PVH-SO-PVa Otp Glut,65.4,4.71,029 L6b CTX Glut,61.7,4.14,24,usable in its own population
+Egr2,013 COAp Grxcr2 Glut,61.7,3.57,006 L4/5 IT CTX Glut,25.7,1.48,1,usable in its own population
+Eif2s3y,012 MEA Slc17a7 Glut,57.8,3.57,012 MEA Slc17a7 Glut,57.8,3.57,12,usable in its own population
+Esr1,077 CEA-BST Gal Avp Gaba,92.8,7.0,121 MEA-BST Otp Zic2 Glut,79.4,5.5,12,strong in its own population
+Gphn,013 COAp Grxcr2 Glut,100.0,8.65,119 SI-MA-LPO-LHA Skor1 Glut,100.0,8.93,75,strong in its own population
+Gpr158,013 COAp Grxcr2 Glut,100.0,9.6,012 MEA Slc17a7 Glut,99.9,8.87,65,strong in its own population
+Gria3,013 COAp Grxcr2 Glut,100.0,10.09,022 L5 ET CTX Glut,100.0,10.05,61,strong in its own population
+Gria4,001 CLA-EPd-CTX Car3 Glut,100.0,10.33,032 L5 NP CTX Glut,99.9,9.99,67,strong in its own population
+Grin3a,026 NLOT Rho Glut,100.0,9.06,053 Sst Gaba,97.6,9.73,44,strong in its own population
+Grm2,006 L4/5 IT CTX Glut,70.6,4.44,006 L4/5 IT CTX Glut,70.6,4.44,2,strong in its own population
+Grm3,319 Astro-TE NN,98.8,10.68,006 L4/5 IT CTX Glut,97.9,8.32,46,strong in its own population
+Grm7,010 IT AON-TT-DP Glut,100.0,9.95,120 MEA Otp Foxp2 Glut,100.0,10.67,64,strong in its own population
+Hexb,334 Microglia NN,99.9,11.25,082 CEA-BST Ebf1 Pdyn Gaba,28.3,1.44,3,strong in its own population
+Ier2,334 Microglia NN,74.1,7.24,006 L4/5 IT CTX Glut,32.1,1.8,5,strong in its own population
+Jun,133 PVH-SO-PVa Otp Glut,97.8,7.29,012 MEA Slc17a7 Glut,65.8,4.14,26,strong in its own population
+Jund,026 NLOT Rho Glut,98.6,7.27,113 MEA-COA-BMA Ccdc42 Glut,96.7,7.32,72,strong in its own population
+Kdm5d,078 SI-MA-ACB Ebf1 Bnc2 Gaba,44.5,2.51,012 MEA Slc17a7 Glut,37.9,2.07,0,high level in a minority of cells (sparse but real)
+Lhx9,114 COAa-PAA-MEA Barhl2 Glut,79.1,5.19,012 MEA Slc17a7 Glut,69.2,4.24,4,strong in its own population
+Lrrtm2,026 NLOT Rho Glut,97.9,6.71,030 L6 CT CTX Glut,91.2,6.7,56,strong in its own population
+Nlgn1,007 L2/3 IT CTX Glut,100.0,11.15,007 L2/3 IT CTX Glut,100.0,11.15,69,strong in its own population
+Npas2,005 L5 IT CTX Glut,96.2,7.46,005 L5 IT CTX Glut,96.2,7.46,39,strong in its own population
+Nr1d1,006 L4/5 IT CTX Glut,53.1,3.13,006 L4/5 IT CTX Glut,53.1,3.13,2,usable in its own population
+Nr1d2,058 PAL-STR Gaba-Chol,88.1,5.2,120 MEA Otp Foxp2 Glut,82.9,5.2,57,strong in its own population
+Nrxn1,001 CLA-EPd-CTX Car3 Glut,100.0,10.7,007 L2/3 IT CTX Glut,100.0,11.05,69,strong in its own population
+Nrxn3,001 CLA-EPd-CTX Car3 Glut,100.0,10.38,022 L5 ET CTX Glut,100.0,11.45,69,strong in its own population
+Ntrk3,013 COAp Grxcr2 Glut,100.0,9.73,007 L2/3 IT CTX Glut,99.9,9.57,64,strong in its own population
+P2ry12,334 Microglia NN,99.7,11.03,113 MEA-COA-BMA Ccdc42 Glut,37.0,2.0,2,strong in its own population
+Pak1,013 COAp Grxcr2 Glut,100.0,8.28,029 L6b CTX Glut,100.0,9.62,63,strong in its own population
+Pcdh8,013 COAp Grxcr2 Glut,88.3,5.92,012 MEA Slc17a7 Glut,78.5,4.92,25,strong in its own population
+Pdgfrb,331 Peri NN,99.3,10.98,046 Vip Gaba,2.2,0.14,4,strong in its own population
+Per3,120 MEA Otp Foxp2 Glut,75.9,4.69,120 MEA Otp Foxp2 Glut,75.9,4.69,35,strong in its own population
+Rgs2,133 PVH-SO-PVa Otp Glut,95.6,6.81,082 CEA-BST Ebf1 Pdyn Gaba,92.0,6.61,47,strong in its own population
+Rgs5,331 Peri NN,99.7,12.09,032 L5 NP CTX Glut,21.0,1.36,3,strong in its own population
+Scg2,077 CEA-BST Gal Avp Gaba,99.5,8.64,074 MEA-BST Lhx6 Sp9 Gaba,97.5,8.14,59,strong in its own population
+Sgk1,026 NLOT Rho Glut,93.4,6.29,052 Pvalb Gaba,84.5,6.09,53,strong in its own population
+Shank3,013 COAp Grxcr2 Glut,86.7,5.2,012 MEA Slc17a7 Glut,81.1,4.96,48,strong in its own population
+Sik1,332 SMC NN,59.1,4.71,073 MEA-BST Sox6 Gaba,26.7,1.46,4,usable in its own population
+Slc1a2,001 CLA-EPd-CTX Car3 Glut,100.0,9.13,029 L6b CTX Glut,100.0,11.05,61,strong in its own population
+Slc30a3,013 COAp Grxcr2 Glut,100.0,7.16,006 L4/5 IT CTX Glut,84.7,5.96,12,strong in its own population
+Slc5a7,058 PAL-STR Gaba-Chol,88.8,9.66,046 Vip Gaba,41.4,3.17,1,strong in its own population
+Slc6a1,048 RHP-COA Ndnf Gaba,100.0,10.17,049 Lamp5 Gaba,100.0,10.73,52,strong in its own population
+Smoc2,001 CLA-EPd-CTX Car3 Glut,87.5,6.23,007 L2/3 IT CTX Glut,82.6,5.86,3,strong in its own population
+St8sia2,133 PVH-SO-PVa Otp Glut,72.8,4.36,113 MEA-COA-BMA Ccdc42 Glut,37.8,2.14,1,strong in its own population
+Sulf1,002 IT EP-CLA Glut,94.1,7.55,029 L6b CTX Glut,78.6,5.79,9,strong in its own population
+Syn1,013 COAp Grxcr2 Glut,100.0,8.2,005 L5 IT CTX Glut,99.7,8.97,66,strong in its own population
+Syngap1,013 COAp Grxcr2 Glut,81.7,4.89,012 MEA Slc17a7 Glut,70.3,4.03,32,strong in its own population
+Syp,001 CLA-EPd-CTX Car3 Glut,100.0,9.31,029 L6b CTX Glut,100.0,9.88,64,strong in its own population
+Syt1,001 CLA-EPd-CTX Car3 Glut,100.0,12.18,007 L2/3 IT CTX Glut,100.0,11.51,66,strong in its own population
+Uty,133 PVH-SO-PVa Otp Glut,61.8,3.89,012 MEA Slc17a7 Glut,54.5,3.29,9,usable in its own population
+Vgf,026 NLOT Rho Glut,97.2,7.31,005 L5 IT CTX Glut,84.4,6.01,46,strong in its own population
+Vtn,331 Peri NN,98.5,10.87,030 L6 CT CTX Glut,0.8,0.04,2,strong in its own population
+Xist,039 OB Meis2 Thsd7b Gaba,66.2,7.49,121 MEA-BST Otp Zic2 Glut,51.2,4.7,8,usable in its own population
+Zbtb20,058 PAL-STR Gaba-Chol,100.0,9.32,120 MEA Otp Foxp2 Glut,98.6,9.43,61,strong in its own population
+Adamts17,050 Lamp5 Lhx6 Gaba,94.8,7.66,049 Lamp5 Gaba,83.7,6.56,24,strong in its own population
+Arhgap15,026 NLOT Rho Glut,89.9,5.82,005 L5 IT CTX Glut,86.8,6.02,11,strong in its own population
+Arhgap31,326 OPC NN,98.4,9.26,005 L5 IT CTX Glut,59.6,4.02,9,strong in its own population
+Crispld1,049 Lamp5 Gaba,79.5,6.03,049 Lamp5 Gaba,77.0,5.84,2,strong in its own population
+Crispld2,332 SMC NN,73.0,7.88,046 Vip Gaba,16.7,1.32,2,strong in its own population
+Dio3,037 DG Glut,38.5,2.43,012 MEA Slc17a7 Glut,30.8,1.72,0,high level in a minority of cells (sparse but real)
+Dipk2a,026 NLOT Rho Glut,86.0,5.14,022 L5 ET CTX Glut,71.1,4.41,16,strong in its own population
+Elfn1,058 PAL-STR Gaba-Chol,91.9,6.02,053 Sst Gaba,84.1,6.98,16,strong in its own population
+Fbn2,026 NLOT Rho Glut,84.3,5.3,074 MEA-BST Lhx6 Sp9 Gaba,33.7,2.16,5,strong in its own population
+Glra3,113 MEA-COA-BMA Ccdc42 Glut,96.1,7.55,113 MEA-COA-BMA Ccdc42 Glut,96.1,7.55,31,strong in its own population
+Gm10754,083 CEA-BST Rai14 Pdyn Crh Gaba,90.2,8.07,022 L5 ET CTX Glut,64.0,4.22,8,strong in its own population
+Gpr149,063 STR D1 Sema5a Gaba,81.3,6.25,119 SI-MA-LPO-LHA Skor1 Glut,66.0,4.75,3,strong in its own population
+Gpx3,133 PVH-SO-PVa Otp Glut,95.6,7.05,113 MEA-COA-BMA Ccdc42 Glut,81.3,5.47,16,strong in its own population
+Hhip,327 Oligo NN,77.5,6.15,073 MEA-BST Sox6 Gaba,4.4,0.25,1,strong in its own population
+Hpse,053 Sst Gaba,10.8,0.7,053 Sst Gaba,11.1,0.72,0,too low to map reliably
+Hs3st1,013 COAp Grxcr2 Glut,70.0,4.1,052 Pvalb Gaba,45.9,2.86,4,strong in its own population
+Lin7a,026 NLOT Rho Glut,99.7,7.81,006 L4/5 IT CTX Glut,92.3,6.75,54,strong in its own population
+Luzp2,326 OPC NN,99.9,10.93,121 MEA-BST Otp Zic2 Glut,95.5,8.36,46,strong in its own population
+Lypd1,026 NLOT Rho Glut,100.0,10.2,032 L5 NP CTX Glut,99.2,9.96,30,strong in its own population
+Maml2,326 OPC NN,99.2,9.82,012 MEA Slc17a7 Glut,68.3,4.75,26,strong in its own population
+Marcks,013 COAp Grxcr2 Glut,100.0,8.43,113 MEA-COA-BMA Ccdc42 Glut,99.8,8.84,70,strong in its own population
+Masp1,056 Sst Chodl Gaba,74.7,4.81,053 Sst Gaba,63.3,4.22,3,strong in its own population
+Meis1,114 COAa-PAA-MEA Barhl2 Glut,80.1,6.38,082 CEA-BST Ebf1 Pdyn Gaba,32.9,1.95,8,strong in its own population
+Minar1,058 PAL-STR Gaba-Chol,65.6,3.4,053 Sst Gaba,56.9,3.79,5,usable in its own population
+Mybpc1,052 Pvalb Gaba,20.9,1.28,052 Pvalb Gaba,21.3,1.31,0,too low to map reliably
+Myo1b,331 Peri NN,96.3,9.61,113 MEA-COA-BMA Ccdc42 Glut,65.4,4.0,21,strong in its own population
+Nbl1,331 Peri NN,88.5,8.13,007 L2/3 IT CTX Glut,58.2,3.56,9,strong in its own population
+Nckap5,326 OPC NN,98.4,9.33,012 MEA Slc17a7 Glut,76.8,4.94,27,strong in its own population
+Neto1,013 COAp Grxcr2 Glut,100.0,7.62,053 Sst Gaba,98.5,8.85,56,strong in its own population
+Pde1b,061 STR D1 Gaba,98.0,8.13,012 MEA Slc17a7 Glut,77.9,4.67,47,strong in its own population
+Pde1c,061 STR D1 Gaba,92.5,8.8,121 MEA-BST Otp Zic2 Glut,59.0,4.16,14,strong in its own population
+Piezo2,119 SI-MA-LPO-LHA Skor1 Glut,20.2,1.45,119 SI-MA-LPO-LHA Skor1 Glut,20.2,1.45,0,too low to map reliably
+Plce1,331 Peri NN,96.3,9.85,120 MEA Otp Foxp2 Glut,53.1,3.26,12,strong in its own population
+Plcl1,331 Peri NN,99.0,10.96,006 L4/5 IT CTX Glut,86.3,6.12,50,strong in its own population
+Plpp4,133 PVH-SO-PVa Otp Glut,91.2,6.44,119 SI-MA-LPO-LHA Skor1 Glut,49.6,3.15,6,strong in its own population
+Pvt1,133 PVH-SO-PVa Otp Glut,95.6,7.52,049 Lamp5 Gaba,93.1,7.62,48,strong in its own population
+Rprml,026 NLOT Rho Glut,98.6,7.13,006 L4/5 IT CTX Glut,95.4,7.19,35,strong in its own population
+Rspo3,010 IT AON-TT-DP Glut,82.8,5.9,022 L5 ET CTX Glut,69.4,4.42,9,strong in its own population
+Spon1,326 OPC NN,96.8,8.74,120 MEA Otp Foxp2 Glut,95.7,7.43,26,strong in its own population
+Stac,026 NLOT Rho Glut,72.7,4.42,120 MEA Otp Foxp2 Glut,49.7,2.96,9,strong in its own population
+Tafa1,022 L5 ET CTX Glut,97.8,10.07,022 L5 ET CTX Glut,97.8,10.07,24,strong in its own population
+Trhde,001 CLA-EPd-CTX Car3 Glut,100.0,9.05,053 Sst Gaba,97.6,9.41,37,strong in its own population
+Trpc3,331 Peri NN,89.0,8.53,032 L5 NP CTX Glut,81.8,6.17,11,strong in its own population
+Trpm3,013 COAp Grxcr2 Glut,100.0,11.27,120 MEA Otp Foxp2 Glut,98.8,11.08,49,strong in its own population
+Vegfc,048 RHP-COA Ndnf Gaba,51.4,3.05,022 L5 ET CTX Glut,39.6,2.25,1,usable in its own population
+Zfp804b,051 Pvalb chandelier Gaba,100.0,11.66,113 MEA-COA-BMA Ccdc42 Glut,89.3,8.21,43,strong in its own population
+Arid3b,026 NLOT Rho Glut,43.4,2.18,005 L5 IT CTX Glut,28.7,1.55,0,high level in a minority of cells (sparse but real)
+Bbx,079 CEA-BST Six3 Cyp26b1 Gaba,94.8,7.08,082 CEA-BST Ebf1 Pdyn Gaba,86.8,5.83,55,strong in its own population
+Bcl6,022 L5 ET CTX Glut,72.0,4.64,022 L5 ET CTX Glut,72.0,4.64,11,strong in its own population
+Clk1,133 PVH-SO-PVa Otp Glut,89.0,5.6,012 MEA Slc17a7 Glut,85.4,5.3,71,strong in its own population
+Dmc1,121 MEA-BST Otp Zic2 Glut,22.1,1.2,121 MEA-BST Otp Zic2 Glut,22.1,1.2,0,too low to map reliably
+Dusp22,058 PAL-STR Gaba-Chol,84.4,4.83,120 MEA Otp Foxp2 Glut,67.1,3.88,44,strong in its own population
+Hes1,332 SMC NN,79.9,7.3,004 L6 IT CTX Glut,44.2,2.73,6,strong in its own population
+Hnrnpll,029 L6b CTX Glut,87.5,6.2,029 L6b CTX Glut,87.5,6.2,57,strong in its own population
+Irf9,333 Endo NN,40.4,3.02,113 MEA-COA-BMA Ccdc42 Glut,21.2,1.1,0,high level in a minority of cells (sparse but real)
+Kdm7a,013 COAp Grxcr2 Glut,98.3,7.49,012 MEA Slc17a7 Glut,88.8,5.96,62,strong in its own population
+Nuak1,006 L4/5 IT CTX Glut,95.2,7.17,006 L4/5 IT CTX Glut,95.2,7.17,39,strong in its own population
+Odc1,013 COAp Grxcr2 Glut,88.3,5.7,120 MEA Otp Foxp2 Glut,74.2,4.5,48,strong in its own population
+Osgin2,059 GPe-SI Sox6 Cyp26b1 Gaba,33.9,1.77,012 MEA Slc17a7 Glut,26.0,1.29,0,too low to map reliably
+Pparg,013 COAp Grxcr2 Glut,75.0,5.2,006 L4/5 IT CTX Glut,56.7,3.65,4,strong in its own population
+Prox2,026 NLOT Rho Glut,11.5,0.52,012 MEA Slc17a7 Glut,6.4,0.31,0,too low to map reliably
+Rapgef2,010 IT AON-TT-DP Glut,99.4,8.15,012 MEA Slc17a7 Glut,98.7,7.75,73,strong in its own population
+Rbm3,058 PAL-STR Gaba-Chol,88.1,5.16,012 MEA Slc17a7 Glut,74.6,4.42,53,strong in its own population
+Rel,334 Microglia NN,73.5,6.21,005 L5 IT CTX Glut,22.5,1.2,1,strong in its own population
+Zdhhc5,058 PAL-STR Gaba-Chol,83.1,4.54,119 SI-MA-LPO-LHA Skor1 Glut,60.2,3.46,24,strong in its own population
+Zfp286,085 SI-MPO-LPO Lhx8 Gaba,51.5,2.68,022 L5 ET CTX Glut,47.6,2.68,1,usable in its own population
+Zfp414,058 PAL-STR Gaba-Chol,58.8,2.87,121 MEA-BST Otp Zic2 Glut,40.5,2.22,1,usable in its own population
+Zfp867,058 PAL-STR Gaba-Chol,25.6,1.06,119 SI-MA-LPO-LHA Skor1 Glut,16.2,0.84,0,too low to map reliably
+Zfp938,026 NLOT Rho Glut,68.9,3.68,120 MEA Otp Foxp2 Glut,49.6,2.67,10,usable in its own population
+Zfp941,085 SI-MPO-LPO Lhx8 Gaba,91.5,5.59,113 MEA-COA-BMA Ccdc42 Glut,87.2,5.74,45,strong in its own population
+Zmiz1,026 NLOT Rho Glut,99.3,7.96,029 L6b CTX Glut,93.6,6.87,67,strong in its own population

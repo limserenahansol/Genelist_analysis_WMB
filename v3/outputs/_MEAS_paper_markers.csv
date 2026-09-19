@@ -1,0 +1,11 @@
+gene,assigned_cell_types,best_assigned_population,pct_in_assigned,mean_log2_in_assigned,pct_in_highest_other_population,gap_pp,include,top_population_overall,pct_top_population_overall
+Reln,052 Pvalb Gaba; 053 Sst Gaba; 046 Vip Gaba; 049 Lamp5 Gaba,053 Sst Gaba,82.6,7.66,64.3,18.4,False,053 Sst Gaba,82.6
+Pax6,073 MEA-BST Sox6 Gaba; 074 MEA-BST Lhx6 Sp9 Gaba; 082 CEA-BST Ebf1 Pdyn Gaba,073 MEA-BST Sox6 Gaba,20.9,1.43,9.3,11.6,False,073 MEA-BST Sox6 Gaba,20.9
+Crym,005 L5 IT CTX Glut; 022 L5 ET CTX Glut; 032 L5 NP CTX Glut,022 L5 ET CTX Glut,89.1,6.29,85.3,3.8,False,022 L5 ET CTX Glut,89.1
+Tcf4,012 MEA Slc17a7 Glut; 113 MEA-COA-BMA Ccdc42 Glut,012 MEA Slc17a7 Glut,98.7,9.36,100.0,-1.3,False,052 Pvalb Gaba,100.0
+Scnn1a,006 L4/5 IT CTX Glut,006 L4/5 IT CTX Glut,1.8,0.1,8.6,-6.8,False,012 MEA Slc17a7 Glut,8.6
+Tshz1,073 MEA-BST Sox6 Gaba; 074 MEA-BST Lhx6 Sp9 Gaba; 082 CEA-BST Ebf1 Pdyn Gaba,073 MEA-BST Sox6 Gaba,69.6,4.52,79.8,-10.1,False,012 MEA Slc17a7 Glut,79.8
+Fst,007 L2/3 IT CTX Glut,007 L2/3 IT CTX Glut,11.9,0.73,25.3,-13.4,False,119 SI-MA-LPO-LHA Skor1 Glut,25.3
+Whrn,006 L4/5 IT CTX Glut,006 L4/5 IT CTX Glut,51.6,3.28,66.9,-15.2,False,074 MEA-BST Lhx6 Sp9 Gaba,66.9
+Cux1,007 L2/3 IT CTX Glut,007 L2/3 IT CTX Glut,71.5,4.77,93.9,-22.4,False,074 MEA-BST Lhx6 Sp9 Gaba,93.9
+Cd36,012 MEA Slc17a7 Glut; 113 MEA-COA-BMA Ccdc42 Glut,113 MEA-COA-BMA Ccdc42 Glut,27.6,1.63,53.1,-25.5,False,121 MEA-BST Otp Zic2 Glut,53.1
