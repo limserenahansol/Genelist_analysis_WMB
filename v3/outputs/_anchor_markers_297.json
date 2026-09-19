@@ -1,0 +1,102 @@
+{
+ "007 L2/3 IT CTX Glut": [
+  "ORBm",
+  8869,
+  7
+ ],
+ "006 L4/5 IT CTX Glut": [
+  "ORBm",
+  14152,
+  4
+ ],
+ "005 L5 IT CTX Glut": [
+  "ORBm",
+  4419,
+  6
+ ],
+ "022 L5 ET CTX Glut": [
+  "ORBm",
+  3739,
+  7
+ ],
+ "032 L5 NP CTX Glut": [
+  "ORBm",
+  3988,
+  8
+ ],
+ "030 L6 CT CTX Glut": [
+  "ORBm",
+  21453,
+  6
+ ],
+ "029 L6b CTX Glut": [
+  "ORBm",
+  1586,
+  6
+ ],
+ "004 L6 IT CTX Glut": [
+  "ORBm",
+  11338,
+  6
+ ],
+ "052 Pvalb Gaba": [
+  "ORBm",
+  2931,
+  6
+ ],
+ "053 Sst Gaba": [
+  "ORBm",
+  5552,
+  5
+ ],
+ "046 Vip Gaba": [
+  "ORBm",
+  3714,
+  6
+ ],
+ "049 Lamp5 Gaba": [
+  "ORBm",
+  2863,
+  6
+ ],
+ "012 MEA Slc17a7 Glut": [
+  "BMAp",
+  3984,
+  28
+ ],
+ "113 MEA-COA-BMA Ccdc42 Glut": [
+  "BMAp",
+  9654,
+  5
+ ],
+ "120 MEA Otp Foxp2 Glut": [
+  "BMAp",
+  1504,
+  8
+ ],
+ "121 MEA-BST Otp Zic2 Glut": [
+  "BMAp",
+  1255,
+  5
+ ],
+ "119 SI-MA-LPO-LHA Skor1 Glut": [
+  "BMAp",
+  2180,
+  12
+ ],
+ "073 MEA-BST Sox6 Gaba": [
+  "BMAp",
+  8705,
+  3
+ ],
+ "074 MEA-BST Lhx6 Sp9 Gaba": [
+  "BMAp",
+  6461,
+  4
+ ],
+ "082 CEA-BST Ebf1 Pdyn Gaba": [
+  "BMAp",
+  6966,
+  9
+ ]
+}

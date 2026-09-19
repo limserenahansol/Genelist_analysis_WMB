@@ -388,8 +388,8 @@ def write_ppt(n_genes: int) -> None:
     prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5)
 
     s = slide(prs, 1, "How the gene panel was selected",
-              "The instrument reads a fixed number of genes per tissue section, so every "
-              "slot has to be earned. First requirement: all 20 ORBm + BMAp cell types.")
+              "Xenium reads a fixed gene list. We kept a gene only if it names one of "
+              "the 20 cell types, or reports morphine, circadian, or receptor state.")
     if (FIG / "s1_workflow.png").exists():
         s.shapes.add_picture(str(FIG / "s1_workflow.png"), Inches(0.37), Inches(1.00),
                              width=Inches(12.60))
@@ -462,18 +462,12 @@ def write_ppt(n_genes: int) -> None:
        "that were TRAP-active during morphine seeking from those that were not, and ask "
        "which receptors differ.", 12, RED)
 
-    s = slide(prs, 4, "The 20 populations we must tell apart",
-              "The target list comes from the Allen Brain Cell Atlas taxonomy: 12 "
-              "populations in orbitofrontal cortex, 8 in basomedial amygdala.")
-    for x, big, lines, c in [
-            (0.40, "12", ["ORBm populations", "83,406 Allen cells"], NAVY),
-            (3.56, "8", ["BMAp populations", "40,709 Allen cells"], BLUE),
-            (6.72, "124,115", ["cells in the 20", "target populations"], GREEN),
-            (9.88, "20 / 20", ["have separators", "on the final panel"], RED)]:
-        kpi(s, x, 1.00, big, lines, c)
+    s = slide(prs, 4, "The 20 cell types we have to tell apart",
+              "12 in orbitofrontal cortex (ORBm), 8 in basomedial amygdala (BMAp). "
+              "Every line is one type. The coloured gene is how that type is named.")
     if (FIG / "s4_populations.png").exists():
-        s.shapes.add_picture(str(FIG / "s4_populations.png"), Inches(1.12), Inches(2.30),
-                             width=Inches(11.10))
+        s.shapes.add_picture(str(FIG / "s4_populations.png"), Inches(0.40), Inches(0.98),
+                             width=Inches(12.50))
 
     s = slide(prs, 5, "The list rests on a full re-analysis of the reference atlas",
               "No gene was taken on a paper's word. Every candidate was re-scored in "
@@ -520,7 +514,7 @@ def deliver() -> None:
             (XL_DST, "FINAL_Xenium_panel_ORBm_BMAp.xlsx"),
             (XL_DST, "FINAL_Xenium_panel_ORBm_BMAp_259genes.xlsx"),
             (PPT_DST, "ORBm_BMAp_Xenium_panel_funder.pptx"),
-            (PPT_DST, "ORBm_BMAp_Xenium_panel_funder_v6.pptx"),
+            (PPT_DST, "ORBm_BMAp_Xenium_panel_funder_v7.pptx"),
     ):
         dst = DL / name
         shutil.copy2(src, dst)

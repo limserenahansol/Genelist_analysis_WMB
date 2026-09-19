@@ -1,0 +1,20 @@
+anchor,n_supertypes,v8+base,v8+base+disc,base only
+007 L2/3 IT CTX Glut,4,4,4,4
+006 L4/5 IT CTX Glut,6,6,6,6
+005 L5 IT CTX Glut,4,4,4,4
+022 L5 ET CTX Glut,3,3,3,3
+032 L5 NP CTX Glut,3,3,3,3
+030 L6 CT CTX Glut,5,5,5,5
+029 L6b CTX Glut,3,3,3,3
+004 L6 IT CTX Glut,5,5,5,5
+052 Pvalb Gaba,7,7,7,7
+053 Sst Gaba,12,12,12,12
+046 Vip Gaba,9,9,9,9
+049 Lamp5 Gaba,4,4,4,4
+012 MEA Slc17a7 Glut,3,3,3,3
+113 MEA-COA-BMA Ccdc42 Glut,4,4,4,4
+121 MEA-BST Otp Zic2 Glut,3,3,3,3
+119 SI-MA-LPO-LHA Skor1 Glut,7,7,7,7
+073 MEA-BST Sox6 Gaba,10,10,10,10
+074 MEA-BST Lhx6 Sp9 Gaba,7,7,7,7
+082 CEA-BST Ebf1 Pdyn Gaba,8,8,8,8

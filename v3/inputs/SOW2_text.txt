@@ -1,0 +1,288 @@
+US NON-PROFIT    
+6 
+149622098_2 
+SCHEDULE A 
+Research Plan 
+ 
+Overview 
+Year-2 studies identified two neuronal populations engaged during opioid use that differ in what they 
+report. The program's primary focus is a subset of transcriptomically distinct populations in the 
+basomedial amygdala (BMA) and orbitofrontal area (ORB) that are activated during volitional opioid 
+seeking but not in yoked animals given the same passive dose — the dissociation that marks the 
+addiction process rather than drug exposure. This differential is strongest at the post-test (~24 h) 
+timepoint; the acute during-consumption window (~1 h) is dominated by drug exposure and cannot 
+isolate the addiction-specific component. 
+ 
+A second population — cortical intratelencephalic / cortico-thalamic (IT/CT) principal neurons of the 
+anterior cingulate (ACA), infralimbic (ILA), prelimbic (PL), and orbitofrontal (ORB) areas, largely mu-
+opioid-receptor-negative — undergoes opioid-induced transcriptional reprogramming (immediate-
+early like Fos and Arc, clock genes like PER2, and pCREB-target genes) under both volitional and passive 
+exposure, consistent with a shift in cortical excitation/inhibition (E/I) balance. Because these 
+transcriptional changes persist well after opioids are cleared, when animals experience withdrawal and 
+seek opioids, these changes are relevant to addiction. Independent studies in reward and motivated-
+behavior research have shown that manipulating the activity of these cells alters addiction-related 
+behaviors: for example, optogenetic manipulation of these cells produced a loss of control over reward 
+consumption. However, a direct link with opioid addiction remains to be established.   Year 3 pursues 
+three aims: (1) identify, at single-cell resolution by Xenium spatial transcriptomics, and cross-model 
+validate (rat RNAscope/IHC of a small marker-gene panel) the activation of the BMA, ORB, and IT/CT 
+ACA/IL/PL/ORB  populations; (2) test their causal contribution to opioid-seeking and addiction related 
+behavior by chemogenetic manipulation; and (3) select and test an intervention on the identified 
+population as proof-of-concept. The BMA, ORB, and IT/CT populations are carried in parallel through 
+the Aim 2 causal test, and a single lead target is down-selected for Aim 3. 
+ 
+1. Scientific Rationale 
+The organizing principle is to determine, in causal experiments, the contribution to opioid seeking and 
+addiction-related behaviors of the BMA, ORB and IT/CT cell populations. Opioid exposure per se — 
+including passive and therapeutic administration — drives broad molecular and E/I changes, so no 
+single marker is addiction-specific on its own. Addiction-specificity is defined operationally, by 
+dissociation from matched non-contingent (yoked-passive): activation during volitional seeking but not 
+under yoked-passive delivery of the same dose (strongest at the ~24 h post-test window), covariation of 
+the signal with the degree of compulsive, escalated, or relapse-prone behavior across individuals, and 
+persistence into protracted abstinence. Drug potency (morphine → heroin → fentanyl) and individual 
+traits modulate vulnerability and are treated as sources of graded severity rather than nuisance.  
+ 
+The previously proposed non-invasive EEG / E-I biomarker has been removed from scope: its resolution 
+and the 9-month timeline do not support it, and existing human EEG/fMRI data already cover the 
+translational gap. 
+ 
+Three populations, tested in parallel. The basomedial amygdala (BMA) and orbitofrontal (ORB) 
+populations carry the addiction-specific dissociation — activated during volitional but not yoked-
+passive seeking — and define the program's addiction-versus-exposure claim. The anterior-cingulate 
+IT/CT population, the most strongly recruited by opioids and the one whose genetic-access tools are 
+already in hand, is carried alongside them as a causal / therapeutic candidate and pharmacology anchor, 
+not as an addiction-specificity marker. All three are taken into the Aim 2 causal test, and a single lead 
+target is down-selected on two criteria: the magnitude of the functional effect on volitional opioid 
+US NON-PROFIT    
+7 
+149622098_2 
+seeking, and whether the population's molecular signal scales with addiction severity across 
+individuals. 
+ 
+2. Validation Strategy 
+The addiction-specific populations are identified by discovery transcriptomics and confirmed cross-
+model, kept distinct by design: 
+ 
+● Identification — spatial transcriptomics (Stanford) using the Xenium platform is applied to the 
+volitional-versus-passive paradigm to resolve the BMA and ORB populations that dissociate 
+active from passive animals at the ~24 h post-test window, yielding a small (3–5 gene) cell-type 
+marker panel.  
+● Cross-model validation —  the marker panel is validated in rat by RNAscope / antibody staining 
+in cortex and amygdala (Hurd tissue; 1 h “during” and 24 h “post-test” timepoints), chosen over 
+bulk RNA-seq for speed, and existing rat RNA-seq datasets (Hurd) serve as optional backup. 
+ 
+Durability and severity —  a new rat fentanyl self-administration cohort tests whether the markers 
+persist across abstinence (durability) and whether their magnitude scales with behavioral severity 
+across individuals (matched-pharmacology addiction-specificity). 
+ 
+3. Approach by Aim 
+Aim 1 — Identify and cross-model validate the addiction-specific populations 
+Xenium spatial transcriptomics resolves the BMA and ORB populations that dissociate volitional from 
+passive seeking and yields a 3–5-gene marker panel (1a); the panel is validated by RNAscope/IHC in rat 
+cortex and amygdala at the “during” (1 h) and “post-test” (24 h) windows (1b); a new rat fentanyl self-
+administration cohort establishes durability across abstinence and correlation with behavioral severity 
+(1c); all coordinated under an MTA with biweekly meetings and a marker-gene / pilot-tissue handoff 
+between laboratories (1d). 
+ 
+Aim 2 — Causal validation of the identified populations 
+Following cell-type identification, chemogenetic manipulation (TRAP2 or cell-type-selective enhancer-
+AAV with hM4Di / hM3Dq) of the identified cortical and amygdalar populations tests their necessity and 
+sufficiency for volitional opioid seeking and addiction-like behavior (2a), with specificity controls 
+establishing that effects are on the addiction-like phenotype rather than on locomotion and non-opioid 
+reward, or therapeutic/passive responding (2b). Slice electrophysiology of the identified populations is 
+the primary functional readout of the cellular phenotype. The BMA, ORB, and IT/CT populations are 
+manipulated in parallel —  IT/CT with the enhancer-AAVs already validated in mouse and rat, BMA / 
+ORB via TRAP2 or population-selective enhancer-AAV — and a single target is down-selected on causal 
+effect on volitional seeking plus severity-scaling. Whether the BMA / ORB populations are themselves 
+IT/CT-class principal cells sharing the same GPCRs (e.g., β1-adrenergic, 5-HT2A) is resolved at 
+identification (Aim 1); if so, the three converge on one cell class and one toolset. 
+ 
+Aim 3 — Intervention proof-of-concept 
+A single lead target/intervention on the identified population is selected and tested in vivo, read out by 
+(oral volitional-vs-passive, CPP, withdrawal, and side effects) (3a–3b). Aim 3 is gated on a positive 
+causal result in Aim 2. 
+ 
+ 
+ 
+ 
+ 
+ 
+US NON-PROFIT    
+8 
+149622098_2 
+4. Gantt Chart 
+ 
+ 
+5. Milestones and Deliverables 
+This project is staged so that spend is committed incrementally as evidence accrues. Activities marked 
+“Now” in the table below proceed at signing; activities marked G1–G3 are released only when the 
+corresponding gate is met. 
+ 
+Gate 1 — Signature identified. The Aim 1a Xenium screen resolves a reproducible BMA / ORB 
+population (or 3–5-gene marker panel) that separates volitional / addiction animals from yoked, 
+passive-exposure animals at ~24 h post-test, reproducibly across ≥2 cohorts at a pre-registered 
+threshold. Releases the Xenium-derived rat RNAscope panel (1b) and sequencing / analysis of the 
+fentanyl cohort (1c). 
+ 
+Gate 2 — Signature validated and targetable. The identified population reproduces across mouse 
+Xenium, rat RNAscope, and the fentanyl cohort, and a working genetic-access handle exists — adequate 
+TRAP2 capture efficiency, or an enhancer-AAV that labels the population specifically enough to 
+manipulate. Releases the in-vivo chemogenetic manipulation (2a), its specificity controls (2b), and slice 
+electrophysiology (2c). 
+ 
+Gate 3 — Causal role confirmed. Chemogenetic manipulation of the identified population moves the 
+addiction-relevant endpoint (volitional intake / severity / durability) directionally and specifically, not 
+explained by locomotor or pharmacokinetic confounds. Releases Aim 3 target selection and the 
+intervention proof-of-concept (3a–3b). 
+ 
+Proceeds now, regardless of gates. Aim 1a Xenium identification (the entry point); the provisional-
+panel RNAscope pilot on existing rat OFC heroin tissue — SATB2 identity, FOS, PER2 (1b); behavior and 
+tissue collection for the fentanyl cohort (1c); and Aim 2 genetic-access preparation — TRAP2 colony / 
+enhancer-AAV construction (2a) — begun in parallel so the causal experiment is not serialized behind 
+colony build. OFC tissue is available now; rat amygdala tissue becomes available from the new Hurd 
+cohorts. 
+ 
+
+US NON-PROFIT    
+9 
+149622098_2 
+Activity ID Milestone (M) / Deliverable (D) Lead Gate to 
+Start 
+Gate 
+Reached 
+upon 
+Success 
+Target (see 
+Gantt) 
+ Aim 1 —  Identify and cross-model validate the addiction-specific amygdala/OFC populations 
+Identification 
+(Xenium) 
+1a M: Xenium spatial transcriptomics (Stanford) in the 
+volitional-vs-passive paradigm resolves BMA and ORB 
+populations that dissociate active from passive animals 
+(strongest at ~24 h post-test); derive a 3–5-gene marker 
+panel.  
+Schnitzer/Stanford 
+& Scherrer 
+Now 
+ 
+ 
+G1 Nov 2026 
+Cross-model 
+validation (rat) 
+1b M: Rat cross-model validation by RNAscope / IHC. A 
+provisional panel pilot  (SATB2 identity, FOS, PER2) on 
+existing rat heroin cortical tissue from Hurd lab proceeds 
+now; the Xenium-derived 3–5-gene panel is added at Gate 
+1. Rat tissue is available now (in-kind) to establish the 
+procedure (transfer between labs, cryosectioning, IHC/ISH, 
+imaging); AMY validation follows the new Hurd cohorts (1c), 
+as banked amygdala tissue is not yet available. Existing rat 
+RNA-seq optional backup. 
+Hurd (tissue, in-
+kind) & Scherrer 
+G1 G2 
+ 
+Oct-Dec 
+2026 
+Durability + severity 
+(rat fentanyl SA) 
+1c M: New rat fentanyl self-administration cohort. Behavior 
+and tissue collection proceed now, so the cohort is not 
+serialized behind identification; sequencing and analysis are 
+released at Gate 1 (non-negative identification). Tests 
+marker persistence across abstinence (durability) and 
+whether marker magnitude scales with behavioral severity 
+across individuals; also the source of rat amygdala tissue. 
+Hurd / Scherrer Now G2 Jan 2027 
+Coordination 1d M: Executed MTA / in-kind tissue-sharing; pre-registration 
+of the marker panel and analysis plan;  pilot-tissue handoff 
+(Hurd → UNC); biweekly coordination.  Pilot experiments to 
+characterize IHC staining and mRNA probes for optimal 
+performance in fresh-frozen vs PFA-fixed tissue. 
+All labs Now n/a Sept 2026 
+Tissue collection 
+strategy  
+D-1d D: Advise Hurd lab on fresh-frozen vs PFA-fixed tissue 
+collection 
+Scherrer Now n/a 5 October 
+2026 
+ Aim 2 —  Causal validation of the identified populations 
+Chemogenetic 
+causal test 
+2a M:      Chemogenetic manipulation (TRAP2 or cell-type-
+selective enhancer-AAV + hM4Di / hM3Dq) of the identified 
+cortical and amygdala populations — necessity and 
+sufficiency for volitional opioid seeking / addiction-like 
+behavior. Genetic-access preparation (TRAP2 colony / 
+enhancer-AAV construction) proceeds now, in parallel; the 
+in-vivo manipulation is released at Gate 2 (validated, 
+targetable population). 
+Three populations (BMA, ORB, IT/CT) are manipulated in 
+parallel; a single target is down-selected on functional effect 
+on volitional seeking plus severity-scaling. IT/CT enhancer-
+AAVs are in hand (mouse and rat) and are being validated 
+now; new viral preparations are ordered for chemogenetic 
+experiments. 
+Scherrer/UNC & 
+Schnitzer/Stanford 
+Now G3 Feb 2027 
+Specificity D-2b D: Effects specific to the addiction-like phenotype —  not 
+locomotion, non-opioid reward, or therapeutic/passive 
+responding. 
+Scherrer / Schnitzer G2 G3 Feb 2027 
+Slice 
+electrophysiology  
+2c M: Slice electrophysiology of the identified populations as 
+the primary functional readout of the cellular phenotype. 
+Scherrer / UNC G2 n/a March 
+2027 
+Sex as a biological 
+variable 
+SABV M: Both sexes included throughout; a dedicated sex-
+difference analysis where the data support it. 
+Scherrer / UNC Now n/a Throughout 
+ Aim 3 —  Intervention proof-of-concept (GATED on a positive Aim 2 result) 
+Target selection 3a M: Selection of a single lead target/intervention on the 
+identified population, with written scientific rationale and 
+target-selection / safety considerations. 
+Scherrer / Schnitzer G3 n/a ~Mar 2027 
+Intervention proof-
+of-concept 
+D-3b D: In-vivo intervention on the identified population, using a 
+single drug at a low and a high dose plus a positive control, 
+read out in parallel at both sites by oral volitional-vs-passive 
+self-administration, CPP, withdrawal signs, and side effects. 
+Follows the causal result (2a) and the two-week review.
+ 
+Scherrer / Schnitzer G3 n/a Mar-Apr 
+2027 
+       
+Sex as a biological 
+variable 
+SABV M: Both sexes included throughout; a dedicated sex-
+difference analysis where the data support it. 
+Scherrer / UNC Now n/a Throughout 
+ 
+US NON-PROFIT    
+10 
+149622098_2 
+ 
+6. Coordination and Timeline 
+The laboratories operate under an MTA / in-kind tissue-sharing agreement with biweekly coordination. 
+Stanford runs Xenium spatial transcriptomics and, with Scherrer, defines the 3–5-gene marker panel; 
+the Hurd lab provides the tissue to validate the panel by RNAscope/IHC in rat cortex and amygdala and 
+first supplies pilot tissue blocks for probe optimization. Because the Hurd tissue is limited and precious, 
+the Scherrer lab runs a suitability pilot before committing the full set, and any unusable tissue and 
+remainder are returned to the Hurd lab. A new rat fentanyl self-administration cohort provides 
+durability and severity-correlation data. The EEG / non-invasive-biomarker effort and the circadian 
+(ZT) cohort have been removed from scope. Circadian, sleep, and basic executive-function measures 
+may still be collected opportunistically as exploratory, non-gating secondaries on existing cohorts if 
+time allows, at no additional budget. Because incubation of craving is defined by an abstinence window 
+(~30–45 days), the durability and downstream intervention work may extend into a subsequent phase. 
+ 
+ 
+ 
+ 
+ 
+ 
+  

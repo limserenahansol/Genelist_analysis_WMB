@@ -29,3 +29,12 @@ v3/outputs/_cache*.parquet
 v3/outputs/_GW_pct.pkl
 v3/outputs/allen_extract*/
 v3/outputs/allen_genomewide/
+
+# regenerable per-cell caches from the 2026-09 298-gene re-analysis
+v3/outputs/anchor_subtype_cache.npz
+v3/outputs/allen_extract_gap/
+v3/outputs/allen_extract_six/
+v3/outputs/_gpcr_tf_curated.json
+
+# downloaded reference data for the probe-designability QC (10+ GB, re-downloadable)
+v3/outputs/panel_245_qc_sources/

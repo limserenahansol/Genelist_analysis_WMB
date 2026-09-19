@@ -1,0 +1,27 @@
+{
+  "panel_total": 245,
+  "endogenous_total": 243,
+  "advanced_exogenous_total": 2,
+  "tenx_standard_designable": 243,
+  "ncbi_current_symbols": 243,
+  "all_endogenous_allen_scored": true,
+  "detectability_high_ge50": 185,
+  "detectability_moderate_20_50": 41,
+  "detectability_low_5_20": 14,
+  "detectability_very_low_lt5": 3,
+  "very_low_genes": [
+    "Slc6a3",
+    "Gpr63",
+    "Sstr4"
+  ],
+  "reporter_fasta_blockers": [
+    "tdTomato",
+    "iCre"
+  ],
+  "anchors_with_zero_qualifying_panel_genes_genomewide_rule": 0,
+  "genomewide_rule": {
+    "min_specificity_log2": 0.5,
+    "min_pct": 25.0,
+    "min_mean_log2": 0.5
+  }
+}

@@ -1,0 +1,3 @@
+target,planned_line,construct,sequence_status,required_action,source_url
+tdTomato,Ai14; JAX 007914 (confirm against colony record),Rosa-CAG-LSL-tdTomato-WPRE,BLOCKED_EXACT_FASTA_NOT_IN_WORKSPACE,"Download/obtain the exact Ai14 tdTomato coding sequence (Addgene Ai9 plasmid 22799 is the construct reference) and submit sense-strand CDS FASTA, >=80 bp. Do not substitute a generic red-fluorescent-protein sequence.",https://www.addgene.org/22799/
+iCre,TRAP2; JAX 030323,Fos-2A-iCreERT2 knock-in,BLOCKED_EXACT_FASTA_NOT_IN_WORKSPACE,"Obtain the exact iCreERT2 coding sequence used in Fos tm2.1(icre/ERT2)Luo from JAX/originating lab and submit sense-strand CDS FASTA, >=80 bp. Do not substitute conventional Cre or a different CreERT2 codon variant.",https://www.jax.org/strain/30323

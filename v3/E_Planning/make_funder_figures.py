@@ -35,52 +35,68 @@ fig, ax = plt.subplots(figsize=(12.6, 5.28))
 ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
 
 STEPS = [
-    (NAVY, "1", "Start with the data", [
-        "Allen atlas of these two regions",
-        "   226,886 cells in ORBm + BMAp",
-        "Jesse: 5-day morphine in cortex",
+    (NAVY, "1", "The data", [
+        "Allen atlas of ORBm + BMAp",
+        "(226,886 cells in these",
+        "two regions only)",
+        "",
+        "Jesse: 5-day morphine",
+        "in orbitofrontal cortex",
+        "",
         "Dan: amygdala spatial panel",
     ]),
-    (BLUE, "2", "Ask one question per gene", [
-        "Does it name one of the 20",
-        "   cell types in these regions?",
-        "Or does it report morphine,",
-        "   circadian, or receptor state?",
+    (BLUE, "2", "The question", [
+        "Does this gene name one",
+        "of the 20 cell types?",
+        "",
+        "Or does it report",
+        "morphine, circadian,",
+        "or receptor state?",
+        "",
+        "If neither: it is out.",
     ]),
-    (RED, "3", "Drop genes that cannot help", [
-        "On in every cell (no contrast)",
-        "Too rare for the instrument",
-        "   to make a usable map",
-        "Same job as a gene already kept",
+    (RED, "3", "What we drop", [
+        "On in every cell",
+        "(no contrast — e.g. Clock)",
+        "",
+        "Too rare to make a map",
+        "(e.g. Sstr4 at 1%)",
+        "",
+        "Same job as a gene",
+        "already on the list",
     ]),
-    (GREEN, "4", "Keep only what earned a slot", [
-        "259 genes on one shared panel",
-        "All 20 cell types can be named",
-        "Sub-types inside them too",
+    (GREEN, "4", "What we keep", [
+        "259 genes",
+        "one shared panel",
+        "",
+        "All 20 cell types named",
+        "12 cortex + 8 amygdala",
+        "",
         "Read from the same mouse",
+        "on the same slide",
     ]),
 ]
-X0, W, GAP = 1.4, 21.6, 2.4
+X0, W, GAP = 2.0, 22.0, 2.2
 for i, (col, num, head, lines) in enumerate(STEPS):
     x = X0 + i * (W + GAP)
-    card(ax, x, 12, W, 78, col, fill="white", lw=1.8)
-    circ = plt.Circle((x + 2.4, 82.6), 1.7, fc=col, ec="none", zorder=3)
-    ax.add_patch(circ)
-    ax.text(x + 2.4, 82.6, num, ha="center", va="center", fontsize=12,
+    card(ax, x, 10, W, 80, col, fill="white", lw=1.8)
+    ax.add_patch(FancyBboxPatch((x, 76), W, 14,
+                                boxstyle="round,pad=0,rounding_size=0.5",
+                                fc=col, ec=col, lw=0, zorder=3))
+    ax.text(x + 3.3, 83, num, ha="center", va="center", fontsize=14,
             color="white", fontweight="bold", zorder=4)
-    ax.text(x + 4.8, 82.6, head, ha="left", va="center", fontsize=12.2,
-            color=col, fontweight="bold")
+    ax.text(x + 6.2, 83, head, ha="left", va="center", fontsize=13.5,
+            color="white", fontweight="bold", zorder=4)
     yy = 70
     for ln in lines:
-        ax.text(x + 1.4, yy, ln, ha="left", va="top", fontsize=11,
-                color=DARK if not ln.startswith("   ") else GREY)
-        yy -= 11.5
+        ax.text(x + 1.6, yy, ln, ha="left", va="top", fontsize=11.2, color=DARK)
+        yy -= 7.0
     if i < 3:
-        ax.add_patch(FancyArrowPatch((x + W + 0.25, 51), (x + W + GAP - 0.25, 51),
-                                     arrowstyle="-|>", mutation_scale=18,
+        ax.add_patch(FancyArrowPatch((x + W + 0.2, 50), (x + W + GAP - 0.2, 50),
+                                     arrowstyle="-|>", mutation_scale=16,
                                      color="#9AA5B1", lw=1.8))
 
-ax.text(50, 5.5, "Read left to right: data  →  question  →  drop  →  the 259-gene list.",
+ax.text(50, 4.5, "Read left to right: data  →  question  →  drop  →  259-gene list.",
         ha="center", fontsize=12, color=NAVY, fontweight="bold")
 fig.savefig(FIG / "s1_workflow.png", dpi=190, bbox_inches="tight",
             facecolor="white", pad_inches=0.08)
@@ -122,45 +138,59 @@ fig.savefig(FIG / "s3_categories.png", dpi=190, facecolor="white")
 plt.close(fig)
 
 # ------------------------------------------------------- 3. the 20 populations
-a = ac.copy()
-nsub = cov.groupby("parent_anchor").supertype.nunique()
-a["n_sep"] = a[["n_unique_vs_all19", "n_vs_closest_neighbour"]].max(axis=1)
-a["n_sub"] = a.allen_subclass_anchor.map(nsub).fillna(0).astype(int)
-a = a.sort_values(["region", "n_sep"], ascending=[True, True])
-y = np.arange(len(a))
+# Plain-language roster: 12 cortex types | 8 amygdala types. One naming gene each.
+ORBM = [
+    ("Layer 2/3 excitatory", "Ccbe1", "upper layers"),
+    ("Layer 4/5 excitatory", "Tnnc1", "middle layers"),
+    ("Layer 5 IT excitatory", "Colq", "local output"),
+    ("Layer 5 ET output", "L3mbtl4", "long-range output"),
+    ("Layer 5 NP excitatory", "Abi3bp", "near-projecting"),
+    ("Layer 6 CT excitatory", "Syt6", "to thalamus"),
+    ("Layer 6b excitatory", "Ccn2", "deepest layer"),
+    ("Layer 6 IT excitatory", "Blnk", "deep local"),
+    ("Pvalb inhibitory", "Pvalb", "fast-spiking"),
+    ("Sst inhibitory", "Sst", "somatostatin"),
+    ("Vip inhibitory", "Vip", "VIP class"),
+    ("Lamp5 inhibitory", "Hapln1", "Lamp5 class"),
+]
+BMAP = [
+    ("VGLUT1 excitatory", "Krt2", "pallial amygdala"),
+    ("Ccdc42 excitatory", "Ccdc42", "BMA glutamatergic"),
+    ("Otp Foxp2 excitatory", "Stc1", "VGLUT2-like"),
+    ("Otp Zic2 excitatory", "Sim1", "VGLUT2-like"),
+    ("Skor1 excitatory", "Skor1", "hypothalamus border"),
+    ("Sox6 inhibitory", "Prox1", "vs Lhx6 neighbour"),
+    ("Lhx6 Sp9 inhibitory", "Lhx6", "Sox6 neighbour"),
+    ("Ebf1 Pdyn inhibitory", "Isl1", "striatal-like GABA"),
+]
 
-fig, ax = plt.subplots(figsize=(11.1, 4.55))
-cols = [RED if r == "BMAp" else NAVY for r in a.region]
-b1 = ax.barh(y, a.n_sep, color=cols, height=0.62, label="separators on the panel")
-b2 = ax.barh(y, a.n_sub, left=a.n_sep, color="#BFD3E6", height=0.62,
-             label="sub-populations resolved inside it")
-ax.bar_label(b1, labels=[f"{v}" for v in a.n_sep], label_type="center",
-             fontsize=8.5, color="white", fontweight="bold")
-ax.bar_label(b2, labels=[f"{v} sub" if v else "" for v in a.n_sub], padding=3,
-             fontsize=8.5, color=GREY)
-ax.set_yticks(y)
-ax.set_yticklabels([f"{r.allen_subclass_anchor}   ({r.n_cells:,} cells)"
-                    for r in a.itertuples()], fontsize=8.8)
-ax.tick_params(colors=GREY, length=0)
-for t, r in zip(ax.get_yticklabels(), a.region):
-    t.set_color(RED if r == "BMAp" else NAVY)
-ax.set_xlabel("separators on the panel that address this population", fontsize=9.5,
-              color=GREY)
-ax.set_xlim(0, (a.n_sep + a.n_sub).max() * 1.12)
-for sp in ("top", "right", "left"):
-    ax.spines[sp].set_visible(False)
-ax.spines["bottom"].set_color("#D6D3CC")
-ax.grid(axis="x", color="#EEF0F2", lw=0.8)
-ax.set_axisbelow(True)
-h, l = ax.get_legend_handles_labels()
-h += [plt.Line2D([], [], color=NAVY, lw=6), plt.Line2D([], [], color=RED, lw=6)]
-l += ["ORBm population", "BMAp population"]
-ax.legend(h, l, loc="lower right", fontsize=8.8, frameon=False)
-ax.set_title("All 20 target populations have separators; most are split further "
-             "into sub-populations",
-             fontsize=11, color=NAVY, fontweight="bold", loc="left", pad=8)
-fig.tight_layout()
-fig.savefig(FIG / "s4_populations.png", dpi=190, facecolor="white")
+fig, ax = plt.subplots(figsize=(12.50, 5.05))
+ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
+
+def roster(x, title, n, color, rows, row_h):
+    card(ax, x, 8, 48.2, 88, color, fill="white", lw=1.8)
+    ax.add_patch(FancyBboxPatch((x, 83), 48.2, 13, boxstyle="round,pad=0,rounding_size=0.4",
+                                fc=color, ec=color, lw=0, zorder=3))
+    ax.text(x + 24.1, 89.5, f"{title}   ·   {n} cell types", ha="center", va="center",
+            fontsize=13.5, color="white", fontweight="bold", zorder=4)
+    for i, (name, gene, note) in enumerate(rows):
+        y = 77.5 - i * row_h
+        ax.text(x + 1.8, y, name, ha="left", va="center", fontsize=11.4,
+                color=DARK, fontweight="bold")
+        ax.text(x + 27.8, y, gene, ha="left", va="center", fontsize=11.4,
+                color=color, fontweight="bold", fontstyle="italic")
+        ax.text(x + 36.2, y, note, ha="left", va="center", fontsize=10.0, color=GREY)
+
+roster(1.2, "ORBm  ·  orbitofrontal cortex", 12, NAVY, ORBM, 5.85)
+roster(50.6, "BMAp  ·  basomedial amygdala", 8, RED, BMAP, 7.4)
+ax.text(52.6, 16.0, "All 8 amygdala types are named.", ha="left", va="center",
+        fontsize=11.2, color=RED, fontweight="bold")
+ax.text(52.6, 11.5, "Closest pair: Sox6 vs Lhx6 Sp9. Prox1 splits them.",
+        ha="left", va="center", fontsize=10.2, color=GREY)
+ax.text(50, 1.2, "Each line is one cell type. The gene in colour is an example of how that type is named on the panel.",
+        ha="center", fontsize=10.5, color=NAVY)
+fig.savefig(FIG / "s4_populations.png", dpi=190, bbox_inches="tight",
+            facecolor="white", pad_inches=0.06)
 plt.close(fig)
 
 print("wrote 3 figures to", FIG)

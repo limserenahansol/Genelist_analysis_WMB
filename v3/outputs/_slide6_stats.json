@@ -1,0 +1,20 @@
+{
+ "n_types": 79,
+ "n_meas": 23305,
+ "gw_meas": 2550515,
+ "pairs": 94,
+ "pair_tests": 27730,
+ "pairs_sep": 94,
+ "sources": 13,
+ "sources_doi": 9,
+ "rec_eval": 426,
+ "rec_expressed": 153,
+ "rec_panel": 49,
+ "tier_spec": 19,
+ "tier_inter": 19,
+ "tier_uni": 11,
+ "drugs": 83,
+ "drug_genes": 29,
+ "fda_drugs": 59,
+ "fda_genes": 17
+}
