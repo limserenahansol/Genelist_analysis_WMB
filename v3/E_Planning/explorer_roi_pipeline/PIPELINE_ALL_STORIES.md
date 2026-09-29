@@ -35,7 +35,7 @@ After lasso/rectangle, export **all** of these into the **same Xenium output fol
 | **S1** Cell-type–specific genes | Which genes mark clusters **inside one ROI / one region** | **Run now** (`run_from_explorer.py`) | Re-run on the production panel; same steps |
 | **S2** tdTom+ vs tdTom− | DEG within a cell class, reporter+ vs − | **Blocked** — no `tdTomato` on panel; DAPI-only morphology | **Wait** — see `PIPELINE_LATER_REAL_DATA.md` |
 | **S3** Mouse A vs mouse B | DEG / composition, **same region**, two animals | **Blocked** — slides are different anatomy, not two mice | **Wait** — animal is the experimental unit |
-| **S4** Neighborhood | Do labeled types sit next to each other more than chance? | **Run now** (kNN z vs label permutation) | Re-run with 298 labels / tdTom groups |
+| **S4** Neighborhood | Do labeled types sit next to each other more than chance? | **Run now** (kNN z vs label permutation) | Re-run with production-panel labels / tdTom groups |
 | **S5** Composition | Fraction of types in the ROI | **Run now** | Compare animals with a hierarchical model, not a χ² on cells |
 | **S6** ROI vs rest of section QC | Did the lasso pick a biased, high-count subset? | **Run now** | Same |
 | **S7** tdTom × Active/Passive factorial | Reporter enrichment and five within-type contrasts | **Blocked** — no tdTom / conditions | Run `run_factorial_tdtom_active_passive.py`, then limma-voom |

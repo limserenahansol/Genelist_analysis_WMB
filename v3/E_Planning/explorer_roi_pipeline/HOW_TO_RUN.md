@@ -28,6 +28,7 @@ Copy `rois_later_template.json` to a new config. For every ROI provide:
 - `anatomy`
 - `animal_id`
 - `condition`
+- `section_id`
 - `xenium`
 - `explorer_cells_csv`
 - `explorer_coordinates_csv`
@@ -36,6 +37,13 @@ Copy `rois_later_template.json` to a new config. For every ROI provide:
 - optional `tdtom_min_counts` after control-based calibration
 
 Then run all three commands with the new config.
+
+For the planned 4-mouse × 2-anatomy × 3-section experiment, fill
+`four_mouse_24roi_manifest_template.csv`, then generate and validate the flat JSON:
+
+```text
+python make_config_from_manifest.py --manifest four_mouse_24roi_manifest_template.csv --output rois_four_mouse_generated.json
+```
 
 For the primary tdTom × Active/Passive design, also run:
 
@@ -48,6 +56,20 @@ The factorial export and model implement five planned contrasts: tdTom+ versus t
 each condition, Active versus Passive within each reporter state, and the condition × reporter
 interaction. See `PRIMARY_AIM_ANALYSIS.md` before interpreting a tdTom-enriched cluster as a
 new cell type.
+
+New drawings from 2026-09-29 are listed in `NEW_ROIS_2026-09-29.md` and were run with `rois_new_exports.json`.
+
+## Optional Seurat check (does not replace the Python path)
+
+The 10x R tutorial's single-sample steps are in `run_seurat_10x_path.R`. On the current ROIs it uses the same Explorer Cell IDs, then Seurat normalization, PCA, Louvain clustering at resolution 1.0, Wilcoxon markers, and a `cell_groups_seurat_cluster.csv` for Explorer.
+
+```text
+Rscript run_seurat_10x_path.R
+```
+
+Harmony, sketch, and BPCells are the multi-sample part of that tutorial. They are not run here: each ROI has about 1,000 cells, and ORBm and BMAp are different anatomies, not batches of one experiment. Banksy is the R-only spatial clustering add-on and is not installed. The Python script remains the pipeline that runs after an Explorer download.
+
+Verified on the 247-gene pilot: Seurat Louvain versus the Python Leiden labels had ARI 0.70 (orbm_right, 10 vs 14 clusters) and 0.77 (bmap_left, 10 vs 15 clusters).
 
 ## Explorer exports
 
@@ -71,3 +93,18 @@ The exact package versions used for the verified rerun are in `environment_versi
 
 The PI-facing summary deck is
 `presentation/ORBm_BMAp_Xenium_pipeline_results_5slides_EN.pptx`.
+
+## Six current bundles and expanded ROI exports
+
+```text
+python run_six_bundle_inventory.py --config six_xenium_bundles.json
+python run_from_explorer.py --config rois_expanded_available.json
+python run_story2_tdtom.py --config rois_expanded_available.json
+python run_story3_mouse_ab.py --config rois_expanded_available.json
+python summarize_expanded_rois.py --config rois_expanded_available.json
+```
+
+The Region 2 ORBm entry has no Explorer cell-ID export. The pipeline derives cells whose centroids
+fall within `orbm_right_coordinates.csv`, joins XOA graph-cluster labels, and records the source and
+count discrepancy in `summary.json`. Replace this fallback with a `*_cells_stats.csv` export when
+available.

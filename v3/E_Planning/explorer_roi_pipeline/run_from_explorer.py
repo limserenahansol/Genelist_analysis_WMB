@@ -1,6 +1,7 @@
 """Explorer ROI → Story 1/4/5/6. Does not modify Xenium folders. Seed 0.
 
-Input: rois_current.json pointing at Explorer *_cells_stats.csv downloads.
+Input: a JSON config pointing at Explorer *_cells_stats.csv downloads or an
+Explorer polygon-coordinate CSV from which cell IDs can be derived.
 """
 from __future__ import annotations
 
@@ -9,6 +10,7 @@ import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib.path import Path as MplPath
 import numpy as np
 import pandas as pd
 import scanpy as sc
@@ -129,6 +131,15 @@ def savefig(fig, path: Path):
     return path
 
 
+def resolve_under(xenium: Path, path_value: str | None) -> Path | None:
+    if not path_value:
+        return None
+    path = Path(path_value)
+    if path.is_absolute():
+        return path
+    return xenium / path
+
+
 def read_explorer_cells(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path, comment="#")
     df.columns = [c.strip() for c in df.columns]
@@ -138,6 +149,67 @@ def read_explorer_cells(path: Path) -> pd.DataFrame:
     if df["Cell ID"].duplicated().any():
         raise ValueError(f"Duplicate Cell IDs in {path}")
     return df
+
+
+def read_polygon_coordinates(path: Path, selection_name: str | None = None):
+    """Read one Explorer polygon and reject ambiguous multi-selection files."""
+    if not path.exists():
+        raise FileNotFoundError(path)
+    df = pd.read_csv(path, comment="#")
+    df.columns = [c.strip() for c in df.columns]
+    selection_col = next((c for c in df.columns if c.lower() == "selection"), None)
+    if selection_col:
+        selections = df[selection_col].dropna().astype(str).unique().tolist()
+        if selection_name:
+            df = df[df[selection_col].astype(str) == str(selection_name)].copy()
+            if df.empty:
+                raise ValueError(f"Selection {selection_name!r} is absent from {path}")
+        elif len(selections) > 1:
+            raise ValueError(
+                f"{path} contains multiple selections {selections}; set selection_name"
+            )
+    cols = {c.lower().strip(): c for c in df.columns}
+    xcol = cols.get("x") or cols.get("x (µm)") or cols.get("x (um)")
+    ycol = cols.get("y") or cols.get("y (µm)") or cols.get("y (um)")
+    if xcol is None or ycol is None:
+        raise ValueError(f"No X/Y columns in {path}: {list(df.columns)}")
+    xy = df[[xcol, ycol]].astype(float).to_numpy()
+    if len(xy) < 3:
+        raise ValueError(f"Polygon in {path} has fewer than three vertices")
+    return xy
+
+
+def derive_explorer_cells_from_polygon(
+    xenium: Path, coordinates_path: Path, selection_name: str | None = None
+) -> pd.DataFrame:
+    """Select cell centroids inside one polygon and attach XOA clusters."""
+    polygon = read_polygon_coordinates(coordinates_path, selection_name)
+    meta = pd.read_parquet(
+        xenium / "cells.parquet",
+        columns=["cell_id", "x_centroid", "y_centroid"],
+    )
+    points = meta[["x_centroid", "y_centroid"]].astype(float).to_numpy()
+    inside = MplPath(polygon, closed=True).contains_points(points, radius=1e-9)
+    selected = meta.loc[inside, ["cell_id"]].copy()
+    if selected.empty:
+        raise ValueError(f"No cell centroids fall inside {coordinates_path}")
+
+    cluster_path = (
+        xenium / "analysis" / "clustering" / "gene_expression_graphclust" / "clusters.csv"
+    )
+    clusters = pd.read_csv(cluster_path, dtype=str)
+    clusters.columns = [c.strip() for c in clusters.columns]
+    if not {"Barcode", "Cluster"}.issubset(clusters.columns):
+        raise ValueError(f"Unexpected cluster schema in {cluster_path}")
+    cluster_map = clusters.set_index("Barcode")["Cluster"]
+    selected["Cell ID"] = selected.pop("cell_id").astype(str)
+    selected["Cluster"] = selected["Cell ID"].map(cluster_map)
+    missing_cluster = selected["Cluster"].isna()
+    selected.loc[~missing_cluster, "Cluster"] = (
+        "Cluster " + selected.loc[~missing_cluster, "Cluster"].astype(str)
+    )
+    selected.loc[missing_cluster, "Cluster"] = "Cluster unassigned"
+    return selected
 
 
 def load_xenium(xenium: Path):
@@ -253,20 +325,11 @@ def scatter_cats(ax, x, y, cats, cmap, s=10, title="", xlabel="", ylabel="", inv
     ax.set_ylabel(ylabel)
 
 
-def polygon_from_coords_csv(path: Path):
+def polygon_from_coords_csv(path: Path, selection_name: str | None = None):
     if not path or not Path(path).exists():
         return None
-    df = pd.read_csv(path, comment="#")
-    cols = {c.lower().strip(): c for c in df.columns}
-    xcol = cols.get("x") or cols.get("x (µm)") or cols.get("x (um)")
-    ycol = cols.get("y") or cols.get("y (µm)") or cols.get("y (um)")
-    if xcol is None or ycol is None:
-        if df.shape[1] >= 2:
-            xcol, ycol = df.columns[0], df.columns[1]
-        else:
-            return None
-    x = df[xcol].to_numpy(float)
-    y = df[ycol].to_numpy(float)
+    xy = read_polygon_coordinates(Path(path), selection_name)
+    x, y = xy[:, 0], xy[:, 1]
     if len(x) >= 2 and (x[0] != x[-1] or y[0] != y[-1]):
         x = np.r_[x, x[0]]
         y = np.r_[y, y[0]]
@@ -345,7 +408,21 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     module_set = cfg["module_set"]
     modules = MODULES[module_set]
 
-    explorer = read_explorer_cells(xenium / cfg["explorer_cells_csv"])
+    explorer_cells_path = resolve_under(xenium, cfg.get("explorer_cells_csv"))
+    if explorer_cells_path:
+        explorer = read_explorer_cells(explorer_cells_path)
+        roi_cell_source = "explorer_cells_stats"
+    else:
+        coordinates_path = resolve_under(xenium, cfg.get("explorer_coordinates_csv"))
+        if coordinates_path is None:
+            raise ValueError(
+                f"{roi}: provide explorer_cells_csv or explorer_coordinates_csv"
+            )
+        explorer = derive_explorer_cells_from_polygon(
+            xenium, coordinates_path, cfg.get("selection_name")
+        )
+        roi_cell_source = "polygon_centroids_plus_xoa_clusters"
+        explorer.to_csv(out / f"{roi}_derived_cells.csv", index=False)
     roi_ids = explorer["Cell ID"].tolist()
     adata_all = load_xenium(xenium)
     n_region = adata_all.n_obs
@@ -474,7 +551,11 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     annotation = cluster_annotation_table(adata.obs)
 
     # ---- figures ----
-    poly = polygon_from_coords_csv(xenium / cfg.get("explorer_coordinates_csv", ""))
+    coordinates_path = resolve_under(xenium, cfg.get("explorer_coordinates_csv"))
+    poly = (
+        polygon_from_coords_csv(coordinates_path, cfg.get("selection_name"))
+        if coordinates_path else None
+    )
     obs = adata.obs
     cmap_l = palette_map(obs["leiden"].astype(str).unique())
     cmap_m = palette_map(obs["module"].astype(str).unique())
@@ -810,11 +891,20 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
         "anatomy": cfg["anatomy"],
         "animal_id": cfg.get("animal_id"),
         "xenium": str(xenium),
-        "explorer_cells_csv": cfg["explorer_cells_csv"],
+        "explorer_cells_csv": cfg.get("explorer_cells_csv"),
+        "roi_cell_source": roi_cell_source,
         "panel_n_gene_features_in_roi_matrix": int(gene_mask.sum()) if hasattr(gene_mask, "sum") else int(np.sum(gene_mask)),
         "tdTomato_on_panel": bool(has_tdtom),
         "n_region_cells": int(n_region),
         "n_roi_export": int(len(roi_ids)),
+        "expected_explorer_cell_count": cfg.get("expected_explorer_cell_count"),
+        "polygon_count_difference": (
+            int(len(roi_ids) - cfg["expected_explorer_cell_count"])
+            if cfg.get("expected_explorer_cell_count") is not None else None
+        ),
+        "n_polygon_cells_without_xoa_cluster": int(
+            (explorer["Cluster"] == "Cluster unassigned").sum()
+        ),
         "n_after_qc": int(adata.n_obs),
         "qc": {
             "min_gene_counts": MIN_COUNTS,
@@ -891,7 +981,7 @@ def write_story_skips(out_root: Path, summaries: list[dict], genes_union: list[s
             "# Story 2 SKIPPED — tdTom+ vs tdTom−\n\n"
             "tdTomato is not among gene features on the current Explorer-linked matrices.\n\n"
             f"ROIs checked: {', '.join(s['roi_name'] for s in summaries)}\n\n"
-            "Do not gate on DAPI. Wait for the 298-gene run. See PIPELINE_LATER_REAL_DATA.md.\n"
+            "Do not gate on DAPI. Wait for the reporter-aware production run. See PIPELINE_LATER_REAL_DATA.md.\n"
         )
         (s2 / "SKIPPED.md").write_text(text, encoding="utf-8")
         fig, ax = plt.subplots(figsize=(8.4, 4.2))

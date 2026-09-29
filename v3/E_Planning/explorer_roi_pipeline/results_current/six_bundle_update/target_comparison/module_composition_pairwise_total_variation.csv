@@ -1,0 +1,4 @@
+comparison,total_variation
+ORBm R3 left vs right,0.10633428449845662
+ORBm right R2 vs R3,0.09080373946244642
+BMAp R1 left vs right,0.21453946146703803

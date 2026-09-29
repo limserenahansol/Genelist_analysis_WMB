@@ -1,0 +1,40 @@
+{
+  "bundles": [
+    {
+      "animal_id": "pilot_slide_0063814",
+      "anatomy": "ORBm",
+      "section_id": "0063814_Region_1",
+      "xenium": "D:\\output-XETG00277__0063814__Region_1__20260923__002559"
+    },
+    {
+      "animal_id": "pilot_slide_0063814",
+      "anatomy": "ORBm",
+      "section_id": "0063814_Region_2",
+      "xenium": "D:\\output-XETG00277__0063814__Region_2__20260923__002559"
+    },
+    {
+      "animal_id": "pilot_slide_0063814",
+      "anatomy": "ORBm",
+      "section_id": "0063814_Region_3",
+      "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559"
+    },
+    {
+      "animal_id": "pilot_slide_0063817",
+      "anatomy": "BMAp",
+      "section_id": "0063817_Region_1",
+      "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558"
+    },
+    {
+      "animal_id": "pilot_slide_0063817",
+      "anatomy": "BMAp",
+      "section_id": "0063817_Region_2",
+      "xenium": "D:\\output-XETG00277__0063817__Region_2__20260923__002559"
+    },
+    {
+      "animal_id": "pilot_slide_0063817",
+      "anatomy": "BMAp",
+      "section_id": "0063817_Region_3",
+      "xenium": "D:\\output-XETG00277__0063817__Region_3__20260923__002559"
+    }
+  ]
+}

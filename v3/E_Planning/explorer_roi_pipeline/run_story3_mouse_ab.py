@@ -30,6 +30,11 @@ def main():
     cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))
     out = HERE / "outputs" / "story3_mouse_ab"
     out.mkdir(parents=True, exist_ok=True)
+    for stale_name in [
+        "SKIPPED.md", "SKIPPED_story3.png", "DESCRIPTIVE_ONLY.md",
+        "READY_FOR_PSEUDOBULK_MODEL.md",
+    ]:
+        (out / stale_name).unlink(missing_ok=True)
 
     composition_rows = []
     pseudobulk_rows = []

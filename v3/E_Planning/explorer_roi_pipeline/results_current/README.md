@@ -5,3 +5,6 @@
   Active/Passive animals. Every simulated figure is labeled as such.
 - Processed `.h5ad` objects, per-cell tables, and raw Xenium exports are intentionally omitted
   from GitHub. They remain in the local analysis folder and are reproducible from the configs.
+- `six_bundle_update/` contains the 2026-09-29 six-bundle QC inventory, five target-ROI
+  comparison, compact ORBm/BMAp figures, exploratory BLA/CEA figures, Seurat summary, and
+  expanded descriptive animal-level export.

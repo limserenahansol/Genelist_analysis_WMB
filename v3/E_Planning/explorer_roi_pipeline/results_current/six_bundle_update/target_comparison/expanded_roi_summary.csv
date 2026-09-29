@@ -1,0 +1,6 @@
+roi_name,label,animal_id,anatomy,section_id,cell_source,n_export,n_after_qc,qc_retained_percent,median_gene_counts_after_qc,n_leiden,ari_res0.5,ari_res1.5,allen_ari,polygon_count_difference
+orbm_0063814_r2_right,ORBm r2 right,pilot_slide_0063814,ORBm,0063814_Region_2,polygon_centroids_plus_xoa_clusters,975,929,95.28205128205128,236.0,17,0.591022467271966,0.8679027881961168,,24.0
+orbm_0063814_r3_right,ORBm r3 right,pilot_slide_0063814,ORBm,0063814_Region_3,explorer_cells_stats,915,914,99.89071038251366,434.0,15,0.7759355200451324,0.7933693700597999,0.49992685005969106,
+orbm_0063814_r3_left,ORBm r3 left,pilot_slide_0063814,ORBm,0063814_Region_3,explorer_cells_stats,1019,1013,99.41118743866535,288.0,17,0.7433695303154838,0.882939883604036,,
+bmap_0063817_r1_left,BMAp r1 left,pilot_slide_0063817,BMAp,0063817_Region_1,explorer_cells_stats,1145,1077,94.06113537117903,194.0,15,0.8799257911921168,0.8377089520375927,0.5027083994360719,
+bmap_0063817_r1_right,BMAp r1 right,pilot_slide_0063817,BMAp,0063817_Region_1,explorer_cells_stats,1071,1000,93.37068160597572,193.0,14,0.929384462995634,0.9133973982594551,,

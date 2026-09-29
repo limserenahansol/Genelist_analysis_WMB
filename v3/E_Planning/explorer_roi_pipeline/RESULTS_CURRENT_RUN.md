@@ -50,6 +50,27 @@ transfer is reported separately.
 
 See `PIPELINE_REVIEW.md` for the recommended real-data workflow.
 
+## Expanded six-bundle update
+
+All three regions for slide 0063814 (ORBm) and all three regions for slide 0063817 (BMAp) were
+inventoried. XOA reported 421,520 cells in total, decoded Q20 of 86.1%–96.5%, and transcript
+assignment of 83.8%–89.4%.
+
+Five target ORBm/BMAp ROI selections were analyzable and produced 4,933 QC-passing cells:
+
+- ORBm 0063814 Region 2 right: 929 QC cells; polygon-derived and approximate.
+- ORBm 0063814 Region 3 right: 914 QC cells.
+- ORBm 0063814 Region 3 left: 1,013 QC cells.
+- BMAp 0063817 Region 1 left: 1,077 QC cells.
+- BMAp 0063817 Region 1 right: 1,000 QC cells.
+
+Marker-module composition total-variation distances were 0.106 for ORBm Region 3 left/right,
+0.091 for ORBm right Region 2/3, and 0.215 for BMAp Region 1 left/right. These quantify
+within-mouse ROI variability and are not treatment effects.
+
+See `outputs/six_bundle_inventory/`, `outputs/expanded_roi_comparison/`, and
+`TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md`.
+
 ## PI presentation and simulated demonstrations
 
 - `presentation/ORBm_BMAp_Xenium_pipeline_results_5slides_EN.pptx` is the validated

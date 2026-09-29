@@ -1,0 +1,15 @@
+animal_id,anatomy,section_id,selection,n_cells,source,file
+pilot_slide_0063814,ORBm,0063814_Region_2,orbm_right,951,combined summary,orbm_right_combined_stats.csv
+pilot_slide_0063814,ORBm,0063814_Region_3,orbm_right,915,combined summary,all_selections_combined_stats_orbmLeft.csv
+pilot_slide_0063814,ORBm,0063814_Region_3,orbm_left,1019,combined summary,all_selections_combined_stats_orbmLeft.csv
+pilot_slide_0063814,ORBm,0063814_Region_3,orbm_left,1019,cell-ID export,orbm_left_cells_stats.csv
+pilot_slide_0063814,ORBm,0063814_Region_3,orbm_right,915,cell-ID export,orbm_right_cells_stats.csv
+pilot_slide_0063814,ORBm,0063814_Region_3,orbm_right,915,combined summary,orbm_right_combined_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_1,BLA_left,1025,combined summary,all_selections_combined_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_1,BLA_right,916,combined summary,all_selections_combined_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_1,bmap_left,1145,cell-ID export,bmap_left_cells_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_1,bmap_right,1071,cell-ID export,bmap_right_cells_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_2,BLA_right,1601,combined summary,all_selections_combined_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_2,BLA_left,707,combined summary,all_selections_combined_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_2,CEA_left,1013,combined summary,all_selections_combined_stats.csv
+pilot_slide_0063817,BMAp,0063817_Region_2,CEA_right,852,combined summary,all_selections_combined_stats.csv

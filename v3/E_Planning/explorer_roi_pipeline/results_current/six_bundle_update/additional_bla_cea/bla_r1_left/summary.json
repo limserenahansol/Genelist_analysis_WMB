@@ -1,0 +1,75 @@
+{
+  "roi_name": "bla_r1_left",
+  "anatomy": "BLA",
+  "animal_id": "pilot_slide_0063817",
+  "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558",
+  "explorer_cells_csv": "C:\\Users\\hsollim\\Research_Projects\\03_GPCR_probe_panel\\panel298_pilot_validation\\explorer_roi_pipeline\\outputs\\derived_explorer_cells\\bla_r1_left_cells_stats.csv",
+  "panel_n_gene_features_in_roi_matrix": 247,
+  "tdTomato_on_panel": false,
+  "n_region_cells": 93727,
+  "n_roi_export": 1079,
+  "n_after_qc": 1043,
+  "qc": {
+    "min_gene_counts": 20,
+    "min_genes": 5,
+    "area_tukey_k": 3.0,
+    "area_cut_um2": 438.1962659060955,
+    "n_drop_counts": 36,
+    "n_drop_genes": 18,
+    "n_drop_area": 0
+  },
+  "baseline_transcripts": {
+    "region_median": 121.0,
+    "roi_median": 255.0,
+    "roi_after_qc_median_gene_counts": 271.0
+  },
+  "clustering": {
+    "n_pcs": 20,
+    "leiden_n": 17,
+    "leiden_0.5_n": 13,
+    "leiden_1.5_n": 20,
+    "n_identity_genes_used": 244,
+    "n_state_reporter_genes_excluded": 3,
+    "ari_res1_vs_res0.5": 0.7116871592327425,
+    "ari_res1_vs_res1.5": 0.8223438948784222
+  },
+  "same_matrix_concordance": {
+    "nmi_leiden_vs_module": 0.502471307092914,
+    "ari_leiden_vs_onboard": 0.4329530168250857,
+    "nmi_leiden_vs_onboard": 0.7168989263870175
+  },
+  "reference_validation": {
+    "reference_label_column": null,
+    "n_reference_labeled": 0,
+    "ari_leiden_vs_reference": null,
+    "nmi_leiden_vs_reference": null
+  },
+  "spatial_description": {
+    "spatial_neighbor_same_leiden": 0.21156919143496325,
+    "spatial_neighbor_same_leiden_perm_mean": 0.07914050919345851,
+    "spatial_neighbor_same_leiden_perm_sd": 0.004453121619360954,
+    "neighborhood_permutations": 499,
+    "note": "Within-section descriptive analysis; neighbor edges are not biological replicates."
+  },
+  "n_filtered_cluster_specific_rows": 136,
+  "module_counts": {
+    "glutamatergic": 345,
+    "unassigned": 238,
+    "gabaergic": 143,
+    "oligo": 86,
+    "endothelial": 66,
+    "OPC": 60,
+    "microglia": 55,
+    "astrocyte": 35,
+    "striatal_like": 12,
+    "VLMC": 3
+  },
+  "stories_runnable": {
+    "S1_celltype_genes": true,
+    "S2_tdtom": false,
+    "S3_mouse_ab": false,
+    "S4_neighborhood": true,
+    "S5_composition": true,
+    "S6_roi_qc": true
+  }
+}

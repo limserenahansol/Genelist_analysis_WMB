@@ -1,0 +1,74 @@
+{
+  "panel_note": "mBrain v1.1 247 genes. Five available ORBm/BMAp ROIs from two pilot animals; sections are nested within animal.",
+  "rois": [
+    {
+      "roi_name": "orbm_0063814_r2_right",
+      "anatomy": "ORBm",
+      "animal_id": "pilot_slide_0063814",
+      "section_id": "0063814_Region_2",
+      "slide": "0063814",
+      "region": "Region_2",
+      "xenium": "D:\\output-XETG00277__0063814__Region_2__20260923__002559",
+      "explorer_coordinates_csv": "orbm_right_coordinates.csv",
+      "selection_name": "orbm_right",
+      "expected_explorer_cell_count": 951,
+      "module_set": "ORBm_layers"
+    },
+    {
+      "roi_name": "orbm_0063814_r3_right",
+      "anatomy": "ORBm",
+      "animal_id": "pilot_slide_0063814",
+      "section_id": "0063814_Region_3",
+      "slide": "0063814",
+      "region": "Region_3",
+      "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559",
+      "explorer_cells_csv": "orbm_right_cells_stats.csv",
+      "explorer_coordinates_csv": "orbm_right_coordinates.csv",
+      "explorer_geojson": "orbm_right.geojson",
+      "module_set": "ORBm_layers",
+      "reference_labels_csv": "C:\\Users\\hsollim\\Desktop\\cursor\\Xenium_downstream\\allen_label_transfer\\ORBm_transferred.csv",
+      "reference_id_column": "Unnamed: 0",
+      "reference_label_column": "seurat_coarse"
+    },
+    {
+      "roi_name": "orbm_0063814_r3_left",
+      "anatomy": "ORBm",
+      "animal_id": "pilot_slide_0063814",
+      "section_id": "0063814_Region_3",
+      "slide": "0063814",
+      "region": "Region_3",
+      "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559",
+      "explorer_cells_csv": "orbm_left_cells_stats.csv",
+      "explorer_coordinates_csv": "orbm_left_coordinates.csv",
+      "explorer_geojson": "annotationorbmleft.geojson",
+      "module_set": "ORBm_layers"
+    },
+    {
+      "roi_name": "bmap_0063817_r1_left",
+      "anatomy": "BMAp",
+      "animal_id": "pilot_slide_0063817",
+      "section_id": "0063817_Region_1",
+      "slide": "0063817",
+      "region": "Region_1",
+      "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558",
+      "explorer_cells_csv": "bmap_left_cells_stats.csv",
+      "explorer_coordinates_csv": "bmap_left_coordinates.csv",
+      "explorer_geojson": "bmap_left_1.geojson",
+      "module_set": "BMAp_classes",
+      "reference_labels_csv": "C:\\Users\\hsollim\\Desktop\\cursor\\Xenium_downstream\\allen_label_transfer\\BMAp_transferred.csv",
+      "reference_id_column": "Unnamed: 0",
+      "reference_label_column": "seurat_coarse"
+    },
+    {
+      "roi_name": "bmap_0063817_r1_right",
+      "anatomy": "BMAp",
+      "animal_id": "pilot_slide_0063817",
+      "section_id": "0063817_Region_1",
+      "slide": "0063817",
+      "region": "Region_1",
+      "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558",
+      "explorer_cells_csv": "bmap_right_cells_stats.csv",
+      "module_set": "BMAp_classes"
+    }
+  ]
+}

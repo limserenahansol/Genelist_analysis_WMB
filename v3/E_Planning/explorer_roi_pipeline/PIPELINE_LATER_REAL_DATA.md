@@ -31,7 +31,7 @@ Explorer still **cannot** compute these DEs. Its cluster DE is onboard clusterin
 
 ### 1.1 Question
 
-Within **one region** and **one cell class** (example: ORBm L5 glut, or BMAp GABA), which 298-panel genes differ between reporter-positive and reporter-negative cells?
+Within **one region** and **one cell class** (example: ORBm L5 glut, or BMAp GABA), which measured production-panel genes differ between reporter-positive and reporter-negative cells?
 
 Do **not** pool all cell types and call genome-wide DE: you will rediscover cell-type composition (tdTom lineage vs the rest).
 
@@ -130,9 +130,9 @@ Script: `run_story3_mouse_ab.py` (exits SKIPPED until ≥2 animals share `anatom
 
 ## 3. Story 1 on the production panel (re-run, not wait)
 
-When the real zarr/h5 arrives, **re-run** `run_from_explorer.py` with a new JSON. Wilcoxon gene lists will change because the feature space is 298 not 247. Do not copy 247 Leiden “markers” onto 298 without re-testing.
+When the real zarr/h5 arrives, **re-run** `run_from_explorer.py` with a new JSON. Marker results will change because the production panel differs from the 247-gene pilot. Do not copy pilot Leiden markers without re-testing.
 
-Module gene lists must be rewritten: many ORBm layer genes on 247 are absent from 298, and many 298 GPCRs are absent from 247.
+Recheck module gene coverage against the final production panel before running.
 
 ---
 
@@ -141,7 +141,7 @@ Module gene lists must be rewritten: many ORBm layer genes on 247 are absent fro
 See `rois_later_template.json`. Required keys:
 
 ```text
-roi_name, anatomy, animal_id, xenium, explorer_cells_csv, explorer_coordinates_csv
+roi_name, anatomy, animal_id, condition, section_id, xenium, explorer_cells_csv, explorer_coordinates_csv
 ```
 
 Optional: `explorer_geojson` (archive only).

@@ -1,0 +1,18 @@
+[
+  {
+    "anatomy": "BMAp",
+    "animals_by_condition": {
+      "unspecified": 1
+    },
+    "inference_ready_preferred": false,
+    "criterion": "at least 3 animals per condition; same anatomy; animal is the unit"
+  },
+  {
+    "anatomy": "ORBm",
+    "animals_by_condition": {
+      "unspecified": 1
+    },
+    "inference_ready_preferred": false,
+    "criterion": "at least 3 animals per condition; same anatomy; animal is the unit"
+  }
+]
