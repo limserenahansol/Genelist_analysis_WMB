@@ -119,3 +119,28 @@ available.
 
 The current 247-gene pilot writes `outputs/story2_novel_subtype/SKIPPED.md` because `tdTomato`
 is absent.
+
+## Refined BLA and CEA analysis
+
+The original BLA/CEA outputs used the broad BMAp modules and remain under `outputs/` as a baseline.
+Run the Allen-informed region-specific modules and spatial checks without overwriting that baseline:
+
+```text
+python run_from_explorer.py --config rois_bla_cea_refined.json --output-root outputs_bla_cea_refined
+python summarize_bla_cea_refined.py
+python run_spatial_context.py --permutations 199
+```
+
+Optional marker-table regeneration when the Allen cache is available:
+
+```text
+python derive_bla_cea_allen_markers.py --allen-cache C:\path\to\abc_atlas_cache --panel-h5ad outputs\cea_r2_left\cea_r2_left_processed.h5ad --output-root outputs\amygdala_allen_reference
+```
+
+Generate the candidate-subtype visualization example:
+
+```text
+python make_tdtom_subtype_toy.py --output-root toy_candidate_subtype
+```
+
+The toy result is simulated and cannot be interpreted as a BLA or CEA biological finding.

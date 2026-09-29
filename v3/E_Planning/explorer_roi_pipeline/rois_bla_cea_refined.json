@@ -2,39 +2,6 @@
   "panel_note": "New Explorer exports on the 247-gene pilot. BLA and CEA use Allen-informed region-specific marker modules; labels ending in _like lack the defining Allen gene on this 247-gene panel and remain provisional.",
   "rois": [
     {
-      "roi_name": "orbm_r3_left",
-      "anatomy": "ORBm",
-      "slide": "0063814",
-      "region": "Region_3",
-      "module_set": "ORBm_layers",
-      "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559",
-      "explorer_cells_csv": "orbm_left_cells_stats.csv",
-      "explorer_coordinates_csv": "orbm_left_coordinates.csv",
-      "animal_id": "pilot_slide_0063814"
-    },
-    {
-      "roi_name": "bmap_r1_right",
-      "anatomy": "BMAp",
-      "slide": "0063817",
-      "region": "Region_1",
-      "module_set": "BMAp_classes",
-      "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558",
-      "explorer_cells_csv": "bmap_right_cells_stats.csv",
-      "explorer_coordinates_csv": "",
-      "animal_id": "pilot_slide_0063817"
-    },
-    {
-      "roi_name": "orbm_r2_right",
-      "anatomy": "ORBm",
-      "animal_id": "pilot_slide_0063814",
-      "slide": "0063814",
-      "region": "Region_2",
-      "xenium": "D:\\output-XETG00277__0063814__Region_2__20260923__002559",
-      "explorer_cells_csv": "C:\\Users\\hsollim\\Research_Projects\\03_GPCR_probe_panel\\panel298_pilot_validation\\explorer_roi_pipeline\\outputs\\derived_explorer_cells\\orbm_r2_right_cells_stats.csv",
-      "explorer_coordinates_csv": "C:\\Users\\hsollim\\Research_Projects\\03_GPCR_probe_panel\\panel298_pilot_validation\\explorer_roi_pipeline\\outputs\\derived_explorer_cells\\orbm_r2_right_coordinates.csv",
-      "module_set": "ORBm_layers"
-    },
-    {
       "roi_name": "bla_r1_left",
       "anatomy": "BLA",
       "animal_id": "pilot_slide_0063817",

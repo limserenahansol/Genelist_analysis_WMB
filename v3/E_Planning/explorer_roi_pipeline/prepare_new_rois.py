@@ -193,12 +193,19 @@ def main():
                 "xenium": job["xenium"],
                 "explorer_cells_csv": str(cells_path),
                 "explorer_coordinates_csv": str(coord_path),
-                "module_set": job["module_set"],
+                "module_set": {
+                    "BLA": "BLA_types",
+                    "CEA": "CEA_types",
+                }.get(job["anatomy"], job["module_set"]),
             })
     tab = pd.DataFrame(rows)
     tab.to_csv(OUT / "assignment_check.csv", index=False)
     cfg = {
-        "panel_note": "New Explorer exports on the 247-gene pilot. BLA/CEA use the BMAp module set because they are amygdala-side drawings, not ORBm layers.",
+        "panel_note": (
+            "New Explorer exports on the 247-gene pilot. BLA and CEA use Allen-informed "
+            "region-specific marker modules; _like labels remain provisional when the defining "
+            "Allen gene is absent from this panel."
+        ),
         "rois": rois,
     }
     dest = Path(__file__).resolve().parent / "rois_new_exports.json"

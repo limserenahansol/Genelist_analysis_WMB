@@ -352,6 +352,11 @@ def process_parent_group(group, anatomy, parent, output_dir):
         "parent_cell_type", "tdTomato_counts", "tdTom_positive",
         "identity_leiden_0.5", "identity_leiden_1", "identity_leiden_1.5",
     ]].copy()
+    assignments["UMAP1"] = identity.obsm["X_umap"][:, 0]
+    assignments["UMAP2"] = identity.obsm["X_umap"][:, 1]
+    for coordinate in ["x_centroid", "y_centroid"]:
+        if coordinate in identity.obs:
+            assignments[coordinate] = identity.obs[coordinate].to_numpy()
     assignments.to_csv(output_dir / "cell_assignments.csv")
 
     fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.8))

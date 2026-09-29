@@ -1,0 +1,8 @@
+anatomy,roi_1,roi_2,total_variation_distance
+BLA,bla_r1_left,bla_r1_right,0.09472255840393147
+BLA,bla_r1_left,bla_r2_left,0.08226270373921381
+BLA,bla_r1_left,bla_r2_right,0.06474294885696016
+BLA,bla_r1_right,bla_r2_left,0.09532401804378922
+BLA,bla_r1_right,bla_r2_right,0.10581260690798211
+BLA,bla_r2_left,bla_r2_right,0.0445188706737942
+CEA,cea_r2_left,cea_r2_right,0.11512452783150845

@@ -1,0 +1,7 @@
+roi_name,anatomy,n_assigned_cells,n_cell_types,max_neighborhood_z,top_moran_gene,top_moran_i,note
+bla_r1_left,BLA,821,9,12.889300766746574,Slc17a7,0.5030897369963764,"descriptive within section; animals, not cells or neighbor edges, are biological replicates"
+bla_r1_right,BLA,741,9,11.212948683994133,Neurod6,0.31049815780040674,"descriptive within section; animals, not cells or neighbor edges, are biological replicates"
+bla_r2_left,BLA,553,9,5.32015313842305,Slc17a7,0.49617103971357224,"descriptive within section; animals, not cells or neighbor edges, are biological replicates"
+bla_r2_right,BLA,1190,9,14.344048147255846,Slc17a7,0.4174693976301953,"descriptive within section; animals, not cells or neighbor edges, are biological replicates"
+cea_r2_left,CEA,768,10,12.818576689508792,Penk,0.3297167140620237,"descriptive within section; animals, not cells or neighbor edges, are biological replicates"
+cea_r2_right,CEA,606,10,8.062569387337275,Nts,0.4387281081849687,"descriptive within section; animals, not cells or neighbor edges, are biological replicates"

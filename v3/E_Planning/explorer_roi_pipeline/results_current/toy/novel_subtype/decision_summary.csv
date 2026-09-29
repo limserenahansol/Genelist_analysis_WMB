@@ -1,0 +1,2 @@
+anatomy,parent_cell_type,n_cells,n_animals,n_tdtom_positive,n_tdtom_negative,n_stable_tdtom_identity_markers,n_candidate_unbiased_clusters,decision,interpretation
+BLA,BLA_principal,640,4,192,448,3,1,candidate_novel_subtype_requires_external_validation,candidate only; never confirmed novel type without independent reference/spatial validation

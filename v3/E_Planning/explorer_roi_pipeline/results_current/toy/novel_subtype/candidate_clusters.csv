@@ -1,0 +1,7 @@
+anatomy,parent_cell_type,cluster,n_cells,animals_present_with_min_cells,median_log2_tdtom_odds,positive_odds_animal_fraction,cluster_recovery_vs_resolution_0.5,cluster_recovery_vs_resolution_1.5,n_stable_identity_markers,top_stable_identity_markers,candidate_novel_subtype,n_leave_one_mouse_out_evaluable,median_leave_one_mouse_out_auc,leave_one_mouse_out_auc_pass_fraction,leave_one_mouse_out_validation_pass
+BLA,BLA_principal,0,195,4,12.815850241386276,1.0,0.9558823529411765,0.9653465346534653,3,SubtypeA;SubtypeB;SubtypeC,True,4,1.0,1.0,True
+BLA,BLA_principal,1,108,4,-5.0311358199504035,0.0,0.2448512585812357,0.415929203539823,4,Identity15;Identity13;Identity14;Identity12,False,4,1.0,1.0,True
+BLA,BLA_principal,2,81,4,-4.424449179883461,0.0,0.18306636155606407,0.4578313253012048,4,Identity04;Identity06;Identity07;Identity05,False,4,1.0,1.0,True
+BLA,BLA_principal,3,102,4,-4.893205069113602,0.0,0.2144469525959368,0.5126050420168067,4,Identity09;Identity10;Identity08;Identity11,False,4,1.0,1.0,True
+BLA,BLA_principal,4,113,4,-5.060834840284784,0.0,0.2591743119266055,0.7017543859649122,4,Identity01;Identity00;Identity03;Identity02,False,4,1.0,1.0,True
+BLA,BLA_principal,5,41,3,-3.4581388810589644,0.0,0.09403669724770643,0.5294117647058824,4,Identity06;Identity07;Identity05;Identity04,False,4,1.0,1.0,True

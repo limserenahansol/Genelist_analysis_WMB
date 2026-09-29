@@ -10,3 +10,7 @@
   expanded descriptive animal-level export.
 - `six_bundle_update/story2_novel_subtype/SKIPPED.md` records the expected skip because the
   current pilot panel has no `tdTomato` feature.
+- `six_bundle_update/bla_cea_refined/` contains the Allen-informed BLA/CEA rerun, spatial-context
+  validation, and compact per-ROI summaries.
+- `toy/novel_subtype/` contains the explicitly simulated four-mouse candidate-subtype figure and
+  validation tables.

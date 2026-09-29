@@ -70,6 +70,43 @@ MODULES = {
         "microglia": ["Trem2", "Cd68", "Siglech"],
         "striatal_like": ["Ppp1r1b", "Penk"],
     },
+    "BLA_types": {
+        "BLA_principal": [
+            "Slc17a7", "Nrn1", "Bhlhe22", "Zfpm2", "Prdm8", "Pdzrn3",
+            "Adamtsl1", "Nwd2", "Neurod6", "Rorb",
+        ],
+        "BLA_Pvalb_GABA": ["Gad1", "Gad2", "Pvalb", "Syt2", "Gucy1a1", "Igfbp6"],
+        "BLA_Sst_GABA": ["Gad1", "Gad2", "Sst", "Chodl", "Grik3", "Necab1"],
+        "BLA_Vip_Lamp5_GABA": ["Gad1", "Gad2", "Vip", "Lamp5", "Sncg", "Calb2", "Cplx3"],
+        "astrocyte": ["Gfap", "Aqp4"],
+        "oligo": ["Sox10", "Opalin", "Gjc3"],
+        "OPC": ["Pdgfra", "Cspg4", "Gpr17"],
+        "vascular": ["Cldn5", "Pecam1", "Kdr", "Dcn", "Col1a1"],
+        "microglia": ["Trem2", "Cd68", "Siglech"],
+    },
+    "CEA_types": {
+        "CEA_Gal_Avp_like": [
+            "Rspo1", "Calb2", "Syt6", "Parm1", "Igfbp5", "Plch1", "Vwc2l",
+            "Gfra2", "Nxph3", "Chrm2",
+        ],
+        "CEA_Six3_Cyp26b1_like": [
+            "Arhgap6", "Penk", "Calb1", "Gm19410", "Strip2", "Kctd12",
+            "Trpc4", "Pcsk5", "Sema3e",
+        ],
+        "CEA_Six3_Sp9_like": [
+            "Foxp2", "Grik3", "Nts", "Sema5b", "Rnf152", "Ndst4", "Prox1",
+        ],
+        "CEA_Ebf1_Pdyn_like": ["Plcxd2", "Sst", "Unc13c", "Sema6a", "Cdh20"],
+        "CEA_Rai14_Pdyn_Crh_like": [
+            "Hs3st2", "Sntb1", "Pdyn", "Col6a1", "Htr1f", "Necab2",
+            "Ppp1r1b", "Crh",
+        ],
+        "astrocyte": ["Gfap", "Aqp4"],
+        "oligo": ["Sox10", "Opalin", "Gjc3"],
+        "OPC": ["Pdgfra", "Cspg4", "Gpr17"],
+        "vascular": ["Cldn5", "Pecam1", "Kdr", "Dcn", "Col1a1"],
+        "microglia": ["Trem2", "Cd68", "Siglech"],
+    },
 }
 
 DOTPLOT = {
@@ -83,11 +120,23 @@ DOTPLOT = {
         "Calb2", "Meis2", "Ppp1r1b", "Penk", "Nr2f2", "Cdh9", "Gfap", "Aqp4",
         "Sox10", "Opalin", "Pdgfra", "Cldn5", "Dcn", "Trem2",
     ],
+    "BLA_types": [
+        "Slc17a7", "Nrn1", "Bhlhe22", "Prdm8", "Pdzrn3", "Neurod6",
+        "Gad1", "Gad2", "Pvalb", "Sst", "Vip", "Lamp5", "Gfap", "Sox10",
+        "Pdgfra", "Cldn5", "Trem2",
+    ],
+    "CEA_types": [
+        "Gad1", "Gad2", "Rspo1", "Calb2", "Arhgap6", "Penk", "Foxp2",
+        "Nts", "Plcxd2", "Sst", "Hs3st2", "Pdyn", "Crh", "Gfap", "Sox10",
+        "Pdgfra", "Cldn5", "Trem2",
+    ],
 }
 
 SPATIAL_GENES = {
     "ORBm_layers": ["Cux2", "Rorb", "Fezf2", "Deptor", "Gad1", "Slc17a7"],
     "BMAp_classes": ["Slc17a7", "Gad1", "Nr2f2", "Cdh9", "Ppp1r1b", "Sox10"],
+    "BLA_types": ["Slc17a7", "Pdzrn3", "Neurod6", "Gad1", "Pvalb", "Sst"],
+    "CEA_types": ["Gad1", "Rspo1", "Arhgap6", "Foxp2", "Sst", "Pdyn"],
 }
 
 plt.rcParams.update({
@@ -1029,10 +1078,11 @@ def write_story_skips(out_root: Path, summaries: list[dict], genes_union: list[s
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--config", default=str(HERE / "rois_current.json"))
+    p.add_argument("--output-root", default=str(HERE / "outputs"))
     args = p.parse_args()
     cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))
-    out_root = HERE / "outputs"
-    out_root.mkdir(exist_ok=True)
+    out_root = Path(args.output_root)
+    out_root.mkdir(parents=True, exist_ok=True)
     sc.settings.verbosity = 1
     np.random.seed(SEED)
     summaries = [process_roi(roi, out_root) for roi in cfg["rois"]]

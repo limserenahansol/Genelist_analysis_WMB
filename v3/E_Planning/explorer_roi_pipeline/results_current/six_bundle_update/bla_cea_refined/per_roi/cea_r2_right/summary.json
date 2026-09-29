@@ -1,0 +1,80 @@
+{
+  "roi_name": "cea_r2_right",
+  "anatomy": "CEA",
+  "animal_id": "pilot_slide_0063817",
+  "xenium": "D:\\output-XETG00277__0063817__Region_2__20260923__002559",
+  "explorer_cells_csv": "C:\\Users\\hsollim\\Research_Projects\\03_GPCR_probe_panel\\panel298_pilot_validation\\explorer_roi_pipeline\\outputs\\derived_explorer_cells\\cea_r2_right_cells_stats.csv",
+  "roi_cell_source": "explorer_cells_stats",
+  "panel_n_gene_features_in_roi_matrix": 247,
+  "tdTomato_on_panel": false,
+  "n_region_cells": 104918,
+  "n_roi_export": 886,
+  "expected_explorer_cell_count": null,
+  "polygon_count_difference": null,
+  "n_polygon_cells_without_xoa_cluster": 0,
+  "n_after_qc": 859,
+  "qc": {
+    "min_gene_counts": 20,
+    "min_genes": 5,
+    "area_tukey_k": 3.0,
+    "area_cut_um2": 386.2891546469182,
+    "n_drop_counts": 27,
+    "n_drop_genes": 6,
+    "n_drop_area": 0
+  },
+  "baseline_transcripts": {
+    "region_median": 126.0,
+    "roi_median": 184.0,
+    "roi_after_qc_median_gene_counts": 191.0
+  },
+  "clustering": {
+    "n_pcs": 20,
+    "leiden_n": 15,
+    "leiden_0.5_n": 10,
+    "leiden_1.5_n": 17,
+    "n_identity_genes_used": 242,
+    "n_state_reporter_genes_excluded": 3,
+    "ari_res1_vs_res0.5": 0.740618859870942,
+    "ari_res1_vs_res1.5": 0.8681094477245126
+  },
+  "same_matrix_concordance": {
+    "nmi_leiden_vs_module": 0.38873726769540384,
+    "ari_leiden_vs_onboard": 0.13905079764149142,
+    "nmi_leiden_vs_onboard": 0.4936882332419017
+  },
+  "reference_validation": {
+    "reference_label_column": null,
+    "n_reference_labeled": 0,
+    "ari_leiden_vs_reference": null,
+    "nmi_leiden_vs_reference": null
+  },
+  "spatial_description": {
+    "spatial_neighbor_same_leiden": 0.256499805975941,
+    "spatial_neighbor_same_leiden_perm_mean": 0.08485773843996856,
+    "spatial_neighbor_same_leiden_perm_sd": 0.005418162853783465,
+    "neighborhood_permutations": 499,
+    "note": "Within-section descriptive analysis; neighbor edges are not biological replicates."
+  },
+  "n_filtered_cluster_specific_rows": 112,
+  "module_counts": {
+    "unassigned": 253,
+    "CEA_Six3_Cyp26b1_like": 234,
+    "astrocyte": 90,
+    "CEA_Rai14_Pdyn_Crh_like": 86,
+    "microglia": 58,
+    "oligo": 54,
+    "vascular": 32,
+    "OPC": 30,
+    "CEA_Ebf1_Pdyn_like": 15,
+    "CEA_Six3_Sp9_like": 5,
+    "CEA_Gal_Avp_like": 2
+  },
+  "stories_runnable": {
+    "S1_celltype_genes": true,
+    "S2_tdtom": false,
+    "S3_mouse_ab": false,
+    "S4_neighborhood": true,
+    "S5_composition": true,
+    "S6_roi_qc": true
+  }
+}

@@ -1,0 +1,5 @@
+held_out_animal,n_train_animals,n_markers_selected_without_held_out,marker_score_auc_for_tdtom_in_held_out,markers
+mouse1,3,3,1.0,SubtypeC;SubtypeB;SubtypeA
+mouse2,3,3,1.0,SubtypeA;SubtypeB;SubtypeC
+mouse3,3,3,1.0,SubtypeC;SubtypeB;SubtypeA
+mouse4,3,3,1.0,SubtypeA;SubtypeB;SubtypeC

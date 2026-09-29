@@ -18,6 +18,10 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 - `run_story2_tdtom.py`: reporter gating, cell-type enrichment and threshold sensitivity.
 - `run_tdtom_novel_subtype.py`: unbiased identity-gene clustering and cross-mouse validation of
   tdTom-associated candidate subtypes within known parent cell types.
+- `run_spatial_context.py`: optional neighborhood-enrichment and Moran's I spatial validation.
+- `derive_bla_cea_allen_markers.py`: reproducible Allen marker ranking restricted to measured genes.
+- `summarize_bla_cea_refined.py`: BLA/CEA baseline-versus-region-specific validation summary.
+- `make_tdtom_subtype_toy.py`: reproducible, clearly labeled synthetic candidate-subtype example.
 - `run_story3_mouse_ab.py`: animal-level composition and pseudobulk export.
 - `run_factorial_tdtom_active_passive.py`: factorial reporter-by-condition export.
 - `run_factorial_limma_voom.R`: animal-level gene models and five planned contrasts.
@@ -27,6 +31,7 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 - `RESULTS_CURRENT_RUN.md`: verified pilot results and limitations.
 - `TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md`: 10x tool map, Harmony decision, and the planned
   four-mouse/three-section design.
+- `TENX_TOOL_DECISION_AND_BLA_CEA.md`: selected 10x-compatible stack and BLA/CEA evidence limits.
 - `run_six_bundle_inventory.py`: XOA QC and Explorer-export inventory for all six bundles.
 - `summarize_expanded_rois.py`: concise yield, composition, and within-mouse ROI comparisons.
 - `rois_expanded_available.json`: five analyzable target ROIs currently available.
@@ -53,3 +58,6 @@ Xenium folders. Those files remain local and can be regenerated from the documen
 - `outputs/expanded_roi_comparison/`: cross-ROI summary tables and three concise figures.
 - `outputs/<expanded_roi_name>/figures/`: 11 detailed figures for each of five target ROIs.
 - `outputs/story3_mouse_ab/`: sections aggregated within animal; descriptive only for this pilot.
+- `outputs_bla_cea_refined/`: non-destructive BLA/CEA rerun with region-specific modules, comparison
+  summaries, and spatial-context validation.
+- `toy_candidate_subtype/tdtom_candidate_subtype_SIMULATED.png`: synthetic illustration only.
