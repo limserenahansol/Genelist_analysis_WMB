@@ -61,6 +61,44 @@ A tdTom-enriched cluster is a candidate new subtype only if all of these hold:
 Until these checks pass, call it a **tdTom-enriched state or provisional subtype**, not a new
 cell type.
 
+### Approaches considered
+
+- **DEG-only tdTom+ versus tdTom−:** simple and useful for finding a reporter-associated program,
+  but it can confuse activity, condition, and cell identity.
+- **Unsupervised clustering across all cells:** can find broad known classes, but those classes can
+  dominate subtle subtype structure and composition can create apparent tdTom separation.
+- **Selected approach — unsupervised identity clustering within each known parent type:** preserves
+  the unbiased search while controlling broad cell identity. Reporter status is revealed only after
+  clustering, then tested for mouse-to-mouse reproduction.
+
+### Unbiased tdTom candidate-subtype module
+
+Script: `run_tdtom_novel_subtype.py`.
+
+The analysis begins inside each established parent cell type. `tdTomato`, `iCre`, immediate-early,
+activity, plasticity, and other predefined state/reporter genes are excluded before PCA, neighbors,
+UMAP, and clustering. Reporter status is overlaid only after the identity-gene clusters exist.
+
+In parallel, tdTom+ versus tdTom− effects are computed separately in every mouse. Genes are retained
+as candidate subtype markers only when effect direction, expression difference, and detection
+difference reproduce across animals. Leave-one-mouse-out marker scoring tests whether markers chosen
+without one mouse distinguish reporter status in that held-out mouse. A computational candidate also
+requires an evaluable held-out AUC of at least 0.65 in at least 75% of evaluable mice (and at least
+three mice), with median AUC at least 0.65.
+
+The output decisions are:
+
+- `insufficient_independent_animals`: no subtype conclusion.
+- `reporter_associated_program_without_reproducible_unbiased_cluster`: reproducible tdTom-associated
+  expression within a known type, but no independent identity cluster.
+- `candidate_novel_subtype_requires_external_validation`: an identity-gene cluster is tdTom-enriched
+  across animals, stable across resolutions, and has multiple reproducible non-state markers.
+- `no_reproducible_reporter_subtype_evidence`: neither a stable marker program nor a stable cluster.
+
+The script never emits “confirmed novel cell type.” Confirmation requires independent animals,
+reference-atlas comparison, spatial coherence, and preferably orthogonal validation. Because Xenium
+can only test genes present on the panel, absence of a candidate does not exclude an unmeasured subtype.
+
 ## Question 2: which genes differ between tdTom+ and tdTom−?
 
 Run differential expression separately within each anatomy and existing cell type. Prioritize
@@ -100,6 +138,10 @@ preferred for heterogeneous cell types.
 
 - `outputs/story2_tdtom/cell_type_tdtom_enrichment_by_animal.csv`
 - `outputs/story2_tdtom/all_rois_tdtom_enrichment_by_leiden_cluster.csv`
+- `outputs/story2_novel_subtype/decision_summary.csv`
+- `outputs/story2_novel_subtype/<anatomy>/<parent_type>/candidate_clusters.csv`
+- `outputs/story2_novel_subtype/<anatomy>/<parent_type>/stable_tdtom_identity_markers.csv`
+- `outputs/story2_novel_subtype/<anatomy>/<parent_type>/leave_one_mouse_out_marker_validation.csv`
 - `outputs/factorial_tdtom_active_passive/factorial_sample_metadata.csv`
 - `outputs/factorial_tdtom_active_passive/factorial_pseudobulk_counts_genes_by_sample.csv`
 - `outputs/factorial_tdtom_active_passive/contrast_plan.csv`

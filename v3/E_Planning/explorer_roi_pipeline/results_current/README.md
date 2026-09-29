@@ -8,3 +8,5 @@
 - `six_bundle_update/` contains the 2026-09-29 six-bundle QC inventory, five target-ROI
   comparison, compact ORBm/BMAp figures, exploratory BLA/CEA figures, Seurat summary, and
   expanded descriptive animal-level export.
+- `six_bundle_update/story2_novel_subtype/SKIPPED.md` records the expected skip because the
+  current pilot panel has no `tdTomato` feature.

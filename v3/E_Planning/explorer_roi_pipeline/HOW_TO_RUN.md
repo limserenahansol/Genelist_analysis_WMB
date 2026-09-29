@@ -50,12 +50,19 @@ For the primary tdTom × Active/Passive design, also run:
 ```text
 python run_factorial_tdtom_active_passive.py --config YOUR_REAL_CONFIG.json
 Rscript run_factorial_limma_voom.R outputs/factorial_tdtom_active_passive
+python run_tdtom_novel_subtype.py --config YOUR_REAL_CONFIG.json
 ```
 
 The factorial export and model implement five planned contrasts: tdTom+ versus tdTom− within
 each condition, Active versus Passive within each reporter state, and the condition × reporter
 interaction. See `PRIMARY_AIM_ANALYSIS.md` before interpreting a tdTom-enriched cluster as a
 new cell type.
+
+`run_tdtom_novel_subtype.py` performs the unbiased subtype search within each known parent type.
+It excludes reporter/state genes from clustering, checks tdTom enrichment only afterward, requires
+mouse-consistent non-state markers and resolution stability, and performs leave-one-mouse-out marker
+validation. Its strongest label is `candidate_novel_subtype_requires_external_validation`; spatial
+coherence and reference-atlas novelty still have to be checked before naming a subtype.
 
 New drawings from 2026-09-29 are listed in `NEW_ROIS_2026-09-29.md` and were run with `rois_new_exports.json`.
 
@@ -102,9 +109,13 @@ python run_from_explorer.py --config rois_expanded_available.json
 python run_story2_tdtom.py --config rois_expanded_available.json
 python run_story3_mouse_ab.py --config rois_expanded_available.json
 python summarize_expanded_rois.py --config rois_expanded_available.json
+python run_tdtom_novel_subtype.py --config rois_expanded_available.json
 ```
 
 The Region 2 ORBm entry has no Explorer cell-ID export. The pipeline derives cells whose centroids
 fall within `orbm_right_coordinates.csv`, joins XOA graph-cluster labels, and records the source and
 count discrepancy in `summary.json`. Replace this fallback with a `*_cells_stats.csv` export when
 available.
+
+The current 247-gene pilot writes `outputs/story2_novel_subtype/SKIPPED.md` because `tdTomato`
+is absent.

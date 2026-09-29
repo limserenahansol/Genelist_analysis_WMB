@@ -489,7 +489,7 @@ python v3/E_Planning/compare_jesse_allen_abundance.py
 
 ### Explorer ROI analysis — current pilot and planned Ai14 experiment
 
-The reviewed ORBm/BMAp Xenium workflow, compact validated pilot outputs, simulated reporter-aware demonstrations, and five-slide English PI deck are in [`v3/E_Planning/explorer_roi_pipeline/`](v3/E_Planning/explorer_roi_pipeline/). The real pilot supports cell-identity analysis; it does not contain `tdTomato` or replicated Active/Passive groups, so those result examples are explicitly labeled simulated.
+The reviewed ORBm/BMAp Xenium workflow, compact validated pilot outputs, simulated reporter-aware demonstrations, and five-slide English PI deck are in [`v3/E_Planning/explorer_roi_pipeline/`](v3/E_Planning/explorer_roi_pipeline/). It now includes an unbiased tdTom candidate-subtype module that clusters on identity genes within each known parent type, reveals reporter status afterward, and requires cross-mouse markers, resolution recovery, and held-out-mouse prediction. The real pilot supports cell-identity analysis; it does not contain `tdTomato` or replicated Active/Passive groups, so those result examples are explicitly labeled simulated.
 
 The 2026-09-29 update adds all six Xenium bundle QC summaries, five available ORBm/BMAp ROI analyses, compact BLA/CEA and Seurat checks, and the four-mouse/three-section plan in [`TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md`](v3/E_Planning/explorer_roi_pipeline/TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md).
 

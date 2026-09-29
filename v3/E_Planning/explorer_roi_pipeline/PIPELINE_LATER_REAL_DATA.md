@@ -76,6 +76,22 @@ Script: `run_story2_tdtom.py` (exits SKIPPED until `tdTomato` is in `var_names`)
 
 ---
 
+## 1.4 Unbiased candidate novel-subtype search
+
+Run `run_tdtom_novel_subtype.py` after the ordinary Story 2 analysis. For each established parent
+cell type, it removes reporter and predefined state genes before PCA, UMAP, and clustering. It then
+overlays tdTom status and asks whether one identity-gene cluster is enriched for tdTom in the same
+direction across independent mice.
+
+The module also calculates tdTom+ versus tdTom− effects per mouse, retains reproducible non-state
+markers, and performs leave-one-mouse-out marker-score validation. A DEG list without an unbiased,
+resolution-stable cluster is reported as a reporter-associated program within a known type. A
+computational candidate requires the cluster, at least two stable identity markers, reproduction in
+at least three independent animals, resolution recovery, and held-out-mouse prediction. Spatial
+coherence and external/reference validation are still required before naming a new subtype.
+
+---
+
 ## 2. Story 3 — DEG / composition mouse A vs mouse B
 
 ### 2.1 Question

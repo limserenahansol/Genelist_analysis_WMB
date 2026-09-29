@@ -16,11 +16,14 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 
 - `run_from_explorer.py`: QC, identity-only clustering, marker summaries and spatial analysis.
 - `run_story2_tdtom.py`: reporter gating, cell-type enrichment and threshold sensitivity.
+- `run_tdtom_novel_subtype.py`: unbiased identity-gene clustering and cross-mouse validation of
+  tdTom-associated candidate subtypes within known parent cell types.
 - `run_story3_mouse_ab.py`: animal-level composition and pseudobulk export.
 - `run_factorial_tdtom_active_passive.py`: factorial reporter-by-condition export.
 - `run_factorial_limma_voom.R`: animal-level gene models and five planned contrasts.
 - `run_seurat_10x_path.R`: optional Seurat check of the same Explorer ROIs. It does not replace `run_from_explorer.py`.
 - `PRIMARY_AIM_ANALYSIS.md`: scientific decision logic.
+- `NOVEL_SUBTYPE_VALIDATION.md`: positive, shuffled-negative, and current-pilot validation results.
 - `RESULTS_CURRENT_RUN.md`: verified pilot results and limitations.
 - `TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md`: 10x tool map, Harmony decision, and the planned
   four-mouse/three-section design.
