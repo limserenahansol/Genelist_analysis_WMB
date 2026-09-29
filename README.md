@@ -487,6 +487,10 @@ python v3/E_Planning/compare_jesse_orb_panel.py
 python v3/E_Planning/compare_jesse_allen_abundance.py
 ```
 
+### Explorer ROI analysis — current pilot and planned Ai14 experiment
+
+The reviewed ORBm/BMAp Xenium workflow, compact validated pilot outputs, simulated reporter-aware demonstrations, and five-slide English PI deck are in [`v3/E_Planning/explorer_roi_pipeline/`](v3/E_Planning/explorer_roi_pipeline/). The real pilot supports cell-identity analysis; it does not contain `tdTomato` or replicated Active/Passive groups, so those result examples are explicitly labeled simulated.
+
 ### E_Planning — turning the list into an order, and into a plan
 
 A Xenium custom add-on is capped at **100 genes** on top of a pre-designed base panel, so the number that decides the budget is not how many genes we want but how many we have to *pay a custom slot for*. `xenium_base_panel_crosscheck.py` answers that: it pulls the 248-gene **Xenium Mouse Brain v1** panel (from the `gene_panel.json` shipped with the public demo dataset for that panel, cached to `v3/outputs/xenium_mouse_brain_base_panel.txt`) and matches it against the D07 list.

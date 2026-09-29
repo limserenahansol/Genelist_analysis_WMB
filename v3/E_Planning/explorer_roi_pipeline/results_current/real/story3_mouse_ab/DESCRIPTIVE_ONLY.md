@@ -1,0 +1,1 @@
+Descriptive outputs were produced. Do not run cell-level tests. A treatment/group comparison needs a condition field and preferably at least 3 independent animals per condition within the same anatomy. Feed the exported pseudobulk matrix and sample metadata to edgeR/DESeq2 with an animal-level design.

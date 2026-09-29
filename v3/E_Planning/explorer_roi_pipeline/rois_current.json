@@ -1,0 +1,35 @@
+{
+  "panel_note": "mBrain v1.1 247 genes. tdTomato not present. Two slides are different anatomy.",
+  "rois": [
+    {
+      "roi_name": "orbm_right",
+      "anatomy": "ORBm",
+      "animal_id": "pilot_slide_0063814",
+      "slide": "0063814",
+      "region": "Region_3",
+      "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559",
+      "explorer_cells_csv": "orbm_right_cells_stats.csv",
+      "explorer_coordinates_csv": "orbm_right_coordinates.csv",
+      "explorer_geojson": "orbm_right.geojson",
+      "module_set": "ORBm_layers",
+      "reference_labels_csv": "C:\\Users\\hsollim\\Desktop\\cursor\\Xenium_downstream\\allen_label_transfer\\ORBm_transferred.csv",
+      "reference_id_column": "Unnamed: 0",
+      "reference_label_column": "seurat_coarse"
+    },
+    {
+      "roi_name": "bmap_left",
+      "anatomy": "BMAp",
+      "animal_id": "pilot_slide_0063817",
+      "slide": "0063817",
+      "region": "Region_1",
+      "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558",
+      "explorer_cells_csv": "bmap_left_cells_stats.csv",
+      "explorer_coordinates_csv": "bmap_left_coordinates.csv",
+      "explorer_geojson": "bmap_left.geojson",
+      "module_set": "BMAp_classes",
+      "reference_labels_csv": "C:\\Users\\hsollim\\Desktop\\cursor\\Xenium_downstream\\allen_label_transfer\\BMAp_transferred.csv",
+      "reference_id_column": "Unnamed: 0",
+      "reference_label_column": "seurat_coarse"
+    }
+  ]
+}

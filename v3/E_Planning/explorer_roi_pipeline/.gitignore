@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+node_modules/
+.ppt_build/
+outputs/
+toy_demo_results/
+*.h5ad
+cells_annotated.csv

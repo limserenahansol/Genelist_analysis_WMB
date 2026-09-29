@@ -1,0 +1,78 @@
+{
+  "roi_name": "orbm_right",
+  "anatomy": "ORBm",
+  "animal_id": "pilot_slide_0063814",
+  "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559",
+  "explorer_cells_csv": "orbm_right_cells_stats.csv",
+  "panel_n_gene_features_in_roi_matrix": 247,
+  "tdTomato_on_panel": false,
+  "n_region_cells": 43930,
+  "n_roi_export": 915,
+  "n_after_qc": 914,
+  "qc": {
+    "min_gene_counts": 20,
+    "min_genes": 5,
+    "area_tukey_k": 3.0,
+    "area_cut_um2": 476.5113454218954,
+    "n_drop_counts": 1,
+    "n_drop_genes": 0,
+    "n_drop_area": 0
+  },
+  "baseline_transcripts": {
+    "region_median": 196.0,
+    "roi_median": 433.0,
+    "roi_after_qc_median_gene_counts": 434.0
+  },
+  "clustering": {
+    "n_pcs": 20,
+    "leiden_n": 15,
+    "leiden_0.5_n": 11,
+    "leiden_1.5_n": 19,
+    "n_identity_genes_used": 243,
+    "n_state_reporter_genes_excluded": 3,
+    "ari_res1_vs_res0.5": 0.7759355200451324,
+    "ari_res1_vs_res1.5": 0.7933693700597999
+  },
+  "same_matrix_concordance": {
+    "nmi_leiden_vs_module": 0.5204875244976309,
+    "ari_leiden_vs_onboard": 0.5752914025237517,
+    "nmi_leiden_vs_onboard": 0.7330767646928389
+  },
+  "reference_validation": {
+    "reference_label_column": "seurat_coarse",
+    "n_reference_labeled": 914,
+    "ari_leiden_vs_reference": 0.49992685005969106,
+    "nmi_leiden_vs_reference": 0.7378847323677111
+  },
+  "spatial_description": {
+    "spatial_neighbor_same_leiden": 0.2939460247994165,
+    "spatial_neighbor_same_leiden_perm_mean": 0.09740350182715181,
+    "spatial_neighbor_same_leiden_perm_sd": 0.00534690052701933,
+    "neighborhood_permutations": 499,
+    "note": "Within-section descriptive analysis; neighbor edges are not biological replicates."
+  },
+  "n_filtered_cluster_specific_rows": 120,
+  "module_counts": {
+    "L2_3": 314,
+    "unassigned": 225,
+    "L5": 90,
+    "gabaergic": 79,
+    "endothelial": 59,
+    "L4": 40,
+    "microglia": 37,
+    "OPC": 26,
+    "oligo": 22,
+    "astrocyte": 16,
+    "VLMC": 3,
+    "L6": 2,
+    "L6b": 1
+  },
+  "stories_runnable": {
+    "S1_celltype_genes": true,
+    "S2_tdtom": false,
+    "S3_mouse_ab": false,
+    "S4_neighborhood": true,
+    "S5_composition": true,
+    "S6_roi_qc": true
+  }
+}

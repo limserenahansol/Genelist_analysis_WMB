@@ -1,0 +1,37 @@
+{
+  "panel_note": "Template only. Add every independent animal. Prefer at least 3 Active and 3 Passive animals per anatomy.",
+  "rois": [
+    {
+      "roi_name": "ORBm_mouseA_roi1",
+      "anatomy": "ORBm",
+      "animal_id": "mouseA",
+      "condition": "Active",
+      "xenium": "REPLACE_WITH_298_ORBm_MOUSE_A_FOLDER",
+      "explorer_cells_csv": "REPLACE_cells_stats.csv",
+      "explorer_coordinates_csv": "REPLACE_coordinates.csv",
+      "explorer_geojson": "REPLACE.geojson",
+      "module_set": "ORBm_layers",
+      "tdtom_min_counts": 2,
+      "cell_class_column": "reference_label",
+      "reference_labels_csv": "REPLACE_REFERENCE_LABELS.csv",
+      "reference_id_column": "cell_id",
+      "reference_label_column": "seurat_coarse"
+    },
+    {
+      "roi_name": "ORBm_mouseB_roi1",
+      "anatomy": "ORBm",
+      "animal_id": "mouseB",
+      "condition": "Passive",
+      "xenium": "REPLACE_WITH_298_ORBm_MOUSE_B_FOLDER",
+      "explorer_cells_csv": "REPLACE_cells_stats.csv",
+      "explorer_coordinates_csv": "REPLACE_coordinates.csv",
+      "explorer_geojson": "REPLACE.geojson",
+      "module_set": "ORBm_layers",
+      "tdtom_min_counts": 2,
+      "cell_class_column": "reference_label",
+      "reference_labels_csv": "REPLACE_REFERENCE_LABELS.csv",
+      "reference_id_column": "cell_id",
+      "reference_label_column": "seurat_coarse"
+    }
+  ]
+}
