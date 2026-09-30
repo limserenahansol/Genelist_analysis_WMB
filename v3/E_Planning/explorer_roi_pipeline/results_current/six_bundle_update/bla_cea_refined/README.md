@@ -7,6 +7,8 @@ BMAp-module results remain the baseline. Processed h5ad objects and per-cell fil
 - `allen_reference/`: top markers regenerated from 15,846 Allen STR-shard cells and the 247 measured
   pilot genes.
 - `spatial_context/`: neighborhood-enrichment/Moran summary and representative BLA/CEA figures.
+- `reference_validation/`: Allen `sAMY` Seurat transfer, independent-classifier agreement, module
+  confusion tables, and compact summary figures.
 - `per_roi/`: compact summary JSON for each ROI.
 - `story2_novel_subtype/SKIPPED.md`: expected skip because this pilot has no `tdTomato` feature.
 

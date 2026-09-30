@@ -144,3 +144,22 @@ python make_tdtom_subtype_toy.py --output-root toy_candidate_subtype
 ```
 
 The toy result is simulated and cannot be interpreted as a BLA or CEA biological finding.
+
+## Allen reference validation for the current BLA/CEA pilot
+
+The current pilot can be checked against the local Allen WMB `sAMY` reference now. The analysis
+uses Seurat anchor transfer as the primary external annotation check and a regularized multinomial
+classifier as an independent method. It preserves the marker-module labels and reports agreement;
+it does not overwrite them.
+
+```text
+python run_bla_cea_reference_transfer.py \
+  --pipeline-root . \
+  --reference-root C:\Users\hsollim\Desktop\cursor\Xenium_downstream\allen_label_transfer \
+  --input-root outputs_bla_cea_refined \
+  --output-root outputs_bla_cea_refined\reference_validation
+```
+
+The verified pilot used 247 shared genes. Prediction score >=0.5 was obtained for 70.1% of BLA
+cells and 72.7% of CEA cells. See `outputs_bla_cea_refined/reference_validation/README.md` for
+agreement metrics and limitations.

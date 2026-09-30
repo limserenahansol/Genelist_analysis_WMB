@@ -14,8 +14,10 @@ clustering, differential-expression, or plotting tasks. The simplest adequate st
   run on uncorrected counts.
 - **Add when image alignment is needed:** SpatialData, spatialdata-io, and spatialdata-plot to keep
   images, boundaries, transcripts, and tables in one coordinate system. Napari is an optional viewer.
-- **Add as independent annotation validation:** Seurat label transfer or RCTD with a region-matched
-  amygdala reference. A cortex reference is not appropriate for BLA or CEA.
+- **Independent annotation validation now implemented:** Seurat label transfer with the local Allen
+  WMB `sAMY` reference, plus a regularized classifier as an independent check. RCTD remains optional
+  for boundary cells or documented mixed-cell signals. A cortex reference is not appropriate for
+  BLA or CEA.
 - **Use only after a documented segmentation failure:** Xenium Ranger resegment/import-segmentation,
   Baysor, or Cellpose. Alternative segmentation must be compared against the onboard result for
   transcript assignment, boundary artifacts, cell size, and preservation of known marker patterns.
@@ -69,6 +71,16 @@ marker table matched the table used to define these modules.
 `run_spatial_context.py` computes cell-type neighborhood enrichment against label permutations and
 Moran's I for region-specific marker genes. It is descriptive within each section. Neighbor edges and
 cells are not biological replicates; cross-condition inference still uses animals.
+
+## Allen reference-transfer validation
+
+The current pilot was transferred to the Allen WMB `sAMY` reference with all 247 shared measured
+genes. BLA had a median Seurat score of 0.621, with 70.1% of cells at score >=0.5; CEA had a median
+score of 0.623, with 72.7% at score >=0.5. Seurat and the independent classifier had coarse-label
+agreement of 69.5% for BLA and 73.9% for CEA. Existing marker modules and Allen labels had NMI 0.451
+for BLA and 0.441 for CEA. Many cells received `other` because the 247-gene targeted panel does not
+resolve every Allen subclass and the BLA Allen reference contains relatively few broad principal
+cells. The transfer supports broad identities but does not establish fine BLA/CEA subtypes.
 
 ## Candidate novel subtype
 

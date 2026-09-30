@@ -1,0 +1,12 @@
+module,CEA_Ebf1_Pdyn_like,CEA_Rai14_Pdyn_Crh_like,CEA_Six3_Cyp26b1_like,OPC,astrocyte,microglia,oligo,other,vascular
+CEA_Ebf1_Pdyn_like,30,0,2,0,5,0,0,11,2
+CEA_Gal_Avp_like,4,0,0,0,0,0,0,2,0
+CEA_Rai14_Pdyn_Crh_like,25,23,5,0,2,0,0,106,0
+CEA_Six3_Cyp26b1_like,19,2,336,0,7,0,0,134,0
+CEA_Six3_Sp9_like,0,0,1,0,2,0,0,7,0
+OPC,3,0,2,52,3,1,1,10,5
+astrocyte,7,2,3,0,188,0,2,22,11
+microglia,4,2,4,0,2,76,0,9,6
+oligo,15,1,4,0,7,0,137,10,2
+unassigned,102,9,83,5,58,9,2,234,29
+vascular,0,0,0,0,1,0,0,1,56

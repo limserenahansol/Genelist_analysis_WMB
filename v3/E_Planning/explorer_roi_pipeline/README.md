@@ -20,6 +20,9 @@ the planned Ai14 tdTomato by Active/Passive experiment.
   tdTom-associated candidate subtypes within known parent cell types.
 - `run_spatial_context.py`: optional neighborhood-enrichment and Moran's I spatial validation.
 - `derive_bla_cea_allen_markers.py`: reproducible Allen marker ranking restricted to measured genes.
+- `run_bla_cea_reference_transfer.py`: Allen sAMY-to-Xenium Seurat label transfer plus an
+  independent regularized-classifier check for BLA and CEA.
+- `run_seurat_label_transfer_generic.R`: generic Seurat anchor-transfer helper used by that check.
 - `summarize_bla_cea_refined.py`: BLA/CEA baseline-versus-region-specific validation summary.
 - `make_tdtom_subtype_toy.py`: reproducible, clearly labeled synthetic candidate-subtype example.
 - `run_story3_mouse_ab.py`: animal-level composition and pseudobulk export.
@@ -60,4 +63,6 @@ Xenium folders. Those files remain local and can be regenerated from the documen
 - `outputs/story3_mouse_ab/`: sections aggregated within animal; descriptive only for this pilot.
 - `outputs_bla_cea_refined/`: non-destructive BLA/CEA rerun with region-specific modules, comparison
   summaries, and spatial-context validation.
+- `outputs_bla_cea_refined/reference_validation/`: real pilot Allen sAMY reference validation for
+  4,246 BLA and 1,905 CEA cells.
 - `toy_candidate_subtype/tdtom_candidate_subtype_SIMULATED.png`: synthetic illustration only.

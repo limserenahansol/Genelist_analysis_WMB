@@ -1,0 +1,57 @@
+{
+  "BLA": {
+    "anatomy": "BLA",
+    "n_cells": 4246,
+    "n_rois": 4,
+    "n_shared_genes": 247,
+    "median_seurat_score": 0.621096124265362,
+    "fraction_seurat_score_ge_0.5": 0.7008949599623174,
+    "ari_seurat_vs_classifier_subclass": 0.3981439380409341,
+    "nmi_seurat_vs_classifier_subclass": 0.6249606451073009,
+    "nmi_primary_module_vs_seurat_coarse": 0.4513093476450922,
+    "seurat_coarse_counts": {
+      "other": 2004,
+      "BLA_principal": 510,
+      "vascular": 468,
+      "astrocyte": 389,
+      "oligo": 253,
+      "microglia": 196,
+      "OPC": 176,
+      "BLA_Vip_Lamp5_GABA": 148,
+      "BLA_Sst_GABA": 70,
+      "BLA_Pvalb_GABA": 32
+    },
+    "note": "Descriptive pilot from one mouse; reference validation is not biological replication.",
+    "fraction_exact_module_label_all_cells": 0.3721149317004239,
+    "fraction_cells_with_comparable_nonother_labels": 0.42534149788035797,
+    "fraction_exact_among_comparable_labels": 0.8748615725359912,
+    "fraction_exact_among_high_confidence_comparable_labels": 0.8804054054054054
+  },
+  "CEA": {
+    "anatomy": "CEA",
+    "n_cells": 1905,
+    "n_rois": 2,
+    "n_shared_genes": 247,
+    "median_seurat_score": 0.622647662655986,
+    "fraction_seurat_score_ge_0.5": 0.7270341207349081,
+    "ari_seurat_vs_classifier_subclass": 0.4391440654581092,
+    "nmi_seurat_vs_classifier_subclass": 0.6012826376106677,
+    "nmi_primary_module_vs_seurat_coarse": 0.440581661511657,
+    "seurat_coarse_counts": {
+      "other": 546,
+      "CEA_Six3_Cyp26b1_like": 440,
+      "astrocyte": 275,
+      "CEA_Ebf1_Pdyn_like": 209,
+      "oligo": 142,
+      "vascular": 111,
+      "microglia": 86,
+      "OPC": 57,
+      "CEA_Rai14_Pdyn_Crh_like": 39
+    },
+    "note": "Descriptive pilot from one mouse; reference validation is not biological replication.",
+    "fraction_exact_module_label_all_cells": 0.4713910761154856,
+    "fraction_cells_with_comparable_nonother_labels": 0.5574803149606299,
+    "fraction_exact_among_comparable_labels": 0.8455743879472694,
+    "fraction_exact_among_high_confidence_comparable_labels": 0.9219457013574661
+  }
+}

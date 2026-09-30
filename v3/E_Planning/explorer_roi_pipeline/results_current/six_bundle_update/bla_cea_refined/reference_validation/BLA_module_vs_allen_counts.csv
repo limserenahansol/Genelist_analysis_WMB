@@ -1,0 +1,11 @@
+module,BLA_Pvalb_GABA,BLA_Sst_GABA,BLA_Vip_Lamp5_GABA,BLA_principal,OPC,astrocyte,microglia,oligo,other,vascular
+BLA_Pvalb_GABA,9,7,6,0,0,7,0,0,57,4
+BLA_Sst_GABA,10,37,7,0,0,3,0,0,153,2
+BLA_Vip_Lamp5_GABA,0,0,23,0,0,1,0,0,9,0
+BLA_principal,0,0,0,483,0,13,1,0,1077,20
+OPC,0,1,0,0,165,4,0,2,30,39
+astrocyte,0,0,3,0,0,257,1,1,39,36
+microglia,0,0,0,0,0,6,181,0,33,34
+oligo,0,0,1,2,3,5,0,229,99,6
+unassigned,13,25,108,25,8,93,13,20,505,131
+vascular,0,0,0,0,0,0,0,1,2,196
