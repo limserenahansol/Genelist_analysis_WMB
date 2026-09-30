@@ -35,6 +35,8 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 - `TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md`: 10x tool map, Harmony decision, and the planned
   four-mouse/three-section design.
 - `TENX_TOOL_DECISION_AND_BLA_CEA.md`: selected 10x-compatible stack and BLA/CEA evidence limits.
+- `REFERENCE_CATALOG_2026-09-29.md` and `.csv`: audited local and web references, with primary,
+  public, internal, and derived sources distinguished explicitly.
 - `run_six_bundle_inventory.py`: XOA QC and Explorer-export inventory for all six bundles.
 - `summarize_expanded_rois.py`: concise yield, composition, and within-mouse ROI comparisons.
 - `rois_expanded_available.json`: five analyzable target ROIs currently available.
