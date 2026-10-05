@@ -3,7 +3,21 @@
 **Deliverable:** a 298-gene standalone 10x Xenium custom panel for two mouse brain regions,
 plus the measured evidence for every gene on it.
 
-**Status:** final as of 2026-09-19. Commit `c63ce0f` on `main`.
+**Scope of this document:** the **panel design** phase only — how the 298 genes were chosen and
+what evidence backs each one. Design frozen 2026-09-19.
+
+**Where this sits in the wider project** (hub: `~/Research_Projects/03_GPCR_probe_panel/`):
+
+| Phase | Status | Document |
+|---|---|---|
+| 1. Panel design → 298 genes | **frozen 2026-09-19** | **this file** |
+| 2. Submission to 10x | 296 of 298 as Ensembl IDs; the 2 transgenes need sequences (4 records, because of the Ai14 STOP-cassette read-through problem) | `SUBMIT_10x_transgene_sequences_README.md` |
+| 3. Pilot run already done | `XETG00277__0063817__Region_1__20260923` — XOA 4.0.2.2, **stock mBrain_v1.1 247-gene panel**, fixed-frozen, 93,727 cells, median 126 transcripts/cell. **Not** the custom 298 panel. | `GUIDE_Xenium_Explorer_and_outputs_KR.md` |
+| 4. Downstream analysis | designed | `PIPELINE_downstream_ORBm_BMAp.md` (Explorer ROI → ORBm/BMAp) |
+| 247 vs 298 comparison | done | `GENES_247_not_on_SUBMIT298_ORBm_BMAp.md` |
+
+Do not read this file as the current state of the whole project — it is the design record.
+For what to do with data off the instrument, go to phase 4.
 
 | | |
 |---|---|
