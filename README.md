@@ -2,6 +2,20 @@
 
 Defensible, evidence-aware GPCR / cell-type marker probe planning for **seven mouse brain regions** (BMAp, LM, RE, CP, ORBm, AId, **CA**), built by **combining** [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/) WMB-10X single-cell data with curated published-literature GPCR suggestions. Both data sources are used **together**, not against each other — every recommended GPCR is tagged with the evidence (paper, Allen, or both) that supports it.
 
+> ## 2026-09 — ORBm + BMAp Xenium panel (298 genes)
+>
+> A separate, self-contained sub-project: a standalone 10x Xenium custom panel for two
+> regions (ORBm = ROI `PL-ILA-ORB`, BMAp = ROI `sAMY`), built for a TRAP + morphine
+> experiment. Full pipeline, selection rules, measured results and the traps that were hit
+> along the way:
+>
+> **→ [`v3/docs/XENIUM_ORBm_BMAp_PIPELINE.md`](v3/docs/XENIUM_ORBm_BMAp_PIPELINE.md)**
+>
+> Order list: [`v3/outputs/FINAL_Xenium_panel_ORBm_BMAp_298genes_FINAL.xlsx`](v3/outputs/FINAL_Xenium_panel_ORBm_BMAp_298genes_FINAL.xlsx)
+> (sheet `SHARED_PANEL_ORDER`). All 20 target cell types recovered on held-out cells at
+> mean recall 0.922; all 94 same-region type pairs separable; 426 GPCRs and 1,321
+> transcription factors screened with none missing.
+
 **Cross-repo & LLM wiki:** [`wiki/README.md`](wiki/README.md) · [research hub (index)](https://github.com/limserenahansol/TRAP_analysis/blob/main/wiki/research_hub/index.md)
 
 ![v3 pipeline overview](v3/docs/images/v3_pipeline_overview.png)
