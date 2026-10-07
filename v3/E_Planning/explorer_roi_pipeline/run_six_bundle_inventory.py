@@ -118,6 +118,12 @@ def main():
     metrics_df = pd.DataFrame(metrics_rows)
     exports_df = pd.DataFrame(export_rows)
     rois_df = pd.DataFrame(roi_rows)
+    fp_column = "estimated_number_of_false_positive_transcripts_per_cell"
+    metrics_df["estimated_false_positive_pct_of_median_transcripts"] = (
+        100
+        * pd.to_numeric(metrics_df[fp_column])
+        / pd.to_numeric(metrics_df["median_transcripts_per_cell"])
+    )
     metrics_df.to_csv(out / "bundle_metrics.csv", index=False)
     exports_df.to_csv(out / "explorer_export_inventory.csv", index=False)
     rois_df.to_csv(out / "roi_selection_inventory.csv", index=False)
@@ -180,6 +186,23 @@ def main():
         fig.savefig(figdir / "03_target_roi_inventory.png", dpi=200)
         plt.close(fig)
 
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.2))
+    fp_values = pd.to_numeric(metrics_df[fp_column])
+    fp_pct = pd.to_numeric(metrics_df["estimated_false_positive_pct_of_median_transcripts"])
+    for ax, values, title, ylabel, fmt in [
+        (axes[0], fp_values, "Run-level false-positive estimate", "Transcripts / cell", "%.3f"),
+        (axes[1], fp_pct, "Estimate relative to median signal", "% of median transcripts / cell", "%.2f"),
+    ]:
+        bars = ax.bar(metrics_df["short_section"], values, color=colors)
+        ax.set_title(title)
+        ax.set_ylabel(ylabel)
+        ax.tick_params(axis="x", rotation=35)
+        ax.bar_label(bars, fmt=fmt, fontsize=8, padding=2)
+    fig.suptitle("Negative-control estimate is reported, not subtracted", fontweight="bold")
+    fig.tight_layout()
+    fig.savefig(figdir / "04_false_positive_qc.png", dpi=200)
+    plt.close(fig)
+
     q20 = pd.to_numeric(metrics_df["fraction_transcripts_decoded_q20"])
     assigned = pd.to_numeric(metrics_df["fraction_transcripts_assigned"])
     notes = [
@@ -189,6 +212,9 @@ def main():
         f"- XOA cells detected: {int(pd.to_numeric(metrics_df['num_cells_detected']).sum()):,} total",
         f"- Decoded Q20 range: {100*q20.min():.1f}%–{100*q20.max():.1f}%",
         f"- Transcript assignment range: {100*assigned.min():.1f}%–{100*assigned.max():.1f}%",
+        f"- Estimated false positives: {fp_values.min():.3f}–{fp_values.max():.3f} transcripts/cell "
+        f"({fp_pct.min():.2f}%–{fp_pct.max():.2f}% of each section median)",
+        "- False-positive estimates are run-level negative-control metrics; report them and do not subtract them from genes or cells.",
         f"- Explorer-derived files catalogued: {len(exports_df)}",
         "",
         "Sections are nested within animal. They support section-level QC and more stable",

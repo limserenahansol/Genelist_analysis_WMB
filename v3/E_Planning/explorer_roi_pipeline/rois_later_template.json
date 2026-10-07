@@ -1,5 +1,9 @@
 {
   "panel_note": "Template only. Add every independent animal. Prefer at least 3 Active and 3 Passive animals per anatomy.",
+  "qc": {
+    "min_gene_counts": 20,
+    "min_genes": 5
+  },
   "rois": [
     {
       "roi_name": "ORBm_mouseA_roi1",
@@ -9,6 +13,7 @@
       "section_id": "mouseA_ORBm_section1",
       "xenium": "REPLACE_WITH_PRODUCTION_ORBm_MOUSE_A_SECTION1_FOLDER",
       "explorer_cells_csv": "REPLACE_cells_stats.csv",
+      "roi_selection_rule": "record Explorer containment setting",
       "explorer_coordinates_csv": "REPLACE_coordinates.csv",
       "explorer_geojson": "REPLACE.geojson",
       "module_set": "ORBm_layers",
@@ -26,6 +31,7 @@
       "section_id": "mouseB_ORBm_section1",
       "xenium": "REPLACE_WITH_PRODUCTION_ORBm_MOUSE_B_SECTION1_FOLDER",
       "explorer_cells_csv": "REPLACE_cells_stats.csv",
+      "roi_selection_rule": "record Explorer containment setting",
       "explorer_coordinates_csv": "REPLACE_coordinates.csv",
       "explorer_geojson": "REPLACE.geojson",
       "module_set": "ORBm_layers",

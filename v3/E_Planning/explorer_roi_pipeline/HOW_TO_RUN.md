@@ -6,6 +6,7 @@ Run from this folder or use the full paths below.
 
 ```text
 python run_from_explorer.py --config rois_current.json
+python run_segmentation_sensitivity.py --config rois_current.json
 python run_story2_tdtom.py --config rois_current.json
 python run_story3_mouse_ab.py --config rois_current.json
 ```
@@ -13,12 +14,37 @@ python run_story3_mouse_ab.py --config rois_current.json
 Expected behavior:
 
 - `run_from_explorer.py` runs cell identity, marker, composition, spatial, and ROI-QC analyses.
+- `run_segmentation_sensitivity.py` checks whether signal, module calls, and clustering are
+  preserved when only `overlaps_nucleus == 1` transcripts are used.
 - Story 2 writes `SKIPPED.md` because tdTomato is absent from the 247-gene pilot.
 - Story 3 writes descriptive animal-level exports only. ORBm and BMAp are different anatomies
   and cannot be treated as two biological replicates.
 
 Outputs are written under `outputs/<roi_name>/`, `outputs/story2_tdtom/`, and
 `outputs/story3_mouse_ab/`.
+
+The top-level `qc` block supplies one count/gene threshold to every ROI. Review
+`qc_threshold_sensitivity.csv` and the pooled low-end distributions, then keep the same rule for
+all animals and conditions. The default is 20 gene transcripts and 5 detected genes. The pipeline
+reports the XOA run-level false-positive estimate and never subtracts it.
+
+## Final 299-panel Allen subclass check
+
+Use the locally extracted reference matrices:
+
+```text
+python validate_panel299_allen_subclasses.py
+```
+
+To regenerate those matrices from the local Allen cache before validation:
+
+```text
+python validate_panel299_allen_subclasses.py --extract --allen-cache C:\Users\hsollim\Downloads\abc_atlas_cache
+```
+
+The report is written to `outputs/panel299_allen_subclass_validation/REPORT.md`. It covers the 12
+intended ORBm and 8 intended BMAp subclass anchors. It does not assert coverage of every subclass
+found in the much broader Allen PL-ILA-ORB and sAMY reference regions.
 
 ## Future reporter-aware production experiment
 

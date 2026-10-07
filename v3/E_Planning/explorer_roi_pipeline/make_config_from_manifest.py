@@ -51,6 +51,9 @@ def main():
         record["module_set"] = record.get("module_set") or (
             "ORBm_layers" if record["anatomy"] == "ORBm" else "BMAp_classes"
         )
+        record["roi_selection_rule"] = record.get("roi_selection_rule") or (
+            "record Explorer containment setting"
+        )
         if record.get("tdtom_min_counts"):
             record["tdtom_min_counts"] = int(record["tdtom_min_counts"])
         else:
@@ -59,6 +62,7 @@ def main():
 
     output = {
         "panel_note": "Four-mouse reporter-aware design; three sections per anatomy are nested within mouse.",
+        "qc": {"min_gene_counts": 20, "min_genes": 5},
         "rois": rois,
     }
     Path(args.output).write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")

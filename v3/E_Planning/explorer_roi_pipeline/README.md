@@ -11,6 +11,8 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 - There is one animal per anatomy with no condition field, so Story 3 remains descriptive.
 - The six-bundle inventory found 421,520 XOA cells across three ORBm and three BMAp regions.
 - Five available target ROI selections produced 4,933 QC-passing cells and 11 figures per ROI.
+- The final 299-gene panel passed the intended Allen-anchor check: donor-held-out macro-F1 was
+  0.921 for 12 ORBm subclasses and 0.975 for 8 BMAp subclasses after state/reporter exclusion.
 
 ## Main files
 
@@ -19,6 +21,10 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 - `run_tdtom_novel_subtype.py`: unbiased identity-gene clustering and cross-mouse validation of
   tdTom-associated candidate subtypes within known parent cell types.
 - `run_spatial_context.py`: optional neighborhood-enrichment and Moran's I spatial validation.
+- `run_segmentation_sensitivity.py`: `overlaps_nucleus` sensitivity check for 5-µm
+  nucleus-expansion segmentation.
+- `validate_panel299_allen_subclasses.py`: marker coverage plus leave-one-donor-out Allen
+  validation of the exact final 299-gene panel.
 - `derive_bla_cea_allen_markers.py`: reproducible Allen marker ranking restricted to measured genes.
 - `run_bla_cea_reference_transfer.py`: Allen sAMY-to-Xenium Seurat label transfer plus an
   independent regularized-classifier check for BLA and CEA.
@@ -32,6 +38,8 @@ the planned Ai14 tdTomato by Active/Passive experiment.
 - `PRIMARY_AIM_ANALYSIS.md`: scientific decision logic.
 - `NOVEL_SUBTYPE_VALIDATION.md`: positive, shuffled-negative, and current-pilot validation results.
 - `RESULTS_CURRENT_RUN.md`: verified pilot results and limitations.
+- `ANJA_QC_AND_PANEL_VALIDATION.md`: direct mapping from the applied-scientist recommendations
+  to pipeline outputs, decision criteria, and interpretation limits.
 - `TENX_GUIDE_AND_FOUR_MOUSE_PLAN.md`: 10x tool map, Harmony decision, and the planned
   four-mouse/three-section design.
 - `TENX_TOOL_DECISION_AND_BLA_CEA.md`: selected 10x-compatible stack and BLA/CEA evidence limits.

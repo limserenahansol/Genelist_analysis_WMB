@@ -1,5 +1,9 @@
 {
   "panel_note": "mBrain v1.1 247 genes. tdTomato not present. Two slides are different anatomy.",
+  "qc": {
+    "min_gene_counts": 20,
+    "min_genes": 5
+  },
   "rois": [
     {
       "roi_name": "orbm_right",
@@ -9,6 +13,7 @@
       "region": "Region_3",
       "xenium": "D:\\output-XETG00277__0063814__Region_3__20260923__002559",
       "explorer_cells_csv": "orbm_right_cells_stats.csv",
+      "roi_selection_rule": "Explorer complete containment",
       "explorer_coordinates_csv": "orbm_right_coordinates.csv",
       "explorer_geojson": "orbm_right.geojson",
       "module_set": "ORBm_layers",
@@ -24,6 +29,7 @@
       "region": "Region_1",
       "xenium": "D:\\output-XETG00277__0063817__Region_1__20260923__002558",
       "explorer_cells_csv": "bmap_left_cells_stats.csv",
+      "roi_selection_rule": "Explorer complete containment",
       "explorer_coordinates_csv": "bmap_left_coordinates.csv",
       "explorer_geojson": "bmap_left.geojson",
       "module_set": "BMAp_classes",

@@ -34,6 +34,18 @@ NHOOD_PERMUTATIONS = 499
 MIN_NHOOD_GROUP = 20
 HERE = Path(__file__).resolve().parent
 
+RUN_QC_FIELDS = [
+    "estimated_number_of_false_positive_transcripts_per_cell",
+    "adjusted_negative_control_probe_rate",
+    "adjusted_negative_control_codeword_rate",
+    "negative_control_probe_counts_per_control_per_cell",
+    "fraction_transcripts_decoded_q20",
+    "fraction_transcripts_assigned",
+    "median_genes_per_cell",
+    "median_transcripts_per_cell",
+    "num_cells_detected",
+]
+
 # These genes report labeling or transient state.  They remain available for
 # plots and differential expression, but cannot create the cell-identity
 # clusters used to ask which cell type overlaps TRAP+ neurons.
@@ -187,6 +199,166 @@ def resolve_under(xenium: Path, path_value: str | None) -> Path | None:
     if path.is_absolute():
         return path
     return xenium / path
+
+
+def read_run_qc_metrics(xenium: Path) -> dict:
+    """Read selected run-level XOA metrics without assigning them to cells."""
+    path = xenium / "metrics_summary.csv"
+    if not path.exists():
+        return {}
+    table = pd.read_csv(path)
+    if table.empty:
+        return {}
+    row = table.iloc[0]
+    out = {}
+    for key in RUN_QC_FIELDS:
+        value = row.get(key, np.nan)
+        out[key] = None if pd.isna(value) else float(value)
+    return out
+
+
+def gene_background_sanity(adata) -> tuple[pd.DataFrame, dict]:
+    """Compare each gene with negative-control probes in the same ROI.
+
+    This is a flagging diagnostic only. Counts are never background-subtracted.
+    """
+    feature_types = adata.var["feature_types"].astype(str).to_numpy()
+    x = adata.X
+    totals = np.asarray(x.sum(axis=0)).ravel().astype(float)
+    detected = np.asarray((x > 0).sum(axis=0)).ravel().astype(float)
+    denom = max(int(adata.n_obs), 1)
+    means = totals / denom
+    fractions = detected / denom
+
+    def control_stats(label: str) -> dict:
+        mask = feature_types == label
+        if not mask.any():
+            return {
+                "n_features": 0,
+                "mean_per_cell_median": None,
+                "mean_per_cell_p95": None,
+                "detection_fraction_p95": None,
+            }
+        return {
+            "n_features": int(mask.sum()),
+            "mean_per_cell_median": float(np.median(means[mask])),
+            "mean_per_cell_p95": float(np.percentile(means[mask], 95)),
+            "detection_fraction_p95": float(np.percentile(fractions[mask], 95)),
+        }
+
+    probe = control_stats("Negative Control Probe")
+    codeword = control_stats("Negative Control Codeword")
+    gene_mask = feature_types == "Gene Expression"
+    table = pd.DataFrame({
+        "gene": np.asarray(adata.var_names)[gene_mask],
+        "total_transcripts_in_qc_cells": totals[gene_mask],
+        "mean_transcripts_per_qc_cell": means[gene_mask],
+        "fraction_qc_cells_detected": fractions[gene_mask],
+    })
+    probe_mean = probe["mean_per_cell_p95"]
+    probe_fraction = probe["detection_fraction_p95"]
+    if probe_mean is None or probe_fraction is None:
+        table["mean_at_or_below_neg_probe_p95"] = False
+        table["detection_at_or_below_neg_probe_p95"] = False
+    else:
+        table["mean_at_or_below_neg_probe_p95"] = (
+            table["mean_transcripts_per_qc_cell"] <= probe_mean
+        )
+        table["detection_at_or_below_neg_probe_p95"] = (
+            table["fraction_qc_cells_detected"] <= probe_fraction
+        )
+    table["barely_above_background_flag"] = (
+        table["mean_at_or_below_neg_probe_p95"]
+        & table["detection_at_or_below_neg_probe_p95"]
+    )
+    table = table.sort_values(
+        ["barely_above_background_flag", "mean_transcripts_per_qc_cell"],
+        ascending=[False, True],
+    ).reset_index(drop=True)
+    summary = {
+        "negative_control_probe": probe,
+        "negative_control_codeword": codeword,
+        "n_genes_flagged": int(table["barely_above_background_flag"].sum()),
+        "flag_definition": (
+            "Gene mean and detection fraction are both at or below the 95th "
+            "percentile across negative-control probes in the same QC-passing ROI cells."
+        ),
+        "action": "Flag for review; do not subtract control counts from genes or cells.",
+    }
+    return table, summary
+
+
+def boundary_selection_sensitivity(
+    xenium: Path,
+    explorer: pd.DataFrame,
+    coordinates_path: Path | None,
+    selection_name: str | None,
+) -> tuple[pd.DataFrame | None, dict | None]:
+    """Compare Explorer cell IDs with a centroid-in-polygon selection."""
+    if coordinates_path is None or not coordinates_path.exists():
+        return None, None
+    polygon = read_polygon_coordinates(coordinates_path, selection_name)
+    centroids = pd.read_parquet(
+        xenium / "cells.parquet", columns=["cell_id", "x_centroid", "y_centroid"]
+    )
+    points = centroids[["x_centroid", "y_centroid"]].astype(float).to_numpy()
+    inside = MplPath(polygon, closed=True).contains_points(points, radius=1e-9)
+    centroid_ids = set(centroids.loc[inside, "cell_id"].astype(str))
+    selected_ids = set(explorer["Cell ID"].astype(str))
+    union = sorted(selected_ids | centroid_ids)
+    rows = pd.DataFrame({"cell_id": union})
+    rows["in_explorer_export"] = rows["cell_id"].isin(selected_ids)
+    rows["centroid_inside_polygon"] = rows["cell_id"].isin(centroid_ids)
+    rows["selection_status"] = np.select(
+        [
+            rows["in_explorer_export"] & rows["centroid_inside_polygon"],
+            rows["in_explorer_export"] & ~rows["centroid_inside_polygon"],
+            ~rows["in_explorer_export"] & rows["centroid_inside_polygon"],
+        ],
+        ["both", "explorer_only", "centroid_only_border_candidate"],
+        default="neither",
+    )
+    tv = None
+    cluster_path = (
+        xenium / "analysis" / "clustering" / "gene_expression_graphclust" / "clusters.csv"
+    )
+    if cluster_path.exists():
+        clusters = pd.read_csv(cluster_path, dtype=str).set_index("Barcode")["Cluster"]
+        clusters.index = clusters.index.astype(str)
+        selected_clusters = clusters.reindex(sorted(selected_ids)).dropna().astype(str)
+        centroid_clusters = clusters.reindex(sorted(centroid_ids)).dropna().astype(str)
+        all_clusters = selected_clusters.combine_first(centroid_clusters)
+        rows["onboard_cluster"] = rows["cell_id"].map(all_clusters)
+        categories = sorted(set(selected_clusters) | set(centroid_clusters))
+        p_selected = selected_clusters.value_counts(normalize=True).reindex(
+            categories, fill_value=0
+        )
+        p_centroid = centroid_clusters.value_counts(normalize=True).reindex(
+            categories, fill_value=0
+        )
+        tv = 0.5 * float(np.abs(p_selected - p_centroid).sum())
+    n_centroid_only = len(centroid_ids - selected_ids)
+    summary = {
+        "n_explorer_export": len(selected_ids),
+        "n_centroid_inside_polygon": len(centroid_ids),
+        "n_both": len(selected_ids & centroid_ids),
+        "n_explorer_only": len(selected_ids - centroid_ids),
+        "n_centroid_only_border_candidates": n_centroid_only,
+        "fraction_centroid_cells_excluded_from_explorer_export": (
+            n_centroid_only / len(centroid_ids) if centroid_ids else None
+        ),
+        "jaccard": (
+            len(selected_ids & centroid_ids) / len(selected_ids | centroid_ids)
+            if selected_ids | centroid_ids else None
+        ),
+        "onboard_cluster_composition_total_variation": tv,
+        "interpretation": (
+            "If the Explorer export used complete containment, centroid-only cells are the "
+            "border-sensitivity set. Total variation measures the maximum change in onboard "
+            "cluster proportion caused by using centroid inclusion instead."
+        ),
+    }
+    return rows, summary
 
 
 def read_explorer_cells(path: Path) -> pd.DataFrame:
@@ -448,7 +620,7 @@ def cluster_annotation_table(obs):
     return pd.DataFrame(rows)
 
 
-def process_roi(cfg: dict, out_root: Path) -> dict:
+def process_roi(cfg: dict, out_root: Path, qc_config: dict | None = None) -> dict:
     roi = cfg["roi_name"]
     xenium = Path(cfg["xenium"])
     out = out_root / roi
@@ -456,13 +628,18 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     figdir.mkdir(parents=True, exist_ok=True)
     module_set = cfg["module_set"]
     modules = MODULES[module_set]
+    qc_config = qc_config or {}
+    min_counts = int(qc_config.get("min_gene_counts", MIN_COUNTS))
+    min_genes = int(qc_config.get("min_genes", MIN_GENES))
+    if min_counts < 0 or min_genes < 0:
+        raise ValueError("QC thresholds must be non-negative")
 
     explorer_cells_path = resolve_under(xenium, cfg.get("explorer_cells_csv"))
+    coordinates_path = resolve_under(xenium, cfg.get("explorer_coordinates_csv"))
     if explorer_cells_path:
         explorer = read_explorer_cells(explorer_cells_path)
         roi_cell_source = "explorer_cells_stats"
     else:
-        coordinates_path = resolve_under(xenium, cfg.get("explorer_coordinates_csv"))
         if coordinates_path is None:
             raise ValueError(
                 f"{roi}: provide explorer_cells_csv or explorer_coordinates_csv"
@@ -472,8 +649,12 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
         )
         roi_cell_source = "polygon_centroids_plus_xoa_clusters"
         explorer.to_csv(out / f"{roi}_derived_cells.csv", index=False)
+    boundary_cells, boundary_summary = boundary_selection_sensitivity(
+        xenium, explorer, coordinates_path, cfg.get("selection_name")
+    )
     roi_ids = explorer["Cell ID"].tolist()
     adata_all = load_xenium(xenium)
+    run_qc = read_run_qc_metrics(xenium)
     n_region = adata_all.n_obs
     missing_ids = [i for i in roi_ids if i not in adata_all.obs_names]
     if missing_ids:
@@ -493,17 +674,34 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     roi_counts = adata.obs["transcript_counts"].astype(float)
     area_cut = tukey_hi(adata.obs["cell_area"].to_numpy())
     keep = (
-        (adata.obs["n_counts_gene"] >= MIN_COUNTS)
-        & (adata.obs["n_genes"] >= MIN_GENES)
+        (adata.obs["n_counts_gene"] >= min_counts)
+        & (adata.obs["n_genes"] >= min_genes)
         & (adata.obs["cell_area"] <= area_cut)
     )
     n_pre = adata.n_obs
-    n_drop_counts = int((adata.obs["n_counts_gene"] < MIN_COUNTS).sum())
-    n_drop_genes = int((adata.obs["n_genes"] < MIN_GENES).sum())
+    n_drop_counts = int((adata.obs["n_counts_gene"] < min_counts).sum())
+    n_drop_genes = int((adata.obs["n_genes"] < min_genes).sum())
     n_drop_area = int((adata.obs["cell_area"] > area_cut).sum())
     adata.obs["pass_qc"] = keep.astype(bool)
     adata_raw = adata.copy()
+    threshold_rows = []
+    for candidate_counts in (10, 15, 20):
+        for candidate_genes in (5, 10):
+            candidate_keep = (
+                (adata_raw.obs["n_counts_gene"] >= candidate_counts)
+                & (adata_raw.obs["n_genes"] >= candidate_genes)
+                & (adata_raw.obs["cell_area"] <= area_cut)
+            )
+            threshold_rows.append({
+                "min_gene_counts": candidate_counts,
+                "min_genes": candidate_genes,
+                "area_cut_um2": float(area_cut),
+                "n_pass": int(candidate_keep.sum()),
+                "fraction_pass": float(candidate_keep.mean()),
+            })
+    threshold_sensitivity = pd.DataFrame(threshold_rows)
     adata = adata[keep].copy()
+    background_table, background_summary = gene_background_sanity(adata)
     adata = adata[:, gene_mask].copy()
     sc.pp.filter_genes(adata, min_cells=MIN_CELLS_PER_GENE)
     adata.layers["counts"] = adata.X.copy()
@@ -600,7 +798,6 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     annotation = cluster_annotation_table(adata.obs)
 
     # ---- figures ----
-    coordinates_path = resolve_under(xenium, cfg.get("explorer_coordinates_csv"))
     poly = (
         polygon_from_coords_csv(coordinates_path, cfg.get("selection_name"))
         if coordinates_path else None
@@ -610,7 +807,8 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     cmap_m = palette_map(obs["module"].astype(str).unique())
     cmap_o = palette_map(obs["onboard_cluster"].astype(str).unique())
 
-    fig, axes = plt.subplots(1, 3, figsize=(12.4, 3.8))
+    fig, axes = plt.subplots(2, 2, figsize=(11.2, 7.2))
+    axes = axes.ravel()
     axes[0].hist(np.log1p(region_counts), bins=40, density=True, alpha=0.5,
                  color="#8a8a8a", label=f"full section (n={n_region})")
     axes[0].hist(np.log1p(roi_counts), bins=30, density=True, alpha=0.75,
@@ -620,17 +818,24 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     axes[0].set_ylabel("Density")
     axes[0].legend(frameon=False)
     axes[1].hist(adata_raw.obs["n_counts_gene"], bins=40, color="#2c5aa0")
-    axes[1].axvline(MIN_COUNTS, color="0.15", ls="--", lw=1.2, label=f"min {MIN_COUNTS}")
+    axes[1].axvline(min_counts, color="0.15", ls="--", lw=1.2, label=f"min {min_counts}")
     axes[1].set_title("Gene-feature counts in ROI")
     axes[1].set_xlabel("Gene transcripts / cell")
     axes[1].set_ylabel("Cells")
     axes[1].legend(frameon=False)
-    axes[2].hist(adata_raw.obs["cell_area"], bins=40, color="#2c5aa0")
-    axes[2].axvline(area_cut, color="0.15", ls="--", lw=1.2, label=f"Tukey high {area_cut:.0f} µm²")
-    axes[2].set_title("Cell area in ROI")
-    axes[2].set_xlabel("Cell area (µm²)")
+    axes[2].hist(adata_raw.obs["n_genes"], bins=40, color="#2c5aa0")
+    axes[2].axvline(min_genes, color="0.15", ls="--", lw=1.2, label=f"min {min_genes}")
+    axes[2].set_title("Detected genes in ROI")
+    axes[2].set_xlabel("Genes detected / cell")
     axes[2].set_ylabel("Cells")
     axes[2].legend(frameon=False)
+    axes[3].hist(adata_raw.obs["cell_area"], bins=40, color="#2c5aa0")
+    axes[3].axvline(area_cut, color="0.15", ls="--", lw=1.2, label=f"Tukey high {area_cut:.0f} µm²")
+    axes[3].set_title("Cell area in ROI")
+    axes[3].set_xlabel("Cell area (µm²)")
+    axes[3].set_ylabel("Cells")
+    axes[3].legend(frameon=False)
+    fig.tight_layout()
     savefig(fig, figdir / "01_qc.png")
 
     fig, axes = plt.subplots(3, 1, figsize=(7.2, 16.2), sharex=True, sharey=True)
@@ -930,10 +1135,32 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
     annotation.to_csv(out / "cluster_annotation_summary.csv", index=False)
     if biology_rows:
         pd.DataFrame(biology_rows).to_csv(out / "biology_gene_set_summary.csv", index=False)
+    qc_cell_columns = ["n_counts_gene", "n_genes", "transcript_counts", "cell_area", "pass_qc"]
+    adata_raw.obs[qc_cell_columns].to_csv(out / "qc_cell_metrics.csv")
+    threshold_sensitivity.to_csv(out / "qc_threshold_sensitivity.csv", index=False)
+    background_table.to_csv(out / "gene_background_sanity.csv", index=False)
+    if boundary_cells is not None:
+        boundary_cells.to_csv(out / "roi_boundary_selection_sensitivity.csv", index=False)
     obs.to_csv(out / "cells_annotated.csv")
     pd.DataFrame(zmat, index=types, columns=types).to_csv(out / "neighborhood_z_modules.csv")
     pd.DataFrame(log2oe, index=types, columns=types).to_csv(out / "neighborhood_log2oe_modules.csv")
     pd.DataFrame(nhood_p, index=types, columns=types).to_csv(out / "neighborhood_permutation_p_modules.csv")
+
+    estimated_fp = run_qc.get(
+        "estimated_number_of_false_positive_transcripts_per_cell"
+    )
+    fp_fraction_of_roi_median = (
+        estimated_fp / float(np.median(roi_counts))
+        if estimated_fp is not None and float(np.median(roi_counts)) > 0 else None
+    )
+    run_qc_report = {
+        **run_qc,
+        "estimated_false_positive_fraction_of_roi_median": fp_fraction_of_roi_median,
+        "handling": (
+            "Reported as a run-level QC estimate and not subtracted from genes or cells."
+        ),
+    }
+    pd.DataFrame([run_qc_report]).to_csv(out / "run_level_qc_metrics.csv", index=False)
 
     summary = {
         "roi_name": roi,
@@ -947,6 +1174,7 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
         "n_region_cells": int(n_region),
         "n_roi_export": int(len(roi_ids)),
         "expected_explorer_cell_count": cfg.get("expected_explorer_cell_count"),
+        "roi_selection_rule": cfg.get("roi_selection_rule", "not specified"),
         "polygon_count_difference": (
             int(len(roi_ids) - cfg["expected_explorer_cell_count"])
             if cfg.get("expected_explorer_cell_count") is not None else None
@@ -956,18 +1184,25 @@ def process_roi(cfg: dict, out_root: Path) -> dict:
         ),
         "n_after_qc": int(adata.n_obs),
         "qc": {
-            "min_gene_counts": MIN_COUNTS,
-            "min_genes": MIN_GENES,
+            "min_gene_counts": min_counts,
+            "min_genes": min_genes,
+            "threshold_scope": "one shared config value applied to every ROI in this run",
             "area_tukey_k": AREA_IQR_K,
             "area_cut_um2": float(area_cut),
             "n_drop_counts": n_drop_counts,
             "n_drop_genes": n_drop_genes,
             "n_drop_area": n_drop_area,
+            "negative_control_gene_sanity": background_summary,
         },
+        "run_level_qc": run_qc_report,
+        "roi_boundary_sensitivity": boundary_summary,
         "baseline_transcripts": {
             "region_median": float(np.median(region_counts)),
             "roi_median": float(np.median(roi_counts)),
             "roi_after_qc_median_gene_counts": float(np.median(adata.obs["n_counts_gene"])),
+            "roi_before_qc_median_gene_counts": float(np.median(adata_raw.obs["n_counts_gene"])),
+            "roi_before_qc_median_genes": float(np.median(adata_raw.obs["n_genes"])),
+            "roi_after_qc_median_genes": float(np.median(adata.obs["n_genes"])),
         },
         "clustering": {
             "n_pcs": int(n_pcs),
@@ -1085,7 +1320,8 @@ def main():
     out_root.mkdir(parents=True, exist_ok=True)
     sc.settings.verbosity = 1
     np.random.seed(SEED)
-    summaries = [process_roi(roi, out_root) for roi in cfg["rois"]]
+    qc_config = cfg.get("qc", {})
+    summaries = [process_roi(roi, out_root, qc_config) for roi in cfg["rois"]]
     write_story_skips(out_root, summaries, [])
     (out_root / "run_summary.json").write_text(json.dumps(summaries, indent=2), encoding="utf-8")
     print("DONE", out_root)
